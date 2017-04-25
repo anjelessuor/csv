@@ -40,10 +40,11 @@
 
 		<section>
 			<?= $this->section('main_content') ?>
+			<?php var_dump($w_user); ?>
 		</section>
 
 	</div>
-	
+
 		<footer>
 			<div class="container-fluid">
 
