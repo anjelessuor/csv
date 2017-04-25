@@ -6,7 +6,7 @@
 	<p>Et maintenant, RTFM dans <strong><a href="../docs/tuto/" title="Documentation de W">docs/tuto</a></strong>.</p>
 
 	<div id="carousse">
-	<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
 
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -50,5 +50,20 @@
   </div>
 </div>
 
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">	
+				<h2>Qu'est ce que c'est</h2>
+		</div>
+		<div class="col-md-6">
+				<h2>doc download</h2>
+				<ul>
+					<li>vcbncvbn</li>
+					<li>cvbncvb</li>
+					<li>cvbncvn</li>
+				</ul>
+		</div>
+	</div>
+</div>
 
 <?php $this->stop('main_content') ?>
