@@ -98,6 +98,18 @@
 					</ul>
 			</nav>
 
+		<section>
+			<?= $this->section('main_content') ?>
+		</section>
+
+	</div>
+
+		<footer>
+			<div class="container-fluid">
+
+			</div>
+		</footer>
+
 
 
 
