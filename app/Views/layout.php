@@ -7,36 +7,96 @@
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
 </head>
-<body>
-	<nav class="navbar navbar-inverse">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="">Centre Social Vauban</a>
-			</div>
+	<body>
+		<nav class="navbar">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Centre social Vauban-Esquermes</a>
+		</div>
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="menu">
-				<ul class="nav navbar-nav">
-					<li><a href="">Accueil</a></li>
-					<li><a href="">Secteur enfance (3 - 5 ans)</a></li>
-					<li><a href="">Secteur enfance (6 - 12 ans)</a></li>
-					<li><a href="">Secteur enfance (12 - 16 ans)</a></li>
-					<li><a href="">Secteur jeunes (16 - 25 ans)</a></li>
-					<li><a href="">Secteur adultes et familles</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-						<li><a href="">Connexion</a></li>
-						<li><a href="">Inscription</a></li>
-				</ul>
-			</div><!-- /.navbar-collapse -->
-	</nav>
-	<div class="container">
+		<div class="collapse navbar-collapse" id="main-menu">
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a data-toggle="dropdown" href="#">Accueil <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<ul class="dropdown-menu jqueryFadeIn">
+						<li><a href="#">Présentation</a></li>
+						<li class="dropdown-submenu">
+							<a data-toggle="dropdown"tabindex="-1" href="#">Qui somme-nous ? </i></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Présentation</a></li>
+								<li><a href="#">Nos valeurs</a></li>
+								<li><a href="#">Nos missions</a></li>
+								<li><a href="#">Contact</a></li>
+								<li><a href="#">Nos sites</a></li>
+								<li><a href="#">Nos partenaires</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
 
+				<li class="dropdown">
+					<a data-toggle="dropdown" href="#">Enfance 6-12 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<ul class="dropdown-menu jqueryFadeIn">
+
+						<li><a href="#">Présentation</a></li>
+						<li class="dropdown-submenu">
+							<a data-toggle="dropdown"tabindex="-1" href="#">Activités </i></a>
+							<ul class="dropdown-menu">
+								<li><a href="#"> Mercredis</a></li>
+								<li><a href="#"> Vacances scolaires</a></li>
+								<li><a href="#"> Accompagnement à la scolarité</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+
+				<li class="dropdown">
+					<a data-toggle="dropdown" href="#">Enfance 12-16 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<ul class="dropdown-menu jqueryFadeIn">
+
+						<li><a href="#">Présentation</a></li>
+						<li class="dropdown-submenu">
+							<a data-toggle="dropdown"tabindex="-1" href="#">Activités </i></a>
+							<ul class="dropdown-menu">
+								<li><a href="#"> Mercredis</a></li>
+								<li><a href="#"> Vacances scolaires</a></li>
+								<li><a href="#"> Accompagnement à la scolarité</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+
+				<li class="dropdown">
+					<a data-toggle="dropdown" href="#">Jeunes <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<ul class="dropdown-menu jqueryFadeIn">
+
+						<li><a href="#">Présentation</a></li>
+						<li class="dropdown-submenu">
+							<a data-toggle="dropdown"tabindex="-1" href="#">Activités </i></a>
+							<ul class="dropdown-menu">
+								<li><a href="#"> Mercredis</a></li>
+								<li><a href="#"> Vacances scolaires</a></li>
+								<li><a href="#"> Accompagnement à la scolarité</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a data-toggle="dropdown" href="#">Adultes et famille <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<ul class="dropdown-menu jqueryFadeIn">
+						<li><a href="#">Présentation</a></li>
+						<li><a href="#">Lundi</a></li>
+						<li><a href="#">Mardi</a></li>
+						<li><a href="#">Mercredi</a></li>
+						<li><a href="#">Jeudi</a></li>
+						<li><a href="#">Vendredi</a></li>
+					</ul>
+			</nav>
 
 		<section>
 			<?= $this->section('main_content') ?>
@@ -50,6 +110,7 @@
 
 			</div>
 		</footer>
+
 
 
 
