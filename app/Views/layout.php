@@ -97,6 +97,7 @@
 							<li><a href="#">Vendredi</a></li>
 						</ul>
 					</li>
+			</nav>		
 
 
 		<section>
