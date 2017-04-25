@@ -7,7 +7,6 @@
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
 </head>
-<body>
 	<body>
 		<nav class="navbar">
 		<div class="navbar-header">
@@ -97,24 +96,8 @@
 						<li><a href="#">Jeudi</a></li>
 						<li><a href="#">Vendredi</a></li>
 					</ul>
-				</li>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="">Connexion</a></li>
-					<li><a href="">Inscription</a></li>
-				</ul>
+			</nav>
 
-
-		<section>
-			<?= $this->section('main_content') ?>
-		</section>
-
-	</div>
-
-		<footer>
-			<div class="container-fluid">
-
-			</div>
-		</footer>
 
 
 
