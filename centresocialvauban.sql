@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 26 Avril 2017 à 10:34
+-- Généré le :  Mer 26 Avril 2017 à 15:06
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  5.6.28
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `centresocialvauban`
+-- Base de données :  `csv`
 --
 
 -- --------------------------------------------------------
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `activities` (
-  `activities_id` int(5) NOT NULL,
+  `activities_id` int(5) UNSIGNED NOT NULL,
   `activities_title` varchar(150) NOT NULL,
   `activities_description` text NOT NULL,
   `activities_localization` varchar(150) NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE `activities` (
 --
 
 CREATE TABLE `ages` (
-  `ages_id` int(2) NOT NULL,
+  `ages_id` int(2) UNSIGNED NOT NULL,
   `ages_name` varchar(50) NOT NULL,
   `ages_description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -70,7 +70,7 @@ INSERT INTO `ages` (`ages_id`, `ages_name`, `ages_description`) VALUES
 --
 
 CREATE TABLE `config` (
-  `config_id` int(2) NOT NULL,
+  `config_id` int(2) UNSIGNED NOT NULL,
   `config_sitename` varchar(150) NOT NULL,
   `config_address` varchar(150) NOT NULL,
   `config_phone` varchar(150) NOT NULL,
@@ -92,7 +92,7 @@ INSERT INTO `config` (`config_id`, `config_sitename`, `config_address`, `config_
 --
 
 CREATE TABLE `documents` (
-  `documents_id` int(5) NOT NULL,
+  `documents_id` int(5) UNSIGNED NOT NULL,
   `documents_name` varchar(150) NOT NULL,
   `documents_description` text NOT NULL,
   `documents_document` varchar(150) NOT NULL
@@ -105,7 +105,7 @@ CREATE TABLE `documents` (
 --
 
 CREATE TABLE `events` (
-  `events_id` int(5) NOT NULL,
+  `events_id` int(5) UNSIGNED NOT NULL,
   `events_title` varchar(150) NOT NULL,
   `events_description` text NOT NULL,
   `events_localization` varchar(150) NOT NULL,
@@ -118,6 +118,18 @@ CREATE TABLE `events` (
   `events_adults` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `events`
+--
+
+INSERT INTO `events` (`events_id`, `events_title`, `events_description`, `events_localization`, `events_hours`, `events_image`, `events_3to5`, `events_6to12`, `events_12to16`, `events_16to25`, `events_adults`) VALUES
+(2, 'coucou', 'fs', '', '', '', 0, 0, 0, 0, 0),
+(3, 'steven', 'e', 'e', 'e', 'e', 0, 0, 0, 0, 0),
+(4, 'rrrr', 'rrrr', 'rrr', 'rrr', 'rrrr', 0, 0, 0, 0, 0),
+(5, 's', 's', 's', 'sss', 's', 0, 0, 0, 0, 0),
+(6, 'r', 'r', 'r', 'r', 'r', 0, 0, 0, 0, 0),
+(7, 'e', 'e', 'e', 'e', 'e', 0, 0, 0, 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -125,7 +137,7 @@ CREATE TABLE `events` (
 --
 
 CREATE TABLE `holidays_activities` (
-  `h_activities_id` int(5) NOT NULL,
+  `h_activities_id` int(5) UNSIGNED NOT NULL,
   `h_activities_title` varchar(150) NOT NULL,
   `h_activities_description` text NOT NULL,
   `h_activities_dates` varchar(150) NOT NULL,
@@ -147,7 +159,7 @@ CREATE TABLE `holidays_activities` (
 --
 
 CREATE TABLE `partners` (
-  `partners_id` int(5) NOT NULL,
+  `partners_id` int(5) UNSIGNED NOT NULL,
   `partners_name` varchar(150) NOT NULL,
   `partners_description` text NOT NULL,
   `partners_image` varchar(150) NOT NULL,
@@ -161,7 +173,7 @@ CREATE TABLE `partners` (
 --
 
 CREATE TABLE `presentation` (
-  `presentation_id` int(2) NOT NULL,
+  `presentation_id` int(2) UNSIGNED NOT NULL,
   `presentation_name` varchar(150) NOT NULL,
   `presentation_description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -184,7 +196,7 @@ INSERT INTO `presentation` (`presentation_id`, `presentation_name`, `presentatio
 --
 
 CREATE TABLE `school_help` (
-  `school_id` int(5) NOT NULL,
+  `school_id` int(5) UNSIGNED NOT NULL,
   `school_description` text NOT NULL,
   `ages_id` int(2) NOT NULL,
   `school_localization` varchar(150) NOT NULL,
@@ -204,7 +216,7 @@ CREATE TABLE `school_help` (
 --
 
 CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) UNSIGNED NOT NULL,
   `user_firstname` varchar(100) DEFAULT NULL,
   `user_lastname` varchar(100) DEFAULT NULL,
   `user_email` varchar(255) NOT NULL,
@@ -291,52 +303,52 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `activities`
 --
 ALTER TABLE `activities`
-  MODIFY `activities_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `activities_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `ages`
 --
 ALTER TABLE `ages`
-  MODIFY `ages_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ages_id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `config`
 --
 ALTER TABLE `config`
-  MODIFY `config_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `config_id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `documents_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `documents_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `events`
 --
 ALTER TABLE `events`
-  MODIFY `events_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `events_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT pour la table `holidays_activities`
 --
 ALTER TABLE `holidays_activities`
-  MODIFY `h_activities_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `h_activities_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `partners`
 --
 ALTER TABLE `partners`
-  MODIFY `partners_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `partners_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `presentation`
 --
 ALTER TABLE `presentation`
-  MODIFY `presentation_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `presentation_id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `school_help`
 --
 ALTER TABLE `school_help`
-  MODIFY `school_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `school_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `user_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
