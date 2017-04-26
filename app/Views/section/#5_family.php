@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Accueil']) ?>
+<?php $this->layout('layout', ['title' => '']) ?>
 
 <?php $this->start('main_content') ?>
 
@@ -29,3 +29,6 @@
 
 <p>-> Durant les vacances scolaires, des sorties familles seront proposées aux adhérents du centre social de Vauban-Esquermes. 
 Les inscriptions se feront directement auprès de la référente famille ; et le tarif sera fixer en fonction des sorties.</p>
+
+
+<?php$this->stop('main_content'); ?>
