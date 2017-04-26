@@ -18,8 +18,8 @@
                 <td><h2><?php echo $event['events_title'] ?> </h2></td>
                 <td><h2><?php echo $event['events_description'] ?> </h2></td>
                 <td>
-                    <a href="<?= $this->url('evenement_update', ['id' => $event['events_id'] ]); ?>" class="btn btn-primary"> Modifier </a>
-                    <a href="<?= $this->url('evenement_delete', ['id' => $event['events_id'] ]); ?>" class="btn btn-danger"> Supprimer </a>
+                    <a href="<?= $this->url('evenement_update', ['events_id' => $event['events_id'] ]); ?>" class="btn btn-primary"> Modifier </a>
+                    <a href="<?= $this->url('evenement_delete', ['events_id' => $event['events_id'] ]); ?>" class="btn btn-danger"> Supprimer </a>
                 </td>
             </tr>
     <?php } ?>
