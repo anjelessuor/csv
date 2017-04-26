@@ -21,23 +21,22 @@
 
 		<div class="collapse navbar-collapse" id="main-menu">
 			<ul class="nav navbar-nav">
+				<li>
+					<a href="#">Accueil <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+				</li>
+
 				<li class="dropdown">
-					<a data-toggle="dropdown" href="#">Accueil <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<a data-toggle="dropdown" href="#">Qui sommes-nous ? <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu jqueryFadeIn">
 						<li><a href="#">Présentation</a></li>
-						<li class="dropdown-submenu">
-							<a data-toggle="dropdown"tabindex="-1" href="#">Qui somme-nous ? </i></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Présentation</a></li>
-								<li><a href="#">Nos valeurs</a></li>
-								<li><a href="#">Nos missions</a></li>
-								<li><a href="#">Contact</a></li>
-								<li><a href="#">Nos sites</a></li>
-								<li><a href="#">Nos partenaires</a></li>
-							</ul>
-						</li>
+						<li><a href="#">Nos valeurs</a></li>
+						<li><a href="#">Nos missions</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Nos sites</a></li>
+						<li><a href="#">Nos partenaires</a></li>
 					</ul>
 				</li>
+
 
 				<li class="dropdown">
 					<a data-toggle="dropdown" href="#">Enfance 6-12 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
@@ -96,6 +95,10 @@
 						<li><a href="#">Jeudi</a></li>
 						<li><a href="#">Vendredi</a></li>
 					</ul>
+				</li>
+				<li>
+					<a href="#">Evénements</a>
+				</li>
 			</nav>
 
 		<section>
