@@ -10,7 +10,7 @@
 	<style>@import url('https://fonts.googleapis.com/css?family=Lato');</style>
 </head>
 	<body>
-<!--Navbar End-->
+<!--Navbar-->
 		<nav class="navbar">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
