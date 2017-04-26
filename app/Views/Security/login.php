@@ -4,14 +4,14 @@
 
     <form action="" method="POST">
         <div class="form-group">
-            <label> Votre pseudo ou mail : </label>
-            <input id="username" name="username" class="form-control">
+            <label for="user_email"> Votre mail : </label>
+            <input id="user_email" name="user_email" class="form-control">
         </div>
         <div class="form-group">
-            <label> Votre mot de passe : </label>
-            <input id="password" name="password" type="password" class="form-control">
+            <label for="user_password"> Votre mot de passe : </label>
+            <input id="user_password" name="user_password" type="password" class="form-control">
         </div>
         <button class="btn btn-submit"> Se connecter </button>
     </form>
-    <?php var_dump($_SESSION); ?>
+
 <?php $this->stop('main_content'); ?>
