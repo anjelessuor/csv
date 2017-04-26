@@ -4,9 +4,10 @@
 	<h1>Centre Social Vauban</h1>
 	<p>Vous avez atteint la page d'accueil. Bravo.</p>
 	<p>Et maintenant, RTFM dans <strong><a href="../docs/tuto/" title="Documentation de W">docs/tuto</a></strong>.</p>
+	</br></br>
 
-	<div id="carousse">
-	<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
 
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -50,5 +51,25 @@
   </div>
 </div>
 
+</br></br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="informationAccueil whatIsIt">
+				<h2>Qu'est ce que c'est</h2>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="informationAccueil downloadDocumentation">
+				<h2>doc download</h2>
+				<ul>
+					<li>vcbncvbn</li>
+					<li>cvbncvb</li>
+					<li>cvbncvn</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
 
 <?php $this->stop('main_content') ?>
