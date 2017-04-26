@@ -26,7 +26,38 @@ class EventController extends \W\Controller\Controller
             $events_description = $_POST['events_description'];
             $events_localization = $_POST['events_localization'];
             $events_hours = $_POST['events_hours'];
-            $events_image = $_POST['events_image'];
+
+            $target_dir = "uploads/events";
+            $target_file = $target_dir . basename($_FILES["events_image"]["name"]);
+            $uploadOk = 1;
+            $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+
+            // Check file size
+            if ($_FILES["events_image"]["size"] > 2000000) {
+                echo "L'image est trop grande.";
+                $uploadOk = 0;
+            }
+            // Allow certain file formats
+            if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif" ) {
+                echo "Seuls les fichiers JPG, JPEG, PNG & GIF seront acceptés.";
+                $uploadOk = 0;
+            }
+            // Check if $uploadOk is set to 0 by an error
+            if ($uploadOk == 0) {
+                echo "Le fichier n'a pas été chargé.";
+            // if everything is ok, try to upload file
+            } else {
+                if (move_uploaded_file($_FILES["events_image"]["tmp_name"], $target_file)) {
+                    echo "The file ". basename( $_FILES["events_image"]["name"]). " has been uploaded.";
+                } else {
+                    echo "Le fichier n'a pas été chargé correctement.";
+                }
+            }
+
+            $events_image = $_FILES["events_image"]["name"];
+
+
             $events_3to5 = isset($_POST['events_3to5']) ? $_POST['events_3to5'] : 0;
             $events_6to12 = isset($_POST['events_6to12']) ? $_POST['events_6to12'] : 0;
             $events_12to16 = isset($_POST['events_12to16']) ? $_POST['events_12to16'] : 0;
@@ -41,7 +72,7 @@ class EventController extends \W\Controller\Controller
                 'events_description' => $events_description,
                 'events_localization' => $events_localization,
                 'events_hours' => $events_hours,
-                'events_image' => $events_image,
+                'events_image' => $_FILES["events_image"]["name"],
                 'events_3to5' => $events_3to5,
                 'events_6to12' => $events_6to12,
                 'events_12to16' => $events_12to16,
@@ -65,7 +96,7 @@ class EventController extends \W\Controller\Controller
                     $events_description = $_POST['events_description'];
                     $events_localization = $_POST['events_localization'];
                     $events_hours = $_POST['events_hours'];
-                    $events_image = $_POST['events_image'];
+                    $events_image = $_FILES["events_image"]["name"];
                     $events_3to5 = isset($_POST['events_3to5']) ? $_POST['events_3to5'] : 0;
                     $events_6to12 = isset($_POST['events_6to12']) ? $_POST['events_6to12'] : 0;
                     $events_12to16 = isset($_POST['events_12to16']) ? $_POST['events_12to16'] : 0;
@@ -77,7 +108,7 @@ class EventController extends \W\Controller\Controller
                             'events_description' => $events_description,
                             'events_localization' => $events_localization,
                             'events_hours' => $events_hours,
-                            'events_image' => $events_image,
+                            'events_image' => $_FILES["events_image"]["name"],
                             'events_3to5' => $events_3to5,
                             'events_6to12' => $events_6to12,
                             'events_12to16' => $events_12to16,
