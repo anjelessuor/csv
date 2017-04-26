@@ -103,7 +103,6 @@
 
 		<section>
 			<?= $this->section('main_content') ?>
-			<?php var_dump($w_user); ?>
 		</section>
 
 	</div>
