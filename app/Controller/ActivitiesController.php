@@ -34,7 +34,7 @@ class ActivitiesController extends Controller
             $activities_adults = isset($_POST['activities_adults']) ? $_POST['activities_adults'] : 0;
 
 			$activities_manager = new ActivitiesModel(); // instancie la class pour gérer les articles en bdd
-			if (!empty($_POST)) {
+            if (!empty($_POST)) {
 				$activities = $activities_manager->insert([
 					'activities_title' => $activities_title,
 					'activities_description' => $activities_description,
@@ -47,6 +47,8 @@ class ActivitiesController extends Controller
                     'activities_16to25' => $activities_16to25,
                     'activities_adults' => $activities_adults,
 				]);
+                $this->redirectToRoute('activities_view', ['id' => $activities['activities_id']]);
+
 			}
 
 		}
@@ -69,7 +71,7 @@ class ActivitiesController extends Controller
 	public function edit($id){
 		//$this->allowTo('admin');
 		$activities_manager = new ActivitiesModel(); // instancie la class pour gérer les articles en bdd
-		$activities = $activities_manager->find($id);
+    		$activities = $activities_manager->find($id);
 
 		if (!empty($_POST)) {
             $activities_title = $_POST['activities_title'];
@@ -96,6 +98,7 @@ class ActivitiesController extends Controller
                     'activities_16to25' => $activities_16to25,
                     'activities_adults' => $activities_adults,
 				], $id); // Requête SQL pour mettre à jour un article
+                $this->redirectToRoute('activities_view', ['id' => $activities['activities_id']]);
 			}
 		}
 		$this->show('activities/edit', ['activities' => $activities]);
