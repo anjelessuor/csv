@@ -19,6 +19,7 @@ class SecurityController extends Controller
                 $user_manager = new UserModel();
                 $user = $user_manager->find($user_id); //Récupère toutes les infos utilisateur
                 $authentification_manager->logUserIn($user); //La connexion se fait
+                //$this->redirectToRoute('security_register');
             }
         }
         $this->show('Security/login');
@@ -74,7 +75,7 @@ class SecurityController extends Controller
                 $messages = $errors;
             }
         }
-
+        //$this->redirectToRoute('nom_de_la_route');
         $this->show('Security/register', ['messages' => $messages, 'user_email' => $user_email, 'user_password' => $user_password]);
     }
     //Déconnexion de l'usager
