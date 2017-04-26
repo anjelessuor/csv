@@ -11,47 +11,30 @@
 
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-    <li data-target="#bs-carousel" data-slide-to="1"></li>
-    <li data-target="#bs-carousel" data-slide-to="2"></li>
-  </ol>
-
+		<?php foreach($events as $key => $event) : ?>
+    <li data-target="#bs-carousel" data-slide-to="<?= $key ?>" class="active"></li>
+		<?php endforeach; ?>
+	</ol>
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
+		<?php foreach($events as $event) : ?>
     <div class="item slides active">
-      <div class="slide-1"></div>
+      <div style="background-image: url(public\upload\download\event\<?php echo $this->url( 'event_view', [ 'events_image' => $event['events_image']] );?><?php echo $event['events_image']; ?>);" class="slide-1"></div>
       <div class="hero">
         <hgroup>
-            <h1>We are jdflkgjdfkgjdfklgjdfg</h1>
-            <h3>Get start your next awesome project</h3>
-        </hgroup>
+            <h1><?php echo $this->url( 'event_view', [ 'events_id' => $event['events_id']] );?><?php echo $event['event_title']; ?></h1>
+            <p><?php echo $this->url( 'event_view', [ 'events_description' => $event['events_description']] );?><?php echo $event['events_description']; ?></p>
+						<p><?php echo $this->url( 'event_view', [ 'events_localization' => $event['events_localization']] );?><?php echo $event['events_localization']; ?></p>
+						<p><?php echo $this->url( 'event_view', [ 'events_hours' => $event['events_hours']] );?><?php echo $event['events_hours']; ?></p>
+				</hgroup>
         <button class="btn btn-hero btn-lg" role="button">See all features</button>
       </div>
     </div>
-    <div class="item slides">
-      <div class="slide-2"></div>
-      <div class="hero">
-        <hgroup>
-            <h1>We are smart</h1>
-            <h3>Get start your next awesome project</h3>
-        </hgroup>
-        <button class="btn btn-hero btn-lg" role="button">See all features</button>
-      </div>
-    </div>
-    <div class="item slides">
-      <div class="slide-3"></div>
-      <div class="hero">
-        <hgroup>
-            <h1>We are amazing</h1>
-            <h3>Get start your next awesome project</h3>
-        </hgroup>
-        <button class="btn btn-hero btn-lg" role="button">See all features</button>
-      </div>
-    </div>
+		<?php endforeach; ?>
   </div>
 </div>
-
 </br></br>
+
 <div class="container">
 	<div class="row">
 		<div class="col-md-6">
