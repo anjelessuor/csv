@@ -1,7 +1,7 @@
 <?php $this->layout('layout', ['title' => 'Créer un évènement']); ?>
 <?php $this->start('main_content'); ?>
 
-    <form method="POST" action="">
+    <form method="POST" action="" enctype="multipart/form-data">
         <div class="form-group">
             <label for="events_title">Titre : </label>
             <input class="form-control" type="text" name="events_title" id="events_title">
@@ -18,10 +18,9 @@
             <label for="events_hours"> Horaires : </label>
             <input type="text" class="form-control" name="events_hours" id="events_hours">
         </div>
-        <!--  upluod pour l'image changer type -->
         <div class="form-group">
             <label for="events_image"> Image : </label>
-            <input type="text" class="form-control" name="events_image" id="events_image">
+            <input type="file" name="events_image" id="events_image">
         </div>
         <div class="form-group">
             <label for="events_3to5">
@@ -42,5 +41,4 @@
         </div>
         <button class="btn btn-submit">Publier : </button>
     </form>
-
 <?php $this->stop('main_content'); ?>
