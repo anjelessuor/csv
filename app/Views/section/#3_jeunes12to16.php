@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Accueil']) ?>
+<?php $this->layout('layout', ['title' => '']) ?>
 
 <?php $this->start('main_content') ?>
 
@@ -29,3 +29,6 @@ Aussi, des projets « séjour » pourront être organisés avec jeunes durant le
 <p>Comme dans le secteur Enfance, les élèves de la 6ème à la Terminale peuvent être accompagnés dans leurs devoirs tous les Lundis, Mardis, Jeudis et Vendredis de 16h30 à 18h30 au sein des locaux du centre social. 
 Là également, des étudiants de l’école d’ingénierie (HEI) seront présents afin d’accompagner vos enfants dans les meilleures conditions pour leurs devoirs.
 <p>
+
+
+<?php$this->stop('main_content'); ?>

@@ -6,8 +6,11 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/style.css') ?>">
+	<link rel="stylesheet" href="<?= $this->assetUrl('css/font-awesome.min.css') ?>">
+	<style>@import url('https://fonts.googleapis.com/css?family=Lato');</style>
 </head>
 	<body>
+<!--Navbar End-->
 		<nav class="navbar">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
@@ -36,8 +39,6 @@
 						<li><a href="#">Nos partenaires</a></li>
 					</ul>
 				</li>
-
-
 				<li class="dropdown">
 					<a data-toggle="dropdown" href="#">Enfance 6-12 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu jqueryFadeIn">
@@ -53,7 +54,6 @@
 						</li>
 					</ul>
 				</li>
-
 				<li class="dropdown">
 					<a data-toggle="dropdown" href="#">Enfance 12-16 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu jqueryFadeIn">
@@ -69,7 +69,6 @@
 						</li>
 					</ul>
 				</li>
-
 				<li class="dropdown">
 					<a data-toggle="dropdown" href="#">Jeunes <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu jqueryFadeIn">
@@ -100,21 +99,22 @@
 					<a href="#">Evénements</a>
 				</li>
 			</nav>
+<!--Navbar End-->
 
+<!--Section field-->
 		<section>
 			<?= $this->section('main_content') ?>
 		</section>
+<!--Section field END-->
 
 	</div>
-
+<!--Footer-->
 		<footer>
 			<div class="container-fluid">
 
 			</div>
 		</footer>
-
-
-
+<!--Footer END-->
 
 <!-- SCRIPTS -->
 	<script type="text/javascript" src="<?= $this->assetUrl('js/jQuery-3.1.1.min.js'); ?>"></script>

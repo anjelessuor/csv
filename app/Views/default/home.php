@@ -1,10 +1,17 @@
 <?php $this->layout('layout', ['title' => 'Accueil']) ?>
 
 <?php $this->start('main_content') ?>
-	<h1>Centre Social Vauban</h1>
-	<p>Vous avez atteint la page d'accueil. Bravo.</p>
-	<p>Et maintenant, RTFM dans <strong><a href="../docs/tuto/" title="Documentation de W">docs/tuto</a></strong>.</p>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <h1>Centre Social Vauban</h1>
+    <p>Vous avez atteint la page d'accueil. Bravo.</p>
+	  <p>Et maintenant, RTFM dans <strong><a href="../docs/tuto/" title="Documentation de W">docs/tuto</a></strong>.</p>
+  </div>
+</div>
 	</br></br>
+	
 
 
 <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">

@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Accueil']) ?>
+<?php $this->layout('layout', ['title' => '']) ?>
 
 <?php $this->start('main_content') ?>
 
@@ -28,3 +28,4 @@ Les ALSH des vacances scolaires a lieu du lundi au vendredi de 8h30 à 17h30 au 
     <p>Les enfants du CP à la 5ème peuvent être accompagnés dans leurs devoirs tous les Lundis, Mardis, Jeudis et Vendredis de 16h30 à 18h30 au sein des locaux du centre social. 
 Ce tutorat s’effectue en partenariat avec l’école d’ingénierie (HEI) où des étudiants mettent leurs compétences en avant afin d’aider vos enfants.</p>
 
+<?php$this->stop('main_content'); ?>
