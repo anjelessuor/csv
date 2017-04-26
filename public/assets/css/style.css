@@ -33,11 +33,11 @@ h2 {
 
 .fade-carousel {
     position: relative;
-    height: 100vh;
+    height: 45vh;
 
 }
 .fade-carousel .carousel-inner .item {
-    height: 100vh;
+    height: 45vh;
 }
 
 
@@ -139,4 +139,15 @@ h2 {
 }
 @media screen and (max-width: 640px){
     .hero h1 { font-size: 4em; }
+}
+
+
+
+
+
+/******************************/
+/*		Documentation Accueil		*/
+/******************************/
+.informationAccueil h2{
+	text-align: center;
 }
