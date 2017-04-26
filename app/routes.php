@@ -8,9 +8,9 @@
 
 		['GET|POST', '/event/create', 'Event#create', 'event_create'],
 		['GET|POST', '/event/index', 'Event#index', 'event_index'],
-		['GET|POST', '/event/delete/[i:id]', 'Event#delete', 'event_delete'],
-		['GET|POST', '/event/update/[i:id]', 'Event#update', 'event_update'],
-		['GET', '/event/[i:id]', 'Event#view', 'event_view'],
+		['GET|POST', '/event/delete/[i:events_id]', 'Event#delete', 'event_delete'],
+		['GET|POST', '/event/update/[i:events_id]', 'Event#update', 'event_update'],
+		['GET', '/event/[i:events_id]', 'Event#view', 'event_view'],
 
 
 
