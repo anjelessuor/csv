@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 25 Avril 2017 à 10:47
+-- Généré le :  Mar 25 Avril 2017 à 17:25
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  5.6.28
 
@@ -206,9 +206,16 @@ CREATE TABLE `users` (
   `user_firstname` varchar(100) DEFAULT NULL,
   `user_lastname` varchar(100) DEFAULT NULL,
   `user_email` varchar(255) NOT NULL,
-  `user_password` varchar(50) NOT NULL,
+  `user_password` varchar(255) NOT NULL,
   `user_status` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `users`
+--
+
+INSERT INTO `users` (`user_id`, `user_firstname`, `user_lastname`, `user_email`, `user_password`, `user_status`) VALUES
+(11, 'fuck', 'php', 'fuckphp@sql.com', '$2y$10$DYERRaeZLiujvDlKClLoG.f/msqiBsugCWjnG8cVW8vQ6YoBYlkhC', 0);
 
 --
 -- Index pour les tables exportées
@@ -327,7 +334,7 @@ ALTER TABLE `school_help`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
