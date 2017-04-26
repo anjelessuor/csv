@@ -103,7 +103,6 @@
 
 		<section>
 			<?= $this->section('main_content') ?>
-			
 		</section>
 
 	</div>
