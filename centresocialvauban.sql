@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 25 Avril 2017 à 17:25
+-- Généré le :  Mer 26 Avril 2017 à 10:34
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  5.6.28
 
@@ -27,17 +27,17 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `activities` (
-  `activities_id` int(11) NOT NULL,
-  `activities_title` varchar(255) NOT NULL,
+  `activities_id` int(5) NOT NULL,
+  `activities_title` varchar(150) NOT NULL,
   `activities_description` text NOT NULL,
-  `activities_localization` varchar(255) NOT NULL,
-  `activities_hours` varchar(255) NOT NULL,
+  `activities_localization` varchar(150) NOT NULL,
+  `activities_hours` varchar(150) NOT NULL,
   `activities_image` varchar(255) NOT NULL,
-  `activities_3to5` int(11) NOT NULL,
-  `activities_6to12` int(11) NOT NULL,
-  `activities_12to16` int(11) NOT NULL,
-  `activities_16to25` int(11) NOT NULL,
-  `activities_adults` int(11) NOT NULL
+  `activities_3to5` int(2) NOT NULL,
+  `activities_6to12` int(2) NOT NULL,
+  `activities_12to16` int(2) NOT NULL,
+  `activities_16to25` int(2) NOT NULL,
+  `activities_adults` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -47,16 +47,16 @@ CREATE TABLE `activities` (
 --
 
 CREATE TABLE `ages` (
-  `ages_id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `description` text NOT NULL
+  `ages_id` int(2) NOT NULL,
+  `ages_name` varchar(50) NOT NULL,
+  `ages_description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `ages`
 --
 
-INSERT INTO `ages` (`ages_id`, `name`, `description`) VALUES
+INSERT INTO `ages` (`ages_id`, `ages_name`, `ages_description`) VALUES
 (1, '3to5', 'Le secteur petite enfance développe des accueils de loisirs sans hébergement (ALSH) tous les mercredis et pendant toutes les vacances scolaires pour les enfants de 3 à 5 ans. \r\nUne fiche d’inscription et une fiche sanitaire devront être remplies pour que vos enfants puissent participer aux ALSH.'),
 (2, '6to12', 'Le secteur enfance développe des accueils de loisirs sans hébergement (ALSH) tous les mercredis et pendant toutes les vacances scolaires pour les enfants de 6 à 12 ans. \r\nAussi un accompagnement à la scolarité est mis en place tous les jours de la semaine sauf le mercredi.'),
 (3, '12to16', 'Le secteur jeune accompagne les 12-16 ans en développant des projets avec eux ; mais aussi en mettant en place diverses activités les mercredis et durant les vacances scolaires. \r\nUn accompagnement à la scolarité est proposé aux jeunes de la 6ème à la Terminale. Un suivi est effectué avec le collège Levi Strauss, du quartier de Vauban-Esquermes.'),
@@ -70,18 +70,20 @@ INSERT INTO `ages` (`ages_id`, `name`, `description`) VALUES
 --
 
 CREATE TABLE `config` (
-  `config_id` int(11) NOT NULL,
-  `config_address` varchar(255) NOT NULL,
-  `config_phone` varchar(255) NOT NULL,
-  `config_email` varchar(255) NOT NULL
+  `config_id` int(2) NOT NULL,
+  `config_sitename` varchar(150) NOT NULL,
+  `config_address` varchar(150) NOT NULL,
+  `config_phone` varchar(150) NOT NULL,
+  `config_email` varchar(150) NOT NULL,
+  `config_facebook` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `config`
 --
 
-INSERT INTO `config` (`config_id`, `config_address`, `config_phone`, `config_email`) VALUES
-(1, '77 rue Philippe-Laurent Roland, Lille', '03.20.03.94.16', 'csvaubanesquermes@gmail.com');
+INSERT INTO `config` (`config_id`, `config_sitename`, `config_address`, `config_phone`, `config_email`, `config_facebook`) VALUES
+(1, 'Centre Social Vauban', '77 rue Philippe-Laurent Roland, Lille', '03.20.03.94.16', 'csvaubanesquermes@gmail.com', 'https://fr-fr.facebook.com/Centre-Social-Vauban-Esquermes-77-1807869302770177/');
 
 -- --------------------------------------------------------
 
@@ -90,10 +92,10 @@ INSERT INTO `config` (`config_id`, `config_address`, `config_phone`, `config_ema
 --
 
 CREATE TABLE `documents` (
-  `documents_id` int(11) NOT NULL,
-  `documents_name` varchar(255) NOT NULL,
+  `documents_id` int(5) NOT NULL,
+  `documents_name` varchar(150) NOT NULL,
   `documents_description` text NOT NULL,
-  `documents_document` varchar(255) NOT NULL
+  `documents_document` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -103,17 +105,17 @@ CREATE TABLE `documents` (
 --
 
 CREATE TABLE `events` (
-  `events_id` int(11) NOT NULL,
-  `events_title` varchar(255) NOT NULL,
+  `events_id` int(5) NOT NULL,
+  `events_title` varchar(150) NOT NULL,
   `events_description` text NOT NULL,
-  `events_localization` varchar(255) NOT NULL,
-  `events_hours` varchar(255) NOT NULL,
+  `events_localization` varchar(150) NOT NULL,
+  `events_hours` varchar(150) NOT NULL,
   `events_image` varchar(255) NOT NULL,
-  `events_3to5` int(11) NOT NULL,
-  `events_6to12` int(11) NOT NULL,
-  `events_12to16` int(11) NOT NULL,
-  `events_16to25` int(11) NOT NULL,
-  `events_adults` int(11) NOT NULL
+  `events_3to5` int(2) NOT NULL,
+  `events_6to12` int(2) NOT NULL,
+  `events_12to16` int(2) NOT NULL,
+  `events_16to25` int(2) NOT NULL,
+  `events_adults` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -123,19 +125,19 @@ CREATE TABLE `events` (
 --
 
 CREATE TABLE `holidays_activities` (
-  `h_activities_id` int(11) NOT NULL,
-  `h_activities_title` varchar(255) NOT NULL,
+  `h_activities_id` int(5) NOT NULL,
+  `h_activities_title` varchar(150) NOT NULL,
   `h_activities_description` text NOT NULL,
-  `h_activities_dates` varchar(255) NOT NULL,
-  `h_activities_localization` varchar(255) NOT NULL,
+  `h_activities_dates` varchar(150) NOT NULL,
+  `h_activities_localization` varchar(150) NOT NULL,
   `h_activities_image` varchar(255) NOT NULL,
-  `h_activities_hours` varchar(255) NOT NULL,
-  `h_activities_price` varchar(255) NOT NULL,
-  `h_activities_3to5` int(11) NOT NULL,
-  `h_activities_6to12` int(11) NOT NULL,
-  `h_activities_12to16` int(11) NOT NULL,
-  `h_activities_16to25` int(11) NOT NULL,
-  `h_activities_adults` int(11) NOT NULL
+  `h_activities_hours` varchar(150) NOT NULL,
+  `h_activities_price` varchar(150) NOT NULL,
+  `h_activities_3to5` int(2) NOT NULL,
+  `h_activities_6to12` int(2) NOT NULL,
+  `h_activities_12to16` int(2) NOT NULL,
+  `h_activities_16to25` int(2) NOT NULL,
+  `h_activities_adults` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -145,11 +147,11 @@ CREATE TABLE `holidays_activities` (
 --
 
 CREATE TABLE `partners` (
-  `partners_id` int(11) NOT NULL,
-  `partners_name` varchar(255) NOT NULL,
+  `partners_id` int(5) NOT NULL,
+  `partners_name` varchar(150) NOT NULL,
   `partners_description` text NOT NULL,
-  `partners_image` varchar(255) NOT NULL,
-  `partners_link` varchar(255) NOT NULL
+  `partners_image` varchar(150) NOT NULL,
+  `partners_link` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -159,8 +161,8 @@ CREATE TABLE `partners` (
 --
 
 CREATE TABLE `presentation` (
-  `presentation_id` int(11) NOT NULL,
-  `presentation_name` varchar(255) NOT NULL,
+  `presentation_id` int(2) NOT NULL,
+  `presentation_name` varchar(150) NOT NULL,
   `presentation_description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -182,17 +184,17 @@ INSERT INTO `presentation` (`presentation_id`, `presentation_name`, `presentatio
 --
 
 CREATE TABLE `school_help` (
-  `school_id` int(11) NOT NULL,
+  `school_id` int(5) NOT NULL,
   `school_description` text NOT NULL,
-  `school_age` int(11) NOT NULL,
-  `school_localization` varchar(255) NOT NULL,
-  `school_hours` varchar(255) NOT NULL,
-  `school_monday` int(11) NOT NULL,
-  `school_thuesday` int(11) NOT NULL,
-  `school_wednesday` int(11) NOT NULL,
-  `school_thursday` int(11) NOT NULL,
-  `school_friday` int(11) NOT NULL,
-  `school_saturday` int(11) NOT NULL
+  `ages_id` int(2) NOT NULL,
+  `school_localization` varchar(150) NOT NULL,
+  `school_hours` varchar(150) NOT NULL,
+  `school_monday` int(2) NOT NULL,
+  `school_thuesday` int(2) NOT NULL,
+  `school_wednesday` int(2) NOT NULL,
+  `school_thursday` int(2) NOT NULL,
+  `school_friday` int(2) NOT NULL,
+  `school_saturday` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -289,47 +291,47 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `activities`
 --
 ALTER TABLE `activities`
-  MODIFY `activities_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `activities_id` int(5) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `ages`
 --
 ALTER TABLE `ages`
-  MODIFY `ages_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ages_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `config`
 --
 ALTER TABLE `config`
-  MODIFY `config_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `config_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `documents_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `documents_id` int(5) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `events`
 --
 ALTER TABLE `events`
-  MODIFY `events_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `events_id` int(5) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `holidays_activities`
 --
 ALTER TABLE `holidays_activities`
-  MODIFY `h_activities_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `h_activities_id` int(5) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `partners`
 --
 ALTER TABLE `partners`
-  MODIFY `partners_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `partners_id` int(5) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `presentation`
 --
 ALTER TABLE `presentation`
-  MODIFY `presentation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `presentation_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `school_help`
 --
 ALTER TABLE `school_help`
-  MODIFY `school_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `school_id` int(5) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `users`
 --
