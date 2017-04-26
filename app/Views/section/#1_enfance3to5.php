@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Accueil']) ?>
+<?php $this->layout('layout', ['title' => '']) ?>
 
 <?php $this->start('main_content') ?>
 
@@ -21,3 +21,4 @@ L’accueil du Mercredi se fait de 8h30 à 17h30 au centre de la petite enfance 
 Les ALSH des vacances scolaires se font au centre de la petite enfance au 12 Place de l’Arbonnoise à Lille ; du Lundi au Vendredi de 8h30 à 17h30.</p>
 
 
+<?php$this->stop('main_content'); ?>
