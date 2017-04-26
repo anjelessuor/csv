@@ -18,7 +18,7 @@
             <input id="activities_localization" name="activities_localization" class="form-control" value="<?php echo $activities['activities_localization']; ?>">
         </div>
         <div class="form-group">
-            <label for="activities_hours"> Heures d'ouverture pour l'activité : </label>
+            <label for="activities_hours"> Horaires de l'activité : </label>
             <input id="activities_hours" name="activities_hours" class="form-control" value="<?php echo $activities['activities_hours']; ?>">
         </div>
         <div class="form-group">
