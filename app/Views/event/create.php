@@ -18,28 +18,29 @@
             <label for="events_hours"> Horaires : </label>
             <input type="text" class="form-control" name="events_hours" id="events_hours">
         </div>
+        <!--  upluod pour l'image changer type -->
         <div class="form-group">
             <label for="events_image"> Image : </label>
-            <input type="url" class="form-control" name="events_image" id="events_image">
+            <input type="text" class="form-control" name="events_image" id="events_image">
         </div>
         <div class="form-group">
             <label for="events_3to5">
-                <input type="radio" name="events_3to5" value="events_3to5"/> 3 - 5 ans
+                <input type="checkbox" name="events_3to5" value=""/> 3 - 5 ans
             </label><br>
             <label for="events_6to12">
-                <input type="radio" name="events_6to12" value="events_6to12"/> 6 - 12 ans
+                <input type="checkbox" name="events_6to12" value=""/> 6 - 12 ans
             </label><br>
             <label for="events_12to16">
-                <input type="radio" name="events_12to16" value="events_12to16"/> 12 - 16 ans
+                <input type="checkbox" name="events_12to16" value=""/> 12 - 16 ans
             </label><br>
             <label for="events_16to25">
-                <input type="radio" name="events_16to25" value="events_16to25"/> 16 - 25 ans
+                <input type="checkbox" name="events_16to25" value=""/> 16 - 25 ans
             </label><br>
             <label for="events_adults">
-                <input type="radio" name="events_adults" value="events_adults"/> Adultes - Famille
+                <input type="checkbox" name="events_adults" value=""/> Adultes - Famille
             </label><br>
         </div>
-        <button class="btn btn-submit">Publier : </div>
+        <button class="btn btn-submit">Publier : </button>
     </form>
 
 <?php $this->stop('main_content'); ?>
