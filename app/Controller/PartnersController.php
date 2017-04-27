@@ -25,7 +25,7 @@ class PartnersController extends \W\Controller\Controller
             $partners_name = $_POST['partners_name'];
             $partners_description = $_POST['partners_description'];
             $partners_link = $_POST['partners_link'];
-            
+
             $target_dir = "uploads/partners";
             $target_file = $target_dir . basename($_FILES["partners_image"]["name"]);
             $uploadOk = 1;
