@@ -11,7 +11,7 @@
     </div>
     <div class="form-group">
         <label for="ages_description">Description :</label>
-        <textarea class="form-control" name="ages_description" id="ages_description"></textarea>
+        <textarea class="form-control" name="ages_description" id="ages_description" value="<?php echo $age['ages_description'] ?>"></textarea>
     </div>
     <button class="btn btn-submit">Modifier : </div>
 </form>
