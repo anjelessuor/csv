@@ -25,4 +25,11 @@
 		['GET|POST', '/h_activities/delete/[i:id]', 'HolidaysActivities#delete', 'h_activities_delete'],
 		['GET', '/h_activities/[i:id]', 'HolidaysActivities#view', 'h_activities_view'],
 
+
+		['GET|POST', '/school/index', 'School#index', 'school_index'],
+		['GET|POST', '/school/create', 'School#create', 'school_create'],
+		['GET|POST', '/school/edit/[i:id]', 'School#edit', 'school_edit'],
+		['GET|POST', '/school/delete/[i:id]', 'School#delete', 'school_delete'],
+		['GET', '/school/[i:id]', 'School#view', 'school_view'],
+
 	);

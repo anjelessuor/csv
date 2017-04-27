@@ -12,22 +12,6 @@
             <textarea id="h_activities_description" name="h_activities_description" class="form-control"></textarea>
         </div>
         <div class="form-group">
-            <label for="h_activities_localization"> Lieu où se déroulera l'activité : </label>
-            <input id="h_activities_localization" name="h_activities_localization" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="h_activities_dates"> Dates de l'activité : </label>
-            <input id="h_activities_dates" name="h_activities_dates" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="h_activities_hours"> Horaires de l'activité : </label>
-            <input id="h_activities_hours" name="h_activities_hours" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="h_activities_image"> Illustration de l'activité : </label>
-            <input type="file" id="h_activities_image" name="h_activities_image" class="form-control">
-        </div>
-        <div class="form-group">
             <label for="h_activities_price"> Tarif de l'activité : </label>
             <input id="h_activities_price" name="h_activities_price" class="form-control">
         </div>
@@ -41,6 +25,7 @@
         </div>
 
         <button class="btn btn-submit"> Valider </button>
+        <a href="<?= $this->url('h_activities_index'); ?>" class="btn btn-success">Revenir à la liste des activités</a>
     </form>
 
 <?php $this->stop('main_content'); ?>

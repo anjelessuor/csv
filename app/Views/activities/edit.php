@@ -1,7 +1,7 @@
 <?php $this->layout('layout', ['title' => 'Mettre à jour l\'activité '.$activities['activities_title']]); ?>
 <?php $this->start('main_content'); ?>
     <div>
-        <a href="<?= $this->url('activities_index'); ?>">Revenir à la liste des activités</a>
+        <a href="<?= $this->url('activities_index'); ?>" class="btn btn-success">Revenir à la liste des activités</a>
     </div>
 
     <form action="" method="POST">
@@ -12,18 +12,6 @@
         <div class="form-group">
             <label for="activities_description"> Description de l'activité : </label>
             <input id="activities_description" name="activities_description" class="form-control" value="<?php echo $activities['activities_description']; ?>">
-        </div>
-        <div class="form-group">
-            <label for="activities_localization"> Lieu où se déroulera l'activité : </label>
-            <input id="activities_localization" name="activities_localization" class="form-control" value="<?php echo $activities['activities_localization']; ?>">
-        </div>
-        <div class="form-group">
-            <label for="activities_hours"> Horaires de l'activité : </label>
-            <input id="activities_hours" name="activities_hours" class="form-control" value="<?php echo $activities['activities_hours']; ?>">
-        </div>
-        <div class="form-group">
-            <label for="activities_image"> Illustration de l'activité : </label>
-            <input type="file" id="activities_image" name="activities_image" class="form-control">
         </div>
         <div class="form-group">
             <label for="activities_ages"> A quels secteurs s'appliquent cette activité ? </label>
