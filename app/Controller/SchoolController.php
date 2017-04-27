@@ -5,7 +5,6 @@ namespace Controller;
 use \W\Controller\Controller;
 use \Model\SchoolModel;
 
-
 class SchoolController extends Controller
 {
 	// page qui liste les activités
@@ -42,9 +41,7 @@ class SchoolController extends Controller
                     'school_adults' => $school_adults,
 				]);
                 $this->redirectToRoute('school_view', ['id' => $school['school_id']]);
-
 			}
-
 		}
 		$this->show('school/create');
 	}

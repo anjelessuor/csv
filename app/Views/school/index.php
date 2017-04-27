@@ -3,7 +3,8 @@
 <?php $this->start('main_content'); ?>
 
     <div>
-        <a href="<?= $this->url('school_create') ?>" class="btn btn-success">Ajouter une activité</a>
+
+        <a href="<?= $this->url('school_create') ?>" class="btn btn-success">Ajouter</a>
         <a href="<?= $this->url('school_index') ?>?age=school_3to5" class="btn btn-primary">3-5 ans</a>
         <a href="<?= $this->url('school_index') ?>?age=school_6to12" class="btn btn-primary">6-12 ans</a>
         <a href="<?= $this->url('school_index') ?>?age=school_12to16" class="btn btn-primary">12-16 ans</a>
@@ -33,7 +34,8 @@
                     <td>
                         <a href="<?= $this->url('school_edit', ['id' => $help['school_id']]); ?>" class="btn btn-primary">Modifier</a>
                         <a href="<?= $this->url('school_delete', ['id' => $help['school_id']]); ?>" class="btn btn-danger">Supprimer</a>
-                        <a href="<?= $this->url('school_view', ['id' => $help['school_id']]); ?>" class="btn btn-info">Voir l'activité</a>
+                        <a href="<?= $this->url('school_view', ['id' => $help['school_id']]); ?>" class="btn btn-info">Voir</a>
+
                     </td>
                 </tr>
                 <?php }  ?>

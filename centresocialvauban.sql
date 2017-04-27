@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
+<<<<<<< HEAD
 -- Généré le :  Jeu 27 Avril 2017 à 15:08
+=======
+-- Généré le :  Jeu 27 Avril 2017 à 15:31
+>>>>>>> refs/remotes/origin/master
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  5.6.28
 
@@ -366,7 +370,11 @@ ALTER TABLE `presentation`
 -- AUTO_INCREMENT pour la table `school_help`
 --
 ALTER TABLE `school_help`
+<<<<<<< HEAD
   MODIFY `school_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+=======
+  MODIFY `school_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+>>>>>>> refs/remotes/origin/master
 --
 -- AUTO_INCREMENT pour la table `users`
 --

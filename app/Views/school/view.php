@@ -2,8 +2,7 @@
 <?php $this->start('main_content'); ?>
 
     <div>
-        <a href="<?= $this->url('school_index'); ?>">Revenir à la liste des activités</a>
-
+        <a href="<?= $this->url('school_index'); ?>">Revenir à la liste</a>
     </div>
 
     <div class="row">
@@ -14,7 +13,7 @@
             <p>Description</p>
             <p><?php echo $school['school_description']; ?></p>
             <br>
-            <p>Secteurs concernés par cette activité : </p>
+            <p>Secteurs concernés par cet accompagnement : </p>
             <p><?php
             if($school['school_3to5'] == 1){
                 echo "Secteur Enfance 3 à 5 ans";
@@ -38,7 +37,7 @@
 
             <br>
             <a href="<?= $this->url('school_edit', ['id' => $school['school_id']]); ?>" class="btn btn-primary">Modifier</a>
-            <a href="<?= $this->url('school_index'); ?>" class="btn btn-info">Retourner à la liste des activités</a>
+            <a href="<?= $this->url('school_index'); ?>" class="btn btn-info">Retourner à la liste</a>
 
         </div>
     </div>

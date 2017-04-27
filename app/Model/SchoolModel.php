@@ -1,7 +1,6 @@
 <?php
 
 namespace Model;
-
 class SchoolModel extends \W\Model\Model {
     protected $primaryKey = 'school_id';
     protected $table = 'school_help';
@@ -17,5 +16,4 @@ class SchoolModel extends \W\Model\Model {
         return $sth->fetchAll();
     }
 }
-
  ?>
