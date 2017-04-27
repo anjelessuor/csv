@@ -29,9 +29,9 @@
 				</li>
 
 				<li class="dropdown">
-					<a data-toggle="dropdown" href="#">Qui sommes-nous <i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
+					<a data-toggle="dropdown" href="<?php echo $this->url('section_qui-sommes-nous'); ?>">Qui sommes-nous <i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu jqueryFadeIn">
-						<li><a href="#">Présentation</a></li>
+						<li><a href="">Présentation</a></li>
 						<li><a href="#">Nos valeurs</a></li>
 						<li><a href="#">Nos missions</a></li>
 						<li><a href="#">Contact</a></li>
@@ -40,7 +40,7 @@
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a data-toggle="dropdown" href="#">Enfance 3-12 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<a data-toggle="dropdown" href="<?php echo $this->url('section_enfance-3-5'); ?>">Enfance 3-5 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu jqueryFadeIn">
 
 						<li><a href="#">Présentation</a></li>
@@ -55,7 +55,7 @@
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a data-toggle="dropdown" href="#">Enfance 12-16 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<a data-toggle="dropdown" href="<?php echo $this->url('section_enfance-6-12'); ?>">Enfance 6-12 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu jqueryFadeIn">
 
 						<li><a href="#">Présentation</a></li>
@@ -70,7 +70,7 @@
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a data-toggle="dropdown" href="#">Jeunes <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<a data-toggle="dropdown" href="<?php echo $this->url('section_enfance-12-16'); ?>">Enfance 12-16 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu jqueryFadeIn">
 
 						<li><a href="#">Présentation</a></li>
@@ -85,7 +85,22 @@
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a data-toggle="dropdown" href="#">Adultes et famille <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<a data-toggle="dropdown" href="<?php echo $this->url('section_jeunes'); ?>">Jeunes <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<ul class="dropdown-menu jqueryFadeIn">
+
+						<li><a href="#">Présentation</a></li>
+						<li class="dropdown-submenu">
+							<a data-toggle="dropdown"tabindex="-1" href="#">Activités <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="#"> Mercredis</a></li>
+								<li><a href="#"> Vacances scolaires</a></li>
+								<li><a href="#"> Accompagnement à la scolarité</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a data-toggle="dropdown" href="<?php echo $this->url('section_adultes-et-famille'); ?>">Adultes et famille <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu jqueryFadeIn">
 						<li><a href="#">Présentation</a></li>
 						<li><a href="#">Lundi</a></li>
@@ -111,7 +126,7 @@
 <!--Footer-->
 		<footer>
 			<div class="container-fluid">
-				<div class row>
+				<div class="row">
 					<p> Copyright 2017 </p>
 				</div>
 			</div>
