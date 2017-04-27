@@ -11,7 +11,7 @@
   </div>
 </div>
 	</br></br>
-	
+
 
 
 <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
@@ -19,22 +19,22 @@
   <!-- Indicators -->
   <ol class="carousel-indicators">
 		<?php foreach($events as $key => $event) : ?>
-    <li data-target="#bs-carousel" data-slide-to="<?= $key ?>" class="active"></li>
+    <li data-target="#bs-carousel" data-slide-to="<?= $key ?>" class="<?php if ($key == 0) { echo 'active' ; } ?>"></li>
 		<?php endforeach; ?>
 	</ol>
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-		<?php foreach($events as $event) : ?>
-    <div class="item slides active">
-      <div style="background-image: url(public\upload\download\event\<?php echo $this->url( 'event_view', [ 'events_image' => $event['events_image']] );?><?php echo $event['events_image']; ?>);" class="slide-1"></div>
+		<?php foreach($events as $key => $event) : ?>
+    <div class="item slides <?php if ($key == 0) { echo 'active' ; } ?>">
+      <div style="background-image:url(../public/uploads/events/<?php echo $event['events_image']; ?>);" class="slide-1"></div>
       <div class="hero">
         <hgroup>
-            <h1><?php echo $this->url( 'event_view', [ 'events_id' => $event['events_id']] );?><?php echo $event['event_title']; ?></h1>
-            <p><?php echo $this->url( 'event_view', [ 'events_description' => $event['events_description']] );?><?php echo $event['events_description']; ?></p>
-						<p><?php echo $this->url( 'event_view', [ 'events_localization' => $event['events_localization']] );?><?php echo $event['events_localization']; ?></p>
-						<p><?php echo $this->url( 'event_view', [ 'events_hours' => $event['events_hours']] );?><?php echo $event['events_hours']; ?></p>
-				</hgroup>
-        <button class="btn btn-hero btn-lg" role="button">See all features</button>
+          <h1><?php echo $event['events_title']; ?></h1>
+          <p><?php echo $event['events_description']; ?></p>
+          <p><?php echo $event['events_localization']; ?></p>
+          <p><?php echo $event['events_hours']; ?></p>
+        </hgroup>
+        <button class="btn btn-hero btn-lg" role="button">Plus d'informations</button>
       </div>
     </div>
 		<?php endforeach; ?>
