@@ -52,5 +52,4 @@
 		['GET|POST', '/documents/update/[i:documents_id]', 'Documents#update', 'documents_update'],
 		['GET', '/documents/[i:documents_id]', 'Documents#view', 'documents_view']
 
-
 	);
