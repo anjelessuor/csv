@@ -120,7 +120,7 @@ class EventController extends \W\Controller\Controller
                     }
                 }
             $this->show('event/update', ['event' => $event]);
-        }
+          }
 
         //Suppression d'un événement
         public function delete($events_id)
