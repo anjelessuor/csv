@@ -38,6 +38,9 @@
 		['GET|POST', '/section/enfance-12-16', 'Default#enfance3', 'section_enfance-12-16'],
 		['GET|POST', '/section/jeunes', 'Default#jeunes', 'section_jeunes'],
 		['GET|POST', '/section/adultes-et-famille', 'Default#family', 'section_adultes-et-famille'],
+		['GET|POST', '/section/events', 'Default#events', 'section_events'],
+
+		
 
 
 		['GET|POST', '/partners/index', 'Partners#index', 'partners_index'],
