@@ -44,7 +44,12 @@
 		['GET|POST', '/partners/create', 'Partners#create', 'partners_create'],
 		['GET|POST', '/partners/delete/[i:partners_id]', 'Partners#delete', 'partners_delete'],
 		['GET|POST', '/partners/update/[i:partners_id]', 'Partners#update', 'partners_update'],
-		['GET', '/partners/[i:partners_id]', 'Partnerst#view', 'partners_view']
+		['GET', '/partners/[i:partners_id]', 'Partners#view', 'partners_view'],
 
+		['GET|POST', '/documents/index', 'Documents#index', 'documents_index'],
+		['GET|POST', '/documents/create', 'Documents#create', 'documents_create'],
+		['GET|POST', '/documents/delete/[i:documents_id]', 'Documents#delete', 'documents_delete'],
+		['GET|POST', '/documents/update/[i:documents_id]', 'Documents#update', 'documents_update'],
+		['GET', '/documents/[i:documents_id]', 'Documents#view', 'documents_view']
 
 	);
