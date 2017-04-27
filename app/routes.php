@@ -32,6 +32,13 @@
 		['GET', '/h_activities/[i:id]', 'HolidaysActivities#view', 'h_activities_view'],
 
 
+
+		['GET|POST', '/school/index', 'School#index', 'school_index'],
+		['GET|POST', '/school/create', 'School#create', 'school_create'],
+		['GET|POST', '/school/edit/[i:id]', 'School#edit', 'school_edit'],
+		['GET|POST', '/school/delete/[i:id]', 'School#delete', 'school_delete'],
+		['GET', '/school/[i:id]', 'School#view', 'school_view'],
+
 		['GET|POST', '/section/qui-sommes-nous', 'Default#about', 'section_qui-sommes-nous'],
 		['GET|POST', '/section/enfance-3-5', 'Default#enfance1', 'section_enfance-3-5'],
 		['GET|POST', '/section/enfance-6-12', 'Default#enfance2', 'section_enfance-6-12'],
@@ -57,5 +64,6 @@
 		['GET|POST', '/school/edit/[i:id]', 'School#edit', 'school_edit'],
 		['GET|POST', '/school/delete/[i:id]', 'School#delete', 'school_delete'],
 		['GET', '/school/[i:id]', 'School#view', 'school_view'],
+
 
 	);

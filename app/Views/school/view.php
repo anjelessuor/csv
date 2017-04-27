@@ -3,7 +3,6 @@
 
     <div>
         <a href="<?= $this->url('school_index'); ?>">Revenir à la liste</a>
-
     </div>
 
     <div class="row">

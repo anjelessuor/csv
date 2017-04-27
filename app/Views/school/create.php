@@ -1,8 +1,10 @@
+
 <?php $this->layout('layout', ['title' => 'Créer un accompagnement']); ?>
 
 <?php $this->start('main_content'); ?>
 
     <form action="" method="POST">
+
         <div class="form-group">
             <label for="school_title"> Accompagnement : </label>
             <input id="school_title" name="school_title" class="form-control">
