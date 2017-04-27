@@ -23,7 +23,7 @@
 
 		['GET|POST', '/config/index', 'Config#index', 'config_index'],
 		['GET|POST', '/config/update/[i:config_id]', 'Config#update', 'config_update'],
-		['GET', '/config/[i:id]', 'Config#view', 'config_view']
+		['GET', '/config/[i:id]', 'Config#view', 'config_view'],
 
 		['GET|POST', '/h_activities/index', 'HolidaysActivities#index', 'h_activities_index'],
 		['GET|POST', '/h_activities/create', 'HolidaysActivities#create', 'h_activities_create'],
@@ -31,5 +31,7 @@
 		['GET|POST', '/h_activities/delete/[i:id]', 'HolidaysActivities#delete', 'h_activities_delete'],
 		['GET', '/h_activities/[i:id]', 'HolidaysActivities#view', 'h_activities_view'],
 
-
+		['GET|POST', '/ages/index', 'Ages#index', 'ages_index'],
+		['GET|POST', '/ages/update/[i:ages_id]', 'Ages#update', 'ages_update'],
+		['GET', '/ages/views', 'Ages#views', 'ages_views'],
 	);
