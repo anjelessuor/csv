@@ -4,6 +4,9 @@
 		['GET', '/', 'Default#home', 'default_home'],
 		['GET|POST', '/security/login', 'Security#login', 'security_login'],
 		['GET|POST', '/security/register', 'Security#register', 'security_register'],
+		['GET|POST', '/security/edit/[i:id]', 'Security#edit', 'security_edit'],
+		['GET|POST', '/security/delete/[i:id]', 'Security#delete', 'security_delete'],
+		['GET|POST', '/security/index', 'Security#index', 'security_index'],
 
 
 		['GET|POST', '/event/index', 'Event#index', 'event_index'],
@@ -59,11 +62,6 @@
 		['GET|POST', '/documents/update/[i:documents_id]', 'Documents#update', 'documents_update'],
 		['GET', '/documents/[i:documents_id]', 'Documents#view', 'documents_view'],
 
-		['GET|POST', '/school/index', 'School#index', 'school_index'],
-		['GET|POST', '/school/create', 'School#create', 'school_create'],
-		['GET|POST', '/school/edit/[i:id]', 'School#edit', 'school_edit'],
-		['GET|POST', '/school/delete/[i:id]', 'School#delete', 'school_delete'],
-		['GET', '/school/[i:id]', 'School#view', 'school_view'],
 
 
 	);
