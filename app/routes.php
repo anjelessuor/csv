@@ -20,4 +20,8 @@
 		['GET|POST', '/activities/delete/[i:id]', 'Activities#delete', 'activities_delete'],
 		['GET', '/activities/[i:id]', 'Activities#view', 'activities_view'],
 
+
+		['GET|POST', '/config/index', 'Config#index', 'config_index'],
+		['GET|POST', '/config/update/[i:config_id]', 'Config#update', 'config_update'],
+		['GET', '/config/[i:id]', 'Config#view', 'config_view']
 	);
