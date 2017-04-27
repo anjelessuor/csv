@@ -53,7 +53,7 @@
 			<div class="informationAccueil downloadDocumentation">
 				<h2>doc download</h2>
 				<ul>
-					<li>vcbncvbn</li>
+					<li>Charte des centres sociaux <a href="#" class="btn btn-primary"> Télécharger </a></li>
 					<li>cvbncvb</li>
 					<li>cvbncvn</li>
 				</ul>
