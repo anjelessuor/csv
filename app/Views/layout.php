@@ -40,7 +40,22 @@
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a data-toggle="dropdown" href="#">Enfance 3-12 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<a data-toggle="dropdown" href="#">Enfance 3-5 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<ul class="dropdown-menu jqueryFadeIn">
+
+						<li><a href="#">Présentation</a></li>
+						<li class="dropdown-submenu">
+							<a data-toggle="dropdown"tabindex="-1" href="#">Activités <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="#"> Mercredis</a></li>
+								<li><a href="#"> Vacances scolaires</a></li>
+								<li><a href="#"> Accompagnement à la scolarité</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a data-toggle="dropdown" href="#">Enfance 6-12 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu jqueryFadeIn">
 
 						<li><a href="#">Présentation</a></li>
@@ -111,7 +126,7 @@
 <!--Footer-->
 		<footer>
 			<div class="container-fluid">
-				<div class row>
+				<div class="row">
 					<p> Copyright 2017 </p>
 				</div>
 			</div>
