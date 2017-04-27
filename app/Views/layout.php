@@ -111,6 +111,11 @@
 <!--Footer-->
 		<footer>
 			<div class="container-fluid">
+				<div class row>
+					<p> Copyright 2017 </p>
+				</div>
+			</div>
+
 
 			</div>
 		</footer>
