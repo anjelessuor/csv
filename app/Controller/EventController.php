@@ -27,14 +27,16 @@ class EventController extends \W\Controller\Controller
             $events_localization = $_POST['events_localization'];
             $events_hours = $_POST['events_hours'];
 
-            $target_dir = "uploads/events";
+            $target_dir = "uploads/events/";
             $target_file = $target_dir . basename($_FILES["events_image"]["name"]);
             $uploadOk = 1;
             $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
             // Check file size
-            if ($_FILES["events_image"]["size"] > 2000000) {
-                echo "Le fichier est trop volumineux.";
+
+            if ($_FILES["events_image"]["size"] > 5000000) {
+                echo "L'image est trop grande.";
+
                 $uploadOk = 0;
             }
             // Allow certain file formats
