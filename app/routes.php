@@ -23,5 +23,11 @@
 
 		['GET|POST', '/config/index', 'Config#index', 'config_index'],
 		['GET|POST', '/config/update/[i:config_id]', 'Config#update', 'config_update'],
-		['GET', '/config/[i:id]', 'Config#view', 'config_view']
+		['GET', '/config/[i:id]', 'Config#view', 'config_view'],
+
+		['GET|POST', '/partners/create', 'Partners#create', 'partners_create'],
+		['GET|POST', '/partners/index', 'Partners#index', 'partners_index'],
+		['GET|POST', '/partners/update/[i:partners_id]', 'Partners#update', 'partners_update'],
+		['GET|POST', '/partners/delete/[i:partners_id]', 'Partners#delete', 'partners_delete'],
+		['GET', '/partners/[i:id]', 'Partners#view', 'partners_view']
 	);
