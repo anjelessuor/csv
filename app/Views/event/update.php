@@ -4,22 +4,22 @@
     <!-- Lien pour retour sur liste event -->
     <a href="<?php echo $this->url('event_index') ?>">Retour à la liste des événements</a>
 
-    <form method="POST" action="">
+    <form method="POST" action="" enctype="multipart/form-data">
         <div class="form-group">
             <label for="events_title">Titre : </label>
-            <input class="form-control" type="text" name="events_title" id="events_title">
+            <input class="form-control" type="text" name="events_title" id="events_title" value="<?php echo $event['events_title']?>">
         </div>
         <div class="form-group">
             <label for="events_description"> Description : </label>
-            <textarea class="form-control" name="events_description" id="events_description"></textarea>
+            <textarea class="form-control" name="events_description" id="events_description" value="<?php echo $event['events_description']?>"></textarea>
         </div>
         <div class="form-group">
             <label for="events_localization"> Lieu : </label>
-            <input type="text" class="form-control" name="events_localization" id="events_localization">
+            <input type="text" class="form-control" name="events_localization" id="events_localization" value="<?php echo $event['events_localization']?>">
         </div>
         <div class="form-group">
             <label for="events_hours"> Horaires : </label>
-            <input type="text" class="form-control" name="events_hours" id="events_hours">
+            <input type="text" class="form-control" name="events_hours" id="events_hours"  value="<?php echo $event['events_hours']?>">
         </div>
         <div class="form-group">
             <label for="events_image"> Image : </label>

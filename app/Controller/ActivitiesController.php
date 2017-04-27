@@ -12,7 +12,7 @@ class ActivitiesController extends Controller
 	public function index(){
 		//$this->allowTo('2');
 		$activities_manager = new ActivitiesModel(); // instancie la class pour gérer les articles en bdd
-		$activities = $activities_manager->findAll(); // récupère tous les articles en bdd (SELECT * FROM articles)
+		$activities = $activities_manager->findAllByAge(); // récupère tous les articles en bdd (SELECT * FROM articles)
 		$this->show('activities/index', ['activities' => $activities]); // j'injecte la variable articles dans la vue
 	}
 
@@ -24,9 +24,6 @@ class ActivitiesController extends Controller
 		if (!empty($_POST)) {
 			$activities_title = $_POST['activities_title'];
 			$activities_description = $_POST['activities_description'];
-			$activities_localization = $_POST['activities_localization'];
-            $activities_hours = $_POST['activities_hours'];
-            $activities_image = $_POST['activities_image'];
             $activities_3to5 = isset($_POST['activities_3to5']) ? $_POST['activities_3to5'] : 0;
             $activities_6to12 = isset($_POST['activities_6to12']) ? $_POST['activities_6to12'] : 0;
             $activities_12to16 = isset($_POST['activities_12to16']) ? $_POST['activities_12to16'] : 0;
@@ -38,9 +35,6 @@ class ActivitiesController extends Controller
 				$activities = $activities_manager->insert([
 					'activities_title' => $activities_title,
 					'activities_description' => $activities_description,
-                    'activities_localization' => $activities_localization,
-                    'activities_hours' => $activities_hours,
-                    'activities_image' => $activities_image,
                     'activities_3to5' => $activities_3to5,
                     'activities_6to12' => $activities_6to12,
                     'activities_12to16' => $activities_12to16,
@@ -76,9 +70,6 @@ class ActivitiesController extends Controller
 		if (!empty($_POST)) {
             $activities_title = $_POST['activities_title'];
 			$activities_description = $_POST['activities_description'];
-			$activities_localization = $_POST['activities_localization'];
-            $activities_hours = $_POST['activities_hours'];
-            $activities_image = $_POST['activities_image'];
             $activities_3to5 = isset($_POST['activities_3to5']) ? $_POST['activities_3to5'] : 0;
             $activities_6to12 = isset($_POST['activities_6to12']) ? $_POST['activities_6to12'] : 0;
             $activities_12to16 = isset($_POST['activities_12to16']) ? $_POST['activities_12to16'] : 0;
@@ -89,9 +80,6 @@ class ActivitiesController extends Controller
 				$activities = $activities_manager->update([
                     'activities_title' => $activities_title,
                     'activities_description' => $activities_description,
-                    'activities_localization' => $activities_localization,
-                    'activities_hours' => $activities_hours,
-                    'activities_image' => $activities_image,
                     'activities_3to5' => $activities_3to5,
                     'activities_6to12' => $activities_6to12,
                     'activities_12to16' => $activities_12to16,

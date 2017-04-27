@@ -1,9 +1,9 @@
 <?php
 
 namespace Model;
-
-class ActivitiesModel extends \W\Model\Model {
-    protected $primaryKey = 'activities_id';
+class SchoolModel extends \W\Model\Model {
+    protected $primaryKey = 'school_id';
+    protected $table = 'school_help';
 
     public function findAllByAge($orderBy = '', $orderDir = 'ASC', $limit = null, $offset = null)
     {
@@ -16,5 +16,4 @@ class ActivitiesModel extends \W\Model\Model {
         return $sth->fetchAll();
     }
 }
-
  ?>

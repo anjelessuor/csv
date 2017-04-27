@@ -7,23 +7,11 @@
 
     <div class="row">
         <div class="col-lg-6">
-            <img src="<?php echo $h_activities['h_activities_image']; ?>"alt="">
-            <p></p>
+            <h2><?php echo $h_activities['h_activities_title']; ?></h2>
         </div>
         <div class="col-lg-6">
-            <h2><?php echo $h_activities['h_activities_title']; ?></h2>
-            <br>
             <p>Description</p>
             <p><?php echo $h_activities['h_activities_description']; ?></p>
-            <br>
-            <p>Lieu</p>
-            <p><?php echo $h_activities['h_activities_localization']; ?></p>
-            <br>
-            <p>Horaires</p>
-            <p><?php echo $h_activities['h_activities_hours']; ?></p>
-            <br>
-            <p>Dates</p>
-            <p><?php echo $h_activities['h_activities_dates']; ?></p>
             <br>
             <p>Prix</p>
             <p><?php echo $h_activities['h_activities_price']; ?></p>

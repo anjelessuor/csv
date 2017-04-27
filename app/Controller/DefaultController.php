@@ -22,9 +22,40 @@ class DefaultController extends Controller
 	{
 		$this->show('Security/login');
 	}
+
 	public function register()
 	{
 		$this->show('Security/register');
 	}
 
+	public function about() 
+	{
+		$this->show('section/qui-sommes-nous');
+	}
+
+	public function enfance1() 
+	{
+		$this->show('section/enfance-3-5');
+	}
+
+	public function enfance2() 
+	{
+		$this->show('section/enfance-6-12');
+	}
+
+	public function enfance3() 
+	{
+		$this->show('section/enfance-12-16');
+	}
+
+	public function jeunes() 
+	{
+		$this->show('section/jeunes');
+	}
+
+	public function family() 
+	{
+		$this->show('section/adultes-et-famille');
+	}
+	
 }
