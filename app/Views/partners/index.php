@@ -22,6 +22,7 @@
                     <a href="<?= $this->url('partners_delete', ['partners_id' => $partners['partners_id'] ]); ?>" class="btn btn-danger"> Supprimer </a>
                 </td>
             </tr>
+            
     <?php } ?>
         </tbody>
    </table>

@@ -6,7 +6,6 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Titre</th>
                 <th>Description</th>
                 <th>Actions</th>
@@ -15,7 +14,6 @@
         <tbody>
         <?php foreach ($event as $event) { ?>
             <tr>
-                <td><h2><?php echo $event['events_id'] ?> </h2></td>
                 <td><h2><?php echo $event['events_title'] ?> </h2></td>
                 <td><h2><?php echo $event['events_description'] ?> </h2></td>
                 <td>
