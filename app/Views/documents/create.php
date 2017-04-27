@@ -10,9 +10,9 @@
             <label for="documents_description"> Description : </label>
             <textarea class="form-control" name="documents_description" id="documents_description"></textarea>
         </div>
-        <div class="form-group">
-            <label for="documents_document"> Lien : </label>
-            <input type="url" name="documents_document" id="documents_document">
+       <div class="form-group">
+            <label for="documents_document"> File : </label>
+            <input type="file" name="documents_document" id="documents_document">
         </div>
 
         <button class="btn btn-submit">Publier : </button>

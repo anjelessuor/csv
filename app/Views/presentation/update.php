@@ -1,19 +1,19 @@
-<?php $this->layout('layout', ['title' => 'Configuration presentation']); ?>
+<?php $this->layout('layout', ['title' => 'Configuration presentation'.$presentation['presentation_name']]); ?>
 <?php $this->start('main_content'); ?>
 
-<!-- Lien pour retour sur liste des différentes catégories d'age -->
-<a href="<?php echo $this->url('presentation_index') ?>">Retour à la liste des différentes catégories de presentation</a>
+<!-- Lien pour retour sur liste des différentes catégories presentation -->
+<a href="<?php echo $this->url('presentation_index') ?>">Retour</a>
 
-<form action="" method="POST">
+<form method="POST" action="">
     <div class="form-group">
-        <label for="presentation_name">Nom de la catégorie d'age :</label>
-        <h2><?php echo $presentation['presentation_name'] ?></h2>
+        <label for="presentation_name">Nom de Présentation :</label>
+        <input class="form-control" type="text" name="presentation_name" id="presentation_name" value="<?php echo $presentation['presentation_name'] ?>">
     </div>
     <div class="form-group">
         <label for="presentation_description">Description :</label>
-        <textarea class="form-control" name="presentation_description" id="presentation_description"></textarea>
+        <input class="form-control" type="text" name="presentation_description" id="presentation_description" value="<?php echo $presentation['presentation_description'] ?>">
     </div>
-    <button class="btn btn-submit">Modifier : </div>
+    <button class="btn btn-submit">Modifier</div>
 </form>
 
 <?php $this->stop('main_content'); ?>

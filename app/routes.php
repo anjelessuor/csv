@@ -29,7 +29,7 @@
 
 		['GET|POST', '/ages/index', 'Ages#index', 'ages_index'],
 		['GET|POST', '/ages/update/[i:ages_id]', 'Ages#update', 'ages_update'],
-		['GET', '/ages/views', 'Ages#views', 'ages_views'],
+		['GET', '/ages/view', 'Ages#view', 'ages_view'],
 
 		['GET|POST', '/school/index', 'School#index', 'school_index'],
 		['GET|POST', '/school/create', 'School#create', 'school_create'],
@@ -58,7 +58,7 @@
 		['GET', '/documents/[i:documents_id]', 'Documents#view', 'documents_view'],
 
 		['GET|POST', '/presentation/index', 'Presentation#index', 'presentation_index'],
-		['GET|POST', '/presentation/update/[i:ages_id]', 'Presentation#update', 'presentation_update'],
+		['GET|POST', '/presentation/update/[i:presentation_id]', 'Presentation#update', 'presentation_update'],
 		['GET', '/presentation/views', 'Presentation#views', 'presentation_views'],
 
 	);

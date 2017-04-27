@@ -19,10 +19,14 @@ class PresentationController extends \W\Controller\Controller
     {
         $presentation_manager = new PresentationModel();
         $presentation = $presentation_manager->find($presentation_id);
+
             if (!empty($_POST)) {
+                $presentation_name = $_POST['presentation_name'];
                 $presentation_description = $_POST['presentation_description'];
-                if (!empty($presentation_name) && !empty($presentation_description)) {
+
+                if (!empty($_POST)) {
                     $presentation = $presentation_manager->update([
+                        'presentation_name' => $presentation_name,
                         'presentation_description' => $presentation_description,
                     ], $presentation_id);
                 }
