@@ -19,6 +19,12 @@
 		['GET|POST', '/activities/delete/[i:id]', 'Activities#delete', 'activities_delete'],
 		['GET', '/activities/[i:id]', 'Activities#view', 'activities_view'],
 
+
+
+		['GET|POST', '/config/index', 'Config#index', 'config_index'],
+		['GET|POST', '/config/update/[i:config_id]', 'Config#update', 'config_update'],
+		['GET', '/config/[i:id]', 'Config#view', 'config_view'],
+
 		['GET|POST', '/h_activities/index', 'HolidaysActivities#index', 'h_activities_index'],
 		['GET|POST', '/h_activities/create', 'HolidaysActivities#create', 'h_activities_create'],
 		['GET|POST', '/h_activities/edit/[i:id]', 'HolidaysActivities#edit', 'h_activities_edit'],
@@ -26,10 +32,32 @@
 		['GET', '/h_activities/[i:id]', 'HolidaysActivities#view', 'h_activities_view'],
 
 
+
 		['GET|POST', '/school/index', 'School#index', 'school_index'],
 		['GET|POST', '/school/create', 'School#create', 'school_create'],
 		['GET|POST', '/school/edit/[i:id]', 'School#edit', 'school_edit'],
 		['GET|POST', '/school/delete/[i:id]', 'School#delete', 'school_delete'],
 		['GET', '/school/[i:id]', 'School#view', 'school_view'],
+
+		['GET|POST', '/section/qui-sommes-nous', 'Default#about', 'section_qui-sommes-nous'],
+		['GET|POST', '/section/enfance-3-5', 'Default#enfance1', 'section_enfance-3-5'],
+		['GET|POST', '/section/enfance-6-12', 'Default#enfance2', 'section_enfance-6-12'],
+		['GET|POST', '/section/enfance-12-16', 'Default#enfance3', 'section_enfance-12-16'],
+		['GET|POST', '/section/jeunes', 'Default#jeunes', 'section_jeunes'],
+		['GET|POST', '/section/adultes-et-famille', 'Default#family', 'section_adultes-et-famille'],
+
+
+		['GET|POST', '/partners/index', 'Partners#index', 'partners_index'],
+		['GET|POST', '/partners/create', 'Partners#create', 'partners_create'],
+		['GET|POST', '/partners/delete/[i:partners_id]', 'Partners#delete', 'partners_delete'],
+		['GET|POST', '/partners/update/[i:partners_id]', 'Partners#update', 'partners_update'],
+		['GET', '/partners/[i:partners_id]', 'Partners#view', 'partners_view'],
+
+		['GET|POST', '/documents/index', 'Documents#index', 'documents_index'],
+		['GET|POST', '/documents/create', 'Documents#create', 'documents_create'],
+		['GET|POST', '/documents/delete/[i:documents_id]', 'Documents#delete', 'documents_delete'],
+		['GET|POST', '/documents/update/[i:documents_id]', 'Documents#update', 'documents_update'],
+		['GET', '/documents/[i:documents_id]', 'Documents#view', 'documents_view'],
+
 
 	);
