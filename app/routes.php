@@ -50,6 +50,12 @@
 		['GET|POST', '/documents/create', 'Documents#create', 'documents_create'],
 		['GET|POST', '/documents/delete/[i:documents_id]', 'Documents#delete', 'documents_delete'],
 		['GET|POST', '/documents/update/[i:documents_id]', 'Documents#update', 'documents_update'],
-		['GET', '/documents/[i:documents_id]', 'Documents#view', 'documents_view']
+		['GET', '/documents/[i:documents_id]', 'Documents#view', 'documents_view'],
+
+		['GET|POST', '/school/index', 'School#index', 'school_index'],
+		['GET|POST', '/school/create', 'School#create', 'school_create'],
+		['GET|POST', '/school/edit/[i:id]', 'School#edit', 'school_edit'],
+		['GET|POST', '/school/delete/[i:id]', 'School#delete', 'school_delete'],
+		['GET', '/school/[i:id]', 'School#view', 'school_view'],
 
 	);
