@@ -19,10 +19,17 @@
 		['GET|POST', '/activities/delete/[i:id]', 'Activities#delete', 'activities_delete'],
 		['GET', '/activities/[i:id]', 'Activities#view', 'activities_view'],
 
+
+
+		['GET|POST', '/config/index', 'Config#index', 'config_index'],
+		['GET|POST', '/config/update/[i:config_id]', 'Config#update', 'config_update'],
+		['GET', '/config/[i:id]', 'Config#view', 'config_view']
+
 		['GET|POST', '/h_activities/index', 'HolidaysActivities#index', 'h_activities_index'],
 		['GET|POST', '/h_activities/create', 'HolidaysActivities#create', 'h_activities_create'],
 		['GET|POST', '/h_activities/edit/[i:id]', 'HolidaysActivities#edit', 'h_activities_edit'],
 		['GET|POST', '/h_activities/delete/[i:id]', 'HolidaysActivities#delete', 'h_activities_delete'],
 		['GET', '/h_activities/[i:id]', 'HolidaysActivities#view', 'h_activities_view'],
+
 
 	);
