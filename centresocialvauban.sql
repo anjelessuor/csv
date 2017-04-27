@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.6
+-- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 26 Avril 2017 à 15:06
+-- Généré le :  Jeu 27 Avril 2017 à 15:31
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  5.6.28
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `csv`
+-- Base de données :  `centresocialvauban`
 --
 
 -- --------------------------------------------------------
@@ -30,15 +30,31 @@ CREATE TABLE `activities` (
   `activities_id` int(5) UNSIGNED NOT NULL,
   `activities_title` varchar(150) NOT NULL,
   `activities_description` text NOT NULL,
-  `activities_localization` varchar(150) NOT NULL,
-  `activities_hours` varchar(150) NOT NULL,
-  `activities_image` varchar(255) NOT NULL,
   `activities_3to5` int(2) NOT NULL,
   `activities_6to12` int(2) NOT NULL,
   `activities_12to16` int(2) NOT NULL,
   `activities_16to25` int(2) NOT NULL,
   `activities_adults` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `activities`
+--
+
+INSERT INTO `activities` (`activities_id`, `activities_title`, `activities_description`, `activities_3to5`, `activities_6to12`, `activities_12to16`, `activities_16to25`, `activities_adults`) VALUES
+(1, 'Mercerdi', 'Des animateurs qualifiés proposent un large choix d’activités : grands jeux (plein air ou intérieur), des projets et découverte nature, des activités manuelles : manipulation de la pâte à sel, création de masque, de porte clé et de cadre, peinture et décoration d’intérieur, etc. Mais aussi, des sorties (art, culture et loisirs) seront organisées sur Lille et ses environs.\r\nCentre de la petite enfance au 12 Place de l’Arbonnoise.\r\nL’accueil du Mercredi se fait de 8h30 à 17h30', 1, 0, 0, 0, 0),
+(2, 'Mercredi', 'Comme pour le secteur Petite Enfance, des animateurs qualifiés proposent un large choix d’activités : grands jeux (plein air ou intérieur), des projets et découverte nature, des activités manuelles : manipulation d’argile, peinture et décoration d’intérieur, création d’accessoires sportifs, etc. Mais aussi, des sorties (art, culture et loisirs) sur Lille et ses environs.\r\nCentre social de Vauban-Esquermes au 77 rue Philippe-Laurent Roland à Lille.\r\nL’accueil du Mercredi se fait de 8h30 à 17h30', 0, 1, 0, 0, 0),
+(3, 'Lundi', 'l’association Vivre Ensemble à Esquermes vous propose un Atelier voix de 19h à 21h.', 0, 0, 0, 0, 1),
+(4, 'Mardi', 'la référente famille met en place des permanences administratives au sein du centre social de 9h à 12h', 0, 0, 0, 0, 1),
+(5, 'Mardi', 'Egalement, un bénévole met en avant ses compétences de peintre de 13h30 à 17h afin que vous puissiez développer vos capacités artistiques', 0, 0, 0, 0, 1),
+(6, 'Mardi', 'Enfin, l’association Gym Lille propose des cours de sport (Fitness, renforcement musculaire) de 18h30 à 19h30.', 0, 0, 0, 0, 1),
+(7, 'Mercredi', 'L’association l’AMAP vous accueille pour une vente de légumes, fruits, œufs, soupes fraiches et pain de 17h30 à 20h30.\r\n', 0, 0, 0, 0, 1),
+(8, 'Jeudi', 'un Café initiative habitants est organisé de 9h à 10h. Vous pourrez alors échanger vos idées pour le développement du centre social. \r\n', 0, 0, 0, 0, 1),
+(9, 'Jeudi', 'Aussi, un bénévole met en avant sa pratique du Tai-chi de 12h30 à 13h30 pour un moment de détente. ', 0, 0, 0, 0, 1),
+(10, 'Jeudi', 'Enfin, une coach sportive vous propose du Fitness de 18h30 à 19h30 afin de passer un agréable moment.', 0, 0, 0, 0, 1),
+(11, 'Vendredi', 'l’association les chantiers de l’inédit propose des ateliers de théâtre pour les enfants de 17h30 à 19h30 et pour les adultes de 19h30 à 21h30.\r\n', 0, 0, 0, 0, 1),
+(12, 'Vendredi', 'l’association les chantiers de l’inédit propose des ateliers de théâtre pour les enfants de 17h30 à 19h30 et pour les adultes de 19h30 à 21h30.', 1, 1, 0, 0, 0),
+(13, 'Mercredi', 'Un mercredi sur deux, un atelier culinaire est mis en place avec les jeunes.\r\nL’autre mercredi, une activité sportive, culturelle ou artistique sera proposée.\r\n', 0, 0, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -152,6 +168,16 @@ CREATE TABLE `holidays_activities` (
   `h_activities_adults` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `holidays_activities`
+--
+
+INSERT INTO `holidays_activities` (`h_activities_id`, `h_activities_title`, `h_activities_description`, `h_activities_dates`, `h_activities_localization`, `h_activities_image`, `h_activities_hours`, `h_activities_price`, `h_activities_3to5`, `h_activities_6to12`, `h_activities_12to16`, `h_activities_16to25`, `h_activities_adults`) VALUES
+(1, 'Mercredi', ' Semblable aux mercredis, diverses activités seront proposées aux enfants durant les vacances scolaires.\r\nLes ALSH des vacances scolaires se font au centre de la petite enfance au 12 Place de l’Arbonnoise à Lille ; du Lundi au Vendredi de 8h30 à 17h30.', '', '', '', '', 'Se rapprocher de l\'organisateur', 1, 0, 0, 0, 0),
+(3, 'Stages sportifs', 'En plus des activités proposées le mercredi, des stages sportifs : initiation à la boxe pourront être proposés aux enfants durant les vacances scolaires. Ces stages s’effectueront avec notre partenaire le « Boxing club des Bois-Blancs ». \r\nAussi, des minis-camps seront organisés durant les grandes vacances scolaires. \r\nLes ALSH des vacances scolaires a lieu du lundi au vendredi de 8h30 à 17h30 au centre social de Vauban-Esquermes. ', '', '', '', '', '', 0, 1, 0, 0, 0),
+(4, 'Vacances', 'Des activités sont proposées durant toutes les vacances scolaires, les jeunes pourront se renseigner directement auprès de l’animateur(rice). \r\nAussi, des projets « séjour » pourront être organisés avec jeunes durant les grandes vacances scolaires. Ils devront alors être acteurs de leur séjour. Pour cela, des autofinancements devront être mis place par les jeunes et l’accompagnant(e). \r\n\r\n-> Que ce soit les mercredis ou pendant les vacances scolaires, les inscriptions devront se faire directement auprès de l’animateur(rice). Le tarif varie en fonction de l’activité ou du projet d’animation.', '', '', '', '', '', 0, 0, 1, 0, 0),
+(5, 'Vacances', 'Durant les vacances scolaires, des sorties familles seront proposées aux adhérents du centre social de Vauban-Esquermes. \r\nLes inscriptions se feront directement auprès de la référente famille ; et le tarif sera fixé en fonction des sorties.', '', '', '', '', '', 0, 0, 0, 0, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -197,16 +223,13 @@ INSERT INTO `presentation` (`presentation_id`, `presentation_name`, `presentatio
 
 CREATE TABLE `school_help` (
   `school_id` int(5) UNSIGNED NOT NULL,
+  `school_title` varchar(150) NOT NULL,
   `school_description` text NOT NULL,
-  `ages_id` int(2) NOT NULL,
-  `school_localization` varchar(150) NOT NULL,
-  `school_hours` varchar(150) NOT NULL,
-  `school_monday` int(2) NOT NULL,
-  `school_thuesday` int(2) NOT NULL,
-  `school_wednesday` int(2) NOT NULL,
-  `school_thursday` int(2) NOT NULL,
-  `school_friday` int(2) NOT NULL,
-  `school_saturday` int(2) NOT NULL
+  `school_3to5` int(2) NOT NULL,
+  `school_6to12` int(2) NOT NULL,
+  `school_12to16` int(2) NOT NULL,
+  `school_16to25` int(2) NOT NULL,
+  `school_adults` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -303,7 +326,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `activities`
 --
 ALTER TABLE `activities`
-  MODIFY `activities_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `activities_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT pour la table `ages`
 --
@@ -328,7 +351,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT pour la table `holidays_activities`
 --
 ALTER TABLE `holidays_activities`
-  MODIFY `h_activities_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `h_activities_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `partners`
 --
@@ -343,7 +366,7 @@ ALTER TABLE `presentation`
 -- AUTO_INCREMENT pour la table `school_help`
 --
 ALTER TABLE `school_help`
-  MODIFY `school_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `school_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `users`
 --
