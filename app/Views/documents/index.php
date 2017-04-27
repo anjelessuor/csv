@@ -14,13 +14,13 @@
         <tbody>
         <?php foreach ($documents as $documents) { ?>
             <tr>
-                <td><h2><?php echo $documents_name['documents_name'] ?> </h2></td>
-                <td><h2><?php echo $documents_description['documents_description'] ?> </h2></td>
-                <td><h2><?php echo $documents_document['documents_document'] ?> </h2></td>
+                <td><h2><?php echo $documents['documents_name'] ?> </h2></td>
+                <td><h2><?php echo $documents['documents_description'] ?> </h2></td>
+                <td><h2><?php echo $documents['documents_document'] ?> </h2></td>
                 <td>
                     <a href="<?= $this->url('documents_update', ['documents_id' => $documents['documents_id'] ]); ?>" class="btn btn-primary"> Modifier </a>
                     <a href="<?= $this->url('documents_delete', ['documents_id' => $documents['documents_id'] ]); ?>" class="btn btn-danger"> Supprimer </a>
-                    
+
                 </td>
             </tr>
     <?php } ?>
