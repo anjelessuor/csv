@@ -58,4 +58,8 @@ class DefaultController extends Controller
 		$this->show('section/adultes-et-famille');
 	}
 	
+	public function events() 
+	{
+		$this->show('section/events');
+	}
 }
