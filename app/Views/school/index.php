@@ -3,6 +3,7 @@
 <?php $this->start('main_content'); ?>
 
     <div>
+
         <a href="<?= $this->url('school_create') ?>" class="btn btn-success">Ajouter</a>
         <a href="<?= $this->url('school_index') ?>?age=school_3to5" class="btn btn-primary">3-5 ans</a>
         <a href="<?= $this->url('school_index') ?>?age=school_6to12" class="btn btn-primary">6-12 ans</a>
@@ -34,11 +35,10 @@
                         <a href="<?= $this->url('school_edit', ['id' => $help['school_id']]); ?>" class="btn btn-primary">Modifier</a>
                         <a href="<?= $this->url('school_delete', ['id' => $help['school_id']]); ?>" class="btn btn-danger">Supprimer</a>
                         <a href="<?= $this->url('school_view', ['id' => $help['school_id']]); ?>" class="btn btn-info">Voir</a>
+
                     </td>
                 </tr>
                 <?php }  ?>
         </tbody>
     </table>
 <?php $this->stop('main_content'); ?>
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status Help

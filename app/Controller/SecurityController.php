@@ -39,10 +39,10 @@ class SecurityController extends Controller
         $user_manager = new UserModel();
         //Traitement formulaire d'inscription
         if (!empty($_POST)){
-            $user_firstname = $_POST['user_firstname'];
-            $user_lastname = $_POST['user_lastname'];
-            $user_email = $_POST['user_email'];
-            $user_password = $_POST['user_password'];
+            $user_firstname = trim($_POST['user_firstname']);
+            $user_lastname = trim($_POST['user_lastname']);
+            $user_email = trim($_POST['user_email']);
+            $user_password = trim($_POST['user_password']);
             $user_cfpassword = trim($_POST['user_cfpassword']);
 
             $errors = []; //tableau vide
