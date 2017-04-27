@@ -62,8 +62,9 @@ class PartnersController extends \W\Controller\Controller
             $partners = $partners_manager->insert([
                 'partners_name' => $partners_name,
                 'partners_description' => $partners_description,
+                'partners_image' => $_FILES["partners_image"]["name"],
                 'partners_link' => $partners_link,
-                'partners_image' => $_FILES["partners_image"]["name"]
+                
             ]);
 
         }
@@ -80,14 +81,14 @@ class PartnersController extends \W\Controller\Controller
                 if (!empty($_POST)) {
                     $partners_name = $_POST['partners_name'];
                     $partners_description = $_POST['partners_description'];
-                    $partners_link = $_POST['partners_link'];
                     $partners_image = $_FILES["partners_image"]["name"];
+                    $partners_link = $_POST['partners_link'];
                     if (!empty($_POST)) {
                         $partners = $partners_manager->update([
                             'partners_name' => $partners_name,
                             'partners_description' => $partners_description,
+                            'partners_image' => $_FILES["partners_image"]["name"],
                             'partners_link' => $partners_link,
-                            'partners_image' => $_FILES["partners_image"]["name"]
                         ], $partners_id); //Requête de mise à jour du partenaire
                     }
                 }

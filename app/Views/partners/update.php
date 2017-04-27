@@ -11,11 +11,15 @@
         </div>
         <div class="form-group">
             <label for="partners_description">Description : </label>
-            <textarea class="form-control" name="partners_description" id="partners_description" value="<?php echo $partners['partners_description']?>">></textarea>
+            <textarea class="form-control" name="partners_description" id="partners_description" value="<?php echo $partners['partners_description']?>"> </textarea>
         </div>
         <div class="form-group">
             <label for="partners_image"> Logo/image : </label>
             <input type="file" name="partners_image" id="partners_image">
+        </div>
+        <div class="form-group">
+            <label for="partners_link">Link : </label>
+            <textarea class="form-control" name="partners_link" id="partners_link" value="<?php echo $partners['partners_link']?>"> </textarea>
         </div>
         <button class="btn btn-submit">Modifier : </div>
     </form>
