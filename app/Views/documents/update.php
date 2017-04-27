@@ -1,0 +1,23 @@
+<?php $this->layout('layout', ['title' => 'Modifier un fichier à télécharger' .$documents['documents_name']]); ?>
+<?php $this->start('main_content'); ?>
+
+    <!-- Lien pour retour sur liste -->
+    <a href="<?php echo $this->url('documents_index') ?>">Retour à la liste des téléchargements</a>
+
+    <form method="POST" action="" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="partners_name">Nom : </label>
+            <input class="form-control" type="text" name="partners_name" id="partners_name">
+        </div>
+        <div class="form-group">
+            <label for="documents_description">Description : </label>
+            <textarea class="form-control" name="documents_description" id="documents_description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="documents_document"> Document : </label>
+            <input type="file" name="documents_document" id="documents_document">
+        </div>
+        <button class="btn btn-submit">Modifier : </div>
+    </form>
+
+<?php $this->stop('main_content'); ?>
