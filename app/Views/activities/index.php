@@ -2,7 +2,7 @@
 
 <?php $this->start('main_content'); ?>
 
-    <div><a href="<?= $this->url('activities_create') ?>" class="btn btn-primary">Ajouter un article</a></div>
+    <div><a href="<?= $this->url('activities_create') ?>" class="btn btn-primary">Ajouter une activité</a></div>
 
     <table class="table table-striped">
         <thead>
