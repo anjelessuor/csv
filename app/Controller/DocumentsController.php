@@ -24,34 +24,7 @@ class DocumentsController extends \W\Controller\Controller
         if(!empty($_POST)){ //Vérifie que le formulaire est posté
             $documents_name = $_POST['documents_name'];
             $documents_description = $_POST['documents_description'];
-            $target_dir = "uploads/document";
-            $target_file = $target_dir . basename($_FILES["documents_document"]["name"]);
-            $uploadOk = 1;
-            $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-
-            // Check file size
-            if ($_FILES["documents_document"]["size"] > 2000000) {
-                echo "Le fichier est trop volumineux.";
-                $uploadOk = 0;
-            }
-            // Allow certain file formats
-            if($imageFileType != "pdf") {
-                echo "Seuls les fichiers au format PDF seront acceptés.";
-                $uploadOk = 0;
-            }
-            // Check if $uploadOk is set to 0 by an error
-            if ($uploadOk == 0) {
-                echo "Le fichier n'a pas été chargé.";
-            // if everything is ok, try to upload file
-            } else {
-                if (move_uploaded_file($_FILES["documents_document"]["tmp_name"], $target_file)) {
-                    echo "Le fichier ". basename( $_FILES["documents_document"]["name"]). " a bien été chargé.";
-                } else {
-                    echo "Le fichier n'a pas été chargé correctement.";
-                }
-            }
-
-            $documents_document = $_FILES["documents_document"]["name"];
+            $documents_document = $_POST["documents_document"];
 
             //Requête sql pour insérer un document
             $documents_manager = new DocumentsModel(); //Instancier ma classe pour gérer mes articles en BDD
@@ -59,7 +32,7 @@ class DocumentsController extends \W\Controller\Controller
             $documents = $documents_manager->insert([
                 'documents_name' => $documents_name,
                 'documents_description' => $documents_description,
-                'documents_document' => $_FILES["documents_document"]["name"]
+                'documents_document' => $documents_document
             ]);
 
         }
@@ -76,13 +49,13 @@ class DocumentsController extends \W\Controller\Controller
                 if (!empty($_POST)) {
                     $documents_name = $_POST['documents_name'];
                     $documents_description = $_POST['documents_description'];
-                    $documents_document = $_FILES["documents_document"]["name"];
+                    $documents_document = $_POST["documents_document"];
 
                     if (!empty($events_title) && !empty($events_description)) {
                         $event = $events_manager->update([
                             'documents_name' => $documents_name,
                             'documents_description' => $documents_description,
-                            'documents_document' => $_FILES["documents_document"]["name"],
+                            'documents_document' => $documents_document
                         ], $documents_id); //Requête de mise à jour
                     }
                 }
