@@ -21,10 +21,9 @@
             <label for="events_hours"> Horaires : </label>
             <input type="text" class="form-control" name="events_hours" id="events_hours">
         </div>
-        <!--  upluod pour l'image changer type -->
         <div class="form-group">
             <label for="events_image"> Image : </label>
-            <input type="text" class="form-control" name="events_image" id="events_image">
+            <input type="file" name="events_image" id="events_image">
         </div>
         <div class="form-group">
             <label for="events_3to5">
