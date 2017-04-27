@@ -31,5 +31,12 @@
 		['GET|POST', '/h_activities/delete/[i:id]', 'HolidaysActivities#delete', 'h_activities_delete'],
 		['GET', '/h_activities/[i:id]', 'HolidaysActivities#view', 'h_activities_view'],
 
+		['GET|POST', '/section/qui-sommes-nous', 'Default#about', 'section_qui-sommes-nous'],
+		['GET|POST', '/section/enfance-3-5', 'Default#enfance1', 'section_enfance-3-5'],
+		['GET|POST', '/section/enfance-6-12', 'Default#enfance2', 'section_enfance-6-12'],
+		['GET|POST', '/section/enfance-12-16', 'Default#enfance3', 'section_enfance-12-16'],
+		['GET|POST', '/section/jeunes', 'Default#jeunes', 'section_jeunes'],
+		['GET|POST', '/section/adultes-et-famille', 'Default#family', 'section_adultes-et-famille'],
+
 
 	);

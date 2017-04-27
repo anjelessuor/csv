@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Enfance 3-5 ans']) ?>
+<?php $this->layout('layout', ['title' => 'Adultes et Famille']) ?>
 
 <?php $this->start('main_content'); ?>
 
