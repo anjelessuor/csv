@@ -4,7 +4,7 @@
     <!-- Lien pour retour sur liste event -->
     <a href="<?php echo $this->url('event_index') ?>">Retour à la liste des événements</a>
 
-    <form method="POST" action="">
+    <form method="POST" action="" enctype="multipart/form-data">
         <div class="form-group">
             <label for="events_title">Titre : </label>
             <input class="form-control" type="text" name="events_title" id="events_title">
