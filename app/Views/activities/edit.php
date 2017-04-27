@@ -1,7 +1,7 @@
-<?php $this->layout('layout', ['title' => 'Mettre à jour l\'article '.$activities['activities_title']]); ?>
+<?php $this->layout('layout', ['title' => 'Mettre à jour l\'activité '.$activities['activities_title']]); ?>
 <?php $this->start('main_content'); ?>
     <div>
-        <a href="<?= $this->url('activities_index'); ?>">Revenir à la liste des articles</a>
+        <a href="<?= $this->url('activities_index'); ?>">Revenir à la liste des activités</a>
     </div>
 
     <form action="" method="POST">
