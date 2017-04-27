@@ -45,8 +45,6 @@
 		['GET|POST', '/section/adultes-et-famille', 'Default#family', 'section_adultes-et-famille'],
 		['GET|POST', '/section/events', 'Default#events', 'section_events'],
 
-		
-
 		['GET|POST', '/partners/index', 'Partners#index', 'partners_index'],
 		['GET|POST', '/partners/create', 'Partners#create', 'partners_create'],
 		['GET|POST', '/partners/delete/[i:partners_id]', 'Partners#delete', 'partners_delete'],
@@ -58,14 +56,5 @@
 		['GET|POST', '/documents/delete/[i:documents_id]', 'Documents#delete', 'documents_delete'],
 		['GET|POST', '/documents/update/[i:documents_id]', 'Documents#update', 'documents_update'],
 		['GET', '/documents/[i:documents_id]', 'Documents#view', 'documents_view'],
-
-<<<<<<< HEAD
-=======
-		['GET|POST', '/school/index', 'School#index', 'school_index'],
-		['GET|POST', '/school/create', 'School#create', 'school_create'],
-		['GET|POST', '/school/edit/[i:id]', 'School#edit', 'school_edit'],
-		['GET|POST', '/school/delete/[i:id]', 'School#delete', 'school_delete'],
-		['GET', '/school/[i:id]', 'School#view', 'school_view'],
->>>>>>> refs/remotes/origin/master
-
+		
 	);
