@@ -33,8 +33,10 @@ class EventController extends \W\Controller\Controller
             $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
             // Check file size
+
             if ($_FILES["events_image"]["size"] > 5000000) {
                 echo "L'image est trop grande.";
+
                 $uploadOk = 0;
             }
             // Allow certain file formats
@@ -49,7 +51,7 @@ class EventController extends \W\Controller\Controller
             // if everything is ok, try to upload file
             } else {
                 if (move_uploaded_file($_FILES["events_image"]["tmp_name"], $target_file)) {
-                    echo "The file ". basename( $_FILES["events_image"]["name"]). " has been uploaded.";
+                    echo "Le fichier ". basename( $_FILES["events_image"]["name"]). " a bien été chargé.";
                 } else {
                     echo "Le fichier n'a pas été chargé correctement.";
                 }
