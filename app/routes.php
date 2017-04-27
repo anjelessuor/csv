@@ -45,7 +45,7 @@
 		['GET|POST', '/section/adultes-et-famille', 'Default#family', 'section_adultes-et-famille'],
 		['GET|POST', '/section/events', 'Default#events', 'section_events'],
 
-		
+
 
 		['GET|POST', '/partners/index', 'Partners#index', 'partners_index'],
 		['GET|POST', '/partners/create', 'Partners#create', 'partners_create'],
@@ -57,11 +57,5 @@
 		['GET|POST', '/documents/create', 'Documents#create', 'documents_create'],
 		['GET|POST', '/documents/delete/[i:documents_id]', 'Documents#delete', 'documents_delete'],
 		['GET|POST', '/documents/update/[i:documents_id]', 'Documents#update', 'documents_update'],
-		['GET', '/documents/[i:documents_id]', 'Documents#view', 'documents_view'],
-
-<<<<<<< HEAD
-	
-
-=======
->>>>>>> refs/remotes/origin/master
-	);
+		['GET', '/documents/[i:documents_id]', 'Documents#view', 'documents_view']
+);
