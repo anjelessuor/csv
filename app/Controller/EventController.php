@@ -34,7 +34,7 @@ class EventController extends \W\Controller\Controller
 
             // Check file size
 
-            if ($_FILES["events_image"]["size"] > 500000000000) {
+            if ($_FILES["events_image"]["size"] > 50000000) {
                 echo "L'image est trop volumineuse.";
 
                 $uploadOk = 0;

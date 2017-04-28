@@ -10,6 +10,7 @@
 		['GET|POST', '/security/delete/[i:id]', 'Security#delete', 'security_delete'],
 		['GET|POST', '/security/view/[i:id]', 'Security#view', 'security_view'],
 		['GET', '/logout', 'Security#logout', 'security_logout'],
+		['GET|POST', 'security/forget', 'Security#forget', 'security_forget'],
 		['GET|POST', '/security/index', 'Security#index', 'security_index'],
 
 

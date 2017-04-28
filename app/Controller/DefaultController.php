@@ -60,6 +60,8 @@ class DefaultController extends Controller
 	
 	public function events() 
 	{
-		$this->show('section/events');
+		$events_manager = new EventsModel(); //Instancie la classe pour générer mes articles en BDD
+		$events = $events_manager->findAll(); //Récupère tous les articles en bdd (SELECT * FROM articles)
+		$this->show('section/events', ['events' => $events]);
 	}
 }
