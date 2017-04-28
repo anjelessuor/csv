@@ -21,8 +21,9 @@ class SecurityController extends Controller
                 $user_manager = new UserModel();
                 $user = $user_manager->find($user_id); //Récupère toutes les infos utilisateur
                 $authentification_manager->logUserIn($user); //La connexion se fait
-
-            } $this->redirectToRoute('display_index');
+                $this->redirectToRoute('display_index');
+            }
+            
         }
         $this->show('Security/login');
     }
