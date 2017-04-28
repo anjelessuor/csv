@@ -4,7 +4,7 @@
     <!-- Lien pour retour sur liste -->
     <a href="<?php echo $this->url('documents_index') ?>">Retour à la liste des téléchargements</a>
 
-    <form method="POST" action="">
+    <form method="POST" action="" enctype="multipart/form-data">
         <div class="form-group">
             <label for="documents_name">Nom : </label>
             <input class="form-control" type="text" name="documents_name" id="documents_name" value="<?php echo $documents['documents_name']?>">
@@ -14,8 +14,8 @@
             <textarea class="form-control" name="documents_description" id="documents_description" value="<?php echo $documents['documents_description']?>"></textarea>
         </div>
         <div class="form-group">
-            <label for="documents_document"> Lien du document : </label>
-            <input type="url" name="documents_document" id="documents_document">
+            <label for="documents_document"> Fichier : </label>
+            <input type="file" name="documents_document" id="documents_document">
         </div>
         <button class="btn btn-submit">Modifier : </div>
     </form>
