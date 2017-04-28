@@ -3,6 +3,7 @@
 <?php $this->start('main_content'); ?>
 
     <div>
+        <a href="<?= $this->url('display_index') ?>" class="btn btn-warning">Retour</a>
         <a href="<?= $this->url('activities_create') ?>" class="btn btn-success">Ajouter une activité</a>
         <a href="<?= $this->url('activities_index') ?>?age=activities_3to5" class="btn btn-primary">3-5 ans</a>
         <a href="<?= $this->url('activities_index') ?>?age=activities_6to12" class="btn btn-primary">6-12 ans</a>
@@ -33,7 +34,7 @@
                     <td>
                         <a href="<?= $this->url('activities_edit', ['id' => $activitie['activities_id']]); ?>" class="btn btn-primary">Modifier</a>
                         <a href="<?= $this->url('activities_delete', ['id' => $activitie['activities_id']]); ?>" class="btn btn-danger">Supprimer</a>
-                        <a href="<?= $this->url('activities_view', ['id' => $activitie['activities_id']]); ?>" class="btn btn-info">Voir l'activité</a>
+                        <a href="<?= $this->url('activities_view', ['id' => $activitie['activities_id']]); ?>" class="btn btn-info">Voir</a>
                     </td>
                 </tr>
                 <?php }  ?>

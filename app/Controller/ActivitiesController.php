@@ -65,7 +65,7 @@ class ActivitiesController extends Controller
 	public function edit($id){
 		//$this->allowTo('admin');
 		$activities_manager = new ActivitiesModel(); // instancie la class pour gérer les articles en bdd
-    		$activities = $activities_manager->find($id);
+    	$activities = $activities_manager->find($id);
 
 		if (!empty($_POST)) {
             $activities_title = $_POST['activities_title'];

@@ -1,6 +1,7 @@
 <?php $this->layout('layout', ['title' => 'Liste des ages']); ?>
 <?php $this->start('main_content'); ?>
 
+<a href="<?= $this->url('display_index') ?>" class="btn btn-primary">Retour</a><br/><br/>
   <table class="table table-striped">
       <thead>
           <tr>

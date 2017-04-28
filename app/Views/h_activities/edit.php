@@ -1,7 +1,7 @@
 <?php $this->layout('layout', ['title' => 'Mettre à jour l\'activité '.$h_activities['h_activities_title']]); ?>
 <?php $this->start('main_content'); ?>
     <div>
-        <a href="<?= $this->url('h_activities_index'); ?>">Revenir à la liste des activités vacances</a>
+        <a href="<?= $this->url('h_activities_index'); ?>" class="btn btn-warning">Revenir à la liste</a>
     </div>
 
     <form action="" method="POST">

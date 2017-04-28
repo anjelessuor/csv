@@ -2,7 +2,7 @@
 <?php $this->start('main_content'); ?>
 
     <div>
-        <a href="<?= $this->url('h_activities_index'); ?>">Revenir à la liste des activités</a>
+        <a href="<?= $this->url('h_activities_index'); ?>" class="btn btn-warning">Revenir à la liste</a>
     </div>
 
     <div class="row">
@@ -40,7 +40,7 @@
 
             <br>
             <a href="<?= $this->url('h_activities_edit', ['id' => $h_activities['h_activities_id']]); ?>" class="btn btn-primary">Modifier</a>
-            <a href="<?= $this->url('h_activities_index'); ?>" class="btn btn-info">Retourner à la liste des activités</a>
+            <a href="<?= $this->url('h_activities_index'); ?>" class="btn btn-warning">Retourner à la liste des activités</a>
 
         </div>
     </div>
