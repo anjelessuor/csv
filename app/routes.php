@@ -55,10 +55,11 @@
 		['GET|POST', '/documents/create', 'Documents#create', 'documents_create'],
 		['GET|POST', '/documents/delete/[i:documents_id]', 'Documents#delete', 'documents_delete'],
 		['GET|POST', '/documents/update/[i:documents_id]', 'Documents#update', 'documents_update'],
+
 		['GET', '/documents/[i:documents_id]', 'Documents#view', 'documents_view'],
 
 		['GET|POST', '/presentation/index', 'Presentation#index', 'presentation_index'],
 		['GET|POST', '/presentation/update/[i:presentation_id]', 'Presentation#update', 'presentation_update'],
-		['GET', '/presentation/views', 'Presentation#views', 'presentation_views'],
+		['GET', '/presentation/views', 'Presentation#views', 'presentation_views']
 
 	);
