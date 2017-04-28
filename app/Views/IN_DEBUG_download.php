@@ -7,7 +7,7 @@ $secret = 'your-secret-string';
  
 if (isset($_GET['fid']) && preg_match('/^([a-f0-9]{32})$/', $_GET['fid'])) {
 	$db = new mysqli('localhost', 'root', '', 'centresocialvauban');
-	$result = $db->query(sprintf("SELECT * FROM 'documents' WHERE MD5(CONCAT(ID, '%s')) = '%s'", $secret, $db->real_escape_string($_GET['fid'])));
+	$result = $db->query("SELECT * FROM 'documents' WHERE id = " . $_GET['fid']);
 	if ($result_>num_rows == 1) {
 		$obj = $result->fetch_object();
 		$fullPath = $path.$obj->filename;
