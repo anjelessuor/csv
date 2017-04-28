@@ -3,7 +3,8 @@
 <?php $this->start('main_content'); ?>
 
     <div>
-        <a href="<?= $this->url('h_activities_create') ?>" class="btn btn-primary">Ajouter une activité</a>
+        <a href="<?= $this->url('display_index') ?>" class="btn btn-warning">Retour</a>
+        <a href="<?= $this->url('h_activities_create') ?>" class="btn btn-success">Ajouter une activité</a>
         <a href="<?= $this->url('h_activities_index') ?>?age=h_activities_3to5" class="btn btn-primary">3-5 ans</a>
         <a href="<?= $this->url('h_activities_index') ?>?age=h_activities_6to12" class="btn btn-primary">6-12 ans</a>
         <a href="<?= $this->url('h_activities_index') ?>?age=h_activities_12to16" class="btn btn-primary">12-16 ans</a>

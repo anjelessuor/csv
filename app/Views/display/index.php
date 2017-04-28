@@ -13,7 +13,8 @@
                 <a href="<?= $this->url('documents_index') ?>" class="btn btn-primary">Documents</a><br/><br/>
                 <?php if ($w_user['user_status'] == 2) { ?>
                 <a href="<?= $this->url('config_index'); ?>" class="btn btn-success">Mettre à jour la config</a><br/><br/>
-                <a href="<?= $this->url('security_index'); ?>" class="btn btn-success">Mettre à jour les utilisateurs</a>
+                <a href="<?= $this->url('security_index'); ?>" class="btn btn-success">Mettre à jour les utilisateurs</a><br/><br/>
+                <a href="<?= $this->url('ages_index'); ?>" class="btn btn-success">Mettre à jour les sections</a><br/><br/>
                 <?php } ?>
 
             </ul>
