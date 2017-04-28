@@ -27,15 +27,15 @@ class EventController extends \W\Controller\Controller
             $events_localization = $_POST['events_localization'];
             $events_hours = $_POST['events_hours'];
 
-            $target_dir = "uploads/events/";
+            $target_dir = "uploads/eventsImage/";
             $target_file = $target_dir . basename($_FILES["events_image"]["name"]);
             $uploadOk = 1;
             $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
             // Check file size
 
-            if ($_FILES["events_image"]["size"] > 5000000) {
-                echo "L'image est trop grande.";
+            if ($_FILES["events_image"]["size"] > 50000000) {
+                echo "L'image est trop volumineuse.";
 
                 $uploadOk = 0;
             }
@@ -51,9 +51,9 @@ class EventController extends \W\Controller\Controller
             // if everything is ok, try to upload file
             } else {
                 if (move_uploaded_file($_FILES["events_image"]["tmp_name"], $target_file)) {
-                    echo "Le fichier ". basename( $_FILES["events_image"]["name"]). " a bien été chargé.";
+                    echo "'image' ". basename( $_FILES["events_image"]["name"]). " a bien été chargée.";
                 } else {
-                    echo "Le fichier n'a pas été chargé correctement.";
+                    echo "L'image n'a pas été chargée correctement.";
                 }
             }
 
@@ -102,6 +102,7 @@ class EventController extends \W\Controller\Controller
                     $events_12to16 = isset($_POST['events_12to16']) ? $_POST['events_12to16'] : 0;
                     $events_16to25 = isset($_POST['events_16to25']) ? $_POST['events_16to25'] : 0;
                     $events_adults = isset($_POST['events_adults']) ? $_POST['events_adults'] : 0;
+
                     if (!empty($events_title) && !empty($events_description)) {
                         $event = $events_manager->update([
                             'events_title' => $events_title,
@@ -137,4 +138,5 @@ class EventController extends \W\Controller\Controller
             $event = $events_manager->find($events_id); //Récupere les données de l'article en question
             $this->show('event/view', ['event' => $event]);
         }
+
 }

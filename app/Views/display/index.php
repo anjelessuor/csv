@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Mise à jour']) ?>
+<?php $this->layout('layout-back', ['title' => 'Mise à jour']) ?>
 
 <?php $this->start('main_content'); ?>
 <div class="container">
