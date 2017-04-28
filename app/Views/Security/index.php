@@ -8,7 +8,7 @@
         <?php if ($w_user['user_status'] == 2) { ?>
         <a href="<?= $this->url('security_edit', ['id' => $w_user['user_id']]); ?>" class="btn btn-success">Mettre à jour l'admin</a>
         <?php } ?>
-        <a href="<?= $this->url('display_index') ?>" class="btn btn-success">Gestion des articles</a>
+        <a href="<?= $this->url('display_index') ?>" class="btn btn-success">Retour</a>
 
     </div>
     <div>
