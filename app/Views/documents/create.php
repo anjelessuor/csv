@@ -1,7 +1,7 @@
 <?php $this->layout('layout', ['title' => 'Ajouter un fichier au téléchargement']); ?>
 <?php $this->start('main_content'); ?>
 
-    <form method="POST" action="">
+    <form method="POST" action="" enctype="multipart/form-data">
         <div class="form-group">
             <label for="documents_name">Nom : </label>
             <input class="form-control" type="text" name="documents_name" id="documents_name">
