@@ -2,7 +2,9 @@
 <?php $this->start('main_content'); ?>
 
     <!-- Lien pour retour sur liste event -->
-    <a href="<?php echo $this->url('event_index') ?>">Retour à la liste des événements</a>
+    <div>
+        <a href="<?= $this->url('event_index'); ?>" class="btn btn-warning">Revenir à la liste</a>
+    </div>
 
     <form method="POST" action="" enctype="multipart/form-data">
         <div class="form-group">
@@ -11,7 +13,7 @@
         </div>
         <div class="form-group">
             <label for="events_description"> Description : </label>
-            <textarea class="form-control" name="events_description" id="events_description" value="<?php echo $event['events_description']?>"></textarea>
+            <input class="form-control" name="events_description" id="events_description" value="<?php echo $event['events_description']?>">
         </div>
         <div class="form-group">
             <label for="events_localization"> Lieu : </label>

@@ -1,17 +1,19 @@
 <?php $this->layout('layout', ['title' => 'Configuration générale']); ?>
 <?php $this->start('main_content'); ?>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Nom du site</th>
-            <th>Adresse</th>
-            <th>Téléphone</th>
-            <th>Email</th>
-            <th>Facebook</th>
-        </tr>
-    </thead>
-    <tbody>
+<a href="<?= $this->url('display_index') ?>" class="btn btn-primary">Retour</a><br/><br/>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nom du site</th>
+                <th>Adresse</th>
+                <th>Téléphone</th>
+                <th>Email</th>
+                <th>Facebook</th>
+            </tr>
+        </thead>
+        <tbody>
+
         <?php foreach ($config as $config) { ?>
         <tr>
             <td>

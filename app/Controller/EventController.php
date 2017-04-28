@@ -12,7 +12,7 @@ class EventController extends \W\Controller\Controller
     {
         // $this->allowTo('2'); //Instancie uniquement les admin a acceder à cette page
         $events_manager = new EventsModel(); //Instancie la classe pour générer mes articles en BDD
-        $events = $events_manager->findAll(); //Récupère tous les articles en bdd (SELECT * FROM articles)
+        $events = $events_manager->findAllByAge(); //Récupère tous les articles en bdd (SELECT * FROM articles)
         $this->show('event/index', ['event' => $events]); //Injecte la variable articles dans mma vue
     }
 
@@ -34,7 +34,7 @@ class EventController extends \W\Controller\Controller
 
             // Check file size
 
-            if ($_FILES["events_image"]["size"] > 500000000000) {
+            if ($_FILES["events_image"]["size"] > 50000000) {
                 echo "L'image est trop volumineuse.";
 
                 $uploadOk = 0;
@@ -58,8 +58,6 @@ class EventController extends \W\Controller\Controller
             }
 
             $events_image = $_FILES["events_image"]["name"];
-
-
             $events_3to5 = isset($_POST['events_3to5']) ? $_POST['events_3to5'] : 0;
             $events_6to12 = isset($_POST['events_6to12']) ? $_POST['events_6to12'] : 0;
             $events_12to16 = isset($_POST['events_12to16']) ? $_POST['events_12to16'] : 0;
@@ -81,7 +79,7 @@ class EventController extends \W\Controller\Controller
                 'events_16to25' => $events_16to25,
                 'events_adults' => $events_adults,
             ]);
-
+            $this->redirectToRoute('event_view', ['events_id' => $event['events_id']]);
         }
     }
         $this->show('event/create');
@@ -118,6 +116,7 @@ class EventController extends \W\Controller\Controller
                             'events_16to25' => $events_16to25,
                             'events_adults' => $events_adults,
                         ], $events_id); //Requête de mise à jour de l'évènement
+                        $this->redirectToRoute('event_view', ['events_id' => $event['events_id']]);
                     }
                 }
             $this->show('event/update', ['event' => $event]);
@@ -135,7 +134,7 @@ class EventController extends \W\Controller\Controller
         //Voir un événement seul
         public function view($events_id)
         {
-            $event_manager = new EventsModel();
+            $events_manager = new EventsModel();
             $event = $events_manager->find($events_id); //Récupere les données de l'article en question
             $this->show('event/view', ['event' => $event]);
         }

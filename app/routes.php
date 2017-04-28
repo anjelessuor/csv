@@ -4,6 +4,8 @@
 		['GET', '/', 'Default#home', 'default_home'],
 		['GET|POST', '/security/login', 'Security#login', 'security_login'],
 		['GET|POST', '/security/register', 'Security#register', 'security_register'],
+		// ['GET|POST', '/security/forget', 'Security#forget', 'security_forget'],
+
 		['GET|POST', '/security/edit/[i:id]', 'Security#edit', 'security_edit'],
 		['GET|POST', '/security/delete/[i:id]', 'Security#delete', 'security_delete'],
 		['GET|POST', '/security/view/[i:id]', 'Security#view', 'security_view'],
@@ -16,7 +18,7 @@
 		['GET|POST', '/event/create', 'Event#create', 'event_create'],
 		['GET|POST', '/event/delete/[i:events_id]', 'Event#delete', 'event_delete'],
 		['GET|POST', '/event/update/[i:events_id]', 'Event#update', 'event_update'],
-		['GET', '/event/[i:events_id]', 'Event#view', 'event_view'],
+		['GET', '/event/view/[i:events_id]', 'Event#view', 'event_view'],
 
 		['GET|POST', '/activities/index', 'Activities#index', 'activities_index'],
 		['GET|POST', '/activities/create', 'Activities#create', 'activities_create'],

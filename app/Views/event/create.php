@@ -39,6 +39,7 @@
                 <input type="checkbox" name="events_adults" value=""/> Adultes - Famille
             </label><br>
         </div>
-        <button class="btn btn-submit">Publier : </button>
+        <button class="btn btn-submit"> Valider </button>
+        <a href="<?= $this->url('event_index'); ?>" class="btn btn-warning">Revenir à la liste</a>
     </form>
 <?php $this->stop('main_content'); ?>
