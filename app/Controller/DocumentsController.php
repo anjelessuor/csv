@@ -24,7 +24,38 @@ class DocumentsController extends \W\Controller\Controller
         if(!empty($_POST)){ //Vérifie que le formulaire est posté
             $documents_name = $_POST['documents_name'];
             $documents_description = $_POST['documents_description'];
-            $documents_document = $_POST["documents_document"];
+
+
+            $target_dir = "uploads/documents/";
+            $target_file = $target_dir . basename($_FILES["documents_document"]["name"]);
+            $uploadOk = 1;
+            $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+
+            // Check file size
+
+            if ($_FILES["documents_document"]["size"] > 20000000000) {
+                echo "Le fichier est trop volumineux.";
+
+                $uploadOk = 0;
+            }
+            // Allow certain file formats
+            if($imageFileType != "pdf") {
+                echo "Seuls les fichiers au format PDF seront acceptés.";
+                $uploadOk = 0;
+            }
+            // Check if $uploadOk is set to 0 by an error
+            if ($uploadOk == 0) {
+                echo "Echec du chargement.";
+            // if everything is ok, try to upload file
+            } else {
+                if (move_uploaded_file($_FILES["documents_document"]["tmp_name"], $target_file)) {
+                    echo "Le fichier ". basename( $_FILES["documents_document"]["name"]). " a bien été chargé.";
+                } else {
+                    echo "Echec du chargement.";
+                }
+            }
+
+            $documents_document = $_FILES["documents_document"]["name"];
 
             //Requête sql pour insérer un document
             $documents_manager = new DocumentsModel(); //Instancier ma classe pour gérer mes articles en BDD
@@ -32,7 +63,7 @@ class DocumentsController extends \W\Controller\Controller
             $documents = $documents_manager->insert([
                 'documents_name' => $documents_name,
                 'documents_description' => $documents_description,
-                'documents_document' => $documents_document
+                'documents_document' => $_FILES["documents_document"]["name"]
             ]);
 
         }
@@ -40,7 +71,7 @@ class DocumentsController extends \W\Controller\Controller
         $this->show('documents/create');
     }
 
-        //Mofifier un fichier
+        //Mettre à jour un fichier
         public function update($documents_id)
         {
             // $this->allowTo('2');
@@ -49,20 +80,20 @@ class DocumentsController extends \W\Controller\Controller
                 if (!empty($_POST)) {
                     $documents_name = $_POST['documents_name'];
                     $documents_description = $_POST['documents_description'];
-                    $documents_document = $_POST["documents_document"];
+                    $documents_document = $_FILES["documents_document"]["name"];
 
-                    if (!empty($events_title) && !empty($events_description)) {
-                        $event = $events_manager->update([
+                    if (!empty($_POST)) {
+                        $documents = $documents_manager->update([
                             'documents_name' => $documents_name,
                             'documents_description' => $documents_description,
-                            'documents_document' => $documents_document
+                            'documents_document' => $_FILES["documents_document"]["name"]
                         ], $documents_id); //Requête de mise à jour
                     }
                 }
             $this->show('documents/update', ['documents' => $documents]);
         }
 
-        //Suppression d'un téléchargment
+        //Suppression d'un fichier
         public function delete($documents_id)
         {
             $documents_manager = new DocumentsModel();
@@ -70,7 +101,7 @@ class DocumentsController extends \W\Controller\Controller
             $this->redirectToRoute('documents_index'); //Après la suppression je redirige
         }
 
-        //Voir un événement seul
+        //Voir un fichier seul
         public function view($documents_id)
         {
             $documents_manager = new DocumentsModel();
@@ -78,18 +109,4 @@ class DocumentsController extends \W\Controller\Controller
             $this->show('documents/view', ['documents' => $documents]);
         }
 
-
-        // //Permet de remplir rapidement la BDD /!!!!!\ ta RACE quand tu fais /random ça rajoute 100 articles
-        // public function random()
-        // {
-        //     $faker = \Faker\Factory::create('fr_FR');
-        //     $article_manager = new ArticleModel();
-        //     for ($i = 0; $i < 100; $i++){
-        //         $article_manager->insert([
-        //             'title' => $faker->sentence(), //Générer une phrase aléatoire
-        //             'content' => $faker->realText(), //Générer texte aléatoire
-        //             'created_at' => $faker->dateTimeBetween('-1 year')->format('Y-m-d H:i:s') //Générer date aléatoire
-        //         ]);
-        //     }
-        // }
 }
