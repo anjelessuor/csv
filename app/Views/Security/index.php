@@ -5,7 +5,11 @@
     <div>
 
         <a href="<?= $this->url('security_register') ?>" class="btn btn-success">Ajouter un utilisateur</a>
-        <a href="<?= $this->url('security_index') ?>" class="btn btn-info">Voir tout</a>
+        <?php if ($w_user['user_status'] == 2) { ?>
+        <a href="<?= $this->url('security_edit', ['id' => $w_user['user_id']]); ?>" class="btn btn-success">Mettre à jour l'admin</a>
+        <?php } ?>
+        <a href="<?= $this->url('display_index') ?>" class="btn btn-success">Gestion des articles</a>
+
     </div>
     <div>
 
@@ -14,26 +18,32 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Titre</th>
-                <th>Description</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Adresse E-mail</th>
+                <th>Statut</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($users as $user) {  ?>
-                <tr>
+            <?php foreach ($users as $user) { ?>
+                <?php if ($user['user_status'] != 2) { ?>
+                    <tr>
+                        <td><?php echo $user['user_id']; ?></td>
+                        <td><?php echo $user['user_firstname']; ?></td>
+                        <td><?php echo $user['user_lastname']; ?></td>
+                        <td><?php echo $user['user_email']; ?></td>
+                        <td><?php if($user['user_status'] == 0){echo 'Utilisateur';} elseif ($user['user_status'] == 1){echo 'Administateur';}; ?></td>
+                        <td>
+                            <a href="<?= $this->url('security_edit', ['id' => $user['user_id']]); ?>" class="btn btn-primary">Modifier</a>
+                            <?php if($user['user_status'] != 2){ ?>
+                                <a href="<?= $this->url('security_delete', ['id' => $user['user_id']]); ?>" class="btn btn-danger">Supprimer</a>
+                                <?php } ?>
 
-                    <td><?php echo $user['user_id']; ?></td>
-                    <td><?php echo $user['user_firstname']; ?></td>
-                    <td><?php echo $user['user_lastname']; ?></td>
-                    <td><?php echo $user['user_email']; ?></td>
-                    <td><?php echo $user['user_status']; ?></td>
-                    <td>
-                        <a href="<?= $this->url('security_edit', ['id' => $user['user_id']]); ?>" class="btn btn-primary">Modifier</a>
-                        <a href="<?= $this->url('security_delete', ['id' => $user['user_id']]); ?>" class="btn btn-danger">Supprimer</a>
+                            </td>
+                        </tr>
 
-                    </td>
-                </tr>
+                <?php } ?>
                 <?php }  ?>
         </tbody>
     </table>

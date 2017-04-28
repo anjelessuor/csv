@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 27 Avril 2017 à 16:14
+-- Généré le :  Ven 28 Avril 2017 à 11:09
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  5.6.28
 
@@ -252,7 +252,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_firstname`, `user_lastname`, `user_email`, `user_password`, `user_status`) VALUES
-(11, 'fuck', 'php', 'fuckphp@sql.com', '$2y$10$DYERRaeZLiujvDlKClLoG.f/msqiBsugCWjnG8cVW8vQ6YoBYlkhC', 0);
+(11, 'fuck php', 'and javascript', 'fuckphp@sql2.com', '$2y$10$q/nNEJx/sxFy18uC47ID1e0N3APY1Jeng/USYMV/QkNHWpyLA37.q', 1),
+(13, 'Admin', 'Admin', 'Admin@admin.com', '$2y$10$qkmdEZDAY2w6PIsbxB/hSOMaym67M6n7./vKQqk5np2iOFJt9Nmpm', 2);
 
 --
 -- Index pour les tables exportées
@@ -326,7 +327,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `activities`
 --
 ALTER TABLE `activities`
-  MODIFY `activities_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `activities_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT pour la table `ages`
 --
@@ -351,7 +352,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT pour la table `holidays_activities`
 --
 ALTER TABLE `holidays_activities`
-  MODIFY `h_activities_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `h_activities_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `partners`
 --
@@ -366,12 +367,12 @@ ALTER TABLE `presentation`
 -- AUTO_INCREMENT pour la table `school_help`
 --
 ALTER TABLE `school_help`
-  MODIFY `school_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `school_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `user_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

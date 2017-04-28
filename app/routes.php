@@ -6,7 +6,10 @@
 		['GET|POST', '/security/register', 'Security#register', 'security_register'],
 		['GET|POST', '/security/edit/[i:id]', 'Security#edit', 'security_edit'],
 		['GET|POST', '/security/delete/[i:id]', 'Security#delete', 'security_delete'],
+		['GET|POST', '/security/view/[i:id]', 'Security#view', 'security_view'],
+		['GET', '/logout', 'Security#logout', 'security_logout'],
 		['GET|POST', '/security/index', 'Security#index', 'security_index'],
+
 
 
 		['GET|POST', '/event/index', 'Event#index', 'event_index'],
@@ -61,6 +64,8 @@
 		['GET|POST', '/documents/delete/[i:documents_id]', 'Documents#delete', 'documents_delete'],
 		['GET|POST', '/documents/update/[i:documents_id]', 'Documents#update', 'documents_update'],
 		['GET', '/documents/[i:documents_id]', 'Documents#view', 'documents_view'],
+
+		['GET|POST', '/display/index', 'Display#index', 'display_index'],
 
 
 

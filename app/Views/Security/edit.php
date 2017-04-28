@@ -7,7 +7,7 @@
     <form action="" method="POST">
         <div class="form-group">
             <label for="user_id"> ID utilisateur : </label>
-            <input id="user_id" name="user_id" class="form-control" value="<?php echo $users['user_id']; ?>">
+            <p><?php echo $users['user_id']; ?><p/>
         </div>
         <div class="form-group">
             <label for="user_firstname"> Prénom : </label>
@@ -22,13 +22,20 @@
             <input id="user_email" name="user_email" class="form-control" value="<?php echo $users['user_email']; ?>">
         </div>
         <div class="form-group">
-            <label for="user_status"> Nom : </label>
-            <input id="user_status" name="user_status" class="form-control" value="<?php if ($users['user_status'] == 0){'Utilisateur'
-            } else{'administrateur'}; ?>">
-            
+            <label for="user_password"> Mot de passe : </label>
+            <input id="user_password" name="user_password" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="user_status"> Status : </label>
+            <select class="" name="user_status">
+                <option name="user_status" value="0">Utilisateur</option>
+                <option name="user_status" value="1">Administrateur</option>
+            </select>
+
         </div>
 
         <button class="btn btn-submit"> Valider </button>
+        <a href="<?= $this->url('security_index'); ?>" class="btn btn-success">Revenir à la liste</a>
     </form>
 
 <?php $this->stop('main_content'); ?>
