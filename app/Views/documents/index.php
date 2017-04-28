@@ -8,7 +8,7 @@
             <tr>
                 <th>Nom</th>
                 <th>Description</th>
-                <th>Document</th>
+                <th>Lien</th>
             </tr>
         </thead>
         <tbody>

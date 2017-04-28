@@ -25,13 +25,13 @@
 		<div class="collapse navbar-collapse" id="main-menu">
 			<ul class="nav navbar-nav">
 				<li>
-					<a href="#">Accueil <i class="fa fa-home" aria-hidden="true"></i></a>
+					<a href="<?php echo $this->url('default_home'); ?>">Accueil <i class="fa fa-home" aria-hidden="true"></i></a>
 				</li>
 
 				<li class="dropdown">
-					<a data-toggle="dropdown" href="<?php echo $this->url('section_qui-sommes-nous'); ?>">Qui sommes-nous <i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
+					<a data-toggle="dropdown" href="#">Qui sommes-nous <i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu jqueryFadeIn">
-						<li><a href="">Présentation</a></li>
+						<li><a href="<?php echo $this->url('section_qui-sommes-nous'); ?>">Présentation</a></li>
 						<li><a href="#">Nos valeurs</a></li>
 						<li><a href="#">Nos missions</a></li>
 						<li><a href="#">Contact</a></li>
@@ -40,10 +40,10 @@
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a data-toggle="dropdown" href="<?php echo $this->url('section_enfance-3-5'); ?>">Enfance 3-5 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<a data-toggle="dropdown" href="#">Enfance 3-5 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu jqueryFadeIn">
 
-						<li><a href="#">Présentation</a></li>
+						<li><a href="<?php echo $this->url('section_enfance-3-5'); ?>">Présentation</a></li>
 						<li class="dropdown-submenu">
 							<a data-toggle="dropdown"tabindex="-1" href="#">Activités <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
 							<ul class="dropdown-menu">
@@ -55,10 +55,10 @@
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a data-toggle="dropdown" href="<?php echo $this->url('section_enfance-6-12'); ?>">Enfance 6-12 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<a data-toggle="dropdown" href="#">Enfance 6-12 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu jqueryFadeIn">
 
-						<li><a href="#">Présentation</a></li>
+						<li><a href="<?php echo $this->url('section_enfance-6-12'); ?>">Présentation</a></li>
 						<li class="dropdown-submenu">
 							<a data-toggle="dropdown"tabindex="-1" href="#">Activités <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
 							<ul class="dropdown-menu">
@@ -70,10 +70,10 @@
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a data-toggle="dropdown" href="<?php echo $this->url('section_enfance-12-16'); ?>">Enfance 12-16 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<a data-toggle="dropdown" href="#">Enfance 12-16 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu jqueryFadeIn">
 
-						<li><a href="#">Présentation</a></li>
+						<li><a href="<?php echo $this->url('section_enfance-12-16'); ?>">Présentation</a></li>
 						<li class="dropdown-submenu">
 							<a data-toggle="dropdown"tabindex="-1" href="#">Activités <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
 							<ul class="dropdown-menu">
@@ -85,10 +85,10 @@
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a data-toggle="dropdown" href="<?php echo $this->url('section_jeunes'); ?>">Jeunes <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<a data-toggle="dropdown" href="#">Jeunes <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu jqueryFadeIn">
 
-						<li><a href="#">Présentation</a></li>
+						<li><a href="<?php echo $this->url('section_jeunes'); ?>">Présentation</a></li>
 						<li class="dropdown-submenu">
 							<a data-toggle="dropdown"tabindex="-1" href="#">Activités <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
 							<ul class="dropdown-menu">
@@ -100,9 +100,9 @@
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a data-toggle="dropdown" href="<?php echo $this->url('section_adultes-et-famille'); ?>">Adultes et famille <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+					<a data-toggle="dropdown" href="#">Adultes et famille <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu jqueryFadeIn">
-						<li><a href="#">Présentation</a></li>
+						<li><a href="<?php echo $this->url('section_adultes-et-famille'); ?>">Présentation</a></li>
 						<li><a href="#">Lundi</a></li>
 						<li><a href="#">Mardi</a></li>
 						<li><a href="#">Mercredi</a></li>
@@ -111,7 +111,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#">Evénements <id=events><i class="fa fa-exclamation" aria-hidden="true"></i></a>
+					<a href="<?php echo $this->url('section_events'); ?>">Evénements <id=events><i class="fa fa-exclamation" aria-hidden="true"></i></a>
 				</li>
 			</nav>
 <!--Navbar End-->
