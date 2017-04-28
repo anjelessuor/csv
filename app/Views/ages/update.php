@@ -8,10 +8,14 @@
     <div class="form-group">
         <label for="ages_name">Nom de la catégorie d'age :</label>
         <input class="form-control" type="text" name="ages_name" id="ages_name" value="<?php echo $ages['ages_name'] ?>">
-    </div>        
+    </div>
     <div class="form-group">
         <label for="ages_description">Description :</label>
+
+        <textarea class="form-control" name="ages_description" id="ages_description" value="<?php echo $age['ages_description'] ?>"></textarea>
+
         <input class="form-control" type="text" name="ages_description" id="ages_description" value="<?php echo $ages['ages_description'] ?>">
+
     </div>
     <button class="btn btn-submit">Modifier</div>
 </form>
