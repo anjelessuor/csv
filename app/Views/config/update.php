@@ -25,7 +25,7 @@
             <label for="config_facebook"> Facebook : </label>
             <input type="url" name="config_facebook" id="config_facebook" value="<?php echo $config['config_facebook'] ?>">
         </div>
-        <button class="btn btn-submit">Modifier : </div>
+        <button class="btn btn-submit">Modifier </div>
     </form>
 
 <?php $this->stop('main_content'); ?>

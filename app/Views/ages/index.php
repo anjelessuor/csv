@@ -1,4 +1,4 @@
-<?php $this->layout('layout', ['title' => 'Liste des événements']); ?>
+<?php $this->layout('layout', ['title' => 'Liste des ages']); ?>
 <?php $this->start('main_content'); ?>
 
   <table class="table table-striped">
