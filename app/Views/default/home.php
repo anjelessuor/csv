@@ -27,15 +27,12 @@
 	<div class="carousel-inner">
 		<?php foreach($events as $key => $event) : ?>
 		<div class="item slides <?php if ($key == 0) { echo 'active' ; } ?>">
-			<div style="background-image:url(../public/uploads/events/<?php echo $event['events_image']; ?>);" class="slide-1"></div>
+			<div style="background-image:url(../public/uploads/eventsImage/<?php echo $event['events_image']; ?>);" class="slide-1"></div>
 			<div class="hero">
 				<hgroup>
 					<h1>
 						<?php echo $event['events_title']; ?>
 					</h1>
-					<p>
-						<?php echo $event['events_description']; ?>
-					</p>
 					<p>
 						<?php echo $event['events_localization']; ?>
 					</p>
