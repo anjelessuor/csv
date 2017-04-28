@@ -136,4 +136,41 @@ class SecurityController extends Controller
         $authentification_manager->logUserOut(); //Déconnecte l'usager connecté
         $this->redirectToRoute('security_login');
     }
+
+    //Mot de passe oublié
+    public function forget()
+    {
+
+        if (!empty($_POST) && isset($_POST['forgetSend'])) { // On vérifie le 1er formulaire qui doit envoyer le mail avec un lien pour redéfinir le password
+            $user_email = $_POST['user_email'];
+            if ($users = checkUserByEmail($user_email)) {
+                // Créer un token_forget et date_forget dans la bdd
+                $token_forget = md5(time() . uniqid()); // Le token
+                // echo strtotime(date('Y-m-d h:i:s') . ' +1 month');
+                $date_forget = date('Y-m-d h:i:s', time() + 3600 * 24); // Date d'expiration du token
+                // J'envoie le token et sa date d'expiration dans la bdd pour l'utilisateur
+                $dbh->query('UPDATE users SET token_forget = "'.$token_forget.'", date_forget = "'.$date_forget.'" WHERE user_id = '.$users);
+                echo "Voici le lien vous permettant de redéfinir votre mot de passe : <a href='http://localhost/cvs/Security/forget.php?token=".$token_forget."'>http://localhost/cvs/Security/forget.php?token=".$token_forget."</a>";
+            } else {
+                echo 'L\'email n\'existe pas';
+            }
+            $this->show('Security/forget');
+        }
+
+
+        if (!empty($_POST) && isset($_POST['forgetPassword'])) {
+            $token = $_GET['token'];
+            $user_password = $_POST['user_password'];
+            if ($user_id = isValidToken($token)) {
+                if ($user_password == $cfpassword) { // Je vérifie que les deux champs mot de passe soit identique
+                    changeUserPassword($user_id, $user_password);
+                    // Renvoyer un mail
+                }
+            } else {
+                echo "Le token a expiré ou n'existe pas.";
+            }
+        }
+
+    }
+
 }
