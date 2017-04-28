@@ -29,7 +29,7 @@
 
 		['GET|POST', '/ages/index', 'Ages#index', 'ages_index'],
 		['GET|POST', '/ages/update/[i:ages_id]', 'Ages#update', 'ages_update'],
-		['GET', '/ages/views', 'Ages#views', 'ages_views'],
+		['GET', '/ages/view', 'Ages#view', 'ages_view'],
 
 		['GET|POST', '/school/index', 'School#index', 'school_index'],
 		['GET|POST', '/school/create', 'School#create', 'school_create'],
@@ -45,8 +45,6 @@
 		['GET|POST', '/section/adultes-et-famille', 'Default#family', 'section_adultes-et-famille'],
 		['GET|POST', '/section/events', 'Default#events', 'section_events'],
 
-		
-
 		['GET|POST', '/partners/index', 'Partners#index', 'partners_index'],
 		['GET|POST', '/partners/create', 'Partners#create', 'partners_create'],
 		['GET|POST', '/partners/delete/[i:partners_id]', 'Partners#delete', 'partners_delete'],
@@ -58,5 +56,9 @@
 		['GET|POST', '/documents/delete/[i:documents_id]', 'Documents#delete', 'documents_delete'],
 		['GET|POST', '/documents/update/[i:documents_id]', 'Documents#update', 'documents_update'],
 		['GET', '/documents/[i:documents_id]', 'Documents#view', 'documents_view'],
+
+		['GET|POST', '/presentation/index', 'Presentation#index', 'presentation_index'],
+		['GET|POST', '/presentation/update/[i:presentation_id]', 'Presentation#update', 'presentation_update'],
+		['GET', '/presentation/views', 'Presentation#views', 'presentation_views'],
 
 	);
