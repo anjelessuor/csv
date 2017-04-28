@@ -2,6 +2,10 @@
 
 <?php $this->start('main_content'); ?>
 
+    <div>
+        <a href="<?= $this->url('activities_index'); ?>" class="btn btn-warning">Revenir à la liste</a>
+    </div>
+    
     <form action="" method="POST">
         <div class="form-group">
             <label for="activities_title"> Activité : </label>
@@ -21,7 +25,7 @@
         </div>
 
         <button class="btn btn-submit"> Valider </button>
-        <a href="<?= $this->url('activities_index'); ?>" class="btn btn-success">Revenir à la liste des activités</a>
+
     </form>
 
 <?php $this->stop('main_content'); ?>
