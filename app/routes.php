@@ -15,7 +15,7 @@
 		['GET|POST', '/event/create', 'Event#create', 'event_create'],
 		['GET|POST', '/event/delete/[i:events_id]', 'Event#delete', 'event_delete'],
 		['GET|POST', '/event/update/[i:events_id]', 'Event#update', 'event_update'],
-		['GET', '/event/[i:events_id]', 'Event#view', 'event_view'],
+		['GET', '/event/view/[i:events_id]', 'Event#view', 'event_view'],
 
 		['GET|POST', '/activities/index', 'Activities#index', 'activities_index'],
 		['GET|POST', '/activities/create', 'Activities#create', 'activities_create'],

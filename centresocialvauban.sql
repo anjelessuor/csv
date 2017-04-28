@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 28 Avril 2017 à 11:09
+-- Généré le :  Ven 28 Avril 2017 à 15:45
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  5.6.28
 
@@ -42,7 +42,7 @@ CREATE TABLE `activities` (
 --
 
 INSERT INTO `activities` (`activities_id`, `activities_title`, `activities_description`, `activities_3to5`, `activities_6to12`, `activities_12to16`, `activities_16to25`, `activities_adults`) VALUES
-(1, 'Mercerdi', 'Des animateurs qualifiés proposent un large choix d’activités : grands jeux (plein air ou intérieur), des projets et découverte nature, des activités manuelles : manipulation de la pâte à sel, création de masque, de porte clé et de cadre, peinture et décoration d’intérieur, etc. Mais aussi, des sorties (art, culture et loisirs) seront organisées sur Lille et ses environs.\r\nCentre de la petite enfance au 12 Place de l’Arbonnoise.\r\nL’accueil du Mercredi se fait de 8h30 à 17h30', 1, 0, 0, 0, 0),
+(1, 'Mercerdi', 'Des animateurs qualifiés proposent un large choix d’activités : grands jeux (plein air ou intérieur), des projets et découverte nature, des activités manuelles : manipulation de la pâte à sel, création de masque, de porte clé et de cadre, peinture et décoration d’intérieur, etc. Mais aussi, des sorties (art, culture et loisirs) seront organisées sur Lille et ses environs.Centre de la petite enfance au 12 Place de l’Arbonnoise.L’accueil du Mercredi se fait de 8h30 à 17h30', 0, 1, 1, 1, 1),
 (2, 'Mercredi', 'Comme pour le secteur Petite Enfance, des animateurs qualifiés proposent un large choix d’activités : grands jeux (plein air ou intérieur), des projets et découverte nature, des activités manuelles : manipulation d’argile, peinture et décoration d’intérieur, création d’accessoires sportifs, etc. Mais aussi, des sorties (art, culture et loisirs) sur Lille et ses environs.\r\nCentre social de Vauban-Esquermes au 77 rue Philippe-Laurent Roland à Lille.\r\nL’accueil du Mercredi se fait de 8h30 à 17h30', 0, 1, 0, 0, 0),
 (3, 'Lundi', 'l’association Vivre Ensemble à Esquermes vous propose un Atelier voix de 19h à 21h.', 0, 0, 0, 0, 1),
 (4, 'Mardi', 'la référente famille met en place des permanences administratives au sein du centre social de 9h à 12h', 0, 0, 0, 0, 1),
@@ -139,12 +139,15 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`events_id`, `events_title`, `events_description`, `events_localization`, `events_hours`, `events_image`, `events_3to5`, `events_6to12`, `events_12to16`, `events_16to25`, `events_adults`) VALUES
-(2, 'coucou', 'fs', '', '', '', 0, 0, 0, 0, 0),
-(3, 'steven', 'e', 'e', 'e', 'e', 0, 0, 0, 0, 0),
-(4, 'rrrr', 'rrrr', 'rrr', 'rrr', 'rrrr', 0, 0, 0, 0, 0),
-(5, 's', 's', 's', 'sss', 's', 0, 0, 0, 0, 0),
-(6, 'r', 'r', 'r', 'r', 'r', 0, 0, 0, 0, 0),
-(7, 'e', 'e', 'e', 'e', 'e', 0, 0, 0, 0, 0);
+(2, 'coucou bbbbbaaaaa', 'hqklaQSHDEKJHVBDFKLJNBMPDGKJSK', 'dfvbghn,jk', 'qsdfgbv,nj;', '', 0, 0, 0, 0, 0),
+(3, 'steven', 'e', 'e', 'e', 'e', 0, 1, 0, 0, 0),
+(4, 'rrrr', 'rrrr', 'rrr', 'rrr', 'rrrr', 0, 0, 1, 0, 0),
+(5, 's', 's', 's', 'sss', 's', 0, 0, 0, 1, 0),
+(6, 'r', 'r', 'r', 'r', 'r', 0, 0, 0, 0, 1),
+(7, 'e', 'e', 'e', 'e', 'e', 0, 0, 0, 0, 1),
+(8, '', '', '', '', '', 0, 0, 0, 0, 0),
+(9, 'aaaaaaaaaaaaa', 'aaaaaaaaaaaaaa', 'aaaaaaaaaaaa', 'aaaaaaaaaaaaa', '', 0, 0, 0, 0, 0),
+(10, 'ffffffffffff', 'ffffffffffff', 'fffffffffffff', 'ffffffffffffff', '', 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -347,7 +350,7 @@ ALTER TABLE `documents`
 -- AUTO_INCREMENT pour la table `events`
 --
 ALTER TABLE `events`
-  MODIFY `events_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `events_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT pour la table `holidays_activities`
 --
