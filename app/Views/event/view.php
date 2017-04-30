@@ -1,7 +1,11 @@
-<?php $this->layout('layout', ['title' => 'Accueil']) ?>
+<?php $this->layout('layout-back', ['title' => 'Accueil']) ?>
 
 <?php $this->start('main_content') ?>
 
+<br>
+<div class="container">
+    <div class="row">
+       <div class="col-xs-11">
 
 <div>
     <a href="<?= $this->url('event_index'); ?>" class="btn btn-warning">Revenir à la liste</a>
@@ -52,6 +56,7 @@
         <a href="<?= $this->url('event_index'); ?>" class="btn btn-warning">Revenir à la liste</a>
 
     </div>
+</div>
 </div>
 
 

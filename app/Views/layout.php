@@ -10,7 +10,11 @@
 	<style>@import url('https://fonts.googleapis.com/css?family=Lato');</style>
 </head>
 	<body>
+
+		
+
 <!--Navbar-->
+
 		<nav class="navbar">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
@@ -121,20 +125,17 @@
 			<?= $this->section('main_content') ?>
 		</section>
 <!--Section field END-->
-
-
-	</div>
+	
 <!--Footer-->
-		<footer>
-			<div class="container-fluid">
-				<div class="row">
-					<p> Copyright 2017 </p>
-				</div>
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-md-12">
+				<p> Copyright 2017 - Rising Goone Squad </p>
 			</div>
-
-
-			</div>
-		</footer>
+		</div>
+	</div>
+</footer>			
 <!--Footer END-->
 
 <!-- SCRIPTS -->
