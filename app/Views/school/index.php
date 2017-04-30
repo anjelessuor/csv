@@ -1,6 +1,11 @@
-<?php $this->layout('layout', ['title' => 'Liste des activités']) ?>
+<?php $this->layout('layout-back', ['title' => 'Liste des activités']) ?>
 
 <?php $this->start('main_content'); ?>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-11">
+            <div>
 
     <div>
 
@@ -41,4 +46,11 @@
                 <?php }  ?>
         </tbody>
     </table>
+<!-- Lien pour retour  -->
+<div class="container">
+    <div class="row">
+    <a href="<?php echo $this->url('display_index') ?>" class="btn btn-success">Retour</a>
+    </div>    
+</div>
+
 <?php $this->stop('main_content'); ?>

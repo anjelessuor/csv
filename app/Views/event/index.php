@@ -1,5 +1,10 @@
-<?php $this->layout('layout', ['title' => 'Liste des événements']); ?>
+<?php $this->layout('layout-back', ['title' => 'Liste des événements']); ?>
 <?php $this->start('main_content'); ?>
+<br>
+<div class="container">
+    <div class="row">
+       <div class="col-xs-11">
+            
     <div>
         <a href="<?= $this->url('display_index') ?>" class="btn btn-warning">Retour</a>
         <a href="<?= $this->url('event_create') ?>" class="btn btn-success">Ajouter un événement </a>

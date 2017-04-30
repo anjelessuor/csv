@@ -1,6 +1,6 @@
-<?php $this->layout('layout', ['title' => $school['school_title']]); ?>
+<?php $this->layout('layout-back', ['title' => $school['school_title']]); ?>
 <?php $this->start('main_content'); ?>
-
+<br>
     <div>
         <a href="<?= $this->url('school_index'); ?>">Revenir à la liste</a>
     </div>

@@ -1,10 +1,16 @@
-<?php $this->layout('layout', ['title' => 'Modifier un événement' .$event['events_title']]); ?>
+<?php $this->layout('layout-back', ['title' => 'Modifier un événement' .$event['events_title']]); ?>
 <?php $this->start('main_content'); ?>
+
+<br>
+<div class="container">
+    <div class="row">
+       <div class="col-xs-11">
 
     <!-- Lien pour retour sur liste event -->
     <div>
         <a href="<?= $this->url('event_index'); ?>" class="btn btn-warning">Revenir à la liste</a>
     </div>
+    <br>
 
     <form method="POST" action="" enctype="multipart/form-data">
         <div class="form-group">
@@ -45,7 +51,7 @@
             </label><br>
         </div>
 
-        <button class="btn btn-submit">Modifier : </div>
+        <button class="btn btn-submit">Modifier</div>
     </form>
 
 <?php $this->stop('main_content'); ?>
