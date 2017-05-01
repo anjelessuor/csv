@@ -32,7 +32,7 @@
     </form>
 <br>
 <div>
-<a href="<?= $this->url('h_activities_index'); ?>" class="btn btn-success">Revenir à la liste</a>
+<a href="<?= $this->url('h_activities_index'); ?>" class="btn btn-warning">Revenir à la liste</a>
 </div>
 
 

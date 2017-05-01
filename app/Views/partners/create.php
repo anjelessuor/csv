@@ -2,15 +2,18 @@
 
 <?php $this->start('main_content'); ?>
 
-<!--Bootstrap for Form-->
+<!--Startlayout-->
+<br>
 <div class="container">
     <div class="row">
-        <div class="col-xs-2"></div>
-            <div class="col-xs-8">
+        <div class="col-xs-11">
+            <div>
+            <!--END of Startlayout-->
 
 <!--Return Button-->
-            <a href="<?php echo $this->url('partners_index') ?>" class="btn btn-primary btn-block">Retour à la liste des partenaires</a>
+            <a href="<?php echo $this->url('partners_index') ?>" class="btn btn-warning">Retour</a><br>
 <!--Return Button-->
+<br>
     <form method="POST" action="" enctype="multipart/form-data">
         <div class="form-group">
             <label for="partners_name">Nom : </label>

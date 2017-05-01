@@ -2,11 +2,24 @@
 <?php $this->start('main_content'); ?>
 
 
+<!--Startlayout-->
+<br>
 <div class="container">
     <div class="row">
         <div class="col-xs-11">
             <div>
-                <a href="<?= $this->url('partners_create') ?>" class="btn btn-primary btn-block"> Ajouter un partenaire </a>
+            <!--END of Startlayout-->
+
+<!--Return-Button-block  -->
+<div class="container">
+    <div class="row">
+        <a href="<?php echo $this->url('display_index') ?>" class="btn btn-warning">Retour</a>
+    </div>    
+</div>
+
+<!--END of Return-Button-block  -->
+
+                <a href="<?= $this->url('partners_create') ?>" class="btn btn-primary"> Ajouter un partenaire </a>
             </div>
                 <table class="table table-striped">
                     <thead>
@@ -37,12 +50,5 @@
    </table>
 </div>
   </div>  
-
-<!-- Lien pour retour  -->
-<div class="container">
-    <div class="row">
-    <a href="<?php echo $this->url('display_index') ?>" class="btn btn-success btn-block">Retour</a>
-    </div>    
-</div>
 
 <?php $this->stop('main_content'); ?>
