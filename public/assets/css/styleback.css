@@ -1,11 +1,44 @@
 html,
 body {
     font-family: 'Lato', sans-serif;
-    color: black;
+    color: white;
+    padding-top: 70px;
+}
+.btn.display{
+    width: 200px;
+}
+.btn{
+    width: 100px;
 }
 
+.table-hover>tbody>tr:hover{
+    background-color: #3A6073;
+}
+.action{
+    width: 10%;
+}
+.id{
+    width: 10%;
+}
+.title{
+    width: 10%;
+}
+.list-content{
+    width: 70%;
+}
+
+textarea.form-control {
+    height: 150px;
+}
+.partners_logo{
+    width: 5em;
+}
 .container {
-    width: 100%;
+    padding: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 a {
@@ -33,7 +66,7 @@ body {
   background:     -ms-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* IE10 */
   background:      -o-linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* Opera 11.10+ */
   background:         linear-gradient(90deg, #16222A 10%, #3A6073 90%); /* W3C */
-        
+
 }
 
 .nav2 {
@@ -90,7 +123,7 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   line-height:70px;
     top:25%;
   left:25%;
-  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .4s;  
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .4s;
 }
   .drop4 {
   width:60%;
@@ -103,7 +136,7 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   line-height:70px;
   top:25%;
   left:25%;
-  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .6s;  
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .6s;
 }
 .drop5 {
   width:60%;
@@ -116,7 +149,7 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   line-height:70px;
   top:25%;
   left:25%;
-  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .8s;  
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .8s;
 }
 .drop6 {
   width:60%;
@@ -129,7 +162,7 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
   line-height:70px;
   top:25%;
   left:25%;
-  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) 1.0s;  
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) 1.0s;
 }
 .mask2 {
   top:15px;

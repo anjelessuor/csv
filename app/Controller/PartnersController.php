@@ -26,7 +26,7 @@ class PartnersController extends \W\Controller\Controller
             $partners_description = $_POST['partners_description'];
             $partners_link = $_POST['partners_link'];
 
-            $target_dir = "uploads/partners";
+            $target_dir = "uploads/partners/";
             $target_file = $target_dir . basename($_FILES["partners_image"]["name"]);
             $uploadOk = 1;
             $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
@@ -64,32 +64,33 @@ class PartnersController extends \W\Controller\Controller
                 'partners_description' => $partners_description,
                 'partners_image' => $_FILES["partners_image"]["name"],
                 'partners_link' => $partners_link,
-                
-            ]);
 
+            ]);
+            $this->redirectToRoute('partners_view', ['id' => $partners['partners_id']]);
         }
     }
         $this->show('partners/create');
     }
 
         //Mofifier un partenaire
-        public function update($partners_id)
+        public function update($id)
         {
             // $this->allowTo('2');
             $partners_manager = new PartnersModel();
-            $partners = $partners_manager->find($partners_id);
+            $partners = $partners_manager->find($id);
                 if (!empty($_POST)) {
                     $partners_name = $_POST['partners_name'];
                     $partners_description = $_POST['partners_description'];
                     $partners_image = $_FILES["partners_image"]["name"];
                     $partners_link = $_POST['partners_link'];
-                    if (!empty($_POST)) {
+                    if (!empty($partners_name) || !empty($partners_description)) {
                         $partners = $partners_manager->update([
                             'partners_name' => $partners_name,
                             'partners_description' => $partners_description,
                             'partners_image' => $_FILES["partners_image"]["name"],
                             'partners_link' => $partners_link,
-                        ], $partners_id); //Requête de mise à jour du partenaire
+                        ], $id); //Requête de mise à jour du partenaire
+                        $this->redirectToRoute('partners_view', ['id' => $partners['partners_id']]);
                     }
                 }
             $this->show('partners/update', ['partners' => $partners]);
