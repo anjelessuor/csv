@@ -1,5 +1,24 @@
-<?php $this->layout('layout', ['title' => 'Ajouter un fichier au téléchargement']); ?>
+<?php $this->layout('layout-back', ['title' => 'Ajouter un fichier au téléchargement']); ?>
 <?php $this->start('main_content'); ?>
+
+<!--Startlayout-->
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-11">
+            <div>
+            <!--END of Startlayout-->
+
+
+<!--Return-Button-block  -->
+<div class="container">
+    <div class="row">
+        <a href="<?php echo $this->url('documents_index') ?>" class="btn btn-warning">Retour</a>
+    </div>    
+</div>
+<br>
+<!--END of Return-Button-block  -->
+
 
     <form method="POST" action="" enctype="multipart/form-data">
         <div class="form-group">
@@ -17,5 +36,7 @@
 
         <button class="btn btn-submit">Publier : </button>
     </form>
-    <a href="<?php echo $this->url('documents_index') ?>">Retour à la liste des documents</a>
+<br>
+    
+
 <?php $this->stop('main_content'); ?>

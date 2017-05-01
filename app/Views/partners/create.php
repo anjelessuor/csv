@@ -1,6 +1,19 @@
-<?php $this->layout('layout', ['title' => 'Ajout d\'un partenaire']); ?>
+<?php $this->layout('layout-back', ['title' => 'Ajout d\'un partenaire']); ?>
+
 <?php $this->start('main_content'); ?>
 
+<!--Startlayout-->
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-11">
+            <div>
+            <!--END of Startlayout-->
+
+<!--Return Button-->
+            <a href="<?php echo $this->url('partners_index') ?>" class="btn btn-warning">Retour</a><br>
+<!--Return Button-->
+<br>
     <form method="POST" action="" enctype="multipart/form-data">
         <div class="form-group">
             <label for="partners_name">Nom : </label>
@@ -20,4 +33,6 @@
         </div>
         <button class="btn btn-submit">Publier : </button>
     </form>
+            
+    </div>
 <?php $this->stop('main_content'); ?>

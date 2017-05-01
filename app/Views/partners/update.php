@@ -1,8 +1,24 @@
-<?php $this->layout('layout', ['title' => 'Modifier un partnaire' .$partners['partners_name']]); ?>
+<?php $this->layout('layout-back', ['title' => 'Modifier un partnaire' .$partners['partners_name']]); ?>
+
 <?php $this->start('main_content'); ?>
 
-    <!-- Lien pour retour sur liste event -->
-    <a href="<?php echo $this->url('partners_index') ?>">Retour à la liste des partenaires</a>
+<!--Startlayout-->
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-11">
+            <div>
+            <!--END of Startlayout-->
+
+
+<!--Return-Button-block  -->
+<div class="container">
+    <div class="row">
+        <a href="<?php echo $this->url('partners_index') ?>" class="btn btn-warning">Retour</a>
+    </div>    
+</div>
+<br>
+<!--END of Return-Button-block  -->
 
     <form method="POST" action="" enctype="multipart/form-data">
         <div class="form-group">
@@ -21,7 +37,12 @@
             <label for="partners_link">Link : </label>
             <textarea class="form-control" name="partners_link" id="partners_link" value="<?php echo $partners['partners_link']?>"> </textarea>
         </div>
-        <button class="btn btn-submit">Modifier : </div>
+        <button class="btn btn-submit">Modifier </div>
     </form>
+    </div>
+        <div class="col-xs-2"></div>
+        </div>
+</div>
+
 
 <?php $this->stop('main_content'); ?>

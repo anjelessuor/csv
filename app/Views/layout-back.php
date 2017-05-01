@@ -11,39 +11,36 @@
 </head>
 	<body>
 
+
 <!--Navbar Backoffice-->	
 
-  <div class="nav2">
-  <div class="drop1"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-user fa-2x"></i></a></div>
-  <div class="drop2"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-graduation-cap fa-2x"></i></a></div>
-  <div class="drop3"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-code fa-2x"></i></a></div>
-  <div class="drop4"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-envelope-o fa-2x"></i></a></div>
-  <div class="drop5"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-envelope-o fa-2x"></i></a></div>
-  <div class="drop6"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-envelope-o fa-2x"></i></a></div>
-  <div class="mask2"><i class="fa fa-cogs fa-3x"></i></div>
-    
+<div class="nav2">
+	<div class="drop1"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
+	<div class="drop2"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
+	<div class="drop3"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
+	<div class="drop4"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
+	<div class="drop5"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
+	<div class="drop6"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
+	<div class="mask2"><i class="fa fa-cogs fa-3x"></i></div>
 </div>
 <!--Navbar End-->
 
 <!--Section field-->
-		<section>
-			<?= $this->section('main_content') ?>
-		</section>
+			<section>
+				<?= $this->section('main_content') ?>
+			</section>
 <!--Section field END-->
 
-
-	</div>
 <!--Footer-->
-		<footer>
-			<div class="container-fluid">
-				<div class="row">
-					<p> Copyright 2017 </p>
-				</div>
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-md-12">
+				<p> Copyright 2017 - Rising Goone Squad </p>
 			</div>
-
-
-			</div>
-		</footer>
+		</div>
+	</div>
+</footer>			
 <!--Footer END-->
 
 <!-- SCRIPTS -->
