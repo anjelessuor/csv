@@ -2,10 +2,6 @@
 
 <?php $this->start('main_content') ?>
 
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-12">
