@@ -2,11 +2,14 @@
 <?php $this->layout('layout-back', ['title' => 'Créer un accompagnement']); ?>
 
 <?php $this->start('main_content'); ?>
+<!--Startlayout-->
 <br>
 <div class="container">
     <div class="row">
         <div class="col-xs-11">
             <div>
+            <!--END of Startlayout-->
+
 
     <form action="" method="POST">
 
@@ -28,7 +31,7 @@
         </div>
 
         <button class="btn btn-submit"> Valider </button><br><br>
-        <a href="<?= $this->url('school_index'); ?>" class="btn btn-success">Revenir à la liste</a>
+        <a href="<?= $this->url('school_index'); ?>" class="btn btn-warning">Retour</a>
     </form>
 
 <?php $this->stop('main_content'); ?>

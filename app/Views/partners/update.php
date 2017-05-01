@@ -2,13 +2,23 @@
 
 <?php $this->start('main_content'); ?>
 
-
+<!--Startlayout-->
+<br>
 <div class="container">
     <div class="row">
-        <div class="col-xs-8">
+        <div class="col-xs-11">
+            <div>
+            <!--END of Startlayout-->
 
-    <!-- Lien pour retour sur liste event -->
-    <a href="<?php echo $this->url('partners_index') ?>" class="btn btn-primary btn-block">Retour à la liste des partenaires</a>
+
+<!--Return-Button-block  -->
+<div class="container">
+    <div class="row">
+        <a href="<?php echo $this->url('partners_index') ?>" class="btn btn-warning">Retour</a>
+    </div>    
+</div>
+<br>
+<!--END of Return-Button-block  -->
 
     <form method="POST" action="" enctype="multipart/form-data">
         <div class="form-group">
