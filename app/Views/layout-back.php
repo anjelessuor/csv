@@ -34,13 +34,8 @@
 
 <!--Footer-->
 <footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-6 col-md-12">
-				<p> Copyright 2017 - Rising Goone Squad </p>
-			</div>
-		</div>
-	</div>
+	
+		<p> Copyright 2017 - Rising Goone Squad </p>
 </footer>			
 <!--Footer END-->
 
@@ -48,5 +43,11 @@
 	<script type="text/javascript" src="<?= $this->assetUrl('js/jQuery-3.1.1.min.js'); ?>"></script>
 	<script type="text/javascript" src="<?= $this->assetUrl('js/bootstrap.min.js'); ?>"></script>
 	<script type="text/javascript" src="<?= $this->assetUrl('js/appback.js'); ?>"></script>
-</body>
+
+
+
+	</body>
 </html>
+
+
+
