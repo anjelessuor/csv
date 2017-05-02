@@ -39,7 +39,7 @@
 			<li><a href="#0">Nos Valeur</a></li>
 			<li><a href="#0">Nos Mission</a></li>
 			<li><a href="#0">Nos Partenaires</a></li>
-			<li><a href="#">Contact</a></li>
+			<li><a href="#0">Contact</a></li>
 
 			<li class="cd-label">next Seperate</li>
 
@@ -69,7 +69,7 @@
 
 <!--Section field-->
 
-<div class="container">
+<div class="container-fluid">
 				<div class="row">
 					<div class="col-xs-12">
 						<section>
