@@ -5,7 +5,8 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-4">
-            <a href="" class="btn btn-warning"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Retour</a>
+            <a href="<?= $this->url('default_home'); ?>" class="btn btn-warning display"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Retour</a><br/><br/>
+            <a href="<?= $this->url('security_forget'); ?>" class="btn btn-danger display"> Mot de passe oublié ?</a>
         </div>
         <div class="col-lg-8">
             <form action="" method="POST">

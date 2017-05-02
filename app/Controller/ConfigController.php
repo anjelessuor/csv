@@ -36,7 +36,7 @@ class ConfigController extends \W\Controller\Controller
                         'config_email' => $config_email,
                         //'config_facebook' => $config_facebook
                     ], $config_id); //Requête de mise à jour
-                    $this->redirectToRoute('config_view', ['id' => '1']);
+                    $this->redirectToRoute('config_view', ['id' => $config['config_id']]);
                 }
             }
         $this->show('config/update', ['config' => $config]);
