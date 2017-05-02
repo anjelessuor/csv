@@ -1,6 +1,7 @@
 <?php $this->layout('layout-back', ['title' => 'Mettre à jour l\'activité '.$activities['activities_title']]); ?>
 <?php $this->start('main_content'); ?>
 
+
     <div class="container text-center">
         <h1>Mettre à jour l'activité <?= $activities['activities_title'] ?></h1>
     </div>

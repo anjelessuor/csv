@@ -1,6 +1,7 @@
 <?php $this->layout('layout-back', ['title' => 'Liste des activités']) ?>
 
 <?php $this->start('main_content'); ?>
+<!--Startlayout-->
 
     <div class="container text-center">
         <h1>Liste des accompagnements scolaires</h1>

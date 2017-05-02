@@ -9,137 +9,97 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/font-awesome.min.css') ?>">
 	<style>@import url('https://fonts.googleapis.com/css?family=Lato');</style>
 </head>
-	<body>
+	<body>	
+
 <!--Navbar-->
-		<nav class="navbar">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">LOGO - PLACEHOLDER</a>
-		</div>
+		<header class="cd-header">
+		<div class="cd-logo"><a href=""><img src="assets/img/cd-logo.svg" alt="Placeholder"></a></div>
+		<nav>
+			<ul class="cd-secondary-nav">
+				<li><a href="#0">ACCUEIL</a></li>
+				<li><a href="#0">QUI SOMMES-NOUS ?</a></li>
+				<li><a href="#0">SECTEUR ENFANCE (3-5ans)</a></li>
+				<li><a href="#0">SECTEUR ENFANCE (6-12ans)</a></li>
+				<li><a href="#0">SECTEUR ENFANCE (12-16ans)</a></li>
+				<li><a href="#0">SECTEUR JEUNES</a></li>
+				<li><a href="#0">Adultes et Famille</a></li>
+				<li><a href="#0">Evénements</a></li>
+				<li><a href="#0">Log IN</a></li>
+			</ul>
+		</nav> <!-- cd-nav -->
 
-		<div class="collapse navbar-collapse" id="main-menu">
-			<ul class="nav navbar-nav">
-				<li>
-					<a href="<?php echo $this->url('default_home'); ?>">Accueil <i class="fa fa-home" aria-hidden="true"></i></a>
-				</li>
+		<a class="cd-primary-nav-trigger" href="#0">
+			<span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+		</a> <!-- cd-primary-nav-trigger -->
+	</header>
+	<nav>
+		<ul class="cd-primary-nav">
+			<li class="cd-label">QUI SOMMES-NOUS ?</li>
 
-				<li class="dropdown">
-					<a data-toggle="dropdown" href="#">Qui sommes-nous <i class="fa fa-question-circle-o" aria-hidden="true"></i></a>
-					<ul class="dropdown-menu jqueryFadeIn">
-						<li><a href="<?php echo $this->url('section_qui-sommes-nous'); ?>">Présentation</a></li>
-						<li><a href="#">Nos valeurs</a></li>
-						<li><a href="#">Nos missions</a></li>
-						<li><a href="#">Contact</a></li>
-						<li><a href="#">Nos sites</a></li>
-						<li><a href="#">Nos partenaires</a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a data-toggle="dropdown" href="#">Enfance 3-5 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-					<ul class="dropdown-menu jqueryFadeIn">
+			<li><a href="#0">Nos Valeur</a></li>
+			<li><a href="#0">Nos Mission</a></li>
+			<li><a href="#0">Nos Partenaires</a></li>
+			<li><a href="#0">Contact</a></li>
 
-						<li><a href="<?php echo $this->url('section_enfance-3-5'); ?>">Présentation</a></li>
-						<li class="dropdown-submenu">
-							<a data-toggle="dropdown"tabindex="-1" href="#">Activités <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-							<ul class="dropdown-menu">
-								<li><a href="#"> Mercredis</a></li>
-								<li><a href="#"> Vacances scolaires</a></li>
-								<li><a href="#"> Accompagnement à la scolarité</a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a data-toggle="dropdown" href="#">Enfance 6-12 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-					<ul class="dropdown-menu jqueryFadeIn">
+			<li class="cd-label">next Seperate</li>
 
-						<li><a href="<?php echo $this->url('section_enfance-6-12'); ?>">Présentation</a></li>
-						<li class="dropdown-submenu">
-							<a data-toggle="dropdown"tabindex="-1" href="#">Activités <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-							<ul class="dropdown-menu">
-								<li><a href="#"> Mercredis</a></li>
-								<li><a href="#"> Vacances scolaires</a></li>
-								<li><a href="#"> Accompagnement à la scolarité</a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a data-toggle="dropdown" href="#">Enfance 12-16 ans <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-					<ul class="dropdown-menu jqueryFadeIn">
+			<li><a href="#0">LoremIpsum</a></li>
+			<li><a href="#0">LoremIpsum</a></li>
+			<li><a href="#0">LoremIpsum</a></li>
 
-						<li><a href="<?php echo $this->url('section_enfance-12-16'); ?>">Présentation</a></li>
-						<li class="dropdown-submenu">
-							<a data-toggle="dropdown"tabindex="-1" href="#">Activités <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-							<ul class="dropdown-menu">
-								<li><a href="#"> Mercredis</a></li>
-								<li><a href="#"> Vacances scolaires</a></li>
-								<li><a href="#"> Accompagnement à la scolarité</a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a data-toggle="dropdown" href="#">Jeunes <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-					<ul class="dropdown-menu jqueryFadeIn">
+			<li class="cd-label">next Seperate</li>
+			
+			<li><a href="#0">LoremIpsum</a></li>
+			<li><a href="#0">LoremIpsum</a></li>
+			<li class="cd-label">next Seperate</li>
+			
+			<li><a href="#0">LoremIpsum</a></li>
+			<li><a href="#0">LoremIpsum</a></li>
+			<li class="cd-label">next Seperate</li>
+			
+			<li><a href="#0">LoremIpsum</a></li>
+			<li><a href="#0">LoremIpsum</a></li>
+			
+			<li class="cd-label">Follow us</li>			
+			<li class="cd-social cd-facebook"><a href="#0">Facebook</a></li>
+		</ul>
+	</nav>
+<!--END NAVBAR-->
 
-						<li><a href="<?php echo $this->url('section_jeunes'); ?>">Présentation</a></li>
-						<li class="dropdown-submenu">
-							<a data-toggle="dropdown"tabindex="-1" href="#">Activités <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-							<ul class="dropdown-menu">
-								<li><a href="#"> Mercredis</a></li>
-								<li><a href="#"> Vacances scolaires</a></li>
-								<li><a href="#"> Accompagnement à la scolarité</a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a data-toggle="dropdown" href="#">Adultes et famille <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-					<ul class="dropdown-menu jqueryFadeIn">
-						<li><a href="<?php echo $this->url('section_adultes-et-famille'); ?>">Présentation</a></li>
-						<li><a href="#">Lundi</a></li>
-						<li><a href="#">Mardi</a></li>
-						<li><a href="#">Mercredi</a></li>
-						<li><a href="#">Jeudi</a></li>
-						<li><a href="#">Vendredi</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="<?php echo $this->url('section_events'); ?>">Evénements <id=events><i class="fa fa-exclamation" aria-hidden="true"></i></a>
-				</li>
-			</nav>
-<!--Navbar End-->
 
 <!--Section field-->
-		<section>
-			<?= $this->section('main_content') ?>
-		</section>
-<!--Section field END-->
 
-
-	</div>
-<!--Footer-->
-		<footer>
-			<div class="container-fluid">
+<div class="container">
 				<div class="row">
-					<p> Copyright 2017 </p>
+					<div class="col-xs-6 col-md-12">
+						<section>
+							<?= $this->section('main_content') ?>
+						</section>
+					</div>
 				</div>
 			</div>
+<!--Section field END-->
 
-
+	
+<!--Footer-->
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-md-12">
+				<p> Copyright 2017 - Rising Goone Squad </p>
 			</div>
-		</footer>
+		</div>
+	</div>
+</footer>			
 <!--Footer END-->
 
 <!-- SCRIPTS -->
 	<script type="text/javascript" src="<?= $this->assetUrl('js/jQuery-3.1.1.min.js'); ?>"></script>
 	<script type="text/javascript" src="<?= $this->assetUrl('js/bootstrap.min.js'); ?>"></script>
 	<script type="text/javascript" src="<?= $this->assetUrl('js/app.js'); ?>"></script>
+	<script type="text/javascript" src="<?= $this->assetUrl('js/main.js'); ?>"></script>
+	<script type="text/javascript" src="<?= $this->assetUrl('js/modernizr.js'); ?>"></script>
+	
+
 </body>
 </html>

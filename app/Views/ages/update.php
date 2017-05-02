@@ -1,6 +1,7 @@
 <?php $this->layout('layout-back', ['title' => 'Configuration générale' .$ages['ages_name']]); ?>
 <?php $this->start('main_content'); ?>
 
+
 <!-- Lien pour retour sur liste des différentes catégories d'age -->
     <div class="container text-center">
         <h1>Mettre à jour la section <?= $ages['ages_name'] ?></h1>

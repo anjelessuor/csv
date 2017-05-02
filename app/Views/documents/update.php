@@ -1,8 +1,23 @@
-<?php $this->layout('layout', ['title' => 'Modifier un fichier à télécharger' .$documents['documents_name']]); ?>
+<?php $this->layout('layout-back', ['title' => 'Modifier un fichier à télécharger' .$documents['documents_name']]); ?>
 <?php $this->start('main_content'); ?>
 
-    <!-- Lien pour retour sur liste -->
-    <a href="<?php echo $this->url('documents_index') ?>">Retour à la liste des téléchargements</a>
+<!--Startlayout-->
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-11">
+            <div>
+            <!--END of Startlayout-->
+
+
+<!--Return-Button-block  -->
+<div class="container">
+    <div class="row">
+        <a href="<?php echo $this->url('documents_index') ?>" class="btn btn-success btn-block">Retour</a>
+    </div>    
+</div>
+<br>
+<!--END of Return-Button-block  -->
 
     <form method="POST" action="" enctype="multipart/form-data">
         <div class="form-group">
@@ -17,7 +32,9 @@
             <label for="documents_document"> Fichier : </label>
             <input type="file" name="documents_document" id="documents_document">
         </div>
-        <button class="btn btn-submit">Modifier : </div>
+        <button class="btn btn-submit">Modifier</div>
     </form>
+    <br>
+   
 
 <?php $this->stop('main_content'); ?>

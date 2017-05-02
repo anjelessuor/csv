@@ -1,3 +1,4 @@
+
 <?php $this->layout('layout-back', ['title' => 'Créer une nouvelle activité']); ?>
 
 <?php $this->start('main_content'); ?>
@@ -36,6 +37,5 @@
         </div>
     </div>
 </div>
-
 
 <?php $this->stop('main_content'); ?>

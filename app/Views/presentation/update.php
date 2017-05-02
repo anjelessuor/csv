@@ -1,8 +1,21 @@
-<?php $this->layout('layout', ['title' => 'Configuration presentation'.$presentation['presentation_name']]); ?>
+<?php $this->layout('layout-back', ['title' => 'Configuration presentation'.$presentation['presentation_name']]); ?>
 <?php $this->start('main_content'); ?>
 
-<!-- Lien pour retour sur liste des différentes catégories presentation -->
-<a href="<?php echo $this->url('presentation_index') ?>">Retour</a>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-11">
+            <div>
+
+<!--Return-Button-block  -->
+<div class="container">
+    <div class="row">
+        <a href="<?php echo $this->url('presentation_index') ?>" class="btn btn-warning">Retour</a>
+    </div>    
+</div>
+<br>
+<!--END of Return-Button-block  -->
+
 
 <form method="POST" action="">
     <div class="form-group">

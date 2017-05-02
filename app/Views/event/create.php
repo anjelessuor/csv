@@ -1,6 +1,7 @@
 <?php $this->layout('layout-back', ['title' => 'Créer un évènement']); ?>
 <?php $this->start('main_content'); ?>
 
+
 <div class="container text-center">
     <h1>Créer un événement</h1>
 </div>

@@ -4,7 +4,6 @@
     <div class="container text-center">
         <h1>Mettre à jour l'accompagnement <?= $school['school_title'] ?></h1>
     </div>
-
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
@@ -33,5 +32,4 @@
             </div>
         </div>
     </div>
-
 <?php $this->stop('main_content'); ?>

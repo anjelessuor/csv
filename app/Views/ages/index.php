@@ -1,5 +1,8 @@
 <?php $this->layout('layout-back', ['title' => 'Liste des ages']); ?>
 <?php $this->start('main_content'); ?>
+<!--Startlayout-->
+
+
 
     <div class="container text-center">
         <h1>Liste des sections</h1>

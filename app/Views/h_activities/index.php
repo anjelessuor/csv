@@ -2,6 +2,7 @@
 
 <?php $this->start('main_content'); ?>
 
+
     <div class="container text-center">
         <h1>Liste des activités vacances</h1>
     </div>

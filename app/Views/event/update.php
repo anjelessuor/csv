@@ -1,9 +1,11 @@
 <?php $this->layout('layout-back', ['title' => 'Modifier un événement' .$event['events_title']]); ?>
 <?php $this->start('main_content'); ?>
 
+
     <div class="container text-center">
         <h1>Mettre à jour l'événement <?= $event['events_title'] ?></h1>
     </div>
+    <br>
 
     <div class="container">
         <div class="row">
@@ -56,9 +58,6 @@
         </div>
     </div>
 
-    <div>
-        <a href="<?= $this->url('event_index'); ?>" class="btn btn-warning">Retour</a>
-    </div>
 
 
 

@@ -1,6 +1,14 @@
 <?php $this->layout('layout-back', ['title' => 'Créer un nouvel accompagnement ']); ?>
 
 <?php $this->start('main_content'); ?>
+<!--Startlayout-->
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-11">
+            <div>
+            <!--END of Startlayout-->
+
 
 <div class="container text-center">
     <h1>Créer un accompagnement scolaire</h1>

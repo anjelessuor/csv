@@ -1,4 +1,5 @@
 <?php $this->layout('layout-back', ['title' => 'Modifier un partnaire' .$partners['partners_name']]); ?>
+
 <?php $this->start('main_content'); ?>
 
     <div class="container text-center">
@@ -33,7 +34,6 @@
             </div>
         </div>
     </div>
-
 
 
 

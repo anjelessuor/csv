@@ -1,4 +1,5 @@
 <?php $this->layout('layout-back', ['title' => 'Ajout d\'un partenaire']); ?>
+
 <?php $this->start('main_content'); ?>
 
     <div class="container text-center">
@@ -33,6 +34,5 @@
             </div>
         </div>
     </div>
-
 
 <?php $this->stop('main_content'); ?>
