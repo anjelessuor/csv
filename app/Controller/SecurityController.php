@@ -10,9 +10,7 @@ class SecurityController extends Controller
 
     public function login()
     {
-        $user_manager = new UserModel();
-        $user = $this->getUser();
-        if ($user['user_status'] == 2) {
+
             if (!empty($_POST)) {
                 $user_email = $_POST['user_email'];
                 $user_password = $_POST['user_password'];
@@ -31,9 +29,7 @@ class SecurityController extends Controller
                 }
             }
             $this->show('security/login');
-        } else {
-            echo "Vous n'êtes pas autorisé à accéder à cette section";
-        }
+
     }
 
     public function index(){
