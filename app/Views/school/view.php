@@ -1,9 +1,13 @@
-<?php $this->layout('layout', ['title' => $school['school_title']]); ?>
+<?php $this->layout('layout-back', ['title' => $school['school_title']]); ?>
 <?php $this->start('main_content'); ?>
 
-    <div>
-        <a href="<?= $this->url('school_index'); ?>">Revenir à la liste</a>
-    </div>
+<!--Startlayout-->
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-11">
+            <div>
+            <!--END of Startlayout-->
 
     <div class="row">
         <div class="col-lg-6">
@@ -13,7 +17,7 @@
             <p>Description</p>
             <p><?php echo $school['school_description']; ?></p>
             <br>
-            <p>Secteurs concernés par cet accompagnement : </p>
+            <p>Secteurs concernés par cet accompagnement</p>
             <p><?php
             if($school['school_3to5'] == 1){
                 echo "Secteur Enfance 3 à 5 ans";

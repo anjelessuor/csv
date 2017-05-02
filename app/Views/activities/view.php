@@ -1,15 +1,21 @@
-<?php $this->layout('layout', ['title' => $activities['activities_title']]); ?>
+<?php $this->layout('layout-back', ['title' => $activities['activities_title']]); ?>
 <?php $this->start('main_content'); ?>
+
+
+<br>
+<div class="container">
+    <div class="row">
+       <div class="col-lg-6"> 
 
     <div>
         <a href="<?= $this->url('activities_index'); ?>" class="btn btn-warning">Revenir à la liste</a>
     </div>
 
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-md-6">
             <h2><?php echo $activities['activities_title']; ?></h2>
         </div>
-        <div class="col-lg-6">
+        <div class="col-md-6">
             <p>Description</p>
             <p><?php echo $activities['activities_description']; ?></p>
             <br>
