@@ -13,7 +13,6 @@ body {
   background: linear-gradient(90deg, #16222A 10%, #3A6073 90%);
   /* W3C */
 }
-
 #controlpanel {
   text-align: center;
     font-family: 'Lato', sans-serif;
@@ -81,15 +80,16 @@ h2 {
   color: #66D9EF;
 }
 
-footer {
+footer {  
   position: absolute;
   bottom: 0;
   left: 0;
 }
 
 /**************************************/
-/*  Navbar design by hjkhjkhjk  */
-/*************************************/
+/*  Navbar design by Steven Poscher   */
+/**************************************/
+
 .nav2 {
   top: 15px;
   right: 15px;
@@ -205,4 +205,6 @@ footer {
   line-height: 120px;
   cursor: pointer;
   position: fixed;
+
 }
+

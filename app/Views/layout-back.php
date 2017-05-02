@@ -14,7 +14,7 @@
 
 <!--Navbar Backoffice-->	
 
-<div class="nav2">
+<!--<div class="nav2">
 	<div class="drop1"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
 	<div class="drop2"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
 	<div class="drop3"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
@@ -22,7 +22,8 @@
 	<div class="drop5"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
 	<div class="drop6"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
 	<div class="mask2"><i class="fa fa-cogs fa-3x"></i></div>
-</div>
+</div>-->
+
 <!--Navbar End-->
 
 <!--Section field-->
