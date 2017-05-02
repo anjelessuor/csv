@@ -142,35 +142,36 @@ class SecurityController extends Controller
     public function forget()
     {
         $user_manager = new UserModel();
-        $user_id = new UserModel();
-
+        $users = $user_manager->getUserByUsernameOrEmail($_POST['user_email']);
         if (!empty($_POST) && isset($_POST['forgetSend'])) { // On vérifie le 1er formulaire qui doit envoyer le mail avec un lien pour redéfinir le password
             $user_email = $_POST['user_email'];
-            if ($users = getUserByUsernameOrEmail($user_email)) {
+            if ($users) {
                 // Créer un token_forget et date_forget dans la bdd
                 $token_forget = md5(time() . uniqid()); // Le token
                 // echo strtotime(date('Y-m-d h:i:s') . ' +1 month');
                 $date_forget = date('Y-m-d h:i:s', time() + 3600 * 24); // Date d'expiration du token
                 // J'envoie le token et sa date d'expiration dans la bdd pour l'utilisateur
-                $user_manager->update([
+                $users = $user_manager->update([
                     'token_forget'=> $token_forget,
                     'date_forget' => $date_forget
-                    ] $users['user_id']);
+                ], $users['user_id']);
                 echo "Voici le lien vous permettant de redéfinir votre mot de passe : <a href='http://localhost/cvs/Security/forget.php?token=".$token_forget."'>http://localhost/cvs/Security/forget.php?token=".$token_forget."</a>";
             } else {
                 echo 'L\'email n\'existe pas';
             }
+
         }
 
 
         if (!empty($_POST) && isset($_POST['forgetPassword'])) {
-            $token = $_GET['token'];
+            $token_forget = $_GET['token_forget'];
             $user_password = $_POST['user_password'];
             $cfpassword = $_POST['cfpassword'];
 
-            if ($user_id = isValidToken($token)) {
+            if ($user_manager->isValidToken($token_forget)) {
                 if ($user_password == $cfpassword) { // Je vérifie que les deux champs mot de passe soit identique
-                    changeUserPassword($this->getUser()['user_id'], $user_password);
+
+                    $user_manager->changeUserPassword($this->getUser()['user_id'], $user_password);
                     // Renvoyer un mail
                 }
             } else {
@@ -179,46 +180,4 @@ class SecurityController extends Controller
         }
         $this->show('security/forget');
     }
- //    public function changeInfos($id = '')
- //    {
- //
- //
- //   // Changer le mot de passe
- //
- //   // J'instancie la classe pour gérer mes users en BDD
- //   $user_manager = new UserModel();
- //
- //   $profil = $user_manager->find($this->getUser()['user_id']);
- //
- //   $errors = [];
- //   $user_password  = null;
- //   $message   = null;
- //
- //   // Traitement du formulaire pour changer le mot de passe; $_POST['button-password'] vient du name dans l'HTML pour différencier les deux formulaires
- //   if (isset($_POST['button-password'])) {
- //     $id = $profil['id'];
- //     $password   = trim($_POST['password']);
- //     $cfpassword = trim($_POST['cfpassword']);
- //
- //     if ( $password != $cfpassword ) {
- //       $errors['password'] = "Les mots de passe ne correspondent pas";
- //     }
- //
- //     // S'il n'y a pas d'erreurs on change le mot de passe de l'utilisateur
- //     if(empty($errors)) {
- //       $auth_manager = new \W\Security\AuthentificationModel();
- //       $user_manager->update(['password' => $auth_manager->hashPassword($password)], $id);
- //
- //       $message = ["Vous etes bien inscris"];
- //     }
- //     else {
- //       $message = $errors;
- //     }
- //
- //   }
- //
- //   // var_dump($_POST['email']);
- //       $this->show('security/changeInfos', ['profil' => $profil, 'message' => $message]);
- //
- // }
 }

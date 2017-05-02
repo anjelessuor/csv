@@ -4,13 +4,13 @@
 		['GET', '/', 'Default#home', 'default_home'],
 		['GET|POST', '/security/login', 'Security#login', 'security_login'],
 		['GET|POST', '/security/register', 'Security#register', 'security_register'],
-		// ['GET|POST', '/security/forget', 'Security#forget', 'security_forget'],
+		['GET|POST', '/security/forget', 'Security#forget', 'security_forget'],
 
 		['GET|POST', '/security/edit/[i:id]', 'Security#edit', 'security_edit'],
 		['GET|POST', '/security/delete/[i:id]', 'Security#delete', 'security_delete'],
 		['GET|POST', '/security/view/[i:id]', 'Security#view', 'security_view'],
 		['GET', '/logout', 'Security#logout', 'security_logout'],
-		['GET|POST', 'security/forget', 'Security#forget', 'security_forget'],
+	
 		['GET|POST', '/security/index', 'Security#index', 'security_index'],
 
 

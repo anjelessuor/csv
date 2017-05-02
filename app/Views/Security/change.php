@@ -1,27 +1,14 @@
 <?php
 
 use \W\Controller\Controller;
+use Model\UserModel;
 
 ?>
 
-<?php $this->layout('layout', ['title' => 'Changer mes informations']) ?>
+<?php $this->layout('layout', ['title' => 'Changer mon mot de passe']) ?>
 
 <?php $this->start('main_content') ?>
   <div class="col-md-3 col-md-push-3">
-    <h3 class="text-center">Changer mon adresse email</h3>
-    <div class="form-group">
-      <label for="">Adresse email actuelle :</label>
-      <input class="form-control" type="text" value="<?= $profil['email']; ?>" disabled="">
-    </div>
-    <form class="" action="" method="post">
-      <div class="form-group <?= (isset($message['lastname'])) ? 'has-error' : ''?>">
-        <label for="email">Nouvelle adresse email :</label>
-        <input id="email" name="email" type="text" class="form-control" placeholder="Email">
-        <?= (isset($message['email'])) ? '<span class="help-block">'.$message['email'].' .</span>'  : '' ?>
-      </div>
-      <button class="btn btn-success" type="submit" name="button-email">Changer mon adresse email</button>
-    </form>
-    <br>
     <h3 class="text-center">Changer mon mot de passe</h3>
     <form class="" action="" method="post">
       <div class="form-group">
@@ -34,19 +21,6 @@ use \W\Controller\Controller;
       </div>
       <button class="btn btn-success" type="submit" name="button-password">Changer mon mot de passe</button>
     </form>
-  </div>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-3 col-md-push-5">
-        <div class="list-group">
-          <a href="<?= $this->url('default_profile'); ?>" class="list-group-item">Mes événements</a>
-          <a href="#" class="list-group-item">Mes trajets</a>
-          <a href="<?= $this->url('security_changeInfos'); ?>" class="list-group-item">Changer mes informations</a>
-          <a href="<?= $this->url('security_logout'); ?>" class="list-group-item">Déconnexion</a>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- <?= var_dump($_POST['email']); ?> -->
