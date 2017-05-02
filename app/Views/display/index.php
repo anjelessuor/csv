@@ -6,9 +6,9 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-xs-12" id=controlpanel>       
+        <div class="col-xs-12" id=controlpanel>
             <p> Welcome to the Control Panel of Webforce Backoffice </p>
-        </div>        
+        </div>
     </div>
 </div>
 <br>
@@ -18,14 +18,17 @@
     <div class="row">
         <div class="col-xs-6">
             <ul>
-                <a href="<?= $this->url('event_index') ?>" class="btn btn-primary display">Evénements</a><br/><br/>
-                <a href="<?= $this->url('activities_index') ?>" class="btn btn-primary display">Activités</a><br/><br/>
-                <a href="<?= $this->url('h_activities_index') ?>" class="btn btn-primary display">Vacances</a><br/><br/>
-                <a href="<?= $this->url('school_index') ?>" class="btn btn-primary display">Accompagnement scolaire</a><br/><br/>
-                <a href="<?= $this->url('partners_index') ?>" class="btn btn-primary display">Partenaires</a><br/><br/>
-                <a href="<?= $this->url('documents_index') ?>" class="btn btn-primary display">Documents</a><br/><br/>
-                <a href="<?= $this->url('ages_index') ?>" class="btn btn-primary display">Sections</a><br/><br/>
-                <a href="<?= $this->url('presentation_views') ?>" class="btn btn-primary display">Présentation</a><br/><br/>
+                <?php if ($w_user['user_status'] == 1) { ?>
+                    <a href="<?= $this->url('event_index') ?>" class="btn btn-primary display">Evénements</a><br/><br/>
+                    <a href="<?= $this->url('activities_index') ?>" class="btn btn-primary display">Activités</a><br/><br/>
+                    <a href="<?= $this->url('h_activities_index') ?>" class="btn btn-primary display">Vacances</a><br/><br/>
+                    <a href="<?= $this->url('school_index') ?>" class="btn btn-primary display">Accompagnement scolaire</a><br/><br/>
+                    <a href="<?= $this->url('partners_index') ?>" class="btn btn-primary display">Partenaires</a><br/><br/>
+                    <a href="<?= $this->url('documents_index') ?>" class="btn btn-primary display">Documents</a><br/><br/>
+                    <a href="<?= $this->url('presentation_views') ?>" class="btn btn-primary display">Présentation</a><br/><br/>
+                <?php } ?>
+
+
 
                 <?php if ($w_user['user_status'] == 2) { ?>
                 <a href="<?= $this->url('config_index'); ?>" class="btn btn-success display">Mettre à jour la config</a><br/><br/>
@@ -35,7 +38,7 @@
             </ul>
         </div>
 
-        <div class="col-xs-5">        
+        <div class="col-xs-5">
             <a href="<?php echo $this->url('security_logout'); ?>" class="btn btn-danger btn-block">Déconnexion</a>
         </div>
 
