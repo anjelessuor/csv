@@ -3,7 +3,6 @@
 <?php $this->start('main_content'); ?>
 
     <?php  if(isset($_GET['token'])) { ?>
-
     <form action="" method="POST">
         <div class="form-group">
             <label for="user_password">Nouveau mot de passe : </label>

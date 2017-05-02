@@ -5,12 +5,13 @@
 		['GET|POST', '/security/login', 'Security#login', 'security_login'],
 		['GET|POST', '/security/register', 'Security#register', 'security_register'],
 		['GET|POST', '/security/forget', 'Security#forget', 'security_forget'],
+		['GET|POST', '/security/change', 'Security#change', 'security_change'],
 
 		['GET|POST', '/security/edit/[i:id]', 'Security#edit', 'security_edit'],
 		['GET|POST', '/security/delete/[i:id]', 'Security#delete', 'security_delete'],
 		['GET|POST', '/security/view/[i:id]', 'Security#view', 'security_view'],
 		['GET', '/logout', 'Security#logout', 'security_logout'],
-	
+
 		['GET|POST', '/security/index', 'Security#index', 'security_index'],
 
 
@@ -69,6 +70,6 @@
 		['GET|POST', '/presentation/index', 'Presentation#index', 'presentation_index'],
 		['GET|POST', '/presentation/update/[i:presentation_id]', 'Presentation#update', 'presentation_update'],
 		['GET', '/presentation/views', 'Presentation#views', 'presentation_views'],
-		['GET|POST', '/display/index', 'Display#index', 'display_index'], 
+		['GET|POST', '/display/index', 'Display#index', 'display_index'],
 
 	);
