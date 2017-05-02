@@ -49,6 +49,11 @@ textarea.form-control {
 .partners_logo{
     width: 5em;
 }
+
+.events_image{
+    width: 20em;
+}
+
 .container {
 
     padding: 15px;
@@ -77,10 +82,10 @@ h2 {
 }
 
 footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
-
+}
 
 /**************************************/
 /*  Navbar design by hjkhjkhjk  */

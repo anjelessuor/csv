@@ -6,14 +6,14 @@ use \W\Controller\Controller;
 use \Model\DisplayModel;
 use \Model\UserModel;
 
-
 class DisplayController extends Controller
 {
-	public function index(){
-		$this->allowTo('2');
-		$display_manager = new DisplayModel();
-		$this->show('display/index');
-	}
 
+	public function index(){
+	//	var_dump($users['user_id']);
+			$display_manager = new DisplayModel();
+			$this->show('display/index');
+
+	}
 }
  ?>

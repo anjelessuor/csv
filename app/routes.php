@@ -10,7 +10,7 @@
 		['GET|POST', '/security/delete/[i:id]', 'Security#delete', 'security_delete'],
 		['GET|POST', '/security/view/[i:id]', 'Security#view', 'security_view'],
 		['GET', '/logout', 'security#logout', 'security_logout'],
-		['GET|POST', 'security/forget', 'Security#forget', 'security_forget'],
+		['GET|POST', '/security/forget', 'Security#forget', 'security_forget'],
 		['GET|POST', '/security/index', 'Security#index', 'security_index'],
 
 
@@ -57,7 +57,7 @@
 		['GET|POST', '/partners/index', 'Partners#index', 'partners_index'],
 		['GET|POST', '/partners/create', 'Partners#create', 'partners_create'],
 		['GET|POST', '/partners/delete/[i:partners_id]', 'Partners#delete', 'partners_delete'],
-		['GET|POST', '/partners/update/[i:partners_id]', 'Partners#update', 'partners_update'],
+		['GET|POST', '/partners/update/[i:id]', 'Partners#update', 'partners_update'],
 		['GET', '/partners/[i:id]', 'Partners#view', 'partners_view'],
 
 		['GET|POST', '/documents/index', 'Documents#index', 'documents_index'],
@@ -69,6 +69,6 @@
 		['GET|POST', '/presentation/index', 'Presentation#index', 'presentation_index'],
 		['GET|POST', '/presentation/update/[i:presentation_id]', 'Presentation#update', 'presentation_update'],
 		['GET', '/presentation/views', 'Presentation#views', 'presentation_views'],
-		['GET|POST', '/display/index', 'Display#index', 'display_index'], 
+		['GET|POST', '/display/index', 'Display#index', 'display_index'],
 
 	);
