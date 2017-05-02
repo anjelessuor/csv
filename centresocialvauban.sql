@@ -1,9 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 28 Avril 2017 à 15:57
+
+-- Généré le :  Ven 28 Avril 2017 à 15:45
+
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  5.6.28
 
@@ -17,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `centresocialvauban`
+-- Base de données :  `csv`
 --
 
 -- --------------------------------------------------------
@@ -176,7 +178,7 @@ CREATE TABLE `holidays_activities` (
 --
 
 INSERT INTO `holidays_activities` (`h_activities_id`, `h_activities_title`, `h_activities_description`, `h_activities_dates`, `h_activities_localization`, `h_activities_image`, `h_activities_hours`, `h_activities_price`, `h_activities_3to5`, `h_activities_6to12`, `h_activities_12to16`, `h_activities_16to25`, `h_activities_adults`) VALUES
-(1, 'Mercredi', ' Semblable aux mercredis, diverses activités seront proposées aux enfants durant les vacances scolaires.\r\nLes ALSH des vacances scolaires se font au centre de la petite enfance au 12 Place de l’Arbonnoise à Lille ; du Lundi au Vendredi de 8h30 à 17h30.', '', '', '', '', 'Se rapprocher de l\'organisateur', 1, 0, 0, 0, 0),
+(1, 'Mercredi', ' Semblable aux mercredis, diverses activités seront proposées aux enfants durant les vacances scolaires.\r\nLes ALSH des vacances scolaires se font au centre de la petite enfance au 12 Place de l’Arbonnoise à Lille ; du Lundi au Vendredi de 8h30 à 17h30.', '', '', '', '', 'Se rapprocher de l''organisateur', 1, 0, 0, 0, 0),
 (3, 'Stages sportifs', 'En plus des activités proposées le mercredi, des stages sportifs : initiation à la boxe pourront être proposés aux enfants durant les vacances scolaires. Ces stages s’effectueront avec notre partenaire le « Boxing club des Bois-Blancs ». \r\nAussi, des minis-camps seront organisés durant les grandes vacances scolaires. \r\nLes ALSH des vacances scolaires a lieu du lundi au vendredi de 8h30 à 17h30 au centre social de Vauban-Esquermes. ', '', '', '', '', '', 0, 1, 0, 0, 0),
 (4, 'Vacances', 'Des activités sont proposées durant toutes les vacances scolaires, les jeunes pourront se renseigner directement auprès de l’animateur(rice). \r\nAussi, des projets « séjour » pourront être organisés avec jeunes durant les grandes vacances scolaires. Ils devront alors être acteurs de leur séjour. Pour cela, des autofinancements devront être mis place par les jeunes et l’accompagnant(e). \r\n\r\n-> Que ce soit les mercredis ou pendant les vacances scolaires, les inscriptions devront se faire directement auprès de l’animateur(rice). Le tarif varie en fonction de l’activité ou du projet d’animation.', '', '', '', '', '', 0, 0, 1, 0, 0),
 (5, 'Vacances', 'Durant les vacances scolaires, des sorties familles seront proposées aux adhérents du centre social de Vauban-Esquermes. \r\nLes inscriptions se feront directement auprès de la référente famille ; et le tarif sera fixé en fonction des sorties.', '', '', '', '', '', 0, 0, 0, 0, 1);
@@ -247,6 +249,7 @@ CREATE TABLE `users` (
   `user_lastname` varchar(100) DEFAULT NULL,
   `user_email` varchar(255) NOT NULL,
   `user_password` varchar(255) NOT NULL,
+  `token_forget` text NOT NULL,
   `user_status` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -254,9 +257,9 @@ CREATE TABLE `users` (
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`user_id`, `user_firstname`, `user_lastname`, `user_email`, `user_password`, `user_status`) VALUES
-(11, 'fuck php', 'and javascript', 'fuckphp@sql2.com', '$2y$10$q/nNEJx/sxFy18uC47ID1e0N3APY1Jeng/USYMV/QkNHWpyLA37.q', 1),
-(13, 'Admin', 'Admin', 'Admin@admin.com', '$2y$10$qkmdEZDAY2w6PIsbxB/hSOMaym67M6n7./vKQqk5np2iOFJt9Nmpm', 2);
+INSERT INTO `users` (`user_id`, `user_firstname`, `user_lastname`, `user_email`, `user_password`, `token_forget`, `user_status`) VALUES
+(11, 'fuck php', 'and javascript', 'fuckphp@sql2.com', '$2y$10$q/nNEJx/sxFy18uC47ID1e0N3APY1Jeng/USYMV/QkNHWpyLA37.q', '', 1),
+(13, 'Admin', 'Admin', 'Admin@admin.com', '$2y$10$qkmdEZDAY2w6PIsbxB/hSOMaym67M6n7./vKQqk5np2iOFJt9Nmpm', '', 2);
 
 --
 -- Index pour les tables exportées
