@@ -27,9 +27,6 @@
                     <a href="<?= $this->url('documents_index') ?>" class="btn btn-primary display">Documents</a><br/><br/>
                     <a href="<?= $this->url('presentation_views') ?>" class="btn btn-primary display">Présentation</a><br/><br/>
                 <?php } ?>
-
-
-
                 <?php if ($w_user['user_status'] == 2) { ?>
                 <a href="<?= $this->url('config_index'); ?>" class="btn btn-success display">Mettre à jour la config</a><br/><br/>
                 <a href="<?= $this->url('security_index'); ?>" class="btn btn-success display">Mettre à jour les utilisateurs</a><br/><br/>

@@ -10,7 +10,7 @@ class ActivitiesController extends Controller
 {
 	// page qui liste les activités
 	public function index(){
-		$this->allowTo('2');
+		$this->allowTo('1');
 		$activities_manager = new ActivitiesModel(); // instancie la class pour gérer les articles en bdd
 		$activities = $activities_manager->findAllByAge(); // récupère tous les articles en bdd (SELECT * FROM articles)
 		$this->show('activities/index', ['activities' => $activities]); // j'injecte la variable articles dans la vue

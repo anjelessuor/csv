@@ -71,7 +71,8 @@
 		['GET|POST', '/presentation/update/[i:presentation_id]', 'Presentation#update', 'presentation_update'],
 		['GET', '/presentation/views', 'Presentation#views', 'presentation_views'],
 
-		['GET|POST', '/contact', 'Default#contact', 'Default_contact']
+		['GET|POST', '/contact', 'Default#contact', 'Default_contact'],
+		['GET|POST', '/display/index', 'Display#index', 'display_index'],
 
 
 	);
