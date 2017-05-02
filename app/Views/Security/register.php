@@ -30,7 +30,7 @@
                     <div class="form-group">
                         <label for="user_password">Mot de passe : </label>
                         <input type="password" name="user_password" id="user_password"  class="form-control">
-
+                        <?= (isset($messages['user_passwordlenght'])) ? '<span class="help-block">' .$messages['user_passwordlenght'] . '</span>' : '' ?>
                     </div>
                     <div class="form-group">
                         <label for="user_cfpassword">Confirmation du mot de passe : </label>
