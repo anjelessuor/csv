@@ -23,13 +23,13 @@
 										<p><?php echo $event['events_localization']; ?></p>
 										<p><?php echo $event['events_hours']; ?></p>
 									</hgroup>
-							<button style class="btn btn-hero btn-lg" role="button">Plus d'informations</button>
+										<button style class="btn btn-hero btn-lg" role="button">Plus d'informations</button>
 								</div>
 							</div>
 							<?php endforeach; ?>
 						</div>
 			</div>
-		</div>
+	
 
 
 <!--bottom Part-->
