@@ -1,6 +1,11 @@
-<?php $this->layout('layout', ['title' => 'Créer un évènement']); ?>
+<?php $this->layout('layout-back', ['title' => 'Créer un évènement']); ?>
 <?php $this->start('main_content'); ?>
 
+<br>
+<div class="container">
+    <div class="row">
+       <div class="col-xs-11">
+           
     <form method="POST" action="" enctype="multipart/form-data">
         <div class="form-group">
             <label for="events_title">Titre : </label>

@@ -1,5 +1,9 @@
-<?php $this->layout('layout', ['title' => $h_activities['h_activities_title']]); ?>
+<?php $this->layout('layout-back', ['title' => $h_activities['h_activities_title']]); ?>
 <?php $this->start('main_content'); ?>
+<br>
+<div class="container">
+    <div class="row">
+       <div class="col-xs-11"> 
 
     <div>
         <a href="<?= $this->url('h_activities_index'); ?>" class="btn btn-warning">Revenir à la liste</a>
@@ -41,7 +45,6 @@
             <br>
             <a href="<?= $this->url('h_activities_edit', ['id' => $h_activities['h_activities_id']]); ?>" class="btn btn-primary">Modifier</a>
             <a href="<?= $this->url('h_activities_index'); ?>" class="btn btn-warning">Retourner à la liste des activités</a>
-
         </div>
     </div>
 
