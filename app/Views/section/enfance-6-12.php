@@ -27,16 +27,26 @@
 <!-- Page Content -->
         <div class="col-md-9">
             <div id="#description">
-                
+                <h1>Description</h1>
+                <p><?php echo $ages; ?></p>
             </div>
             <div id="#mercredi">
-                
+                <h1>Mercredi</h1>
+                <?php foreach ($activities as $activity){
+                    if ($activity['activities_title'] == 'Mercredi' && $activity['activities_6to12'] == 1){
+                        echo $activity['activities_description'];
+                    }
+                }?>
+            </div>
             </div>
             <div id="#vacances">
                 
             </div>
             <div id="#accompagnement">
+                <h1>Accompagnement</h1>
+                <?php foreach ($)
                 
+                }?>
             </div>
         </div>
     </div>
