@@ -4,22 +4,30 @@ namespace Controller;
 
 use \W\Controller\Controller;
 use \Model\PresentationModel;
+use \Model\UserModel;
 
 class PresentationController extends \W\Controller\Controller
 {
     public function index()
     {
-        $this->allowTo('1'); //Instancie uniquement les admin a acceder à cette page
-        $presentation_manager = new PresentationModel(); //Instancie la classe pour générer mes articles en BDD
-        $presentation = $presentation_manager->findAll(); //Récupère tous les articles en bdd (SELECT * FROM articles)
-        $this->show('presentation/index', ['presentation' => $presentation]); //Injecte la variable articles dans ma vue
+        $user_manager = new UserModel();
+        $user = $this->getUser();
+        if ($user['user_status'] == 1 || $user['user_status'] == 2) {
+            $presentation_manager = new PresentationModel(); //Instancie la classe pour générer mes articles en BDD
+            $presentation = $presentation_manager->findAll(); //Récupère tous les articles en bdd (SELECT * FROM articles)
+            $this->show('presentation/index', ['presentation' => $presentation]); //Injecte la variable articles dans ma vue
+        } else {
+            echo "Vous n'êtes pas autorisé à accéder à cette section";
+        }
     }
 
     public function update($presentation_id)
     {
-        $this->allowTo('1'); //Instancie uniquement les admin a acceder à cette page
-        $presentation_manager = new PresentationModel();
-        $presentation = $presentation_manager->find($presentation_id);
+        $user_manager = new UserModel();
+        $user = $this->getUser();
+        if ($user['user_status'] == 1 || $user['user_status'] == 2) {
+            $presentation_manager = new PresentationModel();
+            $presentation = $presentation_manager->find($presentation_id);
 
             if (!empty($_POST)) {
                 $presentation_name = $_POST['presentation_name'];
@@ -32,6 +40,9 @@ class PresentationController extends \W\Controller\Controller
                     ], $presentation_id);
                 }
             }
-        $this->show('presentation/update', ['presentation' => $presentation]);
+            $this->show('presentation/update', ['presentation' => $presentation]);
+        } else {
+            echo "Vous n'êtes pas autorisé à accéder à cette section";
+        }
     }
 }
