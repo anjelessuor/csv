@@ -10,7 +10,7 @@ class ActivitiesController extends Controller
 {
 	// page qui liste les activités
 	public function index(){
-		//$this->allowTo('2');
+		$this->allowTo('2');
 		$activities_manager = new ActivitiesModel(); // instancie la class pour gérer les articles en bdd
 		$activities = $activities_manager->findAllByAge(); // récupère tous les articles en bdd (SELECT * FROM articles)
 		$this->show('activities/index', ['activities' => $activities]); // j'injecte la variable articles dans la vue
@@ -31,7 +31,7 @@ class ActivitiesController extends Controller
             $activities_adults = isset($_POST['activities_adults']) ? $_POST['activities_adults'] : 0;
 
 			$activities_manager = new ActivitiesModel(); // instancie la class pour gérer les articles en bdd
-            if (!empty($_POST)) {
+            if (!empty($activities_title) && !empty($activities_description)) {
 				$activities = $activities_manager->insert([
 					'activities_title' => $activities_title,
 					'activities_description' => $activities_description,
@@ -50,7 +50,7 @@ class ActivitiesController extends Controller
 	}
 
 	public function delete($id){
-		//$this->allowTo('2');
+		$this->allowTo('2');
 		$activities_manager = new ActivitiesModel(); // instancie la class pour gérer les articles en bdd
 		$activities_manager->delete($id); // supprime l'article de la base de données
 		$this->redirectToRoute('activities_index'); // Après suppression je redirige l'utilisateur vers la liste des articles
@@ -63,7 +63,7 @@ class ActivitiesController extends Controller
 	}
 
 	public function edit($id){
-		//$this->allowTo('admin');
+		$this->allowTo('2');
 		$activities_manager = new ActivitiesModel(); // instancie la class pour gérer les articles en bdd
     	$activities = $activities_manager->find($id);
 

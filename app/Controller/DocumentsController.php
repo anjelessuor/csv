@@ -65,7 +65,7 @@ class DocumentsController extends \W\Controller\Controller
                 'documents_description' => $documents_description,
                 'documents_document' => $_FILES["documents_document"]["name"]
             ]);
-
+            $this->redirectToRoute('documents_view', ['documents_id' => $documents['documents_id']]);
         }
     }
         $this->show('documents/create');
@@ -88,6 +88,7 @@ class DocumentsController extends \W\Controller\Controller
                             'documents_description' => $documents_description,
                             'documents_document' => $_FILES["documents_document"]["name"]
                         ], $documents_id); //Requête de mise à jour
+                        $this->redirectToRoute('documents_view', ['documents_id' => $documents['documents_id']]);
                     }
                 }
             $this->show('documents/update', ['documents' => $documents]);
