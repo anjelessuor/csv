@@ -9,7 +9,7 @@ class SchoolController extends Controller
 {
 	// page qui liste les activités
 	public function index(){
-		//$this->allowTo('2');
+		$this->allowTo('1');
 		$school_manager = new SchoolModel(); // instancie la class pour gérer les articles en bdd
 		$school = $school_manager->findAllByAge(); // récupère tous les articles en bdd (SELECT * FROM articles)
 		$this->show('school/index', ['school' => $school]); // j'injecte la variable articles dans la vue
@@ -19,7 +19,7 @@ class SchoolController extends Controller
 	public function create()
 	{
 		//var_dump($_POST);
-		//$this->allowTo('2');
+			$this->allowTo('1');
 		if (!empty($_POST)) {
 			$school_title = $_POST['school_title'];
 			$school_description = $_POST['school_description'];
@@ -47,20 +47,21 @@ class SchoolController extends Controller
 	}
 
 	public function delete($id){
-		//$this->allowTo('2');
+		$this->allowTo('1');
 		$school_manager = new SchoolModel(); // instancie la class pour gérer les articles en bdd
 		$school_manager->delete($id); // supprime l'article de la base de données
 		$this->redirectToRoute('school_index'); // Après suppression je redirige l'utilisateur vers la liste des articles
 	}
 
 	public function view($id){
+		$this->allowTo('1');
 		$school_manager = new SchoolModel(); // instancie la class pour gérer les articles en bdd
 		$school = $school_manager->find($id);
 		$this->show('school/view', ['school' => $school]);
 	}
 
 	public function edit($id){
-		//$this->allowTo('admin');
+			$this->allowTo('1');
 		$school_manager = new SchoolModel(); // instancie la class pour gérer les articles en bdd
     		$school = $school_manager->find($id);
 

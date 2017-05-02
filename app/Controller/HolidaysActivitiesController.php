@@ -10,7 +10,7 @@ class HolidaysActivitiesController extends Controller
 {
 	// page qui liste les activités
 	public function index(){
-		$this->allowTo('2');
+		$this->allowTo('1');
 		$h_activities_manager = new HolidaysActivitiesModel(); // instancie la class pour gérer les articles en bdd
 		$h_activities = $h_activities_manager->findAllByAge(); // récupère tous les articles en bdd (SELECT * FROM articles)
 		$this->show('h_activities/index', ['h_activities' => $h_activities]); // j'injecte la variable articles dans la vue
@@ -20,7 +20,7 @@ class HolidaysActivitiesController extends Controller
 	public function create()
 	{
 		//var_dump($_POST);
-		$this->allowTo('2');
+		$this->allowTo('1');
 		if (!empty($_POST)) {
 			$h_activities_title = $_POST['h_activities_title'];
 			$h_activities_description = $_POST['h_activities_description'];
@@ -52,7 +52,7 @@ class HolidaysActivitiesController extends Controller
 	}
 
 	public function delete($id){
-		$this->allowTo('2');
+		$this->allowTo('1');
 		$h_activities_manager = new HolidaysActivitiesModel(); // instancie la class pour gérer les articles en bdd
 		$h_activities_manager->delete($id); // supprime l'article de la base de données
 		$this->redirectToRoute('h_activities_index'); // Après suppression je redirige l'utilisateur vers la liste des articles
@@ -65,7 +65,7 @@ class HolidaysActivitiesController extends Controller
 	}
 
 	public function edit($id){
-		$this->allowTo('2');
+		$this->allowTo('1');
 	$h_activities_manager = new HolidaysActivitiesModel(); // instancie la class pour gérer les articles en bdd
     		$h_activities = $h_activities_manager->find($id);
 

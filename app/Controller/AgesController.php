@@ -37,6 +37,7 @@ class AgesController extends \W\Controller\Controller
     }
 
     public function view($ages_id){
+        $this->allowTo('2'); //Instancie uniquement les admin a acceder à cette page
         $ages_manager = new AgesModel();
         $ages = $ages_manager->find($ages_id);
         $this->show('ages/view', ['ages' => $ages]);

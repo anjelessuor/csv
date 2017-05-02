@@ -43,6 +43,7 @@ class ConfigController extends \W\Controller\Controller
     }
 
     public function view($config_id){
+        $this->allowTo('2'); //Instancie uniquement les admin a acceder à cette page
         $config_manager = new ConfigModel();
         $config = $config_manager->find($config_id);
         $this->show('config/view', ['config' => $config]);
