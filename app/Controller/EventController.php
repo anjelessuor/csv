@@ -10,7 +10,7 @@ class EventController extends \W\Controller\Controller
     //Page qui liste les événements coté back
     public function index()
     {
-        // $this->allowTo('2'); //Instancie uniquement les admin a acceder à cette page
+        $this->allowTo('1');
         $events_manager = new EventsModel(); //Instancie la classe pour générer mes articles en BDD
         $events = $events_manager->findAllByAge(); //Récupère tous les articles en bdd (SELECT * FROM articles)
         $this->show('event/index', ['event' => $events]); //Injecte la variable articles dans mma vue
@@ -19,7 +19,7 @@ class EventController extends \W\Controller\Controller
     //Page de création des articles
     public function create()
     {
-        // $this->allowTo('2');
+        $this->allowTo('1');
         //Traitement du formulaire
         if(!empty($_POST)){ //Vérifie que le formulaire est posté
             $events_title = $_POST['events_title'];
@@ -88,7 +88,7 @@ class EventController extends \W\Controller\Controller
         //Mofifier un événement
         public function update($events_id)
         {
-            // $this->allowTo('2');
+            $this->allowTo('1');
             $events_manager = new EventsModel();
             $event = $events_manager->find($events_id);
                 if (!empty($_POST)) {
@@ -125,6 +125,7 @@ class EventController extends \W\Controller\Controller
         //Suppression d'un événement
         public function delete($events_id)
         {
+            $this->allowTo('1');
             $events_manager = new EventsModel();
             $events_manager->delete($events_id); //Supprime l'article de la BDD
             $this->redirectToRoute('event_index'); //Après la suppression je
@@ -134,6 +135,7 @@ class EventController extends \W\Controller\Controller
         //Voir un événement seul
         public function view($events_id)
         {
+            $this->allowTo('1');
             $events_manager = new EventsModel();
             $event = $events_manager->find($events_id); //Récupere les données de l'article en question
             $this->show('event/view', ['event' => $event]);

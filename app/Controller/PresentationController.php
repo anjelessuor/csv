@@ -9,7 +9,7 @@ class PresentationController extends \W\Controller\Controller
 {
     public function index()
     {
-        // $this->allowTo('2'); //Instancie uniquement les admin a acceder à cette page
+        $this->allowTo('1'); //Instancie uniquement les admin a acceder à cette page
         $presentation_manager = new PresentationModel(); //Instancie la classe pour générer mes articles en BDD
         $presentation = $presentation_manager->findAll(); //Récupère tous les articles en bdd (SELECT * FROM articles)
         $this->show('presentation/index', ['presentation' => $presentation]); //Injecte la variable articles dans ma vue
@@ -17,6 +17,7 @@ class PresentationController extends \W\Controller\Controller
 
     public function update($presentation_id)
     {
+        $this->allowTo('1'); //Instancie uniquement les admin a acceder à cette page
         $presentation_manager = new PresentationModel();
         $presentation = $presentation_manager->find($presentation_id);
 

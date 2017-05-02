@@ -36,12 +36,12 @@ class DefaultController extends Controller
 		$this->show('Security/register');
 	}
 
-	public function about() 
+	public function about()
 	{
 		$this->show('section/qui-sommes-nous');
 	}
 
-	public function enfance1() 
+	public function enfance1()
 	{
 		$ages_manager = new AgesModel();
 		$ages = $ages_manager->findAll();
@@ -54,7 +54,7 @@ class DefaultController extends Controller
 			]);
 	}
 
-	public function enfance2() 
+	public function enfance2()
 	{
 		$ages_manager = new AgesModel();
 		$ages = $ages_manager->findAll();
@@ -67,7 +67,7 @@ class DefaultController extends Controller
 			]);
 	}
 
-	public function enfance3() 
+	public function enfance3()
 	{
 		$ages_manager = new AgesModel();
 		$ages = $ages_manager->findAll();
@@ -80,7 +80,7 @@ class DefaultController extends Controller
 			]);
 	}
 
-	public function jeunes() 
+	public function jeunes()
 	{
 		$ages_manager = new AgesModel();
 		$ages = $ages_manager->findAll();
@@ -93,7 +93,7 @@ class DefaultController extends Controller
 			]);
 	}
 
-	public function family() 
+	public function family()
 	{
 		$ages_manager = new AgesModel();
 		$ages = $ages_manager->findAll();
@@ -106,12 +106,17 @@ class DefaultController extends Controller
 			'activities' => $activities,
 			]);
 	}
-
 	
 	public function events() 
+
 	{
 		$events_manager = new EventsModel(); //Instancie la classe pour générer mes articles en BDD
 		$events = $events_manager->findAll(); //Récupère tous les articles en bdd (SELECT * FROM articles)
 		$this->show('section/events', ['events' => $events]);
+	}
+
+	public function contact()
+	{
+		$this->show('default/contact');
 	}
 }
