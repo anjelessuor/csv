@@ -79,7 +79,7 @@ class SecurityController extends Controller
                 //Si il n'y a pas d'erreur on inscrit l'usager en BDD
                 $authentification_manager = new \W\Security\AuthentificationModel();
 
-                $user_manager->insert([
+                $users = $user_manager->insert([
                     'user_firstname' => $user_firstname,
                     'user_lastname' => $user_lastname,
                     'user_email' => $user_email,

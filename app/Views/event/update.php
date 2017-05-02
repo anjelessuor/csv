@@ -1,16 +1,14 @@
 <?php $this->layout('layout-back', ['title' => 'Modifier un événement' .$event['events_title']]); ?>
 <?php $this->start('main_content'); ?>
 
-
     <div class="container text-center">
         <h1>Mettre à jour l'événement <?= $event['events_title'] ?></h1>
     </div>
-    <br>
 
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <a href="<?php echo $this->url('activities_index') ?>" class="btn btn-warning display"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Retour</a>
+                <a href="<?php echo $this->url('event_index') ?>" class="btn btn-warning display"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Retour</a>
             </div>
             <div class="col-lg-8">
                 <form method="POST" action="" enctype="multipart/form-data">
@@ -57,7 +55,6 @@
             </div>
         </div>
     </div>
-
 
 
 

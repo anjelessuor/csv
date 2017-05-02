@@ -26,7 +26,7 @@
                     <td><img class="partners_logo" src="../uploads/partners/<?php echo $partners['partners_image'] ?>" alt=""></td>
                     <td><?php echo $partners['partners_description'] ?> </td>
                     <td>
-                        <a href="<?= $this->url('partners_update', ['partners_id' => $partners['partners_id'] ]); ?>" class="btn btn-primary"> Modifier </a>
+                        <a href="<?= $this->url('partners_update', ['id' => $partners['partners_id'] ]); ?>" class="btn btn-primary"> Modifier </a>
                         <a href="<?= $this->url('partners_delete', ['partners_id' => $partners['partners_id'] ]); ?>" class="btn btn-danger"> Supprimer </a>
                         <a href="<?= $this->url('partners_view', ['id' => $partners['partners_id']]); ?>" class="btn btn-info">Voir</a>
                     </td>
