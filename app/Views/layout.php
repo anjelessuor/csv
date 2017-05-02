@@ -39,7 +39,7 @@
 			<li><a href="#0">Nos Valeur</a></li>
 			<li><a href="#0">Nos Mission</a></li>
 			<li><a href="#0">Nos Partenaires</a></li>
-			<li><a href="<?php echo $this->url('default_contact'); ?>">Contact</a></li>
+			<li><a href="#">Contact</a></li>
 
 			<li class="cd-label">next Seperate</li>
 
