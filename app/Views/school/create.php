@@ -1,7 +1,15 @@
 
-<?php $this->layout('layout', ['title' => 'Créer un accompagnement']); ?>
+<?php $this->layout('layout-back', ['title' => 'Créer un accompagnement']); ?>
 
 <?php $this->start('main_content'); ?>
+<!--Startlayout-->
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-11">
+            <div>
+            <!--END of Startlayout-->
+
 
     <form action="" method="POST">
 
@@ -22,8 +30,8 @@
             <label><input type="checkbox" name="school_adults" value="1"/> Adultes et familles</label><br/>
         </div>
 
-        <button class="btn btn-submit"> Valider </button>
-        <a href="<?= $this->url('school_index'); ?>" class="btn btn-success">Revenir à la liste</a>
+        <button class="btn btn-submit"> Valider </button><br><br>
+        <a href="<?= $this->url('school_index'); ?>" class="btn btn-warning">Retour</a>
     </form>
 
 <?php $this->stop('main_content'); ?>

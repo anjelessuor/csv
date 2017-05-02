@@ -1,5 +1,21 @@
-<?php $this->layout('layout', ['title' => 'Liste des presentation']); ?>
+<?php $this->layout('layout-back', ['title' => 'Liste des presentation']); ?>
 <?php $this->start('main_content'); ?>
+
+<!--Startlayout-->
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-11">
+            <div>
+            <!--END of Startlayout-->
+
+<!--Return-Button-block  -->
+<div class="container">
+    <div class="row">
+        <a href="<?php echo $this->url('display_index') ?>" class="btn btn-warning">Retour</a>
+    </div>    
+</div>
+<!--END of Return-Button-block  -->            
 
 <table class="table table-striped">
     <thead>
@@ -32,4 +48,8 @@
         <?php } ?>
     </tbody>
 </table>
+
+ 
+
+
 <?php $this->stop('main_content'); ?>

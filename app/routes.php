@@ -69,6 +69,6 @@
 		['GET|POST', '/presentation/index', 'Presentation#index', 'presentation_index'],
 		['GET|POST', '/presentation/update/[i:presentation_id]', 'Presentation#update', 'presentation_update'],
 		['GET', '/presentation/views', 'Presentation#views', 'presentation_views'],
-		['GET|POST', '/display/index', 'Display#index', 'display_index'],
+		['GET|POST', '/display/index', 'Display#index', 'display_index'], 
 
 	);

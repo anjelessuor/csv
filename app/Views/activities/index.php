@@ -1,6 +1,14 @@
-<?php $this->layout('layout', ['title' => 'Liste des activités']) ?>
+<?php $this->layout('layout-back', ['title' => 'Liste des activités']) ?>
 
 <?php $this->start('main_content'); ?>
+
+<!--Startlayout-->
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-11">
+            <div>
+            <!--END of Startlayout-->
 
     <div>
         <a href="<?= $this->url('display_index') ?>" class="btn btn-warning">Retour</a>

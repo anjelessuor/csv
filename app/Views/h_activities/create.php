@@ -1,10 +1,11 @@
-<?php $this->layout('layout', ['title' => 'Créer une nouvelle activité vacances']); ?>
+<?php $this->layout('layout-back', ['title' => 'Créer une nouvelle activité vacances']); ?>
 
 <?php $this->start('main_content'); ?>
-
-    <div>
-        <a href="<?= $this->url('h_activities_index'); ?>" class="btn btn-warning">Revenir à la liste</a>
-    </div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-11">
+            <div>
 
     <form action="" method="POST">
         <div class="form-group">
@@ -31,5 +32,9 @@
         <button class="btn btn-submit"> Valider </button>
 
     </form>
+<br>
+    <div>
+        <a href="<?= $this->url('h_activities_index'); ?>" class="btn btn-success">Revenir à la liste</a>
+    </div>
 
 <?php $this->stop('main_content'); ?>
