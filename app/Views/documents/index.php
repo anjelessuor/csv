@@ -1,46 +1,40 @@
 <?php $this->layout('layout-back', ['title' => 'Liste des pièces disponibles au téléchargement']); ?>
 <?php $this->start('main_content'); ?>
 
-<!--Startlayout-->
-<br>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-11">
-            <div>
-            <!--END of Startlayout-->
+    <div class="container text-center">
+        <h1>Liste des documents disponibles au téléchargement</h1>
+    </div>
 
-<!--Return-Button-block  -->
-<div class="container">
-    <div class="row">
-        <a href="<?php echo $this->url('display_index') ?>" class="btn btn-warning">Retour</a>
-        
-    </div>    
-</div>
-<!--END of Return-Button-block  -->   
-         
-        <a href="<?= $this->url('documents_create') ?>" class="btn btn-primary"> Ajouter un fichier </a>
-        </div>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Lien</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($documents as $documents) { ?>
-            <tr>
-                <td><h2><?php echo $documents['documents_name'] ?> </h2></td>
-                <td><h2><?php echo $documents['documents_description'] ?> </h2></td>
-                <td><h2><?php echo $documents['documents_document'] ?> </h2></td>
-                <td>
-                    <a href="<?= $this->url('documents_update', ['documents_id' => $documents['documents_id'] ]); ?>" class="btn btn-primary"> Modifier </a>
-                    <a href="<?= $this->url('documents_delete', ['documents_id' => $documents['documents_id'] ]); ?>" class="btn btn-danger"> Supprimer </a>
-                </td>
-            </tr>
-    <?php } ?>
-        </tbody>
-   </table>
-  
+    <div class="container">
+        <a href="<?= $this->url('display_index') ?>" class="btn btn-warning"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Retour</a>
+        <a href="<?= $this->url('documents_create') ?>" class="btn btn-success">Ajouter</a>
+
+    </div>
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th class="id">Nom</th>
+                    <th class="title">Description</th>
+                    <th class="list-content">Lien</th>
+                    <th class="action">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($documents as $documents) { ?>
+                <tr>
+                    <td><?php echo $documents['documents_name'] ?> </td>
+                    <td><?php echo $documents['documents_description'] ?> </td>
+                    <td><?php echo $documents['documents_document'] ?> </td>
+                    <td>
+                        <a href="<?= $this->url('documents_update', ['documents_id' => $documents['documents_id'] ]); ?>" class="btn btn-primary"> Modifier </a>
+                        <a href="<?= $this->url('documents_delete', ['documents_id' => $documents['documents_id'] ]); ?>" class="btn btn-danger"> Supprimer </a>
+                        <a href="<?= $this->url('documents_view', ['documents_id' => $documents['documents_id'] ]); ?>" class="btn btn-info"> Voir </a>
+                    </td>
+                </tr>
+                <?php }  ?>
+            </tbody>
+        </table>
+    </div>
+
 <?php $this->stop('main_content'); ?>

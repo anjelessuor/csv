@@ -24,7 +24,7 @@ class UserModel extends UsersModel //On hérite de UserModel car il possède des
 
 
     public function changeTokenLogin($user_id) {
-    $token_login = sha1(md5(sha1($user_id) . sha1(time() b) . md5('1a4g51rz74hz21rz4h') . md5(uniqid()))); // Génére un token du style 3a4f74a7f5a7f4v7g4ae5g41ae2gea87gv
+    $token_login = sha1(md5(sha1($user_id) . sha1(time()) . md5('1a4g51rz74hz21rz4h') . md5(uniqid()))); // Génére un token du style 3a4f74a7f5a7f4v7g4ae5g41ae2gea87gv
     $this->dbh->query('UPDATE users SET token_login = "'.$token_login.'" WHERE user_id = ' . $user_id);
     return $token_login;
     }
