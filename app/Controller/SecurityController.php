@@ -22,10 +22,13 @@ class SecurityController extends Controller
                 $user = $user_manager->find($user_id); //Récupère toutes les infos utilisateur
                 $authentification_manager->logUserIn($user); //La connexion se fait
                 $this->redirectToRoute('display_index');
+            } else {
+                var_dump($authentification_manager->hashPassword($user_password));
+                echo "Vous ne pouvez pas vous connecter";
             }
 
         }
-        $this->show('Security/login');
+        $this->show('security/login');
     }
 
     public function index(){
@@ -110,7 +113,7 @@ class SecurityController extends Controller
             $user_password = $_POST['user_password'];
             $user_status = $_POST['user_status'];
 
-            if (!empty($_POST)) {
+            if (!empty($user_firstname) && !empty($user_lastname) && !empty($user_password)) {
                 $authentification_manager = new \W\Security\AuthentificationModel();
                 $user = $user_manager->update([
                     'user_firstname' => $user_firstname,
@@ -139,7 +142,7 @@ class SecurityController extends Controller
         //$this->allowTo('2');
         $authentification_manager = new \W\Security\AuthentificationModel();
         $authentification_manager->logUserOut(); //Déconnecte l'usager connecté
-        $this->redirectToRoute('display_index');
+        $this->redirectToRoute('default_home');
     }
 
     public function delete($id){
