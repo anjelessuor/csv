@@ -24,11 +24,11 @@
                 <form name="sentMessage" method="POST" id="contact">
                     <div class="form-group">
                         <label for="lastname">Nom de famille :</label>
-                        <input type="text" name="lastname" id="lastname" class="form-control">
+                        <input type="text" name="lastname" id="lastname" class="form-control"  placeholder="Nom de famille" required>
                     </div>
                     <div class="form-group">
                         <label for="firstname">Prénom : </label>
-                        <input type="text" name="firstname" id="firstname" class="form-control">
+                        <input type="text" name="firstname" id="firstname" class="form-control"  placeholder="Prénom" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email : </label>
@@ -37,7 +37,7 @@
                     <div class="form-group">
                         <label for="message">Votre message :</label>
                         <textarea rows="10" cols="100" class="form-control" placeholder="Messages" name="message" id="message" required></textarea>
-                    
+
                     <button type="submit" class="btn btn-primary">Envoyer</button>
                 </form>
             </div>
