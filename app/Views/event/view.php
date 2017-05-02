@@ -8,7 +8,7 @@
        <div class="col-xs-11">
 
 <div>
-    <a href="<?= $this->url('event_index'); ?>" class="btn btn-warning">Revenir à la liste</a>
+    <a href="<?= $this->url('event_index'); ?>" class="btn btn-warning">Retour</a>
 </div>
 
 <div class="row">
@@ -53,7 +53,7 @@
         <br>
 
         <a href="<?= $this->url('event_update', ['events_id' => $event['events_id']]); ?>" class="btn btn-primary">Modifier</a>
-        <a href="<?= $this->url('event_index'); ?>" class="btn btn-warning">Revenir à la liste</a>
+        <a href="<?= $this->url('event_index'); ?>" class="btn btn-warning">Retour</a>
 
     </div>
 </div>

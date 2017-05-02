@@ -84,16 +84,18 @@ class SecurityController extends Controller
                     'user_lastname' => $user_lastname,
                     'user_email' => $user_email,
                     'user_password' => $authentification_manager->hashPassword($user_password),
-                    'user_status' => '0'
+                    'user_status' => '0',
                 ]);
+                $this->redirectToRoute('security_view', ['id' => $users['user_id']]);
                 $messages = ['success' => 'Vous êtes bien inscrit'];
-                // $this->redirectToRoute('route'); //la fonction s'arrête
             } else {
                 $messages = $errors;
             }
+
         }
+
         //$this->redirectToRoute('nom_de_la_route');
-        $this->show('Security/register', ['messages' => $messages, 'user_email' => $user_email, 'user_password' => $user_password]);
+        $this->show('security/register', ['messages' => $messages, 'user_email' => $user_email, 'user_password' => $user_password]);
     }
 
     public function edit($id){
@@ -125,7 +127,8 @@ class SecurityController extends Controller
     }
 
     public function view($id){
-		$user_manager = new UserModel();
+        $this->allowTo('2');
+        $user_manager = new UserModel();
 	    $users = $user_manager->find($id);
 		$this->show('security/view', ['users' => $users]); // j'injecte la variable articles dans la vue
 	}
@@ -133,11 +136,18 @@ class SecurityController extends Controller
     //Déconnexion de l'usager
     public function logout()
     {
+        //$this->allowTo('2');
         $authentification_manager = new \W\Security\AuthentificationModel();
         $authentification_manager->logUserOut(); //Déconnecte l'usager connecté
-        $this->redirectToRoute('security_login');
+        $this->redirectToRoute('display_index');
     }
 
+    public function delete($id){
+		$this->allowTo('2');
+		$user_manager = new UserModel();
+		$user_manager->delete($id); // supprime l'article de la base de données
+		$this->redirectToRoute('security_index'); // Après suppression je redirige l'utilisateur vers la liste des articles
+	}
     //Mot de passe oublié
     public function forget()
     {
@@ -156,7 +166,9 @@ class SecurityController extends Controller
                     'token_forget'=> $token_forget,
                     'date_forget' => $date_forget
                 ], $users['user_id']);
+
                 echo "Voici le lien vous permettant de redéfinir votre mot de passe : <a href='http://localhost/cvs/public/security/forget.php?token=".$token_forget."'>http://localhost/cvs/public/security/forget.php?token=".$token_forget."</a>";
+
             } else {
                 echo 'L\'email n\'existe pas';
             }
