@@ -5,7 +5,7 @@
 		['GET|POST', '/security/login', 'Security#login', 'security_login'],
 		['GET|POST', '/security/register', 'Security#register', 'security_register'],
 		['GET|POST', '/security/forget', 'Security#forget', 'security_forget'],
-		['GET|POST', '/security/change', 'Security#change', 'security_change'],
+
 
 		['GET|POST', '/security/edit/[i:id]', 'Security#edit', 'security_edit'],
 		['GET|POST', '/security/delete/[i:id]', 'Security#delete', 'security_delete'],
