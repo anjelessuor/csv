@@ -29,7 +29,7 @@ $(document).ready(function() {
     active5 = !active5;
     active6 = !active6;
       
+    });
 });
 
-});
 

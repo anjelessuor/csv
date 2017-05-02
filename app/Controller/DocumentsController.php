@@ -10,7 +10,7 @@ class DocumentsController extends \W\Controller\Controller
     //Page qui liste les pièces disponibles au téléchargement
     public function index()
     {
-        // $this->allowTo('2'); //Instancie uniquement les admin a acceder à cette page
+        $this->allowTo('1'); //Instancie uniquement les admin a acceder à cette page
         $documents_manager = new DocumentsModel();
         $documents = $documents_manager->findAll();
         $this->show('documents/index', ['documents' => $documents]);
@@ -19,7 +19,7 @@ class DocumentsController extends \W\Controller\Controller
     //Page d'ajout des téléchargements
     public function create()
     {
-        // $this->allowTo('2');
+        $this->allowTo('1'); //Instancie uniquement les admin a acceder à cette page
         //Traitement du formulaire
         if(!empty($_POST)){ //Vérifie que le formulaire est posté
             $documents_name = $_POST['documents_name'];
@@ -65,7 +65,7 @@ class DocumentsController extends \W\Controller\Controller
                 'documents_description' => $documents_description,
                 'documents_document' => $_FILES["documents_document"]["name"]
             ]);
-
+            $this->redirectToRoute('documents_view', ['documents_id' => $documents['documents_id']]);
         }
     }
         $this->show('documents/create');
@@ -74,7 +74,7 @@ class DocumentsController extends \W\Controller\Controller
         //Mettre à jour un fichier
         public function update($documents_id)
         {
-            // $this->allowTo('2');
+            $this->allowTo('1'); //Instancie uniquement les admin a acceder à cette page
             $documents_manager = new DocumentsModel();
             $documents = $documents_manager->find($documents_id);
                 if (!empty($_POST)) {
@@ -88,6 +88,7 @@ class DocumentsController extends \W\Controller\Controller
                             'documents_description' => $documents_description,
                             'documents_document' => $_FILES["documents_document"]["name"]
                         ], $documents_id); //Requête de mise à jour
+                        $this->redirectToRoute('documents_view', ['documents_id' => $documents['documents_id']]);
                     }
                 }
             $this->show('documents/update', ['documents' => $documents]);
@@ -96,6 +97,7 @@ class DocumentsController extends \W\Controller\Controller
         //Suppression d'un fichier
         public function delete($documents_id)
         {
+            $this->allowTo('1'); //Instancie uniquement les admin a acceder à cette page
             $documents_manager = new DocumentsModel();
             $documents_manager->delete($documents_id); //Supprime l'article de la BDD
             $this->redirectToRoute('documents_index'); //Après la suppression je redirige
@@ -104,6 +106,7 @@ class DocumentsController extends \W\Controller\Controller
         //Voir un fichier seul
         public function view($documents_id)
         {
+            $this->allowTo('1'); //Instancie uniquement les admin a acceder à cette page
             $documents_manager = new DocumentsModel();
             $documents = $documents_manager->find($documents_id); //Récupere les données de l'article en question
             $this->show('documents/view', ['documents' => $documents]);

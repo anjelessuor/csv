@@ -14,7 +14,7 @@
 
 <!--Navbar Backoffice-->	
 
-<div class="nav2">
+<!--<div class="nav2">
 	<div class="drop1"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
 	<div class="drop2"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
 	<div class="drop3"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
@@ -22,7 +22,8 @@
 	<div class="drop5"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
 	<div class="drop6"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
 	<div class="mask2"><i class="fa fa-cogs fa-3x"></i></div>
-</div>
+</div>-->
+
 <!--Navbar End-->
 
 <!--Section field-->
@@ -33,13 +34,8 @@
 
 <!--Footer-->
 <footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-6 col-md-12">
-				<p> Copyright 2017 - Rising Goone Squad </p>
-			</div>
-		</div>
-	</div>
+	
+		<p> Copyright 2017 - Rising Goone Squad </p>
 </footer>			
 <!--Footer END-->
 
@@ -47,5 +43,11 @@
 	<script type="text/javascript" src="<?= $this->assetUrl('js/jQuery-3.1.1.min.js'); ?>"></script>
 	<script type="text/javascript" src="<?= $this->assetUrl('js/bootstrap.min.js'); ?>"></script>
 	<script type="text/javascript" src="<?= $this->assetUrl('js/appback.js'); ?>"></script>
-</body>
+
+
+
+	</body>
 </html>
+
+
+
