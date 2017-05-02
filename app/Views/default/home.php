@@ -2,10 +2,6 @@
 
 <?php $this->start('main_content') ?>
 
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-12">
@@ -27,13 +23,13 @@
 										<p><?php echo $event['events_localization']; ?></p>
 										<p><?php echo $event['events_hours']; ?></p>
 									</hgroup>
-							<button style class="btn btn-hero btn-lg" role="button">Plus d'informations</button>
+										<button style class="btn btn-hero btn-lg" role="button">Plus d'informations</button>
 								</div>
 							</div>
 							<?php endforeach; ?>
 						</div>
 			</div>
-		</div>
+	
 
 
 <!--bottom Part-->
