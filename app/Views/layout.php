@@ -13,18 +13,18 @@
 
 <!--Navbar-->
 		<header class="cd-header">
-		<div class="cd-logo"><a href=""><img src="assets/img/cd-logo.svg" alt="Placeholder"></a></div>
+		<div class="cd-logo"><a href="<?php echo $this->url('default_home'); ?>"><img src="assets/img/cd-logo.svg" alt="Placeholder"></a></div>
 		<nav>
 			<ul class="cd-secondary-nav">
-				<li><a href="#0">ACCUEIL</a></li>
-				<li><a href="#0">QUI SOMMES-NOUS ?</a></li>
-				<li><a href="#0">SECTEUR ENFANCE (3-5ans)</a></li>
-				<li><a href="#0">SECTEUR ENFANCE (6-12ans)</a></li>
-				<li><a href="#0">SECTEUR ENFANCE (12-16ans)</a></li>
-				<li><a href="#0">SECTEUR JEUNES</a></li>
-				<li><a href="#0">Adultes et Famille</a></li>
-				<li><a href="#0">Evénements</a></li>
-				<li><a href="#0">Log IN</a></li>
+				<li><a href="<?php echo $this->url('default_home'); ?>">ACCUEIL</a></li>
+				<li><a href="<?php echo $this->url('section_qui-sommes-nous'); ?>">QUI SOMMES-NOUS ?</a></li>
+				<li><a href="<?php echo $this->url('section_enfance-3-5'); ?>">SECTEUR ENFANCE (3-5ans)</a></li>
+				<li><a href="<?php echo $this->url('section_enfance-6-12'); ?>">SECTEUR ENFANCE (6-12ans)</a></li>
+				<li><a href="<?php echo $this->url('section_enfance-12-16'); ?>">SECTEUR ENFANCE (12-16ans)</a></li>
+				<li><a href="<?php echo $this->url('section_jeunes'); ?>">SECTEUR JEUNES</a></li>
+				<li><a href="<?php echo $this->url('section_adultes-et-famille'); ?>">Adultes et Famille</a></li>
+				<li><a href="<?php echo $this->url('section_events'); ?>">Evénements</a></li>
+				<li><a href="<?php echo $this->url('security_login'); ?>">Log IN</a></li>
 			</ul>
 		</nav> <!-- cd-nav -->
 
@@ -39,7 +39,7 @@
 			<li><a href="#0">Nos Valeur</a></li>
 			<li><a href="#0">Nos Mission</a></li>
 			<li><a href="#0">Nos Partenaires</a></li>
-			<li><a href="#0">Contact</a></li>
+			<li><a href="<?php echo $this->url('default_contact'); ?>">Contact</a></li>
 
 			<li class="cd-label">next Seperate</li>
 
@@ -71,7 +71,7 @@
 
 <div class="container">
 				<div class="row">
-					<div class="col-xs-6 col-md-12">
+					<div class="col-xs-12">
 						<section>
 							<?= $this->section('main_content') ?>
 						</section>
