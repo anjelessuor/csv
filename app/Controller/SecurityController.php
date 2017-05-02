@@ -10,146 +10,183 @@ class SecurityController extends Controller
 
     public function login()
     {
-        if (!empty($_POST)) {
-            $user_email = $_POST['user_email'];
-            $user_password = $_POST['user_password'];
-            $authentification_manager = new \W\Security\AuthentificationModel();
+        $user_manager = new UserModel();
+        $user = $this->getUser();
+        if ($user['user_status'] == 2) {
+            if (!empty($_POST)) {
+                $user_email = $_POST['user_email'];
+                $user_password = $_POST['user_password'];
+                $authentification_manager = new \W\Security\AuthentificationModel();
 
-            $user_id = $authentification_manager->isValidLoginInfo($user_email, $user_password);
+                $user_id = $authentification_manager->isValidLoginInfo($user_email, $user_password);
 
-            if ($user_id){ //Si le couple username/password est valide
-                $user_manager = new UserModel();
-                $user = $user_manager->find($user_id); //Récupère toutes les infos utilisateur
-                $authentification_manager->logUserIn($user); //La connexion se fait
-                $this->redirectToRoute('display_index');
-            } else {
-                var_dump($authentification_manager->hashPassword($user_password));
-                echo "Vous ne pouvez pas vous connecter";
+                if ($user_id){ //Si le couple username/password est valide
+                    $user_manager = new UserModel();
+                    $user = $user_manager->find($user_id); //Récupère toutes les infos utilisateur
+                    $authentification_manager->logUserIn($user); //La connexion se fait
+                    $this->redirectToRoute('display_index');
+                } else {
+                    var_dump($authentification_manager->hashPassword($user_password));
+                    echo "Vous ne pouvez pas vous connecter";
+                }
             }
-
+            $this->show('security/login');
+        } else {
+            echo "Vous n'êtes pas autorisé à accéder à cette section";
         }
-        $this->show('security/login');
     }
 
     public function index(){
-        $this->allowTo('2');
         $user_manager = new UserModel();
-        $users = $user_manager->findAll(); // récupère tous les articles en bdd (SELECT * FROM articles)
-        $this->show('security/index', ['users' => $users]); // j'injecte la variable articles dans la vue
+        $user = $this->getUser();
+        if ($user['user_status'] == 2) {
+            $user_manager = new UserModel();
+            $users = $user_manager->findAll(); // récupère tous les articles en bdd (SELECT * FROM articles)
+            $this->show('security/index', ['users' => $users]); // j'injecte la variable articles dans la vue
+        } else {
+            echo "Vous n'êtes pas autorisé à accéder à cette section";
+        }
     }
 
 
     //Login de l'utilisateur
     public function register()
-    {   $this->allowTo('2');
-        //Si formulaire n'est pas rempli
-        $user_firstname = '';
-        $user_lastname = '';
-        $user_email = '';
-        $user_password = '';
-        $user_cfpassword = '';
-        $messages = '';
-
+    {
         $user_manager = new UserModel();
-        //Traitement formulaire d'inscription
-        if (!empty($_POST)){
-            $user_firstname = trim($_POST['user_firstname']);
-            $user_lastname = trim($_POST['user_lastname']);
-            $user_email = trim($_POST['user_email']);
-            $user_password = trim($_POST['user_password']);
-            $user_cfpassword = trim($_POST['user_cfpassword']);
-            $errors = []; //tableau vide
+        $user = $this->getUser();
+        if ($user['user_status'] == 2) {
+            //Si formulaire n'est pas rempli
+            $user_firstname = '';
+            $user_lastname = '';
+            $user_email = '';
+            $user_password = '';
+            $user_cfpassword = '';
+            $messages = '';
 
-            if (empty($user_firstname)) {
-                $errors['user_firstname'] =  "Le prénom est vide ou invalide.";
-            }
-            if (empty($user_lastname)) {
-                $errors['user_lastname'] =  "Le nom est vide ou invalide.";
-            }
-            //On vérifie si l'email existe en BDD
-            if ($user_manager->emailExists($user_email) ){
-                $errors['exists'] =  "L'email existe déjà."; //equivaut à array_push($array, $data)
-            }
-            if (empty($user_email) || !filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
-                $errors['user_email'] =  "L'email est vide ou invalide.";
-            }
-            if ($user_password !== $user_cfpassword ) {
-                $errors['user_password'] =  "Les mots de passe ne correspondent pas";
-            }
+            $user_manager = new UserModel();
+            //Traitement formulaire d'inscription
+            if (!empty($_POST)){
+                $user_firstname = trim($_POST['user_firstname']);
+                $user_lastname = trim($_POST['user_lastname']);
+                $user_email = trim($_POST['user_email']);
+                $user_password = trim($_POST['user_password']);
+                $user_cfpassword = trim($_POST['user_cfpassword']);
+                $errors = []; //tableau vide
 
-            if (empty ($errors)) {
-                //Instancier $auhentificationmodel qui facilite la gestion de l'auth. des usagers
-                //Si il n'y a pas d'erreur on inscrit l'usager en BDD
-                $authentification_manager = new \W\Security\AuthentificationModel();
+                if (empty($user_firstname)) {
+                    $errors['user_firstname'] =  "Le prénom est vide ou invalide.";
+                }
+                if (empty($user_lastname)) {
+                    $errors['user_lastname'] =  "Le nom est vide ou invalide.";
+                }
+                //On vérifie si l'email existe en BDD
+                if ($user_manager->emailExists($user_email) ){
+                    $errors['exists'] =  "L'email existe déjà."; //equivaut à array_push($array, $data)
+                }
+                if (empty($user_email) || !filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
+                    $errors['user_email'] =  "L'email est vide ou invalide.";
+                }
 
-                $users = $user_manager->insert([
-                    'user_firstname' => $user_firstname,
-                    'user_lastname' => $user_lastname,
-                    'user_email' => $user_email,
-                    'user_password' => $authentification_manager->hashPassword($user_password),
-                    'user_status' => '0',
-                ]);
-                $this->redirectToRoute('security_view', ['id' => $users['user_id']]);
-                $messages = ['success' => 'Vous êtes bien inscrit'];
-            } else {
-                $messages = $errors;
-            }
+                if (strlen($user_password) < 4 ) {
+                    $errors['user_passwordlenght'] =  "Le mot de passe est trop court (minimum 5 caractères)";
+                }
+                if ($user_password !== $user_cfpassword ) {
+                    $errors['user_password'] =  "Les mots de passe ne correspondent pas";
+                }
 
+                if (empty ($errors)) {
+                    //Instancier $auhentificationmodel qui facilite la gestion de l'auth. des usagers
+                    //Si il n'y a pas d'erreur on inscrit l'usager en BDD
+                    $authentification_manager = new \W\Security\AuthentificationModel();
+
+                    $users = $user_manager->insert([
+                        'user_firstname' => $user_firstname,
+                        'user_lastname' => $user_lastname,
+                        'user_email' => $user_email,
+                        'user_password' => $authentification_manager->hashPassword($user_password),
+                        'user_status' => '1',
+                        ]);
+                        $this->redirectToRoute('security_view', ['id' => $users['user_id']]);
+                        $messages = ['success' => 'Vous êtes bien inscrit'];
+                    } else {
+                        $messages = $errors;
+                    }
+                }
+                $this->show('security/register', ['messages' => $messages, 'user_email' => $user_email, 'user_password' => $user_password]);
+        } else {
+            echo "Vous n'êtes pas autorisé à accéder à cette section";
         }
-
-        //$this->redirectToRoute('nom_de_la_route');
-        $this->show('security/register', ['messages' => $messages, 'user_email' => $user_email, 'user_password' => $user_password]);
     }
 
     public function edit($id){
-        $this->allowTo('2');
         $user_manager = new UserModel();
-        $users = $user_manager->find($id);
+        $user = $this->getUser();
+        if ($user['user_status'] == 2) {
+            $user_manager = new UserModel();
+            $users = $user_manager->find($id);
 
-        if (!empty($_POST)) {
-            $user_firstname = $_POST['user_firstname'];
-            $user_lastname = $_POST['user_lastname'];
-            $user_email = $_POST['user_email'];
-            $user_password = $_POST['user_password'];
-            $user_status = $_POST['user_status'];
+            if (!empty($_POST)) {
+                $user_firstname = $_POST['user_firstname'];
+                $user_lastname = $_POST['user_lastname'];
+                $user_email = $_POST['user_email'];
+                $user_password = $_POST['user_password'];
+                $user_status = $_POST['user_status'];
 
-            if (!empty($user_firstname) && !empty($user_lastname) && !empty($user_password)) {
-                $authentification_manager = new \W\Security\AuthentificationModel();
-                $user = $user_manager->update([
-                    'user_firstname' => $user_firstname,
-                    'user_lastname' => $user_lastname,
-                    'user_email' => $user_email,
-                    'user_password' => $authentification_manager->hashPassword($user_password),
-                    'user_status' => $user_status,
+                if (!empty($user_firstname) && !empty($user_lastname) && strlen($user_password) < 4) {
+                    $authentification_manager = new \W\Security\AuthentificationModel();
+                    $user = $user_manager->update([
+                        'user_firstname' => $user_firstname,
+                        'user_lastname' => $user_lastname,
+                        'user_email' => $user_email,
+                        'user_password' => $authentification_manager->hashPassword($user_password),
+                        'user_status' => $user_status,
 
-                ], $id); // Requête SQL pour mettre à jour un article
-                $this->redirectToRoute('security_view', ['id' => $users['user_id']]);
+                    ], $id); // Requête SQL pour mettre à jour un article
+                    $this->redirectToRoute('security_view', ['id' => $users['user_id']]);
+                }
             }
+            $this->show('security/edit', ['users' => $users]);
+        } else {
+            echo "Vous n'êtes pas autorisé à accéder à cette section";
         }
-        $this->show('security/edit', ['users' => $users]);
     }
 
     public function view($id){
-        $this->allowTo('2');
         $user_manager = new UserModel();
-	    $users = $user_manager->find($id);
-		$this->show('security/view', ['users' => $users]); // j'injecte la variable articles dans la vue
+        $user = $this->getUser();
+        if ($user['user_status'] == 2) {
+            $user_manager = new UserModel();
+            $users = $user_manager->find($id);
+            $this->show('security/view', ['users' => $users]); // j'injecte la variable articles dans la vue
+        } else {
+            echo "Vous n'êtes pas autorisé à accéder à cette section";
+        }
 	}
 
     //Déconnexion de l'usager
     public function logout()
     {
-        //$this->allowTo('2');
-        $authentification_manager = new \W\Security\AuthentificationModel();
-        $authentification_manager->logUserOut(); //Déconnecte l'usager connecté
-        $this->redirectToRoute('default_home');
+        $user_manager = new UserModel();
+        $user = $this->getUser();
+        if ($user['user_status'] == 1 || $user['user_status'] == 2) {
+            $authentification_manager = new \W\Security\AuthentificationModel();
+            $authentification_manager->logUserOut(); //Déconnecte l'usager connecté
+            $this->redirectToRoute('default_home');
+        } else {
+            echo "Vous n'êtes pas autorisé à accéder à cette section";
+        }
     }
 
     public function delete($id){
-		$this->allowTo('2');
-		$user_manager = new UserModel();
-		$user_manager->delete($id); // supprime l'article de la base de données
-		$this->redirectToRoute('security_index'); // Après suppression je redirige l'utilisateur vers la liste des articles
+        $user_manager = new UserModel();
+        $user = $this->getUser();
+        if ($user['user_status'] == 2) {
+            $user_manager = new UserModel();
+            $user_manager->delete($id); // supprime l'article de la base de données
+            $this->redirectToRoute('security_index'); // Après suppression je redirige l'utilisateur vers la liste des articles
+        } else {
+            echo "Vous n'êtes pas autorisé à accéder à cette section";
+        }
 	}
     //Mot de passe oublié
     public function forget()
