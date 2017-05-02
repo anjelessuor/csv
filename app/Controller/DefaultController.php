@@ -35,27 +35,37 @@ class DefaultController extends Controller
 
 	public function enfance1() 
 	{
-		$this->show('section/enfance-3-5');
+		$ages_manager = new AgesModel();
+		$ages = $ages_manager->findAll();
+		$this->show('section/enfance-3-5', ['ages' => $ages]);
 	}
 
 	public function enfance2() 
 	{
-		$this->show('section/enfance-6-12');
+		$ages_manager = new AgesModel();
+		$ages = $ages_manager->findAll();
+		$this->show('section/enfance-6-12', ['ages' => $ages]);
 	}
 
 	public function enfance3() 
 	{
-		$this->show('section/enfance-12-16');
+		$ages_manager = new AgesModel();
+		$ages = $ages_manager->findAll();
+		$this->show('section/enfance-12-16', ['ages' => $ages]);
 	}
 
 	public function jeunes() 
 	{
-		$this->show('section/jeunes');
+		$ages_manager = new AgesModel();
+		$ages = $ages_manager->findAll();
+		$this->show('section/jeunes', ['ages' => $ages]);
 	}
 
 	public function family() 
 	{
-		$this->show('section/adultes-et-famille');
+		$ages_manager = new AgesModel();
+		$ages = $ages_manager->findAll();
+		$this->show('section/adultes-et-famille', ['ages' => $ages]);
 	}
 	
 	public function events() 
