@@ -15,14 +15,19 @@
                 <div class="form-group">
                     <label for="documents_name">Nom : </label>
                     <input class="form-control" type="text" name="documents_name" id="documents_name" value="<?php echo $documents['documents_name']?>">
+                    <?= (isset($messages['documents_name'])) ? '<span class="help-block">' .$messages['documents_name'] . '</span>' : '' ?>
                 </div>
                 <div class="form-group">
                     <label for="documents_description">Description : </label>
                     <textarea class="form-control" name="documents_description" id="documents_description" value="<?php echo $documents['documents_description']?>"></textarea>
+                    <?= (isset($messages['documents_description'])) ? '<span class="help-block">' .$messages['documents_description'] . '</span>' : '' ?>
                 </div>
                 <div class="form-group">
                     <label for="documents_document"> Fichier : </label>
                     <input type="file" name="documents_document" id="documents_document">
+                    <?= (isset($messages['documents_size'])) ? '<span class="help-block">' .$messages['documents_size'] . '</span>' : '' ?>
+                    <?= (isset($messages['documents_type'])) ? '<span class="help-block">' .$messages['documents_type'] . '</span>' : '' ?>
+                    <?= (isset($messages['documents_load'])) ? '<span class="help-block">' .$messages['documents_load'] . '</span>' : '' ?>
                 </div>
                 <button class="btn btn-submit">Modifier : </div>
             </form>

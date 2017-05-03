@@ -36,7 +36,7 @@
         </div>
 
         <div class="col-xs-5">
-            <a href="<?php echo $this->url('security_logout'); ?>" class="btn btn-danger btn-block">Déconnexion</a>
+            <a href="<?php echo $this->url('security_logout'); ?>" class="btn btn-danger display">Déconnexion</a>
         </div>
 
     </div>

@@ -24,10 +24,12 @@
                 <div class="form-group">
                     <label for="school_title"> Accompagnement : </label>
                     <input id="school_title" name="school_title" class="form-control">
+                    <?= (isset($messages['school_title'])) ? '<span class="help-block">' .$messages['school_title'] . '</span>' : '' ?>
                 </div>
                 <div class="form-group">
                     <label for="school_description"> Description : </label>
                     <textarea id="school_description" name="school_description" class="form-control"></textarea>
+                    <?= (isset($messages['school_description'])) ? '<span class="help-block">' .$messages['school_description'] . '</span>' : '' ?>
                 </div>
                 <div class="form-group">
                     <label for="school_ages"> A quels secteurs s'appliquent cet accompagnement ? </label><br/>

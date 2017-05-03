@@ -24,7 +24,7 @@
                         <p><?php echo $partners['partners_description']; ?></p>
                         <br>
                         <p>Lien</p>
-                        <a href="<?php echo $partners['partners_link']; ?>"><?php echo $partners['partners_link']; ?></a>
+                        <a href="<?php echo $partners['partners_link']; ?>" target="_blank"><?php echo $partners['partners_link']; ?></a>
                         <br>
                     </div>
                 </div>
