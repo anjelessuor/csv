@@ -68,16 +68,6 @@
 
 
 <!--Section field-->
-
-<div class="container">
-	<div class="row">
-		<div class="col-xs-6 col-md-12">
-			<section>
-				<?= $this->section('main_content') ?>
-			</section>
-		</div>
-	</div>
-</div>
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
