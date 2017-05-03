@@ -26,6 +26,7 @@
                         <label for="user_email">Email : </label>
                         <input type="email" name="user_email" class="form-control">
                         <?= (isset($messages['user_email'])) ? '<span class="help-block">' .$messages['user_email'] . '</span>' : '' ?>
+                        <?= (isset($messages['exists'])) ? '<span class="help-block">' .$messages['exists'] . '</span>' : '' ?>
                     </div>
                     <div class="form-group">
                         <label for="user_password">Mot de passe : </label>

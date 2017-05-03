@@ -15,11 +15,11 @@
                     <div class="form-group">
                         <label for="user_id"> ID utilisateur : </label>
                         <p><?php echo $users['user_id']; ?><p/>
-                        <?= (isset($messages['user_firstname'])) ? '<span class="help-block">' .$messages['user_firstname'] . '</span>' : '' ?>
                     </div>
                     <div class="form-group">
                         <label for="user_firstname"> Prénom : </label>
                         <input id="user_firstname" name="user_firstname" class="form-control" value="<?php echo $users['user_firstname']; ?>">
+                        <?= (isset($messages['user_firstname'])) ? '<span class="help-block">' .$messages['user_firstname'] . '</span>' : '' ?>
 
                     </div>
                     <div class="form-group">
