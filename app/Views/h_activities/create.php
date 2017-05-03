@@ -17,10 +17,17 @@
                 <div class="form-group">
                     <label for="h_activities_title"> Activité : </label>
                     <input id="h_activities_title" name="h_activities_title" class="form-control">
+                    <?= (isset($messages['h_activities_title'])) ? '<span class="help-block">' .$messages['h_activities_title'] . '</span>' : '' ?>
                 </div>
                 <div class="form-group">
                     <label for="h_activities_description"> Description de l'activité : </label>
                     <textarea id="h_activities_description" name="h_activities_description" class="form-control"></textarea>
+                    <?= (isset($messages['h_activities_description'])) ? '<span class="help-block">' .$messages['h_activities_description'] . '</span>' : '' ?>
+                </div>
+                <div class="form-group">
+                    <label for="h_activities_price"> Prix de l'activité : </label>
+                    <input id="h_activities_price" name="h_activities_price" class="form-control">
+                    <?= (isset($messages['h_activities_price'])) ? '<span class="help-block">' .$messages['h_activities_price'] . '</span>' : '' ?>
                 </div>
                 <div class="form-group">
                     <label for="h_activities_ages"> A quels secteurs s'appliquent cette activité ? </label><br/>
