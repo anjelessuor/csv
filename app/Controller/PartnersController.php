@@ -18,7 +18,8 @@ class PartnersController extends \W\Controller\Controller
             $partners = $partners_manager->findAll();
             $this->show('partners/index', ['partners' => $partners]);
         } else {
-            echo "Vous n'êtes pas autorisé à accéder à cette section";
+            echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+			$this->show('w_errors/404');
         }
     }
 
@@ -28,37 +29,50 @@ class PartnersController extends \W\Controller\Controller
         $user_manager = new UserModel();
         $user = $this->getUser();
         if ($user['user_status'] == 1 || $user['user_status'] == 2) {
+            $messages = '';
             //Traitement du formulaire
             if(!empty($_POST)){ //Vérifie que le formulaire est posté
                 $partners_name = $_POST['partners_name'];
                 $partners_description = $_POST['partners_description'];
                 $partners_link = $_POST['partners_link'];
+                $errors = []; //tableau vide
+
 
                 $target_dir = "uploads/partners/";
                 $target_file = $target_dir . basename($_FILES["partners_image"]["name"]);
                 $uploadOk = 1;
                 $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
+                if (empty($partners_name) || strlen($partners_name) < 3 ) {
+                    $errors['partners_name'] =  "Le nom est vide ou invalide (3 caratères minimum).";
+                }
+                if (empty($partners_description) || strlen($partners_description) < 3) {
+                    $errors['partners_description'] =  "La description est vide ou invalide (3 caratères minimum).";
+                }
+                if (empty($partners_link) || !filter_var($partners_link, FILTER_VALIDATE_URL)) {
+                    $errors['partners_link'] =  "Le lien est vide ou invalide.";
+                }
+
                 // Check file size
                 if ($_FILES["partners_image"]["size"] > 2000000) {
-                    echo "Le fichier est trop volumineux.";
+                    $errors['partners_size'] =  "Le fichier est trop volumineux.";
                     $uploadOk = 0;
                 }
                 // Allow certain file formats
                 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
                 && $imageFileType != "gif" ) {
-                    echo "Seuls les fichiers JPG, JPEG, PNG & GIF seront acceptés.";
+                    $errors['partners_type'] =  "Seuls les fichiers JPG, JPEG, PNG & GIF seront acceptés.";
                     $uploadOk = 0;
                 }
                 // Check if $uploadOk is set to 0 by an error
                 if ($uploadOk == 0) {
-                    echo "Le fichier n'a pas été chargé.";
+                    $errors['partners_load'] =  "Le fichier n'a pas été chargé.";
                     // if everything is ok, try to upload file
                 } else {
                     if (move_uploaded_file($_FILES["partners_image"]["tmp_name"], $target_file)) {
                         echo "Le fichier ". basename( $_FILES["partners_image"]["name"]). " a bien été chargé.";
                     } else {
-                        echo "Le fichier n'a pas été chargé correctement.";
+                        $errors['partners_load'] =  "Le fichier n'a pas été chargé.";
                     }
                 }
 
@@ -66,7 +80,7 @@ class PartnersController extends \W\Controller\Controller
 
                 //Requête sql pour insérer un partenaire
                 $partners_manager = new PartnersModel(); //Instancier ma classe pour gérer mes articles en BDD
-                if (!empty($partners_name) || !empty($partners_description) ){ //Je vérifie si les champs sont vides ou pas
+                if (empty($errors) ){ //Je vérifie si les champs sont vides ou pas
                     $partners = $partners_manager->insert([
                         'partners_name' => $partners_name,
                         'partners_description' => $partners_description,
@@ -75,11 +89,14 @@ class PartnersController extends \W\Controller\Controller
 
                     ]);
                     $this->redirectToRoute('partners_view', ['id' => $partners['partners_id']]);
+                }  else {
+                    $messages = $errors;
                 }
             }
-            $this->show('partners/create');
+            $this->show('partners/create', ['messages' => $messages]);
         } else {
-            echo "Vous n'êtes pas autorisé à accéder à cette section";
+            echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+            $this->show('w_errors/404');
         }
     }
 
@@ -89,6 +106,8 @@ class PartnersController extends \W\Controller\Controller
             $user_manager = new UserModel();
             $user = $this->getUser();
             if ($user['user_status'] == 1 || $user['user_status'] == 2) {
+                $messages = '';
+
                 $partners_manager = new PartnersModel();
                 $partners = $partners_manager->find($id);
                 if (!empty($_POST)) {
@@ -96,7 +115,50 @@ class PartnersController extends \W\Controller\Controller
                     $partners_description = $_POST['partners_description'];
                     $partners_image = $_FILES["partners_image"]["name"];
                     $partners_link = $_POST['partners_link'];
-                    if (!empty($partners_name) || !empty($partners_description)) {
+                    $errors = []; //tableau vide
+
+                    $target_dir = "uploads/partners/";
+                    $target_file = $target_dir . basename($_FILES["partners_image"]["name"]);
+                    $uploadOk = 1;
+                    $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+
+                    if (empty($partners_name) || strlen($partners_name) < 3 ) {
+                        $errors['partners_name'] =  "Le nom est vide ou invalide (3 caratères minimum).";
+                    }
+                    if (empty($partners_description) || strlen($partners_description) < 3) {
+                        $errors['partners_description'] =  "La description est vide ou invalide (3 caratères minimum).";
+                    }
+                    if (empty($partners_link) || !filter_var($partners_link, FILTER_VALIDATE_URL)) {
+                        $errors['partners_link'] =  "Le lien est vide ou invalide.";
+                    }
+
+                    // Check file size
+                    if ($_FILES["partners_image"]["size"] > 2000000) {
+                        $errors['partners_size'] =  "Le fichier est trop volumineux.";
+                        $uploadOk = 0;
+                    }
+                    // Allow certain file formats
+                    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+                    && $imageFileType != "gif" ) {
+                        $errors['partners_type'] =  "Seuls les fichiers JPG, JPEG, PNG & GIF seront acceptés.";
+                        $uploadOk = 0;
+                    }
+                    // Check if $uploadOk is set to 0 by an error
+                    if ($uploadOk == 0) {
+                        $errors['partners_load'] =  "Le fichier n'a pas été chargé.";
+                        // if everything is ok, try to upload file
+                    } else {
+                        if (move_uploaded_file($_FILES["partners_image"]["tmp_name"], $target_file)) {
+                            echo "Le fichier ". basename( $_FILES["partners_image"]["name"]). " a bien été chargé.";
+                        } else {
+                            $errors['partners_load'] =  "Le fichier n'a pas été chargé.";
+                        }
+                    }
+
+                    $partners_image = $_FILES["partners_image"]["name"];
+
+
+                    if (empty($errors)) {
                         $partners = $partners_manager->update([
                             'partners_name' => $partners_name,
                             'partners_description' => $partners_description,
@@ -104,11 +166,14 @@ class PartnersController extends \W\Controller\Controller
                             'partners_link' => $partners_link,
                         ], $id); //Requête de mise à jour du partenaire
                         $this->redirectToRoute('partners_view', ['id' => $partners['partners_id']]);
+                    } else {
+                        $messages = $errors;
                     }
                 }
-                $this->show('partners/update', ['partners' => $partners]);
+                $this->show('partners/update', ['messages' => $messages, 'partners' => $partners]);
             } else {
-                echo "Vous n'êtes pas autorisé à accéder à cette section";
+                echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+                $this->show('w_errors/404');
             }
         }
 
@@ -122,7 +187,8 @@ class PartnersController extends \W\Controller\Controller
                 $partners_manager->delete($partners_id); //Supprime
                 $this->redirectToRoute('partners_index'); //Après la suppression je redirige l'utlisateur vers la liste des partenaires
             } else {
-                echo "Vous n'êtes pas autorisé à accéder à cette section";
+                echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+                $this->show('w_errors/404');
             }
         }
 
@@ -136,7 +202,8 @@ class PartnersController extends \W\Controller\Controller
                 $partners = $partners_manager->find($partners_id); //Récupere les données de l'article en question
                 $this->show('partners/view', ['partners' => $partners]);
             } else {
-                echo "Vous n'êtes pas autorisé à accéder à cette section";
+                echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+                $this->show('w_errors/404');
             }
         }
 }

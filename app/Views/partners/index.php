@@ -16,6 +16,7 @@
                     <th class="id">Nom</th>
                     <th class="title">Logo</th>
                     <th class="list-content">Description</th>
+                    <th class="list-content">Lien</th>
                     <th class="action">Actions</th>
                 </tr>
             </thead>
@@ -25,6 +26,7 @@
                     <td><?php echo $partners['partners_name'] ?> </td>
                     <td><img class="partners_logo" src="../uploads/partners/<?php echo $partners['partners_image'] ?>" alt=""></td>
                     <td><?php echo $partners['partners_description'] ?> </td>
+                    <td><a href="<?php echo $partners['partners_link'] ?>" target="_blank"><?php echo $partners['partners_link'] ?></a></td>
                     <td>
                         <a href="<?= $this->url('partners_update', ['id' => $partners['partners_id'] ]); ?>" class="btn btn-primary"> Modifier </a>
                         <a href="<?= $this->url('partners_delete', ['partners_id' => $partners['partners_id'] ]); ?>" class="btn btn-danger"> Supprimer </a>
