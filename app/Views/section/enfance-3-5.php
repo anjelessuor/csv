@@ -44,15 +44,12 @@
             <div id="vacances">
                 <h1>Vacances Scolaires</h1>
                 <?php foreach ($h_activities as $h_activity) {
-<<<<<<< Updated upstream
-=======
+
 
                     if ($h_activity['h_activities_title'] == 'Vacances'&& $h_activity['h_activities_3to5'] == 1){
                         echo $h_activity['activities_description'];
                 }
 
-
->>>>>>> Stashed changes
                     if ($h_activity['h_activities_title'] == 'Vacances' && $h_activity['h_activities_3to5'] == 1){
                         echo $h_activity['h_activities_description'];
                     }
