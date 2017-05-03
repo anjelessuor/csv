@@ -39,7 +39,8 @@ class SecurityController extends Controller
             $users = $user_manager->findAll(); // récupère tous les articles en bdd (SELECT * FROM articles)
             $this->show('security/index', ['users' => $users]); // j'injecte la variable articles dans la vue
         } else {
-            echo "Vous n'êtes pas autorisé à accéder à cette section";
+            echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+            $this->show('w_errors/404');
         }
     }
 
@@ -109,9 +110,11 @@ class SecurityController extends Controller
                 }
                 $this->show('security/register', ['messages' => $messages, 'user_email' => $user_email, 'user_password' => $user_password]);
         } else {
-            echo "Vous n'êtes pas autorisé à accéder à cette section";
+            echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+            $this->show('w_errors/404');
         }
     }
+
 
     public function edit($id){
         $user_manager = new UserModel();
@@ -151,7 +154,8 @@ class SecurityController extends Controller
             }
             $this->show('security/edit', ['users' => $users, 'messages' => $messages]);
         } else {
-            echo "Vous n'êtes pas autorisé à accéder à cette section";
+            echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+            $this->show('w_errors/404');
         }
     }
 
@@ -202,7 +206,8 @@ class SecurityController extends Controller
             }
             $this->show('security/edituser', ['users' => $users, 'messages' => $messages]);
         } else {
-            echo "Vous n'êtes pas autorisé à accéder à cette section";
+            echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+            $this->show('w_errors/404');
         }
 
 
@@ -216,7 +221,8 @@ class SecurityController extends Controller
             $users = $user_manager->find($id);
             $this->show('security/view', ['users' => $users]); // j'injecte la variable articles dans la vue
         } else {
-            echo "Vous n'êtes pas autorisé à accéder à cette section";
+            echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+            $this->show('w_errors/404');
         }
 	}
 
@@ -230,7 +236,8 @@ class SecurityController extends Controller
             $authentification_manager->logUserOut(); //Déconnecte l'usager connecté
             $this->redirectToRoute('default_home');
         } else {
-            echo "Vous n'êtes pas autorisé à accéder à cette section";
+            echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+            $this->show('w_errors/404');
         }
     }
 
@@ -242,7 +249,8 @@ class SecurityController extends Controller
             $user_manager->delete($id); // supprime l'article de la base de données
             $this->redirectToRoute('security_index'); // Après suppression je redirige l'utilisateur vers la liste des articles
         } else {
-            echo "Vous n'êtes pas autorisé à accéder à cette section";
+            echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+            $this->show('w_errors/404');
         }
 	}
     //Mot de passe oublié
