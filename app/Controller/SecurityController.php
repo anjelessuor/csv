@@ -286,7 +286,7 @@ class SecurityController extends Controller
             $cfpassword = $_POST['cfpassword'];
 
             if ($user_id->isValidToken($token)) {
-                if ($user_password == $cfpassword) { // Je vérifie que les deux champs mot de passe soit identique
+                if ($user_password == $cfpassword) { // Je vérifie que les deux champs mot de passe soient identiques
                     $user_manager->changeUserPassword($this->getUser()['user_id'], $user_password);
                     // Renvoyer un mail
                 }
