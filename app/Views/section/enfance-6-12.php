@@ -17,6 +17,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Activités <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#mercredi">Mercredi</a></li>
+                        <li><a href="#vendredi">Vendredi</a></li>
                         <li><a href="#vacances">Vacances Scolaires</a></li>       
                         <li><a href="#accompagnement">Accompagnement à la scolarité</a></li>                        
                     </ul>
@@ -35,6 +36,15 @@
                 <h1>Mercredi</h1>
                 <?php foreach ($activities as $activity){
                     if ($activity['activities_title'] == 'Mercredi' && $activity['activities_6to12'] == 1){
+                        echo $activity['activities_description'];
+                    }
+                }?>
+            </div>
+
+            <div id="vendredi">
+                <h1>Vendredi</h1>
+                <?php foreach ($activities as $activity){
+                    if ($activity['activities_title'] == 'Vendredi' && $activity['activities_6to12'] == 1){
                         echo $activity['activities_description'];
                     }
                 }?>
