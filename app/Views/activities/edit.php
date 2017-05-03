@@ -16,10 +16,12 @@
                     <div class="form-group">
                         <label for="activities_title"> Activité : </label>
                         <input id="activities_title" name="activities_title" class="form-control" value="<?php echo $activities['activities_title']; ?>">
+                        <?= (isset($messages['activities_title'])) ? '<span class="help-block">' .$messages['activities_title'] . '</span>' : '' ?>
                     </div>
                     <div class="form-group">
                         <label for="activities_description"> Description de l'activité : </label>
                         <textarea class="form-control" name="activities_description" id="activities_description"><?php echo $activities['activities_description'] ?></textarea>
+                        <?= (isset($messages['activities_description'])) ? '<span class="help-block">' .$messages['activities_description'] . '</span>' : '' ?>
                     </div>
                     <div class="form-group">
                         <label for="activities_ages"> A quels secteurs s'appliquent cette activité ?</label><br/>

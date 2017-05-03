@@ -16,10 +16,12 @@
                 <div class="form-group">
                     <label for="presentation_name">Titre :</label>
                     <input class="form-control" type="text" name="presentation_name" id="presentation_name" value="<?php echo $presentation['presentation_name'] ?>">
+                    <?= (isset($messages['presentation_name'])) ? '<span class="help-block">' .$messages['presentation_name'] . '</span>' : '' ?>
                 </div>
                 <div class="form-group">
                     <label for="presentation_description">Description :</label>
                     <textarea class="form-control" type="text" name="presentation_description" id="presentation_description"><?php echo $presentation['presentation_description'] ?></textarea>
+                    <?= (isset($messages['presentation_description'])) ? '<span class="help-block">' .$messages['presentation_description'] . '</span>' : '' ?>
                 </div>
                 <button class="btn btn-submit">Valider</div>
             </form>

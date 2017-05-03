@@ -16,22 +16,29 @@
                 <div class="form-group">
                     <label for="events_title">Titre : </label>
                     <input class="form-control" type="text" name="events_title" id="events_title">
+                    <?= (isset($messages['events_title'])) ? '<span class="help-block">' .$messages['events_title'] . '</span>' : '' ?>
                 </div>
                 <div class="form-group">
                     <label for="events_description"> Description : </label>
                     <textarea class="form-control" name="events_description" id="events_description"></textarea>
+                    <?= (isset($messages['events_description'])) ? '<span class="help-block">' .$messages['events_description'] . '</span>' : '' ?>
                 </div>
                 <div class="form-group">
                     <label for="events_localization"> Lieu : </label>
                     <input type="text" class="form-control" name="events_localization" id="events_localization">
+                    <?= (isset($messages['events_localization'])) ? '<span class="help-block">' .$messages['events_localization'] . '</span>' : '' ?>
                 </div>
                 <div class="form-group">
                     <label for="events_hours"> Horaires : </label>
                     <input type="text" class="form-control" name="events_hours" id="events_hours">
+                    <?= (isset($messages['events_hours'])) ? '<span class="help-block">' .$messages['events_hours'] . '</span>' : '' ?>
                 </div>
                 <div class="form-group">
                     <label for="events_image"> Image : </label>
                     <input type="file" name="events_image" id="events_image">
+                    <?= (isset($messages['events_size'])) ? '<span class="help-block">' .$messages['events_size'] . '</span>' : '' ?>
+                    <?= (isset($messages['events_type'])) ? '<span class="help-block">' .$messages['events_type'] . '</span>' : '' ?>
+                    <?= (isset($messages['events_load'])) ? '<span class="help-block">' .$messages['events_load'] . '</span>' : '' ?>
                 </div>
                 <div class="form-group">
                     <label for="events_ages"> A quels secteurs s'appliquent cet événement ? </label><br/>
