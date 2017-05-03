@@ -2,6 +2,7 @@
 
 <?php $this->start('main_content'); ?>
 
+
 <?php $this->start('main_content'); ?>
 <div class="container-fluid">
     <div style="background-image:url(../public/uploads/sectionImage/photo1.jpg ?>);">
@@ -51,3 +52,4 @@
 
 
 <?php $this->stop('main_content'); ?>
+

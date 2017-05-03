@@ -18,12 +18,12 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Activités <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#mercredi">Mercredi</a></li>
-                        <li><a href="#vacances">Vacances Scolaires</a></li>       
-                        <li><a href="#accompagnement">Accompagnement à la scolarité</a></li>                        
+                        <li><a href="#vacances">Vacances Scolaires</a></li>
+                        <li><a href="#accompagnement">Accompagnement à la scolarité</a></li>
                     </ul>
                 </li>
-            </ul>  
-        </div>    
+            </ul>
+        </div>
 
 <!-- Page Content -->
         <div class="col-md-9">
@@ -55,7 +55,7 @@
 >>>>>>> Stashed changes
                     if ($h_activity['h_activities_title'] == 'Vacances' && $h_activity['h_activities_3to5'] == 1){
                         echo $h_activity['h_activities_description'];
-                    }               
+                    }
                 }?>
             </div>
 

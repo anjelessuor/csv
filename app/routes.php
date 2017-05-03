@@ -10,6 +10,7 @@
 		['GET|POST', '/security/edit/[i:id]', 'Security#edit', 'security_edit'],
 		['GET|POST', '/security/delete/[i:id]', 'Security#delete', 'security_delete'],
 		['GET|POST', '/security/view/[i:id]', 'Security#view', 'security_view'],
+		['GET|POST', '/security/edituser/[i:id]', 'Security#edituser', 'security_edituser'],
 
 		['GET', '/logout', 'security#logout', 'security_logout'],
 		['GET|POST', '/security/index', 'Security#index', 'security_index'],
@@ -69,10 +70,12 @@
 
 		['GET|POST', '/presentation/index', 'Presentation#index', 'presentation_index'],
 		['GET|POST', '/presentation/update/[i:presentation_id]', 'Presentation#update', 'presentation_update'],
-		['GET', '/presentation/views', 'Presentation#views', 'presentation_views'],
+		['GET', '/presentation/view/[i:id]', 'Presentation#view', 'presentation_view'],
 
 		['GET|POST', '/contact', 'Default#contact', 'Default_contact'],
 		['GET|POST', '/display/index', 'Display#index', 'display_index'],
+
+		['GET|POST', '/w_errors/404', 'Default#error', '404'],
 
 
 	);
