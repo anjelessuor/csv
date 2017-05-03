@@ -57,10 +57,28 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
-		
-		
-		</div>
+
+	<!-- opening hours-->
+	<h2>Contactez-nous</h2>
+        <div class="col-md-6">
+			<div id="opclHolder">
+						<div id="opcl">
+							<div id="todayholder"></div>
+							<div id="timeholder"></div>
+							<div id="displaytextholder"></div>
+						</div> <a class="ophbtn" >See all openinghours <i class="fa fa-caret-right fa-fw"></i> </a>
+
+						<table class="tg">
+							<tr class="mon"></tr>
+							<tr class="tue"></tr>
+							<tr class="wen"></tr>
+							<tr class="thu"></tr>
+							<tr class="fri"></tr>
+							<tr class="sat"></tr>
+							<tr class="sun"></tr>
+						</table>
+						</div>
+			</div>
 
 <!--Contact-->
 
@@ -77,9 +95,9 @@
         mail('', $firstname, $lastname, $message."  ".$email);
 } ?>
 
-        <div class="col-md-4" id="contact">
+        <div class="col-md-6" id="contact">
 		
-				<h2 class="text-center">Contactez-nous</h2>
+				<h2>Contactez-nous</h2>
 					<form name="sentMessage" method="POST" id="contact">
 						<div class="form-group">
 							<label for="lastname">Nom de famille :</label>
@@ -107,13 +125,10 @@
 <!--END Contact-->
 		
 		</div>
-        <div class="col-md-4">
-		
-		
 		</div>
-    </div>
-</div>
-
+		</div>
+        
+ 
 
 
 
