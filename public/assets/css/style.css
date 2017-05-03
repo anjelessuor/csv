@@ -545,3 +545,48 @@ footer {
 @media screen and (max-width: 640px){
     .hero h1 { font-size: 4em; }    
 }
+
+
+
+
+
+
+/* -------------------------------- 
+
+              SIDEBAR
+
+-------------------------------- */
+
+/* Important stuff */
+
+.sidebar {
+  height: 100%;
+  position: fixed;
+  left: 0;
+  background-color: #4CAF50;
+  text-align: center;
+  -webkit-box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.5);
+  box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.5);
+}
+
+.sidebar a {
+  transition: all 300ms ease;
+}
+.sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sidebar ul li a {
+  display: block;
+  text-decoration: none !important;
+  height: 60px;
+  line-height: 60px;
+  font-size: 18px;
+  color: #fff;
+}
+.sidebar ul li a:hover {
+  background: #3a6073;
+  color: #000;
+}

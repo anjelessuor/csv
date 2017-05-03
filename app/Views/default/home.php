@@ -38,6 +38,7 @@
 		<div class="col-md-6" id="center">
 			<div class="informationAccueil whatIsIt">
 				<h2>Qu'est ce que c'est</h2>
+				
 			</div>
 		</div>
 		<div class="col-md-6" id="center">
