@@ -49,13 +49,13 @@ class DefaultController extends Controller
 		$h_activities_manager = new HolidaysActivitiesModel();
 		$h_activities = $h_activities_manager->findAll();
 
-		$activities_manager = new ActivitiesModel(); 
+		$activities_manager = new ActivitiesModel();
 		$activities = $activities_manager->findAll();
 
-		$events_manager = new EventsModel(); 
+		$events_manager = new EventsModel();
         $events = $events_manager->findAll();
 
-		$school_manager = new SchoolModel(); 
+		$school_manager = new SchoolModel();
 		$school = $school_manager->findAll();
 
 		$this->show('section/enfance-3-5', [
@@ -75,13 +75,13 @@ class DefaultController extends Controller
 		$h_activities_manager = new HolidaysActivitiesModel();
 		$h_activities = $h_activities_manager->findAll();
 
-		$activities_manager = new ActivitiesModel(); 
+		$activities_manager = new ActivitiesModel();
 		$activities = $activities_manager->findAll();
 
-		$events_manager = new EventsModel(); 
+		$events_manager = new EventsModel();
         $events = $events_manager->findAll();
 
-		$school_manager = new SchoolModel(); 
+		$school_manager = new SchoolModel();
 		$school = $school_manager->findAll();
 
 		$this->show('section/enfance-6-12', [
@@ -101,13 +101,13 @@ class DefaultController extends Controller
 		$h_activities_manager = new HolidaysActivitiesModel();
 		$h_activities = $h_activities_manager->findAll();
 
-		$activities_manager = new ActivitiesModel(); 
+		$activities_manager = new ActivitiesModel();
 		$activities = $activities_manager->findAll();
 
-		$events_manager = new EventsModel(); 
+		$events_manager = new EventsModel();
         $events = $events_manager->findAll();
 
-		$school_manager = new SchoolModel(); 
+		$school_manager = new SchoolModel();
 		$school = $school_manager->findAll();
 
 		$this->show('section/enfance-12-16', [
@@ -127,13 +127,13 @@ class DefaultController extends Controller
 		$h_activities_manager = new HolidaysActivitiesModel();
 		$h_activities = $h_activities_manager->findAll();
 
-		$activities_manager = new ActivitiesModel(); 
+		$activities_manager = new ActivitiesModel();
 		$activities = $activities_manager->findAll();
 
-		$events_manager = new EventsModel(); 
+		$events_manager = new EventsModel();
         $events = $events_manager->findAll();
 
-		$school_manager = new SchoolModel(); 
+		$school_manager = new SchoolModel();
 		$school = $school_manager->findAll();
 
 		$this->show('section/jeunes', [
@@ -153,10 +153,10 @@ class DefaultController extends Controller
 		$h_activities_manager = new HolidaysActivitiesModel();
 		$h_activities = $h_activities_manager->findAll();
 
-		$activities_manager = new ActivitiesModel(); 
+		$activities_manager = new ActivitiesModel();
 		$activities = $activities_manager->findAll();
 
-		$events_manager = new EventsModel(); 
+		$events_manager = new EventsModel();
         $events = $events_manager->findAll();
 
 		$this->show('section/adultes-et-famille', [
@@ -165,8 +165,8 @@ class DefaultController extends Controller
 			'events' => $events,
 			]);
 	}
-	
-	public function events() 
+
+	public function events()
 
 	{
 		$events_manager = new EventsModel(); //Instancie la classe pour générer mes articles en BDD
@@ -177,5 +177,10 @@ class DefaultController extends Controller
 	public function contact()
 	{
 		$this->show('default/contact');
+	}
+
+	public function error()
+	{
+		$this->show('w_errors/404');
 	}
 }
