@@ -24,7 +24,6 @@ class SecurityController extends Controller
                     $authentification_manager->logUserIn($user); //La connexion se fait
                     $this->redirectToRoute('display_index');
                 } else {
-                    var_dump($authentification_manager->hashPassword($user_password));
                     echo "Vous ne pouvez pas vous connecter";
                 }
             }
