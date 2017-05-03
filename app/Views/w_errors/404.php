@@ -7,4 +7,6 @@
         <a href="<?= $this->url('default_home') ?>" class="btn btn-danger"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Retour</a>
     </div>
 </div>
+
+
 <?php $this->stop('main_content'); ?>
