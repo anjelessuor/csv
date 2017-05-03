@@ -2,7 +2,6 @@
 
 <?php $this->start('main_content') ?>
 
-
     <div class="container text-center">
         <h1><?= $documents['documents_name'] ?></h1>
     </div>
@@ -32,5 +31,6 @@
             </div>
         </div>
     </div>
+
 
 <?php $this->stop('main_content') ?>

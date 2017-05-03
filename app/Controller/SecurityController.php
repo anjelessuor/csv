@@ -24,7 +24,6 @@ class SecurityController extends Controller
                     $authentification_manager->logUserIn($user); //La connexion se fait
                     $this->redirectToRoute('display_index');
                 } else {
-                    var_dump($authentification_manager->hashPassword($user_password));
                     echo "Vous ne pouvez pas vous connecter";
                 }
             }
@@ -83,7 +82,7 @@ class SecurityController extends Controller
                     $errors['user_email'] =  "L'email est vide ou invalide.";
                 }
 
-                if (strlen($user_password) < 4 ) {
+                if (strlen($user_password) < 5 ) {
                     $errors['user_passwordlenght'] =  "Le mot de passe est trop court (minimum 5 caractères)";
                 }
                 if ($user_password !== $user_cfpassword ) {
@@ -118,39 +117,101 @@ class SecurityController extends Controller
         $user_manager = new UserModel();
         $user = $this->getUser();
         if ($user['user_status'] == 2) {
+            $messages = '';
             $user_manager = new UserModel();
             $users = $user_manager->find($id);
-
             if (!empty($_POST)) {
-                $user_firstname = $_POST['user_firstname'];
-                $user_lastname = $_POST['user_lastname'];
-                $user_email = $_POST['user_email'];
-                $user_password = $_POST['user_password'];
-                $user_status = $_POST['user_status'];
+                $user_firstname = trim($_POST['user_firstname']);
+                $user_lastname = trim($_POST['user_lastname']);
+                $user_email = trim($_POST['user_email']);
+                $errors = []; //tableau vide
 
-                if (!empty($user_firstname) && !empty($user_lastname) && strlen($user_password) < 4) {
+
+                if (empty($user_firstname)) {
+                    $errors['user_firstname'] =  "Le prénom est vide ou invalide.";
+                }
+                if (empty($user_lastname)) {
+                    $errors['user_lastname'] =  "Le nom est vide ou invalide.";
+                }
+                if (empty($user_email) || !filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
+                    $errors['user_email'] =  "L'email est vide ou invalide.";
+                }
+
+                if (empty($errors)) {
                     $authentification_manager = new \W\Security\AuthentificationModel();
                     $user = $user_manager->update([
                         'user_firstname' => $user_firstname,
                         'user_lastname' => $user_lastname,
                         'user_email' => $user_email,
-                        'user_password' => $authentification_manager->hashPassword($user_password),
-                        'user_status' => $user_status,
-
                     ], $id); // Requête SQL pour mettre à jour un article
                     $this->redirectToRoute('security_view', ['id' => $users['user_id']]);
+                } else {
+                    $messages = $errors;
                 }
             }
-            $this->show('security/edit', ['users' => $users]);
+            $this->show('security/edit', ['users' => $users, 'messages' => $messages]);
         } else {
             echo "Vous n'êtes pas autorisé à accéder à cette section";
         }
     }
 
+    public function edituser($id){
+        $user_manager = new UserModel();
+        $user = $this->getUser();
+        if ($user['user_status'] == 1 || $user['user_status'] == 2) {
+            $messages = '';
+            $user_manager = new UserModel();
+            $users = $user_manager->find($id);
+
+            if (!empty($_POST)) {
+                $user_firstname = trim($_POST['user_firstname']);
+                $user_lastname = trim($_POST['user_lastname']);
+                $user_email = trim($_POST['user_email']);
+                $user_password = trim($_POST['user_password']);
+                $user_cfpassword = trim($_POST['user_cfpassword']);
+                $errors = []; //tableau vide
+
+                if (empty($user_firstname)) {
+                    $errors['user_firstname'] =  "Le prénom est vide ou invalide.";
+                }
+                if (empty($user_lastname)) {
+                    $errors['user_lastname'] =  "Le nom est vide ou invalide.";
+                }
+                if (empty($user_email) || !filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
+                    $errors['user_email'] =  "L'email est vide ou invalide.";
+                }
+                if ($user_password !== $user_cfpassword ) {
+                    $errors['user_password'] =  "Les mots de passe ne correspondent pas";
+                }
+                if (strlen($user_password) < 5 ) {
+                    $errors['user_passwordlenght'] =  "Le mot de passe est trop court (minimum 5 caractères)";
+                }
+                if (empty($errors)) {
+                    $authentification_manager = new \W\Security\AuthentificationModel();
+
+                    $user = $user_manager->update([
+                        'user_firstname' => $user_firstname,
+                        'user_lastname' => $user_lastname,
+                        'user_email' => $user_email,
+                        'user_password' => $authentification_manager->hashPassword($user_password),
+                    ], $id); // Requête SQL pour mettre à jour un article
+                    $this->redirectToRoute('security_view', ['id' => $users['user_id']]);
+                } else {
+                    $messages = $errors;
+                }
+            }
+            $this->show('security/edituser', ['users' => $users, 'messages' => $messages]);
+        } else {
+            echo "Vous n'êtes pas autorisé à accéder à cette section";
+        }
+
+
+    }
+
     public function view($id){
         $user_manager = new UserModel();
         $user = $this->getUser();
-        if ($user['user_status'] == 2) {
+        if ($user['user_status'] == 1 || $user['user_status'] == 2) {
             $user_manager = new UserModel();
             $users = $user_manager->find($id);
             $this->show('security/view', ['users' => $users]); // j'injecte la variable articles dans la vue

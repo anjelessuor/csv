@@ -19,28 +19,19 @@
                     <div class="form-group">
                         <label for="user_firstname"> Prénom : </label>
                         <input id="user_firstname" name="user_firstname" class="form-control" value="<?php echo $users['user_firstname']; ?>">
+                        <?= (isset($messages['user_firstname'])) ? '<span class="help-block">' .$messages['user_firstname'] . '</span>' : '' ?>
+
                     </div>
                     <div class="form-group">
                         <label for="user_lastname"> Nom : </label>
                         <input id="user_lastname" name="user_lastname" class="form-control" value="<?php echo $users['user_lastname']; ?>">
+                        <?= (isset($messages['user_lastname'])) ? '<span class="help-block">' .$messages['user_lastname'] . '</span>' : '' ?>
                     </div>
                     <div class="form-group">
                         <label for="user_email"> Email : </label>
                         <input id="user_email" name="user_email" class="form-control" value="<?php echo $users['user_email']; ?>">
+                        <?= (isset($messages['user_email'])) ? '<span class="help-block">' .$messages['user_email'] . '</span>' : '' ?>
                     </div>
-                    <div class="form-group">
-                        <label for="user_password"> Mot de passe : </label>
-                        <input id="user_password" name="user_password" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="user_status"> Status : </label>
-                        <select class="selectpicker" name="user_status">
-                            <option name="user_status" value="0">Utilisateur</option>
-                            <option name="user_status" value="1">Administrateur</option>
-                        </select>
-
-                    </div>
-
                     <button class="btn btn-submit"> Valider </button>
                 </form>
             </div>
