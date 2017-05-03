@@ -4,3 +4,4 @@ app/config.php
 *.log
 /public/uploads/*
 
+app/Views/section/enfance-3-5.php

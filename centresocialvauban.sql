@@ -3,9 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
-
--- Généré le :  Ven 28 Avril 2017 à 15:45
-
+-- Généré le :  Mar 02 Mai 2017 à 15:01
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  5.6.28
 
@@ -249,7 +247,6 @@ CREATE TABLE `users` (
   `user_lastname` varchar(100) DEFAULT NULL,
   `user_email` varchar(255) NOT NULL,
   `user_password` varchar(255) NOT NULL,
-  `token_forget` text NOT NULL,
   `user_status` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -257,9 +254,9 @@ CREATE TABLE `users` (
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`user_id`, `user_firstname`, `user_lastname`, `user_email`, `user_password`, `token_forget`, `user_status`) VALUES
-(11, 'fuck php', 'and javascript', 'fuckphp@sql2.com', '$2y$10$q/nNEJx/sxFy18uC47ID1e0N3APY1Jeng/USYMV/QkNHWpyLA37.q', '', 1),
-(13, 'Admin', 'Admin', 'Admin@admin.com', '$2y$10$qkmdEZDAY2w6PIsbxB/hSOMaym67M6n7./vKQqk5np2iOFJt9Nmpm', '', 2);
+INSERT INTO `users` (`user_id`, `user_firstname`, `user_lastname`, `user_email`, `user_password`, `user_status`) VALUES
+(11, 'fuck php', 'and javascript', 'fuckphp@sql2.com', '$2y$10$q/nNEJx/sxFy18uC47ID1e0N3APY1Jeng/USYMV/QkNHWpyLA37.q', 1),
+(13, 'Admin', 'Admin', 'Admin@admin.com', '$2y$10$qkmdEZDAY2w6PIsbxB/hSOMaym67M6n7./vKQqk5np2iOFJt9Nmpm', 2);
 
 --
 -- Index pour les tables exportées
