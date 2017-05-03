@@ -15,39 +15,37 @@
                     <div class="form-group">
                         <label for="events_title">Titre : </label>
                         <input class="form-control" type="text" name="events_title" id="events_title" value="<?php echo $event['events_title']?>">
+                        <?= (isset($messages['events_title'])) ? '<span class="help-block">' .$messages['events_title'] . '</span>' : '' ?>
                     </div>
                     <div class="form-group">
                         <label for="events_description"> Description : </label>
                         <textarea class="form-control" name="events_description" id="events_description"><?php echo $event['events_description']?></textarea>
+                        <?= (isset($messages['events_description'])) ? '<span class="help-block">' .$messages['events_description'] . '</span>' : '' ?>
                     </div>
                     <div class="form-group">
                         <label for="events_localization"> Lieu : </label>
                         <input type="text" class="form-control" name="events_localization" id="events_localization" value="<?php echo $event['events_localization']?>">
+                        <?= (isset($messages['events_localization'])) ? '<span class="help-block">' .$messages['events_localization'] . '</span>' : '' ?>
                     </div>
                     <div class="form-group">
                         <label for="events_hours"> Horaires : </label>
                         <input type="text" class="form-control" name="events_hours" id="events_hours"  value="<?php echo $event['events_hours']?>">
+                        <?= (isset($messages['events_hours'])) ? '<span class="help-block">' .$messages['events_hours'] . '</span>' : '' ?>
                     </div>
                     <div class="form-group">
                         <label for="events_image"> Image : </label>
                         <input type="file" name="events_image" id="events_image">
+                        <?= (isset($messages['events_size'])) ? '<span class="help-block">' .$messages['events_size'] . '</span>' : '' ?>
+                        <?= (isset($messages['events_type'])) ? '<span class="help-block">' .$messages['events_type'] . '</span>' : '' ?>
+                        <?= (isset($messages['events_load'])) ? '<span class="help-block">' .$messages['events_load'] . '</span>' : '' ?>
                     </div>
                     <div class="form-group">
-                        <label for="events_3to5">
-                            <input type="checkbox" name="events_3to5" value=""/> 3 - 5 ans
-                        </label><br>
-                        <label for="events_6to12">
-                            <input type="checkbox" name="events_6to12" value=""/> 6 - 12 ans
-                        </label><br>
-                        <label for="events_12to16">
-                            <input type="checkbox" name="events_12to16" value=""/> 12 - 16 ans
-                        </label><br>
-                        <label for="events_16to25">
-                            <input type="checkbox" name="events_16to25" value=""/> 16 - 25 ans
-                        </label><br>
-                        <label for="events_adults">
-                            <input type="checkbox" name="events_adults" value=""/> Adultes - Famille
-                        </label><br>
+                        <label for="events_ages"> A quels secteurs s'appliquent cet événement ? </label><br/>
+                        <label><input type="checkbox" name="events_3to5" value=""/> 3 - 5 ans</label><br>
+                        <label><input type="checkbox" name="events_6to12" value=""/> 6 - 12 ans</label><br>
+                        <label><input type="checkbox" name="events_12to16" value=""/> 12 - 16 ans</label><br>
+                        <label><input type="checkbox" name="events_16to25" value=""/> 16 - 25 ans</label><br>
+                        <label><input type="checkbox" name="events_adults" value=""/> Adultes - Famille</label><br>
                     </div>
 
                     <button class="btn btn-submit"> Valider </div>

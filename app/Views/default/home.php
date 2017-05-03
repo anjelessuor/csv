@@ -33,14 +33,15 @@
 
 
 <!--bottom Part-->
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-6" id="center">
 			<div class="informationAccueil whatIsIt">
 				<h2>Qu'est ce que c'est</h2>
+				
 			</div>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-6" id="center">
 			<div class="informationAccueil downloadDocumentation">
 				<h2>doc download</h2>
 				<ul>
@@ -52,5 +53,85 @@
 		</div>
 	</div>
 </div>
+
+<!--Hours / Contact / Map-->
+
+<div class="container">
+    <div class="row">
+
+	<!-- opening hours-->
+	<h2>Contactez-nous</h2>
+        <div class="col-md-6">
+			<div id="opclHolder">
+						<div id="opcl">
+							<div id="todayholder"></div>
+							<div id="timeholder"></div>
+							<div id="displaytextholder"></div>
+						</div> <a class="ophbtn" >See all openinghours <i class="fa fa-caret-right fa-fw"></i> </a>
+
+						<table class="tg">
+							<tr class="mon"></tr>
+							<tr class="tue"></tr>
+							<tr class="wen"></tr>
+							<tr class="thu"></tr>
+							<tr class="fri"></tr>
+							<tr class="sat"></tr>
+							<tr class="sun"></tr>
+						</table>
+						</div>
+			</div>
+
+<!--Contact-->
+
+	<?php if (!empty($_POST)) {
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+        // echo $name;
+        // echo $email;
+        // echo $message;
+
+        mail('', $firstname, $lastname, $message."  ".$email);
+} ?>
+
+        <div class="col-md-6" id="contact">
+		
+				<h2>Contactez-nous</h2>
+					<form name="sentMessage" method="POST" id="contact">
+						<div class="form-group">
+							<label for="lastname">Nom de famille :</label>
+							<input type="text" name="lastname" id="lastname" class="form-control"  placeholder="Nom de famille" required>
+						</div>
+						<div class="form-group">
+							<label for="firstname">Prénom : </label>
+							<input type="text" name="firstname" id="firstname" class="form-control"  placeholder="Prénom" required>
+						</div>
+						<div class="form-group">
+							<label for="email">Email : </label>
+							<input type="email" class="form-control" id="email" name="email"  placeholder="Email" required>
+						</div>
+						<div class="form-group">
+							<label for="message">Votre message :</label>
+							<textarea rows="10" cols="100" class="form-control" placeholder="Messages" name="message" id="message" required></textarea>
+
+						<div class="text-center">
+							<button type="submit " class="btn btn-hero btn-lg" >Envoyer</button>
+						</div>
+						</div>
+					</form>
+
+				
+<!--END Contact-->
+		
+		</div>
+		</div>
+		</div>
+        
+ 
+
+
+
 
 <?php $this->stop('main_content') ?>

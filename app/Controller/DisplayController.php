@@ -16,7 +16,8 @@ class DisplayController extends Controller
 			$display_manager = new DisplayModel();
 			$this->show('display/index');
 		} else {
-			echo "Vous devez être autorisé pour vous connecter";
+			echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+			$this->show('w_errors/404');
 		}
 
 

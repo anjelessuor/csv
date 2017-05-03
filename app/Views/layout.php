@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="<?= $this->assetUrl('css/font-awesome.min.css') ?>">
 	<style>@import url('https://fonts.googleapis.com/css?family=Lato');</style>
 </head>
-	<body>	
+	<body>
 
 <!--Navbar-->
 		<header class="cd-header">
@@ -48,19 +48,19 @@
 			<li><a href="#0">LoremIpsum</a></li>
 
 			<li class="cd-label">next Seperate</li>
-			
+
 			<li><a href="#0">LoremIpsum</a></li>
 			<li><a href="#0">LoremIpsum</a></li>
 			<li class="cd-label">next Seperate</li>
-			
+
 			<li><a href="#0">LoremIpsum</a></li>
 			<li><a href="#0">LoremIpsum</a></li>
 			<li class="cd-label">next Seperate</li>
-			
+
 			<li><a href="#0">LoremIpsum</a></li>
 			<li><a href="#0">LoremIpsum</a></li>
-			
-			<li class="cd-label">Follow us</li>			
+
+			<li class="cd-label">Follow us</li>
 			<li class="cd-social cd-facebook"><a href="#0">Facebook</a></li>
 		</ul>
 	</nav>
@@ -69,15 +69,6 @@
 
 <!--Section field-->
 
-<div class="container">
-	<div class="row">
-		<div class="col-xs-6 col-md-12">
-			<section>
-				<?= $this->section('main_content') ?>
-			</section>
-		</div>
-	</div>
-</div>
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
@@ -89,7 +80,7 @@
 </div>
 <!--Section field END-->
 
-	
+
 <!--Footer-->
 <footer>
 	<div class="container">
@@ -99,7 +90,7 @@
 			</div>
 		</div>
 	</div>
-</footer>			
+</footer>
 <!--Footer END-->
 
 <!-- SCRIPTS -->
@@ -108,7 +99,7 @@
 	<script type="text/javascript" src="<?= $this->assetUrl('js/app.js'); ?>"></script>
 	<script type="text/javascript" src="<?= $this->assetUrl('js/main.js'); ?>"></script>
 	<script type="text/javascript" src="<?= $this->assetUrl('js/modernizr.js'); ?>"></script>
-	
+
 
 </body>
 </html>

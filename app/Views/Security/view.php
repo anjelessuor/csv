@@ -9,8 +9,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
+                <?php  if ($w_user['user_status'] == 1) {?>
+                    <a href="<?php echo $this->url('display_index') ?>" class="btn btn-warning display"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Retour</a>
+                    <a href="<?= $this->url('security_edituser', ['id' => $users['user_id']]); ?>" class="btn btn-primary display">Modifier</a>
+                <?php  } else { ?>
                 <a href="<?= $this->url('security_index'); ?>" class="btn btn-warning display"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Retour</a><br/><br/>
                 <a href="<?= $this->url('security_edit', ['id' => $users['user_id']]); ?>" class="btn btn-primary display">Modifier</a>
+                <?php  } ?>
             </div>
             <div class="col-lg-8">
                 <div class="row">

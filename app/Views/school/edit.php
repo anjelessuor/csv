@@ -14,10 +14,12 @@
                     <div class="form-group">
                         <label for="school_title"> Accompagnement : </label>
                         <input id="school_title" name="school_title" class="form-control" value="<?php echo $school['school_title']; ?>">
+                        <?= (isset($messages['school_title'])) ? '<span class="help-block">' .$messages['school_title'] . '</span>' : '' ?>
                     </div>
                     <div class="form-group">
                         <label for="school_description"> Description : </label>
                         <textarea class="form-control" name="school_description" id="school_description"><?php echo $school['school_description'] ?></textarea>
+                        <?= (isset($messages['school_description'])) ? '<span class="help-block">' .$messages['school_description'] . '</span>' : '' ?>
                     </div>
                     <div class="form-group">
                         <label for="school_ages"> A quels secteurs s'appliquent cet accompagnement ?</label><br/>
