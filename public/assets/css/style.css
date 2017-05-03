@@ -25,6 +25,8 @@ body {
   /* Opera 11.10+ */
   background: linear-gradient(90deg, #16222A 10%, #3A6073 90%);
   /* W3C */
+  padding-top: 10vw;
+  padding-bottom: 10vw;
 }
 body.overflow-hidden {
   /* when primary navigation is visible, the content in the background won't scroll */
@@ -435,9 +437,10 @@ html, body {
 }
 
 footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
+  display: block;
 }
 
 /********************************/
@@ -445,10 +448,10 @@ footer {
 /********************************/
 .fade-carousel {
     position: relative;
-    height: 100vh;
+    height: 60vh;
 }
 .fade-carousel .carousel-inner .item {
-    height: 100vh;
+    height: 60vh;
 }
 .fade-carousel .carousel-indicators > li {
     margin: 0 2px;
@@ -504,17 +507,7 @@ footer {
             transition: 2s all ease-in-out .1s;    
 }
 
-/********************************/
-/*            Overlay           */
-/********************************/
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    background-color: #080d15;
-    opacity: .7;
-}
+
 
 /********************************/
 /*          Custom Buttons      */
@@ -524,8 +517,8 @@ footer {
 .btn.btn-hero:hover,
 .btn.btn-hero:focus {
     color: #f5f5f5;
-    background-color: #1abc9c;
-    border-color: #1abc9c;
+    background-color: #45818e;
+    border-color: #45818e;
     outline: none;
     margin: 20px auto;
 }
@@ -541,15 +534,7 @@ footer {
   background-position: center center;
   background-repeat: no-repeat;
 }
-.fade-carousel .slides .slide-1 {
-  background-image: url(https://ununsplash.imgix.net/photo-1416339134316-0e91dc9ded92?q=75&fm=jpg&s=883a422e10fc4149893984019f63c818); 
-}
-.fade-carousel .slides .slide-2 {
-  background-image: url(https://ununsplash.imgix.net/photo-1416339684178-3a239570f315?q=75&fm=jpg&s=c39d9a3bf66d6566b9608a9f1f3765af);
-}
-.fade-carousel .slides .slide-3 {
-  background-image: url(https://ununsplash.imgix.net/photo-1416339276121-ba1dfa199912?q=75&fm=jpg&s=9bf9f2ef5be5cb5eee5255e7765cb327);
-}
+
 
 /********************************/
 /*          Media Queries       */
