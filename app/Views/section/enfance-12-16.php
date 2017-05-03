@@ -3,16 +3,16 @@
 <?php $this->start('main_content'); ?>
 
 <div class="container-fluid">
-    <img src="" alt="">
+    <div style="background-image:url(../public/uploads/sectionImage/Enfance.jpg ?>);">
+    <h1>Section Enfance de 12 à 16 ans</h1></div>
 </div>
 
 <!-- SIDEBAR -->
 <div class="container data-spy="scroll" data-target="#sidebar" data-offset="20"">
     <div class="row">
-        <nav class="col-sm-3" id="sidebar">
+        <div class="col-sm-3" id="sidebar">
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#description"></a></li>
-                <li><a href="#description">Description</a></li>
+                <li class="active"><a href="#description">Description</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Activités <span class="caret"></span></a>
                     <ul class="dropdown-menu">
