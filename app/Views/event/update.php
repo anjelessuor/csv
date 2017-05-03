@@ -33,21 +33,12 @@
                         <input type="file" name="events_image" id="events_image">
                     </div>
                     <div class="form-group">
-                        <label for="events_3to5">
-                            <input type="checkbox" name="events_3to5" value=""/> 3 - 5 ans
-                        </label><br>
-                        <label for="events_6to12">
-                            <input type="checkbox" name="events_6to12" value=""/> 6 - 12 ans
-                        </label><br>
-                        <label for="events_12to16">
-                            <input type="checkbox" name="events_12to16" value=""/> 12 - 16 ans
-                        </label><br>
-                        <label for="events_16to25">
-                            <input type="checkbox" name="events_16to25" value=""/> 16 - 25 ans
-                        </label><br>
-                        <label for="events_adults">
-                            <input type="checkbox" name="events_adults" value=""/> Adultes - Famille
-                        </label><br>
+                        <label for="events_ages"> A quels secteurs s'appliquent cet événement ? </label><br/>
+                        <label><input type="checkbox" name="events_3to5" value=""/> 3 - 5 ans</label><br>
+                        <label><input type="checkbox" name="events_6to12" value=""/> 6 - 12 ans</label><br>
+                        <label><input type="checkbox" name="events_12to16" value=""/> 12 - 16 ans</label><br>
+                        <label><input type="checkbox" name="events_16to25" value=""/> 16 - 25 ans</label><br>
+                        <label><input type="checkbox" name="events_adults" value=""/> Adultes - Famille</label><br>
                     </div>
 
                     <button class="btn btn-submit"> Valider </div>

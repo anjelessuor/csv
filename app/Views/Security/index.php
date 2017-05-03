@@ -10,9 +10,7 @@
     <div class="container">
         <a href="<?= $this->url('display_index') ?>" class="btn btn-warning"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Retour</a>
         <a href="<?= $this->url('security_register') ?>" class="btn btn-success">Ajouter</a>
-        <?php if ($w_user['user_status'] == 2) { ?>
-        <a href="<?= $this->url('security_edit', ['id' => $w_user['user_id']]); ?>" class="btn btn-success display">Mettre à jour l'admin</a>
-        <?php } ?>
+        <a href="<?= $this->url('security_edituser', ['id' => $w_user['user_id']]); ?>" class="btn btn-success display">Mettre à jour l'admin</a>
     </div>
     <div class="container">
         <table class="table table-hover">
