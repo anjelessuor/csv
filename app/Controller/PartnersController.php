@@ -40,7 +40,7 @@ class PartnersController extends \W\Controller\Controller
                 $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 
                 // Check file size
-                if ($_FILES["partners_image"]["size"] > 2000000) {
+                if ($_FILES["partners_image"]["size"] > 5000000) {
                     echo "Le fichier est trop volumineux.";
                     $uploadOk = 0;
                 }
