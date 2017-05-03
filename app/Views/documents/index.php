@@ -24,7 +24,7 @@
             <tr>
                 <td><?php echo $documents['documents_name'] ?> </td>
                 <td><?php echo $documents['documents_description'] ?> </td>
-                <td><a href="<?php echo $documents['documents_document'] ?>"><?php echo $documents['documents_document'] ?></a></td>
+                <td><a href="../uploads/documents/<?php echo $documents["documents_document"] ?>" target="_blank"><?php echo $documents['documents_document'] ?></a></td>
                 <td>
                     <a href="<?= $this->url('documents_update', ['documents_id' => $documents['documents_id'] ]); ?>" class="btn btn-primary"> Modifier </a>
                     <a href="<?= $this->url('documents_delete', ['documents_id' => $documents['documents_id'] ]); ?>" class="btn btn-danger"> Supprimer </a>

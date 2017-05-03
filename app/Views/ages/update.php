@@ -16,10 +16,12 @@
                     <div class="form-group">
                         <label for="ages_name">Secteur :</label>
                         <input class="form-control" type="text" name="ages_name" id="ages_name" value="<?php echo $ages['ages_name'] ?>">
+                        <?= (isset($messages['ages_name'])) ? '<span class="help-block">' .$messages['ages_name'] . '</span>' : '' ?>
                     </div>
                     <div class="form-group">
                         <label for="ages_description">Description :</label>
                         <textarea class="form-control" name="ages_description" id="ages_description"><?php echo $ages['ages_description'] ?></textarea>
+                        <?= (isset($messages['ages_description'])) ? '<span class="help-block">' .$messages['ages_description'] . '</span>' : '' ?>
                     </div>
                     <button class="btn btn-submit"> Valider </button>
                 </form>

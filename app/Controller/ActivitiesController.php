@@ -18,7 +18,8 @@ class ActivitiesController extends Controller
 			$activities = $activities_manager->findAllByAge(); // récupère tous les articles en bdd (SELECT * FROM articles)
 			$this->show('activities/index', ['activities' => $activities]); // j'injecte la variable articles dans la vue
 		} else {
-            echo "Vous n'êtes pas autorisé à accéder à cette section";
+			echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+			$this->show('w_errors/404');
         }
 	}
 
@@ -28,6 +29,7 @@ class ActivitiesController extends Controller
 		$user_manager = new UserModel();
 		$user = $this->getUser();
 		if ($user['user_status'] == 1 || $user['user_status'] == 2) {
+			$messages = '';
 			if (!empty($_POST)) {
 				$activities_title = $_POST['activities_title'];
 				$activities_description = $_POST['activities_description'];
@@ -36,9 +38,17 @@ class ActivitiesController extends Controller
 				$activities_12to16 = isset($_POST['activities_12to16']) ? $_POST['activities_12to16'] : 0;
 				$activities_16to25 = isset($_POST['activities_16to25']) ? $_POST['activities_16to25'] : 0;
 				$activities_adults = isset($_POST['activities_adults']) ? $_POST['activities_adults'] : 0;
+				$errors = []; //tableau vide
+
+				if (empty($activities_title) || strlen($activities_title) < 3) {
+					$errors['activities_title'] =  "Le titre est vide ou invalide (3 caratères minimum).";
+				}
+				if (empty($activities_description) || strlen($activities_description) < 3) {
+					$errors['activities_description'] =  "La description est vide ou invalide (3 caratères minimum).";
+				}
 
 				$activities_manager = new ActivitiesModel(); // instancie la class pour gérer les articles en bdd
-				if (!empty($activities_title) && !empty($activities_description)) {
+				if (empty($errors)) {
 					$activities = $activities_manager->insert([
 						'activities_title' => $activities_title,
 						'activities_description' => $activities_description,
@@ -49,11 +59,14 @@ class ActivitiesController extends Controller
 						'activities_adults' => $activities_adults,
 					]);
 					$this->redirectToRoute('activities_view', ['id' => $activities['activities_id']]);
+				} else {
+					$messages = $errors;
 				}
 			}
-			$this->show('activities/create');
+			$this->show('activities/create', ['messages' => $messages]);
 		} else {
-            echo "Vous n'êtes pas autorisé à accéder à cette section";
+			echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+			$this->show('w_errors/404');
         }
 	}
 
@@ -65,7 +78,8 @@ class ActivitiesController extends Controller
 			$activities_manager->delete($id); // supprime l'article de la base de données
 			$this->redirectToRoute('activities_index'); // Après suppression je redirige l'utilisateur vers la liste des articles
 		} else {
-            echo "Vous n'êtes pas autorisé à accéder à cette section";
+			echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+			$this->show('w_errors/404');
         }
 	}
 
@@ -77,7 +91,8 @@ class ActivitiesController extends Controller
 			$activities = $activities_manager->find($id);
 			$this->show('activities/view', ['activities' => $activities]);
 		} else {
-            echo "Vous n'êtes pas autorisé à accéder à cette section";
+			echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+			$this->show('w_errors/404');
         }
 	}
 
@@ -85,6 +100,7 @@ class ActivitiesController extends Controller
 		$user_manager = new UserModel();
 		$user = $this->getUser();
 		if ($user['user_status'] == 1 || $user['user_status'] == 2) {
+			$messages = '';
 			$activities_manager = new ActivitiesModel(); // instancie la class pour gérer les articles en bdd
 			$activities = $activities_manager->find($id);
 
@@ -96,8 +112,16 @@ class ActivitiesController extends Controller
 				$activities_12to16 = isset($_POST['activities_12to16']) ? $_POST['activities_12to16'] : 0;
 				$activities_16to25 = isset($_POST['activities_16to25']) ? $_POST['activities_16to25'] : 0;
 				$activities_adults = isset($_POST['activities_adults']) ? $_POST['activities_adults'] : 0;
+				$errors = []; //tableau vide
 
-				if (!empty($activities_title) && !empty($activities_description)) {
+				if (empty($activities_title) || strlen($activities_title) < 3) {
+					$errors['activities_title'] =  "Le titre est vide ou invalide (3 caratères minimum).";
+				}
+				if (empty($activities_description) || strlen($activities_description) < 3) {
+					$errors['activities_description'] =  "La description est vide ou invalide (3 caratères minimum).";
+				}
+
+				if (empty ($errors)) {
 					$activities = $activities_manager->update([
 						'activities_title' => $activities_title,
 						'activities_description' => $activities_description,
@@ -108,11 +132,14 @@ class ActivitiesController extends Controller
 						'activities_adults' => $activities_adults,
 					], $id); // Requête SQL pour mettre à jour un article
 					$this->redirectToRoute('activities_view', ['id' => $activities['activities_id']]);
+				} else {
+					$messages = $errors;
 				}
 			}
-			$this->show('activities/edit', ['activities' => $activities]);
+			$this->show('activities/edit', ['messages' => $messages, 'activities' => $activities]);
 		} else {
-            echo "Vous n'êtes pas autorisé à accéder à cette section";
+			echo '<script type="text/javascript">alert("Vous n\'êtes pas autorisé à accéder à cette section !");</script>';
+			$this->show('w_errors/404');
         }
 	}
 }

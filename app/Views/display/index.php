@@ -1,5 +1,4 @@
 <?php $this->layout('layout-back', ['title' => 'Mise à jour']) ?>
-
 <?php $this->start('main_content'); ?>
 <br>
 <br>
@@ -27,16 +26,21 @@
                 <a href="<?= $this->url('presentation_index') ?>" class="btn btn-primary display">Présentation</a><br/><br/>
                 <a href="<?= $this->url('ages_index'); ?>" class="btn btn-primary display">Mettre à jour les sections</a><br/><br/>
                 <a href="<?= $this->url('security_edituser', ['id' => $w_user['user_id']]); ?>" class="btn btn-primary display">Mettre à jour mes infos</a><br/><br/>
+                <?php if ($w_user['user_status'] == 1) { ?>
+                <a href="<?= $this->url('security_logout'); ?>" class="btn btn-danger display">Déconnexion</a><br/><br/>
+                <?php } ?>
+
                 <?php if ($w_user['user_status'] == 2) { ?>
                 <a href="<?= $this->url('config_index'); ?>" class="btn btn-success display">Mettre à jour la config</a><br/><br/>
                 <a href="<?= $this->url('security_index'); ?>" class="btn btn-success display">Mettre à jour les utilisateurs</a><br/><br/>
+                <a href="<?= $this->url('security_logout'); ?>" class="btn btn-danger display">Déconnexion</a><br/><br/>
 
                 <?php } ?>
             </ul>
         </div>
 
         <div class="col-xs-5">
-            <a href="<?php echo $this->url('security_logout'); ?>" class="btn btn-danger btn-block">Déconnexion</a>
+            <h1>Bonjour <?= $w_user['user_firstname'] ." ". $w_user['user_lastname'] ?> !</h1>
         </div>
 
     </div>
