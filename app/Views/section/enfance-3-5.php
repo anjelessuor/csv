@@ -2,8 +2,10 @@
 
 <?php $this->start('main_content'); ?>
 
+
 <div class="container-fluid">
-    <img src="" alt="">
+    <div style="background-image:url(../public/uploads/sectionImage/photo1.jpg ?>);">
+    <h1>Section Enfance de 3 à 5 ans</h1></div>
 </div>
 
 <!-- SIDEBAR -->
@@ -11,8 +13,7 @@
     <div class="row">
         <div class="col-sm-3" id="sidebar">
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#description"></a></li>
-                <li><a href="#description">Description</a></li>
+                <li class="active"><a href="#description">Description</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Activités <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -39,11 +40,19 @@
                     }
                 }?>
             </div>
-            </div>
 
             <div id="vacances">
                 <h1>Vacances Scolaires</h1>
                 <?php foreach ($h_activities as $h_activity) {
+<<<<<<< Updated upstream
+=======
+
+                    if ($h_activity['h_activities_title'] == 'Vacances'&& $h_activity['h_activities_3to5'] == 1){
+                        echo $h_activity['activities_description'];
+                }
+
+
+>>>>>>> Stashed changes
                     if ($h_activity['h_activities_title'] == 'Vacances' && $h_activity['h_activities_3to5'] == 1){
                         echo $h_activity['h_activities_description'];
                     }               

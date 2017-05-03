@@ -38,7 +38,16 @@ class DefaultController extends Controller
 
 	public function about()
 	{
-		$this->show('section/qui-sommes-nous');
+		$presentation_manager = new PresentationModel(); 
+        $presentation = $presentation_manager->findAll();
+
+		$partners_manager = new PartnersModel();
+        $partners = $partners_manager->findAll();
+
+		$this->show('section/qui-sommes-nous', [
+			'presentation' => $presentation,
+			'partners' => $partners,
+		]);
 	}
 
 	public function enfance1()
