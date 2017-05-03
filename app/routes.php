@@ -75,5 +75,7 @@
 		['GET|POST', '/contact', 'Default#contact', 'Default_contact'],
 		['GET|POST', '/display/index', 'Display#index', 'display_index'],
 
+		['GET|POST', '/w_errors/404', 'Default#error', '404'],
+
 
 	);
