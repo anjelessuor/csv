@@ -24,7 +24,7 @@ body {
   /* IE10 */
   /*background: -o-linear-gradient(90deg, #16222A 10%, #3A6073 90%);*/
   /* Opera 11.10+ */
-  /*background: linear-gradient(90deg, #16222A 10%, #3A6073 90%);*/*/
+  /*background: linear-gradient(90deg, #16222A 10%, #3A6073 90%);*/
   /* W3C */
   padding-top: 10vw;
   padding-bottom: 10vw;
@@ -686,44 +686,47 @@ footer .social-links li:first-child { margin-left: 0; }
 
 }
 
+/****************************
+      Background Section
+****************************/
 
-/* --------------------------------
-              SIDEBAR
--------------------------------- */
-
-/* Important stuff */
-
-.sidebar {
-  height: 100%;
-  position: fixed;
-  left: 0;
-  background-color: #4CAF50;
+.backgrSection {
+  height: 500px;
+  background-size: 100%;
+  background-repeat: no-repeat;
   text-align: center;
-  -webkit-box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.5);
-  box-shadow: inset -1.5em 0 1.5em -0.75em rgba(0, 0, 0, 0.5);
 }
 
-.sidebar a {
-  transition: all 300ms ease;
+
+/********************************
+        ENFANCE SECTION
+
+********************************/
+.enfanceSection1{
+  height: 300px;
+  text-align: center;
+  padding-top: 30px;
+  background-color: #0f9095;
 }
-.sidebar ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+
+.enfanceSection2{
+  height: 300px;
+  text-align: center;
+  padding-top: 30px;
 }
-.sidebar ul li a {
-  display: block;
-  text-decoration: none !important;
-  height: 60px;
-  line-height: 60px;
-  font-size: 18px;
-  color: #fff;
+
+.enfanceSection3{
+  height: 300px;
+  text-align: center;
+  padding-top: 30px;
 }
-.sidebar ul li a:hover {
-  background: #3a6073;
-  color: #000;
+
+.enfanceSection4{
+  height: 300px;
+  text-align: center;
+  padding-top: 30px;
 }
+
 
 
 /********************************/

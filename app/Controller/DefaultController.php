@@ -25,10 +25,13 @@ class DefaultController extends Controller
 		$config_manager = new ConfigModel();
 		$config = $config_manager->findAll()[0];
 
-		$events_manager = new EventsModel(); //Instancie la classe pour générer mes articles en BDD
-		$events = $events_manager->findAll(); //Récupère tous les articles en bdd (SELECT * FROM articles)
+		$events_manager = new EventsModel();
+		$events = $events_manager->findAll();
 
-		$this->show('default/home', ['events' => $events, 'config' => $config]);
+		$presentation_manager = new PresentationModel();
+		$presentation = $presentation_manager->findAll();
+
+		$this->show('default/home', ['events' => $events, 'config' => $config, 'presentation' => $presentation]);
 
 
 	}
