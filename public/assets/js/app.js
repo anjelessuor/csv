@@ -1,32 +1,7 @@
-// $(".category").tagsinput('items');
-// $(function () {
-//     var citynames = new Bloodhound({
-//         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
-//         queryTokenizer: Bloodhound.tokenizers.whitespace,
-//         prefetch: {
-//             url: '/category.json',
-//             filter: function (list) {
-//                 return $.map(list, function (cityname) {
-//                     return {
-//                         name: cityname
-//                     };
-//                 });
-//             }
-//         }
-//     });
-//     citynames.initialize();
+/*----------------------------------------------------*/
+/* Navbar fadein and Out - S.Poscher
+------------------------------------------------------ */
 
-//     $('input').tagsinput({
-//         typeaheadjs: {
-//             name: 'citynames',
-//             displayKey: 'name',
-//             valueKey: 'name',
-//             source: citynames.ttAdapter()
-//         }
-//     });
-// });
-
-//JS de la navbar
 $(function () {
     // Affichage du sous menu en douceur
     jQuery('ul.nav li.dropdown').hover(function () {
@@ -37,7 +12,9 @@ $(function () {
 
 });
 
-// opening hours
+/*----------------------------------------------------*/
+/* Opening Hours
+------------------------------------------------------ */
 
 //hide table
 $('.tg').fadeOut(0);
@@ -46,15 +23,15 @@ $('.tg').fadeOut(0);
 
 var d = new Date();
 
-// $weekdays array 
+// $weekdays array
 var weekday = new Array(7);
-weekday[0] = "Sunday";
-weekday[1] = "Monday";
-weekday[2] = "Tuesday";
-weekday[3] = "Wednesday";
-weekday[4] = "Thursday";
-weekday[5] = "Friday";
-weekday[6] = "Saturday";
+weekday[0] = "Dimanche";
+weekday[1] = "Lundi";
+weekday[2] = "Mardi";
+weekday[3] = "Mercredi";
+weekday[4] = "Jeudi";
+weekday[5] = "Vendredi";
+weekday[6] = "Samedi";
 
 // get weekday from array
 var n = weekday[d.getDay()];
@@ -64,23 +41,23 @@ var displayDate = (d.getDate()) + '/' + (d.getMonth() + 1) + '/' + d.getFullYear
 
 //times to display
 
-var monday = ['9h', '12h', '13h', '20.30h'];
-var tuesday = ['9h', '12h', '13h', '19.30h'];
-var wednesday = ['9h', '12h', '13h', '17.30h'];
-var thursday = ['9h', '12h', '13h', '16.30h'];
-var friday = ['9h', '12h', '13h', '15.30h'];
-var saturday = ['9h', '12h', '13h', '14.30h'];
-var sunday = ['/', '/', '/', '/'];
+var lundi = ['9h', '12h', '14h', '19.00h'];
+var mardi = ['9h', '12h', '14h', '19.00h'];
+var mercredi = ['9h', '12h', '14h', '19.00h'];
+var jeudi = ['9h', '12h', '14h', '19.00h'];
+var vendredi = ['9h', '12h', '14h', '19.00h'];
+var samedi = ['/', '/', '/', '/'];
+var dimanche = ['/', '/', '/', '/'];
 
 //text to display
 
-var day0 = 'The shop is <strong>closed</strong>';
-var day1 = 'We are <strong>open</strong> from<strong> ' + monday[0] + ' to ' + monday[1] + '</strong> and from <strong>' + monday[2] + ' to ' + monday[3] + '</strong>';
-var day2 = 'We are <strong>open</strong> from<strong> ' + tuesday[0] + ' to ' + tuesday[1] + '</strong> and from <strong>' + tuesday[2] + ' to ' + tuesday[3] + '</strong>';
-var day3 = 'We are <strong>open</strong> from<strong> ' + wednesday[0] + ' to ' + wednesday[1] + '</strong> and from <strong>' + wednesday[2] + ' to ' + wednesday[3] + '</strong>';
-var day4 = 'We are <strong>open</strong> from<strong> ' + thursday[0] + ' to ' + thursday[1] + '</strong> and from <strong>' + thursday[2] + ' to ' + thursday[3] + '</strong>';
-var day5 = 'We are <strong>open</strong> from<strong> ' + friday[0] + ' to ' + friday[1] + '</strong> and from <strong>' + friday[2] + ' to ' + friday[3] + '</strong>';
-var day6 = 'We are <strong>open</strong> from<strong> ' + saturday[0] + ' to ' + saturday[1] + '</strong> and from <strong>' + saturday[2] + ' to ' + saturday[3] + '</strong>';
+var day0 = 'The center is <strong>closed</strong>';
+var day1 = 'We are <strong>open</strong> from<strong> ' + lundi[0] + ' to ' + lundi[1] + '</strong> and from <strong>' + lundi[2] + ' to ' + lundi[3] + '</strong>';
+var day2 = 'We are <strong>open</strong> from<strong> ' + mardi[0] + ' to ' + mardi[1] + '</strong> and from <strong>' + mardi[2] + ' to ' + mardi[3] + '</strong>';
+var day3 = 'We are <strong>open</strong> from<strong> ' + mercredi[0] + ' to ' + mercredi[1] + '</strong> and from <strong>' + mercredi[2] + ' to ' + mercredi[3] + '</strong>';
+var day4 = 'We are <strong>open</strong> from<strong> ' + jeudi[0] + ' to ' + jeudi[1] + '</strong> and from <strong>' + jeudi[2] + ' to ' + jeudi[3] + '</strong>';
+var day5 = 'We are <strong>open</strong> from<strong> ' + vendredi[0] + ' to ' + vendredi[1] + '</strong> and from <strong>' + vendredi[2] + ' to ' + vendredi[3] + '</strong>';
+var day6 = 'The center is <strong>closed</strong>';
 
 //update the clock function
 
@@ -97,7 +74,7 @@ function updateClock() {
   $('#timeholder').empty().append('<span class="time"><i class="fa fa-clock-o"></i> ' + time + ' H</span>');
 }
 
-// doc ready	
+// doc ready
 $(document).ready(function() {
 
   //display date and time data
@@ -114,7 +91,7 @@ $(document).ready(function() {
   var time = d.getHours() + ":" + currentMinutes + ":" + currentSeconds;
   $('#timeholder').empty().append('<span class="time"><i class="fa fa-clock-o"></i> ' + time + ' H</span>');
 
-  //update clock	
+  //update clock
 
   setInterval('updateClock()', 1000);
 
@@ -125,62 +102,107 @@ $(document).ready(function() {
     $('.tg').fadeToggle(1);
     if ($(".ophbtn i").hasClass('fa-caret-right')) {
       $(".ophbtn i").removeClass('fa-caret-right fa-fw').addClass('fa-times fa-fw');
-      $(".ophbtn").text('Close openinghours').append('<i class="fa fa-times fa-fw"></i>');
+      $(".ophbtn").text('ouvrir le oraires').append('<i class="fa fa-times fa-fw"></i>');
     } else {
       $(".ophbtn i").removeClass('fa-times fa-fw').addClass('fa-caret-right fa-fw');
-      $(".ophbtn").text('See all openinghours').append('<i class="fa fa-caret-right fa-fw"></i>');
+      $(".ophbtn").text('tout le horaires').append('<i class="fa fa-caret-right fa-fw"></i>');
     }
   });
 
   //append Times in table
 
-  $('.mon').append('<td class="tg-032e">Mo:</td><td class="tg-031e">' + monday[0] + '</td><td class="tg-031e">' + monday[1] + '</td><td class="tg-031e">' + monday[2] + '</td><td class="tg-031e">' + monday[3] + '</td>');
-  $('.tue').append('<td class="tg-032e">Tu:</td><td class="tg-031e">' + tuesday[0] + '</td><td class="tg-031e">' + tuesday[1] + '</td><td class="tg-031e">' + tuesday[2] + '</td><td class="tg-031e">' + tuesday[3] + '</td>');
-  $('.wen').append('<td class="tg-032e">We:</td><td class="tg-031e">' + wednesday[0] + '</td><td class="tg-031e">' + wednesday[1] + '</td><td class="tg-031e">' + wednesday[2] + '</td><td class="tg-031e">' + wednesday[3] + '</td>');
-  $('.thu').append('<td class="tg-032e">Th:</td><td class="tg-031e">' + thursday[0] + '</td><td class="tg-031e">' + thursday[1] + '</td><td class="tg-031e">' + thursday[2] + '</td><td class="tg-031e">' + thursday[3] + '</td>');
-  $('.fri').append('<td class="tg-032e">Fr:</td><td class="tg-031e">' + friday[0] + '</td><td class="tg-031e">' + friday[1] + '</td><td class="tg-031e">' + friday[2] + '</td><td class="tg-031e">' + friday[3] + '</td>');
-  $('.sat').append('<td class="tg-032e">Sa:</td><td class="tg-031e">' + saturday[0] + '</td><td class="tg-031e">' + saturday[1] + '</td><td class="tg-031e">' + saturday[2] + '</td><td class="tg-031e">' + saturday[3] + '</td>');
-  $('.sun').append('<td class="tg-032e">Su:</td><td class="tg-031e">' + sunday[0] + '</td><td class="tg-031e">' + sunday[1] + '</td><td class="tg-031e">' + sunday[2] + '</td><td class="tg-031e">' + sunday[3] + '</td>');
+  $('.lun').append('<td class="tg-032e">Mo:</td><td class="tg-031e">' + lundi[0] + '</td><td class="tg-031e">' + lundi[1] + '</td><td class="tg-031e">' + lundi[2] + '</td><td class="tg-031e">' + lundi[3] + '</td>');
+  $('.mar').append('<td class="tg-032e">Tu:</td><td class="tg-031e">' + mardi[0] + '</td><td class="tg-031e">' + mardi[1] + '</td><td class="tg-031e">' + mardi[2] + '</td><td class="tg-031e">' + mardi[3] + '</td>');
+  $('.mer').append('<td class="tg-032e">We:</td><td class="tg-031e">' + mercredi[0] + '</td><td class="tg-031e">' + mercredi[1] + '</td><td class="tg-031e">' + mercredi[2] + '</td><td class="tg-031e">' + mercredi[3] + '</td>');
+  $('.jeu').append('<td class="tg-032e">Th:</td><td class="tg-031e">' + jeudi[0] + '</td><td class="tg-031e">' + jeudi[1] + '</td><td class="tg-031e">' + jeudi[2] + '</td><td class="tg-031e">' + jeudi[3] + '</td>');
+  $('.ven').append('<td class="tg-032e">Fr:</td><td class="tg-031e">' + vendredi[0] + '</td><td class="tg-031e">' + vendredi[1] + '</td><td class="tg-031e">' + vendredi[2] + '</td><td class="tg-031e">' + vendredi[3] + '</td>');
+  $('.sam').append('<td class="tg-032e">Sa:</td><td class="tg-031e">' + samedi[0] + '</td><td class="tg-031e">' + samedi[1] + '</td><td class="tg-031e">' + samedi[2] + '</td><td class="tg-031e">' + samedi[3] + '</td>');
+  $('.dim').append('<td class="tg-032e">Su:</td><td class="tg-031e">' + dimanche[0] + '</td><td class="tg-031e">' + dimanche[1] + '</td><td class="tg-031e">' + dimanche[2] + '</td><td class="tg-031e">' + dimanche[3] + '</td>');
 
-  //check day and display text accordingly and color day row	
+  //check day and display text accordingly and color day row
   switch (d.getDay()) {
     case 0:
       //sunday
       $('#displaytextholder').append('<span class="displaytext">' + day0 + '</span>');
-      $('.sun').addClass("activeTr");
+      $('.dim').addClass("activeTr");
       break;
     case 1:
       //monday
       $('#displaytextholder').append('<span class="displaytext">' + day1 + '</span>');
-      $('.mon').addClass("activeTr");
+      $('.lun').addClass("activeTr");
       break;
     case 2:
       //tuesday
       $('#displaytextholder').append('<span class="displaytext">' + day2 + '</span>');
-      $('.tue').addClass("activeTr");
+      $('.mar').addClass("activeTr");
       break;
     case 3:
-      //wensday
+      //wednesday
       $('#displaytextholder').append('<span class="displaytext">' + day3 + '</span>');
-      $('.wen').addClass("activeTr");
+      $('.mer').addClass("activeTr");
 
       break;
     case 4:
       //thursday
       $('#displaytextholder').append('<span class="displaytext">' + day4 + '</span>');
-      $('.thu').addClass("activeTr");
+      $('.jeu').addClass("activeTr");
       break;
     case 5:
       //friday
       $('#displaytextholder').append('<span class="displaytext">' + day5 + '</span>');
-      $('.fri').addClass("activeTr");
+      $('.ven').addClass("activeTr");
       break;
     case 6:
       //saturday
       $('#displaytextholder').append('<span class="displaytext">' + day6 + '</span>');
-      $('.sat').addClass("activeTr")
+      $('.sam').addClass("activeTr")
       break;
   }
 
 });
 
+
+
+/*----------------------------------------------------*/
+/* Smooth Scrolling - not active
+------------------------------------------------------ */
+  //
+  //  $('.smoothscroll').on('click',function (e) {
+	//     e.preventDefault();
+  //
+	//     var target = this.hash,
+	//     $target = $(target);
+  //
+	//     $('html, body').stop().animate({
+	//         'scrollTop': $target.offset().top
+	//     }, 800, 'swing', function () {
+	//         window.location.hash = target;
+	//     });
+	// });
+
+
+/*----------------------------------------------------*/
+/* Highlight the current section in the navigation bar - not active
+------------------------------------------------------*/
+
+	// var sections = $("section");
+	// var navigation_links = $("#nav-wrap a");
+  //
+	// sections.waypoint({
+  //
+  //     handler: function(event, direction) {
+  //
+	// 	   var active_section;
+  //
+	// 		active_section = $(this);
+	// 		if (direction === "up") active_section = active_section.prev();
+  //
+	// 		var active_link = $('#nav-wrap a[href="#' + active_section.attr("id") + '"]');
+  //
+  //        navigation_links.parent().removeClass("current");
+	// 		active_link.parent().addClass("current");
+  //
+	// 	},
+	// 	offset: '35%'
+  //
+	// });
