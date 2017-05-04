@@ -48,7 +48,7 @@
 		<div class="col-md-6">
 			<div class="informationAccueil whatIsIt">
 				<h2>Qu'est ce que c'est</h2>
-				<p><p><?php echo $presentation[1]['presentation_description']; ?></p>
+				<p><p><?php echo $presentation[0]['presentation_description']; ?></p>
 			</div>
 		</div>
 				<div class="col-md-6">
