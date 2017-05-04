@@ -1,7 +1,5 @@
 /* --------------------------------
-
 Primary style
-
 -------------------------------- */
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
@@ -26,7 +24,7 @@ body {
   /* IE10 */
   /*background: -o-linear-gradient(90deg, #16222A 10%, #3A6073 90%);*/
   /* Opera 11.10+ */
-  /*background: linear-gradient(90deg, #16222A 10%, #3A6073 90%);*/*/
+  /*background: linear-gradient(90deg, #16222A 10%, #3A6073 90%);*/
   /* W3C */
   padding-top: 10vw;
   padding-bottom: 10vw;
@@ -62,14 +60,9 @@ a {
   padding-top: 10px;
 }
 
-p {
-
-}
 
 /* --------------------------------
-
 Modules - reusable parts of our design
-
 -------------------------------- */
 .cd-container {
   /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
@@ -84,9 +77,7 @@ Modules - reusable parts of our design
 }
 
 /* --------------------------------
-
 Main components
-
 -------------------------------- */
 html, body {
   height: 100%;
@@ -318,7 +309,7 @@ html, body {
   padding: 50px 0;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  overflow: auto;
+  overflow: hidden;
   /* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
   -webkit-overflow-scrolling: touch;
   -webkit-transform: translateY(-100%);
@@ -475,19 +466,16 @@ html, body {
   bottom: 0;
   left: 0;
   display: block;
-
   footer {
     background: #000;
     color: #ddd;
     padding: 30px 0 30px;
     text-align: center;
   }
-
   footer a {
     color: #ddd;
     text-decoration: none;
   }
-
   footer a:hover {
     color: #eee;
     text-decoration: underline;
@@ -695,13 +683,12 @@ footer .social-links li:first-child { margin-left: 0; }
 
 }
 
-/*********************************
-       IMAGE SECTION
-
-/*********************************/
+/****************************
+      Background Section
+****************************/
 
 .backgrSection {
-  height: 400px;
+  height: 500px;
   background-size: 100%;
   background-repeat: no-repeat;
   text-align: center;
@@ -709,10 +696,34 @@ footer .social-links li:first-child { margin-left: 0; }
 
 
 /********************************
-            SECTION
+        ENFANCE SECTION
 
 ********************************/
-.
+.enfanceSection1{
+  height: 300px;
+  text-align: center;
+  padding-top: 30px;
+  background-color: #0f9095;
+}
+
+.enfanceSection2{
+  height: 300px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.enfanceSection3{
+  height: 300px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.enfanceSection4{
+  height: 300px;
+  text-align: center;
+  padding-top: 30px;
+}
+
 
 
 /********************************/
@@ -848,7 +859,6 @@ footer .social-links li:first-child { margin-left: 0; }
   /*********************************/
   /*       Parallax                */
   /*********************************/
-
 section {
   background: #red;
 
@@ -858,5 +868,3 @@ section {
   height: 550px;
   width: 100%;
 }
-
-
