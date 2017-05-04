@@ -5,27 +5,29 @@
 
 
 <div class="container-fluid">
+
     <div class="row">
         <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-image-src="https://static.pexels.com/photos/122477/pexels-photo-122477.jpeg" data-natural-width="1920" data-natural-height="1200"></div>
         <h1>Jeunes</h1>
     </div>
-</div>
+
 
 <!-- Page Content -->
-        <div class="col-md-9">
-            <div id="description">
-                <h1>Description</h1>
-                <p><?php echo $ages; ?></p>
-            </div>
+<div class="container">
+    <div class="row"> 
+        <div id="description">
+            <h1>Description</h1>
+            <p><?php echo $ages; ?></p>
+        </div>
 
-            <div id="mercredi">
-                <h1>Mercredi</h1>
-                <?php foreach ($activities as $activity){
-                    if ($activity['activities_title'] == 'Mercredi' && $activity['activities_16to25'] == 1){
-                        echo $activity['activities_description'];
-                    }
-                }?>
-            </div>
+        <div id="mercredi">
+            <h1>Mercredi</h1>
+            <?php foreach ($activities as $activity){
+                if ($activity['activities_title'] == 'Mercredi' && $activity['activities_16to25'] == 1){
+                    echo $activity['activities_description'];
+                }
+            }?>
+        </div>
 
             <div id="vacances">
                 <h1>Vacances Scolaires</h1>
@@ -44,6 +46,7 @@
                     }
                 }?>
             </div>
+
         </div>
     </div>
 </div>

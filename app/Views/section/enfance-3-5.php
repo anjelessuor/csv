@@ -4,22 +4,26 @@
 
 
 <div class="container-fluid">
+
     <div class="row">
         <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-image-src="https://static.pexels.com/photos/159579/crayons-coloring-book-coloring-book-159579.jpeg" data-natural-width="1920" data-natural-height="1200"></div>
             <h1>Enfance de 3 à 5 ans</h1>
         </div>
     </div>
-</div>
+
+
 
 <!-- Page Content -->
-        <div class="col-md-9">
-            <div id="description">
+    <div class="container-fluid">
+        <div class="row" id="part2">
+            <div class="col-xs-12">
                 <h1>Description</h1>
                 <p><?php echo $ages; ?></p>
             </div>
 
+            <h1>Activité</h1>
             <div id="mercredi">
-                <h1>Mercredi</h1>
+                <h3>Mercredi</h3>
                 <?php foreach ($activities as $activity){
                     if ($activity['activities_title'] == 'Mercredi' && $activity['activities_3to5'] == 1){
                         echo $activity['activities_description'];
@@ -28,7 +32,7 @@
             </div>
 
             <div id="vendredi">
-                <h1>Vendredi</h1>
+                <h3>Vendredi</h3>
                 <?php foreach ($activities as $activity){
                     if ($activity['activities_title'] == 'Vendredi' && $activity['activities_6to12'] == 1){
                         echo $activity['activities_description'];
@@ -65,9 +69,9 @@
                     }
                 }?>
             </div>
+        <br><br><br><br><br>   
         </div>
     </div>
-</div>
 
 
 
