@@ -60,6 +60,9 @@ a {
   padding-top: 10px;
 }
 
+iframe{
+  pointer-events: none;
+}
 
 /* --------------------------------
 Modules - reusable parts of our design
