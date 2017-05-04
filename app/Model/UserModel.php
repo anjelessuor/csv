@@ -3,20 +3,20 @@ namespace Model;
 
 use \W\Model\UsersModel;
 
-class UserModel extends UsersModel //On hérite de UserModel car il possède des fonctionnalités spécifiques
+class UserModel extends UsersModel
 {
     protected $primaryKey = 'user_id';
 
     function isValidToken($token) {
-        $query = $dbh->prepare('SELECT id_user FROM users WHERE token_forget = :token AND NOW() < date_forget');
-        $query->bindValue(':token', $token, PDO::PARAM_STR);
+        $query = $this->dbh->prepare('SELECT user_id FROM users WHERE token_forget = :token AND NOW() < date_forget');
+        $query->bindValue(':token', $token, \PDO::PARAM_STR);
         $query->execute();
         return $query->fetchColumn();
     }
 
 
     function changeUserPassword($user_id, $user_password) {
-        $query = $dbh->prepare('UPDATE users SET user_password = :user_password, token_forget = NULL, date_forget = NULL WHERE user_id = :user_id'); // On met à jour le mot de passe de l'utilisateur et on supprime le token
+        $query = $this->dbh->prepare('UPDATE users SET user_password = :user_password, token_forget = NULL, date_forget = NULL WHERE user_id = :user_id'); // On met à jour le mot de passe de l'utilisateur et on supprime le token
         $query->bindValue('user_id', $user_id);
         $query->bindValue('user_password', password_hash($user_password, PASSWORD_DEFAULT));
         return $query->execute();
@@ -30,7 +30,7 @@ class UserModel extends UsersModel //On hérite de UserModel car il possède des
     }
 
     function checkUserByEmail($user_email) {
-        $query =$this->$dbh->prepare('SELECT id_user FROM users WHERE user_email = :user_email');
+        $query = $this->dbh->prepare('SELECT id_user FROM users WHERE user_email = :user_email');
         $query->bindValue(':user_email', $user_email, PDO::PARAM_STR);
         $query->execute();
         return $query->fetchColumn();

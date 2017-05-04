@@ -22,8 +22,8 @@
 							<div class="hero">
 								<hgroup>
 									<h1><?php echo $event['events_title']; ?></h1>
-										<p><?php echo $event['events_localization']; ?></p>
-										<p><?php echo $event['events_hours']; ?></p>
+									<p><?php echo $event['events_localization']; ?></p>
+									<p><?php echo $event['events_hours']; ?></p>
 								</hgroup>
 				<button style class="btn btn-hero btn-lg" role="button">Plus d'informations</button>
 			</div>
@@ -48,17 +48,17 @@
 		<div class="col-md-6">
 			<div class="informationAccueil whatIsIt">
 				<h2>Qu'est ce que c'est</h2>
-				<p>blablablabla</p>
+				<p><p><?php echo $presentation[0]['presentation_description']; ?></p>
 			</div>
 		</div>
 				<div class="col-md-6">
 				<div class="informationAccueil downloadDocumentation">
-						<button style class="btn btn-hero btn-lg" role="button"><i class="fa fa-download" aria-hidden="true"></i> Télécharger </button>
-								<ul>
-									<li>Charte des centres sociaux <a href="./uploads/Charte-des-centres-sociaux-et-socioculturels-de-France.pdf"> Download file</a></li>
-									<li>Placeholder</li>
-									<li>Placeholder</li>
-								</ul>
+					<button style class="btn btn-hero btn-lg" role="button"><i class="fa fa-download" aria-hidden="true"></i> Télécharger </button>
+					<ul>
+						<li>Charte des centres sociaux <a href="./uploads/Charte-des-centres-sociaux-et-socioculturels-de-France.pdf"> Download file</a></li>
+						<li>Placeholder</li>
+						<li>Placeholder</li>
+					</ul>
 				</div>
 			</div>
 	</div>
@@ -74,6 +74,7 @@
 
 <div class="container-fluid">
     <div class="row" id="part3">
+<!--parallax  -->
 <section>
 <!-- OPENING hours-->
 	        <div class="col-md-6" id= "timer">
@@ -82,7 +83,7 @@
 								<div id="todayholder"></div>
 								<div id="timeholder"></div>
 								<div id="displaytextholder"></div>
-						</div> <a class="ophbtn" >See all openinghours <i class="fa fa-caret-right fa-fw"></i> </a>
+						</div> <a class="ophbtn" >Voir les horaires <i class="fa fa-caret-right fa-fw"></i> </a>
 							<table class="tg">
 								<tr class="lun"></tr>
 								<tr class="mar"></tr>
@@ -94,7 +95,7 @@
 							</table>
 						</div>
 			</div>
-<!--parallax  -->
+
 
 <!--Contact-->
 
@@ -104,12 +105,10 @@
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-        // echo $name;
-        // echo $email;
-        // echo $message;
 
-        mail('', $firstname, $lastname, $message."  ".$email);
-} ?>
+        mail($config['config_email'], $firstname." ".$lastname, $email." ".$message);
+		var_dump($config);
+ } ?>
 
 			        <div class="col-md-6" id= "contact">
 
