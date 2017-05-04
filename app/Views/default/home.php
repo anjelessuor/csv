@@ -105,7 +105,7 @@
     $message = $_POST['message'];
 
 
-        mail($config['config_email'], $firstname." ".$lastname, $message);
+        mail($config['config_email'], $firstname." ".$lastname, $email." ".$message);
 		var_dump($config);
  } ?>
 
