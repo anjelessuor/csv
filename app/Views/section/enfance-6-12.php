@@ -3,8 +3,11 @@
 <?php $this->start('main_content'); ?>
 
 <div class="container-fluid">
-    <div style="background-image:url(../public/uploads/sectionImage/Enfance.jpg ?>);">
-    <h1>Section Enfance de 6 à 12 ans</h1></div>
+    <div class="row">
+        <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-image-src="https://static.pexels.com/photos/168866/pexels-photo-168866.jpeg" data-natural-width="1920" data-natural-height="1200"></div>
+            <h1>Enfance de 6 à 12 ans</h1>
+        </div>
+    </div>
 </div>
 
 <!-- SIDEBAR -->
@@ -18,12 +21,12 @@
                     <ul class="dropdown-menu">
                         <li><a href="#mercredi">Mercredi</a></li>
                         <li><a href="#vendredi">Vendredi</a></li>
-                        <li><a href="#vacances">Vacances Scolaires</a></li>       
-                        <li><a href="#accompagnement">Accompagnement à la scolarité</a></li>                        
+                        <li><a href="#vacances">Vacances Scolaires</a></li>
+                        <li><a href="#accompagnement">Accompagnement à la scolarité</a></li>
                     </ul>
                 </li>
-            </ul>  
-        </div>    
+            </ul>
+        </div>
 
 <!-- Page Content -->
         <div class="col-md-9">
@@ -55,10 +58,10 @@
                 <?php foreach ($h_activities as $h_activity) {
                     if ($h_activity['h_activities_title'] == 'Vacances' && $h_activity['h_activities_6to12'] == 1){
                         echo $h_activity['h_activities_description'];
-                    }               
+                    }
                 }?>
             </div>
-            
+
             <div id="accompagnement">
                 <h1>Accompagnement à la scolarité</h1>
                 <?php foreach ($school as $school) {

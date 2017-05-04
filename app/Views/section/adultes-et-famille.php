@@ -3,8 +3,10 @@
 
 <?php $this->start('main_content'); ?>
 <div class="container-fluid">
-    <div style="background-image:url(../public/uploads/sectionImage/photo1.jpg ?>);">
-    <h1>Section Adultes & famille</h1></div>
+    <div class="row">
+        <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-image-src="https://static.pexels.com/photos/346297/pexels-photo-346297.jpeg" data-natural-width="1920" data-natural-height="1200"></div>
+        <h1>Adultes & famille</h1>
+    </div>
 </div>
 
 
@@ -20,12 +22,12 @@
                         <li><a href="#lundi">Lundi</a></li>
                         <li><a href="#mardi">Mardi</a></li>
                         <li><a href="#mercredi">Mercredi</a></li>
-                        <li><a href="#jeudi">Jeudi</a></li>       
-                        <li><a href="#vendredi">Vendredi</a></li>                        
-                    </ul> 
+                        <li><a href="#jeudi">Jeudi</a></li>
+                        <li><a href="#vendredi">Vendredi</a></li>
+                    </ul>
                 </li>
-            </ul>  
-        </div>    
+            </ul>
+        </div>
 
 <!-- Page Content -->
         <div class="col-md-9">
@@ -53,7 +55,7 @@
                     if ($activity['activities_title'] == 'Mardi' && $activity['activities_adults'] == 1){
                         echo $activity['activities_description'];
                     }
-                }?>                
+                }?>
             </div>
         <br><br><br><br><br><br>
             <div id="mercredi">
@@ -83,8 +85,8 @@
                 }?>
             </div>
 
-        </div>     
-    </div> 
+        </div>
+    </div>
 </div>
 
 
