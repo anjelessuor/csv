@@ -272,7 +272,7 @@ class SecurityController extends Controller
                     'date_forget' => $date_forget
                 ], $users['user_id']);
 
-                echo "Voici le lien vous permettant de redéfinir votre mot de passe : <a href='http://localhost/cvs/public/security/forget.php?token=".$token_forget."'>http://localhost/cvs/public/security/forget.php?token=".$token_forget."</a>";
+                echo "Voici le lien vous permettant de redéfinir votre mot de passe : <a href='http://localhost/csv/public/security/forget?token=".$token_forget."'>http://localhost/csv/public/security/forget?token=".$token_forget."</a>";
 
             } else {
                 echo 'L\'email n\'existe pas';
@@ -285,7 +285,7 @@ class SecurityController extends Controller
             $user_password = $_POST['user_password'];
             $cfpassword = $_POST['cfpassword'];
 
-            if ($user_id->isValidToken($token)) {
+            if ($user_manager->isValidToken($token)) {
                 if ($user_password == $cfpassword) { // Je vérifie que les deux champs mot de passe soient identiques
                     $user_manager->changeUserPassword($this->getUser()['user_id'], $user_password);
                     // Renvoyer un mail
