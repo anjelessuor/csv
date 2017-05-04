@@ -7,20 +7,11 @@
     <h1>Qui-sommes-nous</h1></div>
 </div>
 
-<!-- SIDEBAR -->
-<div class="container data-spy="scroll" data-target="#sidebar" data-offset="20"">
-    <div class="row">
-        <div class="col-md-3" id="sidebar">
-            <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#presentation">Présentation</a></li>
-                <li><a href="#valeurs">Nos valeurs</a></li>
-                <li><a href="#missions">Nos missions</a></li>
-                <li><a href="#partenaires">Nos partenaires</a></li>
-            </ul>  
-        </div>    
+
 
 <!-- Page Content -->
-        <div class="col-md-9">
+<div class="container">
+    <div class="row"> 
         <!-- DESCRIPTION -->
         <div id="description">
             <h1>Description</h1>
