@@ -74,6 +74,7 @@
 
 <div class="container-fluid">
     <div class="row" id="part3">
+<!--parallax  -->
 <section>
 <!-- OPENING hours-->
 	        <div class="col-md-6" id= "timer">
@@ -94,7 +95,7 @@
 							</table>
 						</div>
 			</div>
-<!--parallax  -->
+
 
 <!--Contact-->
 
