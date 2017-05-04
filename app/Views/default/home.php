@@ -48,7 +48,6 @@
 		<div class="col-md-6">
 			<div class="informationAccueil whatIsIt">
 				<h2>Qu'est ce que c'est</h2>
-				<p>blablablabla</p>
 			</div>
 		</div>
 				<div class="col-md-6">
