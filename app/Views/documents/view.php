@@ -17,7 +17,7 @@
                     <div class="col-lg-5">
                         <h3><?php echo $documents['documents_name']; ?></h3>
                         <p>Document </p>
-                        <img class="document" src="../uploads/documents/<?php echo $documents['documents_document'] ?>" alt="">
+                        <iframe class="document" src="../uploads/documents/<?php echo $documents['documents_document'] ?>" alt=""></iframe>
                     </div>
                     <div class="col-lg-7">
                         <p>Description</p>
@@ -25,6 +25,9 @@
                         <br>
                         <p>Nom du document</p>
                         <p><?php echo $documents['documents_document']; ?></p>
+                        <br>
+                        <p>Lien</p>
+                        <p><a href="../uploads/documents/<?php echo $documents["documents_document"] ?>" target="_blank"><?php echo $documents['documents_document'] ?></a></p>
                         <br>
                     </div>
                 </div>
