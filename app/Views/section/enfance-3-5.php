@@ -4,30 +4,14 @@
 
 
 <div class="container-fluid">
-    <div class="row">
-        <div style="background-image:url(../uploads/sectionImage/enfant3-5.jpeg);" class="backgrSection">
-        <h1>Section Enfance de 3 à 5 ans</h1></div>
-    </div>    
-</div>
 
-<!-- SIDEBAR -->
-<!--<div class="container" data-spy="scroll" data-target="#sidebar" data-offset="20">
     <div class="row">
-        <div class="col-md-3">
-            <div class="sidebar">
-                <ul>
-                    <li class="active"><a href="#description">Description</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Activités <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#mercredi">Mercredi</a></li>
-                            <li><a href="#vacances">Vacances Scolaires</a></li>
-                            <li><a href="#accompagnement">Accompagnement à la scolarité</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>-->
+        <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-image-src="https://static.pexels.com/photos/159579/crayons-coloring-book-coloring-book-159579.jpeg" data-natural-width="1920" data-natural-height="1200"></div>
+            <h1>Enfance de 3 à 5 ans</h1>
+        </div>
+    </div>
+
+
 
 <!-- Page Content -->
     <div class="container-fluid">
