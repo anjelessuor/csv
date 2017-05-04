@@ -544,6 +544,7 @@ footer {
 }
 @media screen and (max-width: 640px){
     .hero h1 { font-size: 4em; }    
+
 }
 
 
@@ -590,3 +591,133 @@ footer {
   background: #3a6073;
   color: #000;
 }
+
+/*Opening Hours*/
+
+	#opclHolder {
+	  width: 300px;
+	  margin: 0 auto;
+	  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	  margin-top: 16px;
+	  font-size: 18px;
+	  background-color: #ccc;
+	  padding-bottom: 16px;
+}
+	
+	#opcl {
+	  text-align: center;
+	  padding-bottom: 16px;
+	  color: white;
+	  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	
+	.today {
+	  text-transform: uppercase;
+	  font-weight: 400;
+	  font-size: 24px;
+	}
+	
+	.time {
+	  font-size: 28px;
+	  width: 100%;
+	  display: block;
+	  padding-top: 16px;
+	  padding-bottom: 16px;
+	}
+	
+	#todayholder {
+	  border-bottom: 1px solid white;
+	  padding-bottom: 16px;
+	  background-color: #000;
+	  padding-top: 16px;
+	  background: #111;
+	}
+	
+	#timeholder {
+	  border-bottom: 1px solid white;
+	  background-color: #2E332F;
+	}
+	
+	#displaytextholder {
+	  padding-top: 16px;
+	  font-size: 18px;
+	  padding-bottom: 16px;
+	  border-bottom: 1px solid white;
+	  color: #555;
+	}
+	
+	.displaytext strong {
+	  color: #3d3d3d;
+	}
+	
+	.ophbtn {
+	  display: block;
+	  margin-right: 16px;
+	  text-align: right;
+	  color: #2E332F;
+	  text-decoration: underline;
+	  font-weight: 400;
+	  font-size: 14px;
+	}
+	
+	.fa-caret-right {
+	  position: relative;
+	  top: 1px;
+	}
+	
+	.tg {
+	  border-collapse: collapse;
+	  border-spacing: 0;
+	  margin: 0px auto;
+	  width: 100%;
+	  margin-right: 16px;
+	  margin-top: 16px;
+	  margin-bottom: 16px;
+	  text-align: center;
+	  background-color: #2E332F;
+	}
+	
+	.tg tr:last-child {
+	  border-bottom: none;
+	}
+	
+	.tg td {
+	  font-family: Arial, sans-serif;
+	  font-size: 14px;
+	  padding: 10px 5px;
+	  border-style: solid;
+	  border-width: 0px;
+	  overflow: hidden;
+	  word-break: normal;
+	}
+	
+	.tg-031e {
+	  color: #fff;
+	}
+	
+	.tg-032e {
+	  color: red;
+	}
+	
+	.tg tr {
+	  border-bottom: 1px solid #fff;
+	}
+	
+	.fa-clock-o {
+	  font-size: 28px;
+	  color: red;
+	}
+	
+	tr.activeTr {
+	  background-color: red;
+	  font-weight: 700;
+	}
+	
+	.activeTr .tg-032e {
+	  color: #3d3d3d;
+	}
+	
+	.activeTr .tg-031e {
+	  color: #3d3d3d;
+	}
+
