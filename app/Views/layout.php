@@ -65,17 +65,19 @@
 
 <!--Section field-->
 
-      <!-- <section> -->
-        <?= $this->section('main_content') ?>
-      <!-- </section> -->
+    <div class="container-fluid">
+		<div class="row">
+        	<?= $this->section('main_content') ?>
+		</div>
+    </div>
 
 <!--Section field END-->
 
 <!--Footer-->
 
 <footer>
-      <div class="container">
-
+    <div class="container">
+		<div class="row"> 	 	
             <ul class="social-links">
                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -89,9 +91,10 @@
                <li>Design by <a title="Styleshout" href="http://www.google.com/">Rising Goone Squad</a></li>
             </ul>
 
-         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
-      </div>
-   </footer> <!-- Footer End-->
+         	<div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+		</div>
+    </div>
+</footer> <!-- Footer End-->
 <!--Footer END-->
 
 <!-- SCRIPTS -->

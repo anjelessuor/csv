@@ -1,7 +1,7 @@
 <?php
 
 	$w_routes = array(
-		['GET', '/', 'Default#home', 'default_home'],
+		['GET|POST', '/', 'Default#home', 'default_home'],
 		['GET|POST', '/security/login', 'Security#login', 'security_login'],
 		['GET|POST', '/security/register', 'Security#register', 'security_register'],
 		['GET|POST', '/security/forget', 'Security#forget', 'security_forget'],
@@ -76,6 +76,7 @@
 		['GET|POST', '/display/index', 'Display#index', 'display_index'],
 
 		['GET|POST', '/w_errors/404', 'Default#error', '404'],
+		['GET|POST', '/w_errors/403', 'Default#error', '403'],
 
 
 	);
