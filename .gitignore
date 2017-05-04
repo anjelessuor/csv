@@ -2,6 +2,3 @@
 app/config.php
 /phpDocumentor.phar
 *.log
-/public/uploads/*
-
-app/Views/section/enfance-3-5.php

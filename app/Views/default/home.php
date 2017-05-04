@@ -104,12 +104,10 @@
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-        // echo $name;
-        // echo $email;
-        // echo $message;
 
-        mail('', $firstname, $lastname, $message."  ".$email);
-} ?>
+        mail($config['config_email'], $firstname." ".$lastname, $email." ".$message);
+		var_dump($config);
+ } ?>
 
 			        <div class="col-md-6" id= "contact">
 

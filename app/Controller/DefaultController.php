@@ -11,6 +11,7 @@ use \Model\DocumentsModel;
 use \Model\PartnersModel;
 use \Model\PresentationModel;
 use \Model\SchoolModel;
+use \Model\ConfigModel;
 
 
 class DefaultController extends Controller
@@ -21,9 +22,15 @@ class DefaultController extends Controller
 	 */
 	public function home()
 	{
+		$config_manager = new ConfigModel();
+		$config = $config_manager->findAll()[0];
+
 		$events_manager = new EventsModel(); //Instancie la classe pour générer mes articles en BDD
 		$events = $events_manager->findAll(); //Récupère tous les articles en bdd (SELECT * FROM articles)
-		$this->show('default/home', ['events' => $events]);
+
+		$this->show('default/home', ['events' => $events, 'config' => $config]);
+
+
 	}
 
 	public function login()
@@ -38,7 +45,7 @@ class DefaultController extends Controller
 
 	public function about()
 	{
-		$presentation_manager = new PresentationModel(); 
+		$presentation_manager = new PresentationModel();
         $presentation = $presentation_manager->findAll();
 
 		$partners_manager = new PartnersModel();
@@ -176,7 +183,6 @@ class DefaultController extends Controller
 	}
 
 	public function events()
-
 	{
 		$events_manager = new EventsModel(); //Instancie la classe pour générer mes articles en BDD
 		$events = $events_manager->findAll(); //Récupère tous les articles en bdd (SELECT * FROM articles)
