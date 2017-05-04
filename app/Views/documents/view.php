@@ -17,7 +17,7 @@
                     <div class="col-lg-5">
                         <h3><?php echo $documents['documents_name']; ?></h3>
                         <p>Document </p>
-                        <iframe class="document" src="../uploads/documents/<?php echo $documents['documents_document'] ?>" alt=""></iframe>
+                        <iframe class="document" src="../uploads/documents/<?php echo $documents['documents_document'] ?>" width="300em"></iframe>
                     </div>
                     <div class="col-lg-7">
                         <p>Description</p>
