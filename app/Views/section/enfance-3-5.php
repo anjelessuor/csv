@@ -2,7 +2,6 @@
 
 <?php $this->start('main_content'); ?>
 
-
 <div class="container-fluid">
     <div class="row">
         <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-image-src="https://static.pexels.com/photos/159579/crayons-coloring-book-coloring-book-159579.jpeg" data-natural-width="1920" data-natural-height="1200"></div>
@@ -85,9 +84,11 @@
         </div>  
     </div>
 </div>
-        
-<div class="parallax-container" data-parallax="scroll" data-bleed="10" data-image-src="https://static.pexels.com/photos/159579/crayons-coloring-book-coloring-book-159579.jpeg" data-natural-width="1920" data-natural-height="1200"></div>   
 
-
+<div class="container-fluid">
+    <div class="row">        
+        <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-image-src="https://static.pexels.com/photos/159579/crayons-coloring-book-coloring-book-159579.jpeg" data-natural-width="1920" data-natural-height="1200"></div>   
+    </div> 
+</div>
 
 <?php $this->stop('main_content'); ?>
