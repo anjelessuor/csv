@@ -14,7 +14,7 @@
 <!--<div class="container" data-spy="scroll" data-target="#sidebar" data-offset="20">
     <div class="row">
         <div class="col-md-3">
-            <div class="sidebar">             
+            <div class="sidebar">
                 <ul>
                     <li class="active"><a href="#description">Description</a></li>
                     <li class="dropdown">
@@ -46,7 +46,7 @@
                     }
                 }?>
             </div>
-            
+
             <div id="vendredi">
                 <h3>Vendredi</h3>
                 <?php foreach ($activities as $activity){
@@ -59,12 +59,24 @@
             <div id="vacances">
                 <h1>Vacances Scolaires</h1>
                 <?php foreach ($h_activities as $h_activity) {
+
+
+
+                    if ($h_activity['h_activities_title'] == 'Vacances'&& $h_activity['h_activities_3to5'] == 1){
+                        echo $h_activity['activities_description'];
+                }
+
+                    if ($h_activity['h_activities_title'] == 'Vacances' && $h_activity['h_activities_3to5'] == 1){
+                        echo $h_activity['h_activities_description'];
+                    }
+
                     if ($h_activity['h_activities_title'] == 'Vacances' && $h_activity['h_activities_3to5'] == 1){
                         echo $h_activity['activities_description'];
                 }
+
                 }?>
             </div>
-            
+
             <div id="accompagnement">
                 <h1>Accompagnement à la scolarité</h1>
                 <?php foreach ($school as $school) {
