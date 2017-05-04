@@ -13,7 +13,7 @@
 
 <!--Navbar-->
 		<header class="cd-header">
-		<div class="cd-logo"><img src="./assets/img/cd-logo.svg" alt=""></a></div>
+		<div class="cd-logo"><img src="<?= $this->assetUrl('img/cd-logo.svg') ?>" alt=""></a></div>
 		<nav>
 			<ul class="cd-secondary-nav">
 				<li><a class="smoothscroll" href="#home" href="<?php echo $this->url('default_home'); ?>">ACCUEIL</a></li>
