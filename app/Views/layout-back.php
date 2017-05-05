@@ -12,7 +12,7 @@
 	<body>
 
 
-<!--Navbar Backoffice-->	
+<!--Navbar Backoffice-->
 
 <!--<div class="nav2">
 	<div class="drop1"><a href="<?php echo $this->url('display_index'); ?>"><i class="fa fa-cogs fa-2x"></i></a></div>
@@ -27,16 +27,26 @@
 <!--Navbar End-->
 
 <!--Section field-->
-			<section>
-				<?= $this->section('main_content') ?>
-			</section>
+<section>
+	<div class="container-fluid">
+		<div class="row"
+		<?= $this->section('main_content') ?>
+		</div>
+	</div>	
+</section>
+
+
+
+
+
 <!--Section field END-->
 
 <!--Footer-->
-<footer>
-	
-		<p> Copyright 2017 - Rising Goone Squad </p>
-</footer>			
+<section>
+	<footer>
+
+	</footer>
+</section>
 <!--Footer END-->
 
 <!-- SCRIPTS -->
@@ -48,6 +58,3 @@
 
 	</body>
 </html>
-
-
-

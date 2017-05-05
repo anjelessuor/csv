@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2017 at 04:36 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Erstellungszeit: 05. Mai 2017 um 04:21
+-- Server-Version: 10.1.19-MariaDB
+-- PHP-Version: 7.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `centresocialvauban`
+-- Datenbank: `centresocialvauban`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `activities`
+-- Tabellenstruktur für Tabelle `activities`
 --
 
 CREATE TABLE `activities` (
@@ -38,7 +38,7 @@ CREATE TABLE `activities` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `activities`
+-- Daten für Tabelle `activities`
 --
 
 INSERT INTO `activities` (`activities_id`, `activities_title`, `activities_description`, `activities_3to5`, `activities_6to12`, `activities_12to16`, `activities_16to25`, `activities_adults`) VALUES
@@ -59,7 +59,7 @@ INSERT INTO `activities` (`activities_id`, `activities_title`, `activities_descr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ages`
+-- Tabellenstruktur für Tabelle `ages`
 --
 
 CREATE TABLE `ages` (
@@ -69,7 +69,7 @@ CREATE TABLE `ages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `ages`
+-- Daten für Tabelle `ages`
 --
 
 INSERT INTO `ages` (`ages_id`, `ages_name`, `ages_description`) VALUES
@@ -82,7 +82,7 @@ INSERT INTO `ages` (`ages_id`, `ages_name`, `ages_description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `config`
+-- Tabellenstruktur für Tabelle `config`
 --
 
 CREATE TABLE `config` (
@@ -95,7 +95,7 @@ CREATE TABLE `config` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `config`
+-- Daten für Tabelle `config`
 --
 
 INSERT INTO `config` (`config_id`, `config_sitename`, `config_address`, `config_phone`, `config_email`, `config_facebook`) VALUES
@@ -104,7 +104,7 @@ INSERT INTO `config` (`config_id`, `config_sitename`, `config_address`, `config_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `documents`
+-- Tabellenstruktur für Tabelle `documents`
 --
 
 CREATE TABLE `documents` (
@@ -114,10 +114,18 @@ CREATE TABLE `documents` (
   `documents_document` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Daten für Tabelle `documents`
+--
+
+INSERT INTO `documents` (`documents_id`, `documents_name`, `documents_description`, `documents_document`) VALUES
+(1, 'test1', 'Lorem Ipsum', 'PHPEvaluationpratiquefinale.pdf'),
+(2, 'SUOMI PERKELE', 'Yllä harmaan korven korpit laulaa,\r\nHurme tämän kansan roudan sulattaa,\r\nKatso kuinka hohkaa kansi taivaan,\r\nKutsuu se meitä tumman virran taa,\r\nHeikot vaipuu kuohuun sysimustaan,\r\nSankarit kun astuu joen rantaan,\r\nHalki iäisyyden laulu raikaa,\r\nKutsuu se veljiä tumman virran taa', 'test2.pdf');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `events`
+-- Tabellenstruktur für Tabelle `events`
 --
 
 CREATE TABLE `events` (
@@ -135,17 +143,20 @@ CREATE TABLE `events` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `events`
+-- Daten für Tabelle `events`
 --
 
 INSERT INTO `events` (`events_id`, `events_title`, `events_description`, `events_localization`, `events_hours`, `events_image`, `events_3to5`, `events_6to12`, `events_12to16`, `events_16to25`, `events_adults`) VALUES
-(2, 'SOUPE', '123123', '123123', '123123', '1487176229_Germany.png', 0, 0, 0, 0, 0),
-(3, 'Booobies', '123123', 'rtzuiopü', '010101', '11194513_849873581727818_1500715589563160936_o.jpg', 0, 0, 0, 0, 0);
+(4, 'Canard!!!', 'Today - all you can eat', 'Webforce3', '15:00', 'event5.jpg', 0, 0, 0, 0, 0),
+(5, 'Photoshooting', 'bring your beautiful friends', 'Dimanche', '15:00', 'event4.jpg', 1, 1, 1, 1, 1),
+(6, 'Fête de la Music', '*sing for your life*', 'TEST', 'NOW', 'event1.jpg', 0, 0, 1, 1, 1),
+(7, 'Je suis la', 'dont Judge me', 'there', '19:00', 'event2.jpg', 1, 0, 0, 0, 1),
+(8, 'I SEE YOU', 'qwerty', '123', '20:00 - 23:00', 'event3.jpg', 1, 0, 0, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `holidays_activities`
+-- Tabellenstruktur für Tabelle `holidays_activities`
 --
 
 CREATE TABLE `holidays_activities` (
@@ -165,11 +176,11 @@ CREATE TABLE `holidays_activities` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `holidays_activities`
+-- Daten für Tabelle `holidays_activities`
 --
 
 INSERT INTO `holidays_activities` (`h_activities_id`, `h_activities_title`, `h_activities_description`, `h_activities_dates`, `h_activities_localization`, `h_activities_image`, `h_activities_hours`, `h_activities_price`, `h_activities_3to5`, `h_activities_6to12`, `h_activities_12to16`, `h_activities_16to25`, `h_activities_adults`) VALUES
-(1, 'Mercredi', ' Semblable aux mercredis, diverses activités seront proposées aux enfants durant les vacances scolaires.\r\nLes ALSH des vacances scolaires se font au centre de la petite enfance au 12 Place de l’Arbonnoise à Lille ; du Lundi au Vendredi de 8h30 à 17h30.', '', '', '', '', 'Se rapprocher de l\'organisateur', 1, 0, 0, 0, 0),
+(1, 'Mercredi', ' Semblable aux mercredis, diverses activités seront proposées aux enfants durant les vacances scolaires.\r\nLes ALSH des vacances scolaires se font au centre de la petite enfance au 12 Place de l’Arbonnoise à Lille ; du Lundi au Vendredi de 8h30 à 17h30.', '', '', '', '', 'Se rapprocher de l''organisateur', 1, 0, 0, 0, 0),
 (3, 'Stages sportifs', 'En plus des activités proposées le mercredi, des stages sportifs : initiation à la boxe pourront être proposés aux enfants durant les vacances scolaires. Ces stages s’effectueront avec notre partenaire le « Boxing club des Bois-Blancs ». \r\nAussi, des minis-camps seront organisés durant les grandes vacances scolaires. \r\nLes ALSH des vacances scolaires a lieu du lundi au vendredi de 8h30 à 17h30 au centre social de Vauban-Esquermes. ', '', '', '', '', '', 0, 1, 0, 0, 0),
 (4, 'Vacances', 'Des activités sont proposées durant toutes les vacances scolaires, les jeunes pourront se renseigner directement auprès de l’animateur(rice). \r\nAussi, des projets « séjour » pourront être organisés avec jeunes durant les grandes vacances scolaires. Ils devront alors être acteurs de leur séjour. Pour cela, des autofinancements devront être mis place par les jeunes et l’accompagnant(e). \r\n\r\n-> Que ce soit les mercredis ou pendant les vacances scolaires, les inscriptions devront se faire directement auprès de l’animateur(rice). Le tarif varie en fonction de l’activité ou du projet d’animation.', '', '', '', '', '', 0, 0, 1, 0, 0),
 (5, 'Vacances', 'Durant les vacances scolaires, des sorties familles seront proposées aux adhérents du centre social de Vauban-Esquermes. \r\nLes inscriptions se feront directement auprès de la référente famille ; et le tarif sera fixé en fonction des sorties.', '', '', '', '', '', 0, 0, 0, 0, 1);
@@ -177,7 +188,7 @@ INSERT INTO `holidays_activities` (`h_activities_id`, `h_activities_title`, `h_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `partners`
+-- Tabellenstruktur für Tabelle `partners`
 --
 
 CREATE TABLE `partners` (
@@ -189,16 +200,22 @@ CREATE TABLE `partners` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `partners`
+-- Daten für Tabelle `partners`
 --
 
 INSERT INTO `partners` (`partners_id`, `partners_name`, `partners_description`, `partners_image`, `partners_link`) VALUES
-(1, '123123', '123123', '1487176216_France.png', 'http://www.google.de');
+(2, 'La deule', 'La Deule association sportive et sociale dans la région des Hauts-de-France à Lille, Bouin-Plumoison et Courcelles-les-Lens. Activités nautiques et de plein air: canoë-kayak, umiak, randonnées, VTT, escalade....', 'ladeule.png', 'http://www.ladeule.com/'),
+(3, ' FCP', 'Prévention Culture Formation', 'fcp.png', 'http://www.fcp-asso.org/'),
+(4, 'Boxing Club Lille Bois Blanc', 'Boxing Club Lille Bois Blanc', 'boxe.png', 'https://fr-fr.facebook.com/pages/Boxing-Club-Lille-Bois-Blanc/265154590220615'),
+(5, 'Le Collège Levi Strauss', 'Le Collège Levi Strauss\r\n', 'levistrauss.jpg', 'http://claude-levi-strauss-lille.savoirsnumeriques5962.fr/'),
+(6, 'Vivre Ensemble à Esquermes (VEE)', 'Vivre Ensemble à Esquermes (VEE)\r\n', 'VEE.png', 'http://vivreensembleaesquermes.fr/'),
+(7, 'Vivre à Vauban (VAV)', 'Vivre à Vauban (VAV)', 'vaub.png', 'http://jo-association.info/v2/59000/20100044-VIVRE-A-VAUBAN-V-A-V-W595017614.php'),
+(8, 'Comité d’Animation de Vauban-Esquermes (CAVE)', 'Comité d’Animation de Vauban-Esquermes (CAVE)\r\n', 'smiley-icon-1.png', 'https://fr-fr.facebook.com/comitedanimationvaubanesquermesCAVE/');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `presentation`
+-- Tabellenstruktur für Tabelle `presentation`
 --
 
 CREATE TABLE `presentation` (
@@ -208,7 +225,7 @@ CREATE TABLE `presentation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `presentation`
+-- Daten für Tabelle `presentation`
 --
 
 INSERT INTO `presentation` (`presentation_id`, `presentation_name`, `presentation_description`) VALUES
@@ -221,7 +238,7 @@ INSERT INTO `presentation` (`presentation_id`, `presentation_name`, `presentatio
 -- --------------------------------------------------------
 
 --
--- Table structure for table `school_help`
+-- Tabellenstruktur für Tabelle `school_help`
 --
 
 CREATE TABLE `school_help` (
@@ -238,7 +255,7 @@ CREATE TABLE `school_help` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Tabellenstruktur für Tabelle `users`
 --
 
 CREATE TABLE `users` (
@@ -247,133 +264,134 @@ CREATE TABLE `users` (
   `user_lastname` varchar(100) DEFAULT NULL,
   `user_email` varchar(255) NOT NULL,
   `user_password` varchar(255) NOT NULL,
+  `token_forget` varchar(255) NOT NULL,
+  `date_forget` datetime NOT NULL,
   `user_status` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Daten für Tabelle `users`
 --
 
-INSERT INTO `users` (`user_id`, `user_firstname`, `user_lastname`, `user_email`, `user_password`, `user_status`) VALUES
-(11, 'fuck php', 'and javascript', 'fuckphp@sql2.com', '$2y$10$q/nNEJx/sxFy18uC47ID1e0N3APY1Jeng/USYMV/QkNHWpyLA37.q', 1),
-(13, 'Admin', 'Admin', 'Admin@admin.com', '$2y$10$qkmdEZDAY2w6PIsbxB/hSOMaym67M6n7./vKQqk5np2iOFJt9Nmpm', 2),
-(14, 'Steven', 'Po', 'test@test.de', '$2y$10$PJhu1nR8JCYwteoz./ayB.2E7fbmkz502IXpQjogbLkYpfos.dcVe', 1);
+INSERT INTO `users` (`user_id`, `user_firstname`, `user_lastname`, `user_email`, `user_password`, `token_forget`, `date_forget`, `user_status`) VALUES
+(13, 'Super', 'Admin', 'Admin@admin.com', '$2y$10$.JSsm..Eh1H5QJ98xc96/e3CPnPQImMnwySxwDSB.JTYV87qSYNom', '', '0000-00-00 00:00:00', 2),
+(14, 'Steven', 'Poscher', 'test@test.de', '$2y$10$PJhu1nR8JCYwteoz./ayB.2E7fbmkz502IXpQjogbLkYpfos.dcVe', '', '0000-00-00 00:00:00', 1);
 
 --
--- Indexes for dumped tables
+-- Indizes der exportierten Tabellen
 --
 
 --
--- Indexes for table `activities`
+-- Indizes für die Tabelle `activities`
 --
 ALTER TABLE `activities`
   ADD PRIMARY KEY (`activities_id`);
 
 --
--- Indexes for table `ages`
+-- Indizes für die Tabelle `ages`
 --
 ALTER TABLE `ages`
   ADD PRIMARY KEY (`ages_id`);
 
 --
--- Indexes for table `config`
+-- Indizes für die Tabelle `config`
 --
 ALTER TABLE `config`
   ADD PRIMARY KEY (`config_id`);
 
 --
--- Indexes for table `documents`
+-- Indizes für die Tabelle `documents`
 --
 ALTER TABLE `documents`
   ADD PRIMARY KEY (`documents_id`);
 
 --
--- Indexes for table `events`
+-- Indizes für die Tabelle `events`
 --
 ALTER TABLE `events`
   ADD PRIMARY KEY (`events_id`);
 
 --
--- Indexes for table `holidays_activities`
+-- Indizes für die Tabelle `holidays_activities`
 --
 ALTER TABLE `holidays_activities`
   ADD PRIMARY KEY (`h_activities_id`);
 
 --
--- Indexes for table `partners`
+-- Indizes für die Tabelle `partners`
 --
 ALTER TABLE `partners`
   ADD PRIMARY KEY (`partners_id`);
 
 --
--- Indexes for table `presentation`
+-- Indizes für die Tabelle `presentation`
 --
 ALTER TABLE `presentation`
   ADD PRIMARY KEY (`presentation_id`);
 
 --
--- Indexes for table `school_help`
+-- Indizes für die Tabelle `school_help`
 --
 ALTER TABLE `school_help`
   ADD PRIMARY KEY (`school_id`);
 
 --
--- Indexes for table `users`
+-- Indizes für die Tabelle `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT für exportierte Tabellen
 --
 
 --
--- AUTO_INCREMENT for table `activities`
+-- AUTO_INCREMENT für Tabelle `activities`
 --
 ALTER TABLE `activities`
   MODIFY `activities_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
--- AUTO_INCREMENT for table `ages`
+-- AUTO_INCREMENT für Tabelle `ages`
 --
 ALTER TABLE `ages`
   MODIFY `ages_id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `config`
+-- AUTO_INCREMENT für Tabelle `config`
 --
 ALTER TABLE `config`
   MODIFY `config_id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `documents`
+-- AUTO_INCREMENT für Tabelle `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `documents_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `documents_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `events`
+-- AUTO_INCREMENT für Tabelle `events`
 --
 ALTER TABLE `events`
-  MODIFY `events_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `events_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT for table `holidays_activities`
+-- AUTO_INCREMENT für Tabelle `holidays_activities`
 --
 ALTER TABLE `holidays_activities`
   MODIFY `h_activities_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `partners`
+-- AUTO_INCREMENT für Tabelle `partners`
 --
 ALTER TABLE `partners`
-  MODIFY `partners_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `partners_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT for table `presentation`
+-- AUTO_INCREMENT für Tabelle `presentation`
 --
 ALTER TABLE `presentation`
   MODIFY `presentation_id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `school_help`
+-- AUTO_INCREMENT für Tabelle `school_help`
 --
 ALTER TABLE `school_help`
   MODIFY `school_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;

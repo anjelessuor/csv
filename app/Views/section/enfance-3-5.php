@@ -4,8 +4,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-image-src="https://static.pexels.com/photos/159579/crayons-coloring-book-coloring-book-159579.jpeg" data-natural-width="1920" data-natural-height="1200"></div>
-        <h1>Enfance de 3 à 5 ans</h1>
+        <div class="parallax-container" id="big" data-parallax="scroll" data-bleed="10" data-image-src="https://static.pexels.com/photos/159579/crayons-coloring-book-coloring-book-159579.jpeg" data-natural-width="1920" data-natural-height="1200"><h1>Enfance de 3 à 5 ans</h1></div>
     </div>
 </div>
 
@@ -31,8 +30,8 @@
                         echo $activity['activities_description'];
                     }
                 }?>
-            </div> 
-        
+            </div>
+
             <div id="vendredi">
                 <h3>Vendredi</h3>
                 <?php foreach ($activities as $activity){
@@ -41,16 +40,20 @@
                     }
                 }?>
             </div>
-        </div> 
+        </div>
     </div>
-</div> 
+</div>
+
+
+<div class="parallax-container" data-parallax="scroll" data-bleed="10" data-image-src="https://static.pexels.com/photos/159579/crayons-coloring-book-coloring-book-159579.jpeg" data-natural-width="1920" data-natural-height="1200"></div>
+
 
 <div class="container-fluid">
     <div class="row">
     <div class="enfanceSection3">
         <div id="vacances">
             <h1>Vacances Scolaires</h1>
-            <?php foreach ($h_activities as $h_activity) {
+          <?php foreach ($h_activities as $h_activity) {
 
 
 
@@ -70,25 +73,28 @@
         </div>
     </div>
     </div>
-</div>    
+</div>
+
 
 <div class="container-fluid">
+  <div class="row">
     <div class="enfanceSection4">
         <div id="accompagnement">
             <h1>Accompagnement à la scolarité</h1>
             <?php foreach ($school as $school) {
                 if ($school['school_3to5'] == 1){
                     echo $school['school'];
-                }
-            }?>
-        </div>  
-    </div>
-</div>
+                  }
+                }?>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<div class="container-fluid">
-    <div class="row">        
-        <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-image-src="https://static.pexels.com/photos/159579/crayons-coloring-book-coloring-book-159579.jpeg" data-natural-width="1920" data-natural-height="1200"></div>   
-    </div> 
-</div>
+
+    <div class="row">
+        <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-image-src="https://static.pexels.com/photos/159579/crayons-coloring-book-coloring-book-159579.jpeg" data-natural-width="1920" data-natural-height="1200"></div>
+    </div>
+
 
 <?php $this->stop('main_content'); ?>
