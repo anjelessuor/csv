@@ -37,15 +37,15 @@ weekday[6] = "Samedi";
 var n = weekday[d.getDay()];
 
 // format date info
-var displayDate = (d.getDate()) + '/' + (d.getMonth() + 1) + '/' + d.getFullYear();
+var displayDate = (d.getDate()) + '.' + (d.getMonth() + 1) + '.' + d.getFullYear();
 
 //times to display
 
-var lundi = ['9h', '12h', '14h', '19.00h'];
-var mardi = ['9h', '12h', '14h', '19.00h'];
-var mercredi = ['9h', '12h', '14h', '19.00h'];
-var jeudi = ['9h', '12h', '14h', '19.00h'];
-var vendredi = ['9h', '12h', '14h', '19.00h'];
+var lundi = ['9h', '12h', '14h', '19h'];
+var mardi = ['9h', '12h', '14h', '19h'];
+var mercredi = ['9h', '12h', '14h', '19h'];
+var jeudi = ['9h', '12h', '14h', '19h'];
+var vendredi = ['9h', '12h', '14h', '19h'];
 var samedi = ['/', '/', '/', '/'];
 var dimanche = ['/', '/', '/', '/'];
 
@@ -71,7 +71,7 @@ function updateClock() {
   currentSeconds = (currentSeconds < 10 ? "0" : "") + currentSeconds;
 
   var time = d.getHours() + ":" + currentMinutes + ":" + currentSeconds;
-  $('#timeholder').empty().append('<span class="time"><i class="fa fa-clock-o"></i> ' + time + ' H</span>');
+  $('#timeholder').empty().append('<span class="time"><i class="fa fa-clock-o"></i> ' + time + ' </span>');
 }
 
 // doc ready
@@ -89,23 +89,25 @@ $(document).ready(function() {
   currentSeconds = (currentSeconds < 10 ? "0" : "") + currentSeconds;
 
   var time = d.getHours() + ":" + currentMinutes + ":" + currentSeconds;
-  $('#timeholder').empty().append('<span class="time"><i class="fa fa-clock-o"></i> ' + time + ' H</span>');
+  $('#timeholder').empty().append('<span class="time"><i class="fa fa-clock-o"></i> ' + time + ' </span>');
 
   //update clock
 
   setInterval('updateClock()', 1000);
 
   //table button
-
-  $(".ophbtn").on("mousedown", function() {
+    // on Siteload
+  $(".ophbtn").ready(function() {
+    // on mousedown
+  // $(".ophbtn").on("mousedown", function() {
 
     $('.tg').fadeToggle(1);
     if ($(".ophbtn i").hasClass('fa-caret-right')) {
       $(".ophbtn i").removeClass('fa-caret-right fa-fw').addClass('fa-times fa-fw');
-      $(".ophbtn").text('Fermer les horaires').append('<i class="fa fa-times fa-fw"></i>');
+      // $(".ophbtn").text('Fermer les horaires').append('<i class="fa fa-times fa-fw"></i>');
     } else {
       $(".ophbtn i").removeClass('fa-times fa-fw').addClass('fa-caret-right fa-fw');
-      $(".ophbtn").text('Voir les horaires').append('<i class="fa fa-caret-right fa-fw"></i>');
+      // $(".ophbtn").text('Voir les horaires').append('<i class="fa fa-caret-right fa-fw"></i>');
     }
   });
 

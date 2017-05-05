@@ -27,6 +27,7 @@
                     <input type="email" name="user_email" id="user_email" class="form-control">
                 </div>
                 <button name="forgetSend" class="btn btn-primary display">Envoyer</button>
+                <a href="<?= $this->url('display_index') ?>" class="btn btn-warning"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i> Retour</a>
             </form>
         <?php } ?>
 </div>

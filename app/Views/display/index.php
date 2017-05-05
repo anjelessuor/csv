@@ -1,18 +1,13 @@
 <?php $this->layout('layout-back', ['title' => 'Mise à jour']) ?>
 <?php $this->start('main_content'); ?>
-<br>
-<br>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-xs-12" id=controlpanel>
-            <p> Welcome to the Control Panel of Webforce Backoffice </p>
+            <h1> Welcome to the Control Panel of Webforce Backoffice </h1>
         </div>
     </div>
 </div>
-<br>
-
-
 <div class="container">
     <div class="row">
         <div class="col-xs-6">
@@ -40,7 +35,7 @@
         </div>
 
         <div class="col-xs-5">
-            <h1>Bonjour <?= $w_user['user_firstname'] ." ". $w_user['user_lastname'] ?> !</h1>
+            <h2>Bonjour <?= $w_user['user_firstname'] ." ". $w_user['user_lastname'] ?> !</h2>
         </div>
 
     </div>

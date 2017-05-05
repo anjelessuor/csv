@@ -2,10 +2,10 @@
 -- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Client :  127.0.0.1
--- Généré le :  Mar 02 Mai 2017 à 15:01
--- Version du serveur :  10.1.19-MariaDB
--- Version de PHP :  5.6.28
+-- Host: 127.0.0.1
+-- Erstellungszeit: 05. Mai 2017 um 04:21
+-- Server-Version: 10.1.19-MariaDB
+-- PHP-Version: 7.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `csv`
+-- Datenbank: `centresocialvauban`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `activities`
+-- Tabellenstruktur für Tabelle `activities`
 --
 
 CREATE TABLE `activities` (
@@ -38,11 +38,11 @@ CREATE TABLE `activities` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `activities`
+-- Daten für Tabelle `activities`
 --
 
 INSERT INTO `activities` (`activities_id`, `activities_title`, `activities_description`, `activities_3to5`, `activities_6to12`, `activities_12to16`, `activities_16to25`, `activities_adults`) VALUES
-(1, 'Mercerdi', 'Des animateurs qualifiés proposent un large choix d’activités : grands jeux (plein air ou intérieur), des projets et découverte nature, des activités manuelles : manipulation de la pâte à sel, création de masque, de porte clé et de cadre, peinture et décoration d’intérieur, etc. Mais aussi, des sorties (art, culture et loisirs) seront organisées sur Lille et ses environs.Centre de la petite enfance au 12 Place de l’Arbonnoise.L’accueil du Mercredi se fait de 8h30 à 17h30', 0, 1, 1, 1, 1),
+(1, 'Mercerdi', 'Des animateurs qualifiés proposent un large choix d’activités : grands jeux (plein air ou intérieur), des projets et découverte nature, des activités manuelles : manipulation de la pâte à sel, création de masque, de porte clé et de cadre, peinture et décoration d’intérieur, etc. Mais aussi, des sorties (art, culture et loisirs) seront organisées sur Lille et ses environs.\r\nCentre de la petite enfance au 12 Place de l’Arbonnoise.\r\nL’accueil du Mercredi se fait de 8h30 à 17h30', 1, 0, 0, 0, 0),
 (2, 'Mercredi', 'Comme pour le secteur Petite Enfance, des animateurs qualifiés proposent un large choix d’activités : grands jeux (plein air ou intérieur), des projets et découverte nature, des activités manuelles : manipulation d’argile, peinture et décoration d’intérieur, création d’accessoires sportifs, etc. Mais aussi, des sorties (art, culture et loisirs) sur Lille et ses environs.\r\nCentre social de Vauban-Esquermes au 77 rue Philippe-Laurent Roland à Lille.\r\nL’accueil du Mercredi se fait de 8h30 à 17h30', 0, 1, 0, 0, 0),
 (3, 'Lundi', 'l’association Vivre Ensemble à Esquermes vous propose un Atelier voix de 19h à 21h.', 0, 0, 0, 0, 1),
 (4, 'Mardi', 'la référente famille met en place des permanences administratives au sein du centre social de 9h à 12h', 0, 0, 0, 0, 1),
@@ -59,7 +59,7 @@ INSERT INTO `activities` (`activities_id`, `activities_title`, `activities_descr
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ages`
+-- Tabellenstruktur für Tabelle `ages`
 --
 
 CREATE TABLE `ages` (
@@ -69,7 +69,7 @@ CREATE TABLE `ages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `ages`
+-- Daten für Tabelle `ages`
 --
 
 INSERT INTO `ages` (`ages_id`, `ages_name`, `ages_description`) VALUES
@@ -82,7 +82,7 @@ INSERT INTO `ages` (`ages_id`, `ages_name`, `ages_description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `config`
+-- Tabellenstruktur für Tabelle `config`
 --
 
 CREATE TABLE `config` (
@@ -95,7 +95,7 @@ CREATE TABLE `config` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `config`
+-- Daten für Tabelle `config`
 --
 
 INSERT INTO `config` (`config_id`, `config_sitename`, `config_address`, `config_phone`, `config_email`, `config_facebook`) VALUES
@@ -104,7 +104,7 @@ INSERT INTO `config` (`config_id`, `config_sitename`, `config_address`, `config_
 -- --------------------------------------------------------
 
 --
--- Structure de la table `documents`
+-- Tabellenstruktur für Tabelle `documents`
 --
 
 CREATE TABLE `documents` (
@@ -114,10 +114,18 @@ CREATE TABLE `documents` (
   `documents_document` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Daten für Tabelle `documents`
+--
+
+INSERT INTO `documents` (`documents_id`, `documents_name`, `documents_description`, `documents_document`) VALUES
+(1, 'test1', 'Lorem Ipsum', 'PHPEvaluationpratiquefinale.pdf'),
+(2, 'SUOMI PERKELE', 'Yllä harmaan korven korpit laulaa,\r\nHurme tämän kansan roudan sulattaa,\r\nKatso kuinka hohkaa kansi taivaan,\r\nKutsuu se meitä tumman virran taa,\r\nHeikot vaipuu kuohuun sysimustaan,\r\nSankarit kun astuu joen rantaan,\r\nHalki iäisyyden laulu raikaa,\r\nKutsuu se veljiä tumman virran taa', 'test2.pdf');
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `events`
+-- Tabellenstruktur für Tabelle `events`
 --
 
 CREATE TABLE `events` (
@@ -135,24 +143,20 @@ CREATE TABLE `events` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `events`
+-- Daten für Tabelle `events`
 --
 
 INSERT INTO `events` (`events_id`, `events_title`, `events_description`, `events_localization`, `events_hours`, `events_image`, `events_3to5`, `events_6to12`, `events_12to16`, `events_16to25`, `events_adults`) VALUES
-(2, 'coucou bbbbbaaaaa', 'hqklaQSHDEKJHVBDFKLJNBMPDGKJSK', 'dfvbghn,jk', 'qsdfgbv,nj;', '', 0, 0, 0, 0, 0),
-(3, 'steven', 'e', 'e', 'e', 'e', 0, 1, 0, 0, 0),
-(4, 'rrrr', 'rrrr', 'rrr', 'rrr', 'rrrr', 0, 0, 1, 0, 0),
-(5, 's', 's', 's', 'sss', 's', 0, 0, 0, 1, 0),
-(6, 'r', 'r', 'r', 'r', 'r', 0, 0, 0, 0, 1),
-(7, 'e', 'e', 'e', 'e', 'e', 0, 0, 0, 0, 1),
-(8, '', '', '', '', '', 0, 0, 0, 0, 0),
-(9, 'aaaaaaaaaaaaa', 'aaaaaaaaaaaaaa', 'aaaaaaaaaaaa', 'aaaaaaaaaaaaa', '', 0, 0, 0, 0, 0),
-(10, 'ffffffffffff', 'ffffffffffff', 'fffffffffffff', 'ffffffffffffff', '', 0, 0, 0, 0, 0);
+(4, 'Canard!!!', 'Today - all you can eat', 'Webforce3', '15:00', 'event5.jpg', 0, 0, 0, 0, 0),
+(5, 'Photoshooting', 'bring your beautiful friends', 'Dimanche', '15:00', 'event4.jpg', 1, 1, 1, 1, 1),
+(6, 'Fête de la Music', '*sing for your life*', 'TEST', 'NOW', 'event1.jpg', 0, 0, 1, 1, 1),
+(7, 'Je suis la', 'dont Judge me', 'there', '19:00', 'event2.jpg', 1, 0, 0, 0, 1),
+(8, 'I SEE YOU', 'qwerty', '123', '20:00 - 23:00', 'event3.jpg', 1, 0, 0, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `holidays_activities`
+-- Tabellenstruktur für Tabelle `holidays_activities`
 --
 
 CREATE TABLE `holidays_activities` (
@@ -172,7 +176,7 @@ CREATE TABLE `holidays_activities` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `holidays_activities`
+-- Daten für Tabelle `holidays_activities`
 --
 
 INSERT INTO `holidays_activities` (`h_activities_id`, `h_activities_title`, `h_activities_description`, `h_activities_dates`, `h_activities_localization`, `h_activities_image`, `h_activities_hours`, `h_activities_price`, `h_activities_3to5`, `h_activities_6to12`, `h_activities_12to16`, `h_activities_16to25`, `h_activities_adults`) VALUES
@@ -184,7 +188,7 @@ INSERT INTO `holidays_activities` (`h_activities_id`, `h_activities_title`, `h_a
 -- --------------------------------------------------------
 
 --
--- Structure de la table `partners`
+-- Tabellenstruktur für Tabelle `partners`
 --
 
 CREATE TABLE `partners` (
@@ -195,10 +199,23 @@ CREATE TABLE `partners` (
   `partners_link` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Daten für Tabelle `partners`
+--
+
+INSERT INTO `partners` (`partners_id`, `partners_name`, `partners_description`, `partners_image`, `partners_link`) VALUES
+(2, 'La deule', 'La Deule association sportive et sociale dans la région des Hauts-de-France à Lille, Bouin-Plumoison et Courcelles-les-Lens. Activités nautiques et de plein air: canoë-kayak, umiak, randonnées, VTT, escalade....', 'ladeule.png', 'http://www.ladeule.com/'),
+(3, ' FCP', 'Prévention Culture Formation', 'fcp.png', 'http://www.fcp-asso.org/'),
+(4, 'Boxing Club Lille Bois Blanc', 'Boxing Club Lille Bois Blanc', 'boxe.png', 'https://fr-fr.facebook.com/pages/Boxing-Club-Lille-Bois-Blanc/265154590220615'),
+(5, 'Le Collège Levi Strauss', 'Le Collège Levi Strauss\r\n', 'levistrauss.jpg', 'http://claude-levi-strauss-lille.savoirsnumeriques5962.fr/'),
+(6, 'Vivre Ensemble à Esquermes (VEE)', 'Vivre Ensemble à Esquermes (VEE)\r\n', 'VEE.png', 'http://vivreensembleaesquermes.fr/'),
+(7, 'Vivre à Vauban (VAV)', 'Vivre à Vauban (VAV)', 'vaub.png', 'http://jo-association.info/v2/59000/20100044-VIVRE-A-VAUBAN-V-A-V-W595017614.php'),
+(8, 'Comité d’Animation de Vauban-Esquermes (CAVE)', 'Comité d’Animation de Vauban-Esquermes (CAVE)\r\n', 'smiley-icon-1.png', 'https://fr-fr.facebook.com/comitedanimationvaubanesquermesCAVE/');
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `presentation`
+-- Tabellenstruktur für Tabelle `presentation`
 --
 
 CREATE TABLE `presentation` (
@@ -208,7 +225,7 @@ CREATE TABLE `presentation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `presentation`
+-- Daten für Tabelle `presentation`
 --
 
 INSERT INTO `presentation` (`presentation_id`, `presentation_name`, `presentation_description`) VALUES
@@ -221,7 +238,7 @@ INSERT INTO `presentation` (`presentation_id`, `presentation_name`, `presentatio
 -- --------------------------------------------------------
 
 --
--- Structure de la table `school_help`
+-- Tabellenstruktur für Tabelle `school_help`
 --
 
 CREATE TABLE `school_help` (
@@ -238,7 +255,7 @@ CREATE TABLE `school_help` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Tabellenstruktur für Tabelle `users`
 --
 
 CREATE TABLE `users` (
@@ -247,135 +264,137 @@ CREATE TABLE `users` (
   `user_lastname` varchar(100) DEFAULT NULL,
   `user_email` varchar(255) NOT NULL,
   `user_password` varchar(255) NOT NULL,
+  `token_forget` varchar(255) NOT NULL,
+  `date_forget` datetime NOT NULL,
   `user_status` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `users`
+-- Daten für Tabelle `users`
 --
 
-INSERT INTO `users` (`user_id`, `user_firstname`, `user_lastname`, `user_email`, `user_password`, `user_status`) VALUES
-(11, 'fuck php', 'and javascript', 'fuckphp@sql2.com', '$2y$10$q/nNEJx/sxFy18uC47ID1e0N3APY1Jeng/USYMV/QkNHWpyLA37.q', 1),
-(13, 'Admin', 'Admin', 'Admin@admin.com', '$2y$10$qkmdEZDAY2w6PIsbxB/hSOMaym67M6n7./vKQqk5np2iOFJt9Nmpm', 2);
+INSERT INTO `users` (`user_id`, `user_firstname`, `user_lastname`, `user_email`, `user_password`, `token_forget`, `date_forget`, `user_status`) VALUES
+(13, 'Super', 'Admin', 'Admin@admin.com', '$2y$10$.JSsm..Eh1H5QJ98xc96/e3CPnPQImMnwySxwDSB.JTYV87qSYNom', '', '0000-00-00 00:00:00', 2),
+(14, 'Steven', 'Poscher', 'test@test.de', '$2y$10$PJhu1nR8JCYwteoz./ayB.2E7fbmkz502IXpQjogbLkYpfos.dcVe', '', '0000-00-00 00:00:00', 1);
 
 --
--- Index pour les tables exportées
+-- Indizes der exportierten Tabellen
 --
 
 --
--- Index pour la table `activities`
+-- Indizes für die Tabelle `activities`
 --
 ALTER TABLE `activities`
   ADD PRIMARY KEY (`activities_id`);
 
 --
--- Index pour la table `ages`
+-- Indizes für die Tabelle `ages`
 --
 ALTER TABLE `ages`
   ADD PRIMARY KEY (`ages_id`);
 
 --
--- Index pour la table `config`
+-- Indizes für die Tabelle `config`
 --
 ALTER TABLE `config`
   ADD PRIMARY KEY (`config_id`);
 
 --
--- Index pour la table `documents`
+-- Indizes für die Tabelle `documents`
 --
 ALTER TABLE `documents`
   ADD PRIMARY KEY (`documents_id`);
 
 --
--- Index pour la table `events`
+-- Indizes für die Tabelle `events`
 --
 ALTER TABLE `events`
   ADD PRIMARY KEY (`events_id`);
 
 --
--- Index pour la table `holidays_activities`
+-- Indizes für die Tabelle `holidays_activities`
 --
 ALTER TABLE `holidays_activities`
   ADD PRIMARY KEY (`h_activities_id`);
 
 --
--- Index pour la table `partners`
+-- Indizes für die Tabelle `partners`
 --
 ALTER TABLE `partners`
   ADD PRIMARY KEY (`partners_id`);
 
 --
--- Index pour la table `presentation`
+-- Indizes für die Tabelle `presentation`
 --
 ALTER TABLE `presentation`
   ADD PRIMARY KEY (`presentation_id`);
 
 --
--- Index pour la table `school_help`
+-- Indizes für die Tabelle `school_help`
 --
 ALTER TABLE `school_help`
   ADD PRIMARY KEY (`school_id`);
 
 --
--- Index pour la table `users`
+-- Indizes für die Tabelle `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT für exportierte Tabellen
 --
 
 --
--- AUTO_INCREMENT pour la table `activities`
+-- AUTO_INCREMENT für Tabelle `activities`
 --
 ALTER TABLE `activities`
   MODIFY `activities_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
--- AUTO_INCREMENT pour la table `ages`
+-- AUTO_INCREMENT für Tabelle `ages`
 --
 ALTER TABLE `ages`
   MODIFY `ages_id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT pour la table `config`
+-- AUTO_INCREMENT für Tabelle `config`
 --
 ALTER TABLE `config`
   MODIFY `config_id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT pour la table `documents`
+-- AUTO_INCREMENT für Tabelle `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `documents_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `documents_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT pour la table `events`
+-- AUTO_INCREMENT für Tabelle `events`
 --
 ALTER TABLE `events`
-  MODIFY `events_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `events_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT pour la table `holidays_activities`
+-- AUTO_INCREMENT für Tabelle `holidays_activities`
 --
 ALTER TABLE `holidays_activities`
   MODIFY `h_activities_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT pour la table `partners`
+-- AUTO_INCREMENT für Tabelle `partners`
 --
 ALTER TABLE `partners`
-  MODIFY `partners_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `partners_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT pour la table `presentation`
+-- AUTO_INCREMENT für Tabelle `presentation`
 --
 ALTER TABLE `presentation`
   MODIFY `presentation_id` int(2) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT pour la table `school_help`
+-- AUTO_INCREMENT für Tabelle `school_help`
 --
 ALTER TABLE `school_help`
   MODIFY `school_id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT pour la table `users`
+-- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `user_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
