@@ -34,8 +34,11 @@ class DefaultController extends Controller
 
 		$presentation_manager = new PresentationModel();
 		$presentation = $presentation_manager->findAll();
-		
-		$this->show('default/home', ['events' => $events, 'config' => $config, 'presentation'=> $presentation ]);
+
+		$documents_manager = new DocumentsModel();
+		$documents = $documents_manager->findAll();
+
+		$this->show('default/home', ['events' => $events, 'config' => $config, 'presentation'=> $presentation, 'documents' => $documents ]);
 
 
 
