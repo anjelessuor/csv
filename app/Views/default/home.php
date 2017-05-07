@@ -60,10 +60,10 @@
 				<div class="informationAccueil downloadDocumentation">
 					<button style class="btn btn-hero btn-lg" role="button"><i class="fa fa-download" aria-hidden="true"></i> Documents </button>
 					<ul>
-						<li>Charte des centres sociaux <a href="./uploads/Charte-des-centres-sociaux-et-socioculturels-de-France.pdf"> Download file</a></li>
-						<li>Placeholder</li>
-						<li>Placeholder</li>
-						<li>Placeholder</li>
+						<li><a href="./uploads/Charte-des-centres-sociaux-et-socioculturels-de-France.pdf" target="_blank"> Charte des centres sociaux </a></li>
+						<?php foreach ($documents as $documents) { ?>
+							<li><a href="../public/uploads/documents/<?php echo $documents["documents_document"] ?>" target="_blank"><?php echo $documents['documents_document'] ?></a></li>
+						<?php } ?>
 					</ul>
 				</div>
 			</div>
